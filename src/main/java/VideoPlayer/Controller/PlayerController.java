@@ -12,6 +12,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -30,13 +31,21 @@ public class PlayerController implements Initializable{
     private Button playPauseButton, FsButton ;
     @FXML
     private Slider timeSlider;
+    @FXML
+    private Label timerLabel;
+    @FXML
+    private Label totalTimeLabel;
+    @FXML
+    private Slider volumeSlider;
 
     private Media movie;
     private MediaPlayer player;
 
-    private boolean play;
+    enum stateButton {
+        PLAY, RESUME, REPLAY;
 
-
+    }
+    stateButton state;
 
     @Override
 
@@ -53,12 +62,16 @@ public class PlayerController implements Initializable{
         height.bind(Bindings.selectDouble(viewer.sceneProperty(), "height"));
         viewer.setPreserveRatio(true);
 
-        play = false;
+        state = stateButton.RESUME;
+
+        timerLabel.setText(computeTime(player.getCurrentTime()) + " /");
+        totalTimeLabel.setText(computeTime(player.getTotalDuration()));
 
         player.totalDurationProperty().addListener(new ChangeListener<Duration>() {
             @Override
             public void changed(ObservableValue<? extends Duration> observableValue, Duration duration, Duration t1) {
                 timeSlider.setMax(t1.toSeconds());
+                totalTimeLabel.setText(computeTime(t1));
             }
         });
 
@@ -78,22 +91,69 @@ public class PlayerController implements Initializable{
                 if (!timeSlider.isValueChanging()) {
                     timeSlider.setValue(currentTime.toSeconds());
                 }
+                timerLabel.setText( computeTime(currentTime) + " /");
             }
         });
 
+        player.setOnEndOfMedia(new Runnable() {
+            @Override
+            public void run() {
+                state = stateButton.REPLAY;
+                playPauseButton.setText("REPLAY");
+            }
+        });
+
+        volumeSlider.setMax(100);
+
+        player.volumeProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                if( !volumeSlider.isValueChanging()) {
+                    volumeSlider.setValue( (double ) t1 );
+                }
+            }
+        });
+
+        volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number lastVolume, Number currVolume) {
+                player.setVolume( (double) currVolume );
+            }
+        });
+    }
+
+    public String computeTime(Duration duration ) {
+        int hours = ( int ) duration.toHours() % 60;
+        int minutes = ( int ) duration.toMinutes() % 60;
+        int seconds = ( int ) duration.toSeconds() % 60;
+
+        if(hours > 0 ) return String.format("%d:%02d:%02d", hours, minutes, seconds );
+        else return String.format("%02d:%02d", minutes, seconds );
     }
 
     public void setPlay() {
-        play = !play;
 
-        if( play == true ) {
-            player.play();
-            playPauseButton.setText("Pause");
+
+        switch (state) {
+            case RESUME:
+                player.play();
+                playPauseButton.setText("Pause");
+                break;
+
+            case PLAY:
+                player.pause();
+                playPauseButton.setText("Play");
+                break;
+
+            case REPLAY:
+                player.seek(Duration.seconds(0.0));
+                player.play();
+                playPauseButton.setText("Pause");
+                break;
         }
-        else {
-            player.pause();
-            playPauseButton.setText("Play");
-        }
+
+        state = (state == stateButton.PLAY ) ? stateButton.RESUME : stateButton.PLAY;
+
     }
 
     public void setFullScreen() {
