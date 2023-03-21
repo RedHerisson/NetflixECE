@@ -8,21 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="-10.0" prefHeight="90.0" prefWidth="613.0" style="-fx-background-color: #515151;">
          <children>
-            <ImageView fx:id="ImageLogo" fitHeight="82.0" fitWidth="85.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../../../../Images/Images/tortipouss.png" />
-               </image>
-            </ImageView>
             <Label contentDisplay="CENTER" layoutX="217.0" layoutY="32.0" prefHeight="26.0" prefWidth="179.0" text="User Registration Form" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
+            <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="60.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/tortipouss.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <Label layoutX="170.0" layoutY="108.0" text="First Name" />
