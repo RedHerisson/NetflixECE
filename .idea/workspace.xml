@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="525a2047-c75a-4372-99c3-e572788d64b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NetflixECE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/BDD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mysql-connector-java-8.0.25.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/Accessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/MovieAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/MovieHistoricAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/PersonAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/UserAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/dao/UserDataAccessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/map/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/map/MovieHistoric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/map/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/map/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/map/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,21 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "N:/Cours/ECE cours/ING3-S2/Informatique/Projet Java/PRJING4/ING3S2java-main",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;N:/Cours/ECE cours/ING3-S2/Informatique/Projet Java/PRJING4/ING3S2java-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\src" />
     </key>
