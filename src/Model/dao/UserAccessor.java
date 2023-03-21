@@ -16,17 +16,19 @@ public class UserAccessor extends Accessor<User> {
     }
 
     @Override
-    public User create(User obj) {
-        return null;
+    public int create(User obj) {
+
+        return 0;
     }
 
     @Override
-    public User update(User obj) {
-        return null;
+    public int update(User obj) {
+
+        return 0;
     }
 
     @Override
-    public void delete(User obj) {
+    public void delete( int id ) {
 
     }
 }

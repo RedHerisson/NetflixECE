@@ -9,7 +9,17 @@ public class UnitTest {
     public static void main( String[] args) {
         try {
             PersonAccessor personAccessor = new PersonAccessor();
-            System.out.println(personAccessor.find(1).toString());
+
+            Person demoPerson;
+            demoPerson = personAccessor.find(1);
+            if( demoPerson == null) {
+                System.out.println("object does not exist");
+            }
+            else {
+                demoPerson.setName("igor");
+                System.out.println();
+                personAccessor.update(demoPerson);
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

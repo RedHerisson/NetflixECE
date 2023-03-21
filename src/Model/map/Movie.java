@@ -1,14 +1,16 @@
 package Model.map;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Movie {
 
+    private int id;
     private String title;
 
-    private Image Tumbnail;
+    private BufferedImage thumbnail;
 
     private String filePath;
 
@@ -33,9 +35,10 @@ public class Movie {
 
     private int viewCount;
 
-    public Movie(String title, Image tumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, String type, String summary, String teaserPath, int rating, boolean awarded, int viewCount) {
+    public Movie(int ID, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, String type, String summary, String teaserPath, int rating, boolean awarded, int viewCount) {
+        this.id = id;
         this.title = title;
-        Tumbnail = tumbnail;
+        this.thumbnail = thumbnail;
         this.filePath = filePath;
         this.releaseDate = releaseDate;
         this.length = length;

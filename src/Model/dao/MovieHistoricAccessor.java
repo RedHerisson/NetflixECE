@@ -16,17 +16,18 @@ public class MovieHistoricAccessor extends Accessor<MovieHistoric> {
     }
 
     @Override
-    public MovieHistoric create(MovieHistoric obj) {
-        return null;
+    public int create(MovieHistoric obj) {
+        return 0;
     }
 
     @Override
-    public MovieHistoric update(MovieHistoric obj) {
-        return null;
+    public int update(MovieHistoric obj) {
+
+        return 0;
     }
 
     @Override
-    public void delete(MovieHistoric obj) {
+    public void delete( int id ) {
 
     }
 }

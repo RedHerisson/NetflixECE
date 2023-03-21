@@ -16,17 +16,18 @@ public class UserDataAccessor extends Accessor<UserData> {
     }
 
     @Override
-    public UserData create(UserData obj) {
-        return null;
+    public int create(UserData obj) {
+        return 0;
     }
 
     @Override
-    public UserData update(UserData obj) {
-        return null;
+    public int update(UserData obj) {
+
+        return 0;
     }
 
     @Override
-    public void delete(UserData obj) {
+    public void delete(int id ) {
 
     }
 }
