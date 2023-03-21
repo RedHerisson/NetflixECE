@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="525a2047-c75a-4372-99c3-e572788d64b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/Accessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/MovieHistoricAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/PersonAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/UserAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/dao/UserDataAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/map/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/map/MovieHistoric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/map/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/map/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/map/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/map/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

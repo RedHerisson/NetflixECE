@@ -42,7 +42,7 @@ public class Person {
     }
 
     public String toString() {
-        return "Person | name : " + name + " surname : " + surname + "age : " + age + " sexe : " + sexe ;
+        return "Person | name : " + name + " surname : " + surname + " | age : " + age + " sexe : " + sexe ;
     }
 
 }
