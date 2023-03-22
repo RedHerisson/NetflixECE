@@ -12,9 +12,14 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="144.76371002197266" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="143.0">
                <image>
                   <Image url="@../images/pirates1.1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="144.76371002197266" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="143.0">
+               <image>
+                  <Image url="@../images/pirates1.2.jpg" />
                </image>
             </ImageView>
          </children>

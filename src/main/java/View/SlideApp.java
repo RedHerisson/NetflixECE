@@ -31,6 +31,11 @@ public class SlideApp implements Initializable{
     @FXML
     private Button Next;
     @FXML
+    private Button Back1;
+
+    @FXML
+    private Button Next1;
+    @FXML
     private Label Num;
 
     @FXML
@@ -82,6 +87,35 @@ public class SlideApp implements Initializable{
 
     @FXML
     void NextImage(ActionEvent event) {
+        if(show ==0){
+            translateAnimation(0.5, Panel2, -829);
+            show++;
+            Num.setText("2/3");
+        }
+        else if(show ==1){
+            translateAnimation(0.5, Panel3, -829);
+            show++;
+            Num.setText("3/3");
+        }
+
+    }
+
+    @FXML
+    void BackImage1(ActionEvent event) {
+        if(show ==1){
+            translateAnimation(0.5, Panel2, 829);
+            show--;
+            Num.setText("1/3");
+        }
+        else if(show ==2){
+            translateAnimation(0.5, Panel3, 829);
+            show--;
+            Num.setText("2/3");
+        }
+    }
+
+    @FXML
+    void NextImage1(ActionEvent event) {
         if(show ==0){
             translateAnimation(0.5, Panel2, -829);
             show++;
