@@ -4,19 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="525a2047-c75a-4372-99c3-e572788d64b1" name="Changes" comment="">
+    <list default="true" id="ea774537-6967-444a-8fb7-376e08429056" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/main/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoPlayer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NetflixECE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixECE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/Accessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/MovieHistoricAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/MovieHistoricAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/PersonAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/dao/UserDataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/dao/UserDataAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/map/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/map/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/map/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/BDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/MovieHistoricAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieHistoricAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/dao/UserDataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/MovieHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/MovieHistoric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/map/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/UnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VideoPlayer/Controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VideoPlayer/Vue/PlayerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VideoPlayer/player.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/VideoPlayer/player.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mysql-connector-java-8.0.25.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mysql-connector-java-8.0.25.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VideoPlayer/player.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,19 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2NILwrYx7HrauJyncw24saWeNYN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,8 +84,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.3.2/plugins/javaFX/lib/javaFX.jar",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "N:/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE/mysql-connector-java-8.0.25.jar",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.43678162",
     "run.code.analysis.last.selected.profile": "pProject Default"
@@ -68,19 +96,60 @@
       <recent name="Model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE" />
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\java\src\Vue" />
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\java\src\Vue\VideoPlayer" />
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\java" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="UnitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UnitTest" />
-      <module name="NetflixECE" />
+  <component name="RunManager" selected="Application.com.Model.UnitTest">
+    <configuration name="PlayerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Vue.VideoPlayer.PlayerApp" />
+      <module name="videoPlayer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Vue.VideoPlayer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UnitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest" />
+      <module name="videoPlayer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.Model.UnitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.Model.UnitTest" />
+      <module name="videoPlayer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.PlayerApp" />
+      <item itemvalue="Application.com.Model.UnitTest" />
+      <item itemvalue="Application.UnitTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.Model.UnitTest" />
+        <item itemvalue="Application.PlayerApp" />
         <item itemvalue="Application.UnitTest" />
       </list>
     </recent_temporary>
@@ -88,7 +157,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="525a2047-c75a-4372-99c3-e572788d64b1" name="Changes" comment="" />
+      <changelist id="ea774537-6967-444a-8fb7-376e08429056" name="Changes" comment="" />
       <created>1679346892934</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
