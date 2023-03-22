@@ -15,10 +15,10 @@
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../images/tortipouss.png" />
+                  <Image url=" @../../../../../../../images/tortipouss.png" />
                </image>
             </ImageView>
-         </children>
+         </children>*
       </AnchorPane>
       <Label layoutX="314.0" layoutY="131.0" text="Username">
          <font>
