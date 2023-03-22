@@ -2,6 +2,7 @@ package com.Model.dao;
 
 import com.Model.map.Person;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -36,13 +37,16 @@ public class PersonAccessor extends Accessor<Person> {
 
     @Override
     public int create(Person person) throws SQLException {
-        String query = "INSERT INTO Person(name, surname, age, sexe ) VALUES ( '" +
-                person.getName() + "', '" +
-                person.getSurname() + "', " +
-                person.getAge() + ", '" +
-                person.getSexe() + "');";
-        System.out.println(query);
-        dataBase.getRequest().executeUpdate(query);
+
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "INSERT INTO Person(name, surname, age, sexe) VALUES (?,?,?,?) ;" );
+
+        pre.setString(1, person.getName());
+        pre.setString(2, person.getSurname());
+        pre.setInt(3, person.getAge());
+        pre.setString(4, person.getSexe());
+
+        pre.executeUpdate();
 
         ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Person ORDER BY id DESC LIMIT 1 ");
         if( result.next() ) {
@@ -54,24 +58,25 @@ public class PersonAccessor extends Accessor<Person> {
 
     @Override
     public int update(Person person) throws SQLException {
+        System.out.println(person.getID());
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = " + person.getID() );
-
+        result.
         if( ! result.next() ) {
-            return create( person);
+            return create( person );
         }
         else {
 
-            String query = "UPDATE Person SET " +
-                    "ID = " + person.getID() +
-                    ", name = '" + person.getName() +
-                    "', surname = '" + person.getSurname() +
-                    "', age = " +  person.getAge() +
-                    ", sexe = '" + person.getSexe() +
-                    "' WHERE 1 ";
-            System.out.println(query);
-            dataBase.getRequest().executeUpdate(query);
+            PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                    "UPDATE Person SET  ID = ?, name = ? , surname = ?, age = ?, sexe = ? ;" );
+            pre.setInt(1, person.getID());
+            pre.setString(2, person.getName());
+            pre.setString(3, person.getSurname());
+            pre.setInt(4, person.getAge());
+            pre.setString(5, person.getSexe());
+
+            pre.executeUpdate();
+            return person.getID();
         }
-        return 0;
     }
 
     @Override

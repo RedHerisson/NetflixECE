@@ -1,5 +1,10 @@
 package com.Controller;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 
 /**
@@ -50,5 +55,16 @@ public class BDD {
 
     public static Statement getRequest() {
         return request;
+    }
+
+    public Image getImageByBlob(Blob blob){
+        try {
+            InputStream stream = blob.getBinaryStream();
+            BufferedImage image = ImageIO.read(stream);
+            return image;
+        } catch (IOException | SQLException e) {
+            System.out.println("Blob-Image conversion Error: " + e.getMessage());
+            return null;
+        }
     }
 }
