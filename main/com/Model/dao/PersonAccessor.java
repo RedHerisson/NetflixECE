@@ -47,32 +47,24 @@ public class PersonAccessor extends Accessor<Person> {
         pre.setString(4, person.getSexe());
 
         pre.executeUpdate();
-
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Person ORDER BY id DESC LIMIT 1 ");
-        if( result.next() ) {
-            return result.getInt(1);
-        }
-        return -1;
-
+        return dataBase.getLastIdFromTable("Person");
     }
 
     @Override
     public int update(Person person) throws SQLException {
         System.out.println(person.getID());
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = " + person.getID() );
-        result.
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = 1 " + person.getID() );
         if( ! result.next() ) {
             return create( person );
         }
         else {
 
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                    "UPDATE Person SET  ID = ?, name = ? , surname = ?, age = ?, sexe = ? ;" );
-            pre.setInt(1, person.getID());
-            pre.setString(2, person.getName());
-            pre.setString(3, person.getSurname());
-            pre.setInt(4, person.getAge());
-            pre.setString(5, person.getSexe());
+                    "UPDATE Person SET name = ? , surname = ?, age = ?, sexe = ?" );
+            pre.setString(1, person.getName());
+            pre.setString(2, person.getSurname());
+            pre.setInt(3, person.getAge());
+            pre.setString(4, person.getSexe());
 
             pre.executeUpdate();
             return person.getID();
@@ -81,7 +73,7 @@ public class PersonAccessor extends Accessor<Person> {
 
     @Override
     public void delete( int id ) throws SQLException {
-        ResultSet result = dataBase.getRequest().executeQuery("DELETE FROM Person WHERE ID =" + id );
+        dataBase.getRequest().executeUpdate("DELETE FROM Person WHERE ID =" + id );
 
     }
 }

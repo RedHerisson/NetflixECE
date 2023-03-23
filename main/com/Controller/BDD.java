@@ -67,4 +67,12 @@ public class BDD {
             return null;
         }
     }
+
+    public int getLastIdFromTable(String table ) throws SQLException {
+        ResultSet result = getRequest().executeQuery("SELECT * FROM " + table +" ORDER BY id DESC LIMIT 1 ");
+        if( result.next() ) {
+            return result.getInt(1);
+        }
+        return 0;
+    }
 }

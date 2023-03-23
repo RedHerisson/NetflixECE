@@ -5,7 +5,11 @@ import com.Model.map.Person;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -57,12 +61,35 @@ public class MovieAccessor extends Accessor<Movie> {
     }
 
     @Override
-    public int create(Movie movie) {
+    public int create(Movie movie) throws SQLException {
+
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "INSERT INTO Movie (ID, title, file_path, release_date, length, director_ID, actor_ID, type, summary, teaser_path, award, thumbnail, view_counter, rating) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        pre.setInt(1, movie.getId());
+        pre.setString(2, movie.getTitle());
+        pre.setString(3, movie.getFilePath());
+        pre.setDate(4, java.sql.Date.valueOf(movie.getReleaseDate()));
+        pre.setInt(5, movie.getLength());
+        pre.setInt(6, movie.getDirector().getID());
+        String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
+        for( Person actor : movie.getActors()) {
+            queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
+        }
+        queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
+        System.out.println(queryForActorTable);
+        dataBase.getRequest().executeQuery(queryForActorTable);
+        pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
+        pre.setString(8, movie.getType());
+        pre.setString(9, movie.getSummary());
+        pre.setString(10, movie.getTeaserPath());
+
         return 0;
     }
 
     @Override
-    public int update(Movie movie) throws SQLException {
+    public int update(Movie movie) throws SQLException, IOException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Movie WHERE ID = " + movie.getId() );
 
         if( ! result.next() ) {
@@ -70,33 +97,50 @@ public class MovieAccessor extends Accessor<Movie> {
         }
         else {
 
-            String query = "UPDATE Movie SET " +
-                    "ID = " + movie.getId() +
-                    ", title = '" + movie.getTitle() +
-                    ", file_path = '" + movie.getFilePath() +
-                    ", release_date = '" +  movie.getReleaseDate() +
-                    ", length = '" + movie.getLength() +
-                    ", director_ID = '" + personAccessor.update(movie.getDirector()) +
-                    ", actor_ID = '" + movie.getActors() +
-                    "',type = '" + movie.getType() +
-                    "',summary = '" + movie.getSummary() +
-                    "',teaser_path = '" + movie.getTeaserPath() +
-                    "',award = '" + movie.isAwarded() +
-                    "',thumbnail = '" + movie.getThumbnail() + // raph à modif
-                    "',view_counter = '" + movie.getViewCount() +
-                    "',rating = '" + movie.getRating() +
-                    "' WHERE 1 ";
-
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                    "UPDATE into Movie V");
-            System.out.println(query);
-            dataBase.getRequest().executeUpdate(query);
+                    "UPDATE Movie SET ID = ?, title = ?, file_path = ?, release_date = ?, length = ?, director_ID = ?, actor_ID = ?" +
+                            ",type = ?,summary = ?,teaser_path = ?,award = ?,thumbnail = ?,view_counter = ?,rating = ?" );
+
+            pre.setInt(1, movie.getId());
+            pre.setString(2, movie.getTitle());
+            pre.setString(3, movie.getFilePath());
+            pre.setDate(4, Date.valueOf(movie.getReleaseDate()));
+            pre.setInt(5, movie.getLength());
+            pre.setInt(6, movie.getDirector().getID());
+
+            String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
+            for( Person actor : movie.getActors()) {
+                queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
+            }
+            queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
+            System.out.println(queryForActorTable);
+            dataBase.getRequest().executeQuery(queryForActorTable);
+            pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
+
+            pre.setString(8, movie.getType());
+            pre.setString(9, movie.getSummary());
+            pre.setString(10, movie.getTeaserPath());
+            pre.setBoolean(11, movie.isAwarded());
+
+            ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
+            ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
+            InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
+            pre.setBlob(12, inputStream);
+
+            pre.setInt(13, movie.getViewCount());
+            pre.setDouble(14, movie.getRating());
+
+            pre.executeUpdate();
+
             return movie.getId();
         }
     }
 
     @Override
-    public void delete( int id ) {
+    public void delete( int id ) throws SQLException {
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT actor_ID FROM Movie WHERE ID =" + id );
+                dataBase.getRequest().executeUpdate("DELETE * FROM Movie WHERE ID =" + id );
+                dataBase.getRequest().executeUpdate("DELETE * FROM Actor WHERE ID =" + id );
 
     }
 }

@@ -13,7 +13,7 @@ public abstract class Accessor<T> {
 
     public abstract int create(T obj) throws SQLException;
 
-    public abstract int update(T obj) throws SQLException;
+    public abstract int update(T obj) throws SQLException, IOException;
 
     public abstract void delete( int id ) throws SQLException;
 
