@@ -2,14 +2,14 @@ package com.Model.map;
 
 public class Person {
 
-    private int bddID;
-    private String name;
+    protected int id;
+    protected String name;
 
-    private String surname;
+    protected String surname;
 
-    private int age;
+    protected int age;
 
-    private String sexe;
+    protected String sexe;
 
     public Person() {
         this.name = "";
@@ -19,7 +19,7 @@ public class Person {
     }
 
     public Person(int id, String name, String surname, int age, String sexe) {
-        this.bddID = id;
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -27,7 +27,7 @@ public class Person {
     }
 
     public Person(Person person) {
-        this.bddID = person.bddID;
+        this.id = person.id;
         this.name = person.name;
         this.surname = person.surname;
         this.age = person.age;
@@ -51,10 +51,10 @@ public class Person {
         return sexe;
     }
 
-    public int getID() { return bddID; }
+    public int getId() { return id; }
 
-    public void setBddID(int bddID) {
-        this.bddID = bddID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {

@@ -18,19 +18,19 @@ public class UserAccessor extends Accessor<User> {
     }
 
     @Override
-    public int create(User usr) throws SQLException { {
+    public int create(User usr) throws SQLException {
 
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "INSERT INTO User (person_id, pseudo, pwd, email, acc_date_creation, favourite_type_ID, movie_historic_ID) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-        pre.setInt(1, usr.getID());
+        pre.setInt(1, usr.getId());
         pre.setString(2, usr.getPseudo());
         pre.setString(3, usr.getPwd());
         pre.setString(4, usr.getEmail());
         pre.setDate(5, Date.valueOf(usr.getCreationDate()));
-        pre.setInt(6, usr.getFavouriteTypeID());
-        pre.setInt(7, usr.getMovieHistoricID());
+        //pre.setInt(6, usr.getFavouriteTypeID());
+        //pre.setInt(7, usr.getMovieHistoricID());
 
         return 0;
     }

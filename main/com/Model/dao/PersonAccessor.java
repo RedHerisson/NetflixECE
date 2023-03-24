@@ -52,8 +52,8 @@ public class PersonAccessor extends Accessor<Person> {
 
     @Override
     public int update(Person person) throws SQLException {
-        System.out.println(person.getID());
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = 1 " + person.getID() );
+        System.out.println(person.getId());
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = 1 " + person.getId() );
         if( ! result.next() ) {
             return create( person );
         }
@@ -67,7 +67,7 @@ public class PersonAccessor extends Accessor<Person> {
             pre.setString(4, person.getSexe());
 
             pre.executeUpdate();
-            return person.getID();
+            return person.getId();
         }
     }
 

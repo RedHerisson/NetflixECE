@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public class User extends Person {
 
-    private int id;
-
     private String pseudo;
 
     private String pwd;
@@ -19,9 +17,8 @@ public class User extends Person {
 
     private UserData data;
 
-    public User(int id, int Person_id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date, UserData data) {
-        super(Person_id, name, surname, age, sexe );
-        this.id = id;
+    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date, UserData data) {
+        super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
         this.email = email;

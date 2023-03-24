@@ -1,9 +1,17 @@
 package com.Vue.VideoPlayer;
 
 
+import java.awt.*;
+
+import javafx.animation.FadeTransition;
+import javafx.scene.input.MouseEvent;
+
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
@@ -14,6 +22,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -25,6 +36,10 @@ import static java.lang.Math.abs;
 
 public class PlayerController implements Initializable{
 
+    @FXML
+    private StackPane FullFrame;
+    @FXML
+    private Rectangle bg;
     @FXML
     private MediaView viewer;
     @FXML
@@ -38,6 +53,15 @@ public class PlayerController implements Initializable{
     @FXML
     private Slider volumeSlider;
 
+    @FXML
+    private HBox ControlItems;
+
+    private boolean controlVisible;
+
+    @FXML
+    private AnchorPane bgControl;
+
+
     private Media movie;
     private MediaPlayer player;
 
@@ -46,6 +70,8 @@ public class PlayerController implements Initializable{
 
     }
     stateButton state;
+
+    MouseListener mouse;
 
     @Override
 
@@ -60,9 +86,13 @@ public class PlayerController implements Initializable{
         DoubleProperty height = viewer.fitHeightProperty();
         width.bind(Bindings.selectDouble(viewer.sceneProperty(), "width"));
         height.bind(Bindings.selectDouble(viewer.sceneProperty(), "height"));
+
+
         viewer.setPreserveRatio(true);
 
         state = stateButton.RESUME;
+
+        controlVisible = false;
 
         timerLabel.setText(computeTime(player.getCurrentTime()) + " /");
         totalTimeLabel.setText(computeTime(player.getTotalDuration()));
@@ -120,6 +150,34 @@ public class PlayerController implements Initializable{
                 player.setVolume( (double) currVolume );
             }
         });
+
+
+        FullFrame.setOnMouseClicked(event -> {
+            setPlay();
+        });
+
+        FullFrame.setOnMouseMoved(event -> {
+
+            if (controlVisible == false ) {
+
+                fadeControl(0);
+                controlVisible = true;
+
+                new Timer().schedule(
+                        new TimerTask() {
+                            @Override
+                            public void run() {
+                                fadeControl(1);
+                                controlVisible = false;
+                            }
+                        }, 3000
+                );
+            }
+        });
+
+
+
+
     }
 
     public String computeTime(Duration duration ) {
@@ -169,5 +227,24 @@ public class PlayerController implements Initializable{
 
         }
     }
+
+    public void fadeControl(int IN_OUT) {
+        FadeTransition fadeCtrlItems = new FadeTransition(Duration.seconds(1), ControlItems);
+        fadeCtrlItems.setFromValue(IN_OUT);
+        fadeCtrlItems.setToValue(1 - IN_OUT);
+
+        FadeTransition fadeTimeSlider = new FadeTransition(Duration.seconds(1), timeSlider);
+        fadeTimeSlider.setFromValue(IN_OUT);
+        fadeTimeSlider.setToValue(1 - IN_OUT);
+
+        FadeTransition fadeBg = new FadeTransition(Duration.seconds(1), bgControl);
+        fadeBg.setFromValue(IN_OUT);
+        fadeBg.setToValue(1 - IN_OUT);
+
+        fadeBg.play();
+        fadeTimeSlider.play();
+        fadeCtrlItems.play();
+    }
+
 
 }

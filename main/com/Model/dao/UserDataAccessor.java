@@ -72,7 +72,7 @@ public class UserDataAccessor extends Accessor<UserData> {
         pre.setInt(4, usrData.getLengthAlreadySeen());
         pre.setString(5, usrData.getLanguageSelected());
         pre.setDouble(6, usrData.getRate());
-        return 0;
+        return usrData.getOwnerId();
     }
 
     @Override

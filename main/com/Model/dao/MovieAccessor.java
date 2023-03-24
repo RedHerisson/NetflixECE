@@ -72,7 +72,7 @@ public class MovieAccessor extends Accessor<Movie> {
         pre.setString(3, movie.getFilePath());
         pre.setDate(4, java.sql.Date.valueOf(movie.getReleaseDate()));
         pre.setInt(5, movie.getLength());
-        pre.setInt(6, movie.getDirector().getID());
+        pre.setInt(6, movie.getDirector().getId());
         String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
         for( Person actor : movie.getActors()) {
             queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
@@ -106,7 +106,7 @@ public class MovieAccessor extends Accessor<Movie> {
             pre.setString(3, movie.getFilePath());
             pre.setDate(4, Date.valueOf(movie.getReleaseDate()));
             pre.setInt(5, movie.getLength());
-            pre.setInt(6, movie.getDirector().getID());
+            pre.setInt(6, movie.getDirector().getId());
 
             String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
             for( Person actor : movie.getActors()) {
