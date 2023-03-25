@@ -4,13 +4,28 @@ import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.Node;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import javafx.scene.chart.*;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.Slider;
 
 public class AdminController implements Initializable {
 
@@ -20,18 +35,32 @@ public class AdminController implements Initializable {
 
     }
 
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
-    private BorderPane borderPane;
+    private Scene scene;
+    @FXML
+    private Stage stage;
+    @FXML
+    private Parent root;
+    @FXML
+    private Button buttonAdd;
+    @FXML
+    private GridPane gridPane= new GridPane();
+    @FXML
+    private ImageView brandingImageView;
 
     @FXML
     private void HandleShowStatisticsGenre(ActionEvent event){
+
+
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Genres");
-
+        xAxis.setTickLabelFill(Color.WHITE);
         NumberAxis yAxis = new NumberAxis();
         yAxis.setLabel("Nombre de visionnages");
-
+        yAxis.setTickLabelFill(Color.WHITE);
         BarChart barChart = new BarChart(xAxis, yAxis);
 
         XYChart.Series data = new XYChart.Series();
@@ -46,12 +75,10 @@ public class AdminController implements Initializable {
 
         barChart.getData().add(data);
 
-        borderPane.setCenter(barChart);
-    }
+        //vbox.getChildren().add(barChart);
+        //borderPane.setCenter(barChart);
+        gridPane.add(barChart,0,0);
 
-
-    @FXML
-    private void HandleShowStatisticsVisionnages(ActionEvent event){
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Pulp Fiction", 1253000),
                 new PieChart.Data("Interstellar", 1138790),
@@ -68,14 +95,79 @@ public class AdminController implements Initializable {
         PieChart pieChart = new PieChart(pieChartData);
         pieChart.setTitle("Films les plus regardés");
         pieChart.setClockwise(true);
-        pieChart.setLabelLineLength(50);
-        pieChart.setLabelsVisible(true);
+        pieChart.setLabelLineLength(10);
         pieChart.setStartAngle(180);
 
-        borderPane.setLeft(pieChart);
+
+        //borderPane2.setTop(pieChart);
+        //vbox.getChildren().add(pieChart);
+        gridPane.add(pieChart,0,1);
+
+        ObservableList<PieChart.Data> pieChartDataSexPercentage = FXCollections.observableArrayList(
+                new PieChart.Data("Hommes", 12500),
+                new PieChart.Data("Femmes", 10790),
+                new PieChart.Data("Autre",1260)
+        );
+
+        PieChart pieChartSexPercentage = new PieChart(pieChartDataSexPercentage);
+        pieChartSexPercentage.setTitle("Proportion M/F");
+        pieChartSexPercentage.setClockwise(true);
+        pieChartSexPercentage.setLabelLineLength(10);
+        pieChartSexPercentage.setStartAngle(360);
+        pieChartSexPercentage.setLabelsVisible(false);
+
+
+        //borderPane.setRight(pieChartSexPercentage);
+        //vbox.getChildren().add(pieChartSexPercentage);
+        gridPane.add(pieChartSexPercentage,1,0);
+
+        NumberAxis xAxis2 = new NumberAxis();
+        xAxis2.setLabel("No of employees");
+        xAxis2.setTickLabelFill(Color.WHITE);
+        NumberAxis yAxis2 = new NumberAxis();
+        yAxis2.setLabel("Revenue per employee");
+        yAxis2.setTickLabelFill(Color.WHITE);
+        LineChart lineChart = new LineChart(xAxis2, yAxis2);
+
+
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("2014");
+
+        dataSeries1.getData().add(new XYChart.Data( 1, 567));
+        dataSeries1.getData().add(new XYChart.Data( 5, 612));
+        dataSeries1.getData().add(new XYChart.Data(10, 800));
+        dataSeries1.getData().add(new XYChart.Data(20, 780));
+        dataSeries1.getData().add(new XYChart.Data(40, 810));
+        dataSeries1.getData().add(new XYChart.Data(80, 850));
+
+        lineChart.getData().add(dataSeries1);
+
+        //borderPane.setTop(lineChart);
+        //vbox.getChildren().add(lineChart);
+        gridPane.add(lineChart,1,1);
 
 
     }
+
+
+    @FXML
+    private void HandleCatalogGestion(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("admincatalog.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+        /*File brandingFile = new File("images/addbutton.png");
+        Image brandingImage = new Image(brandingFile.toURI().toString());
+        brandingImageView.setImage(brandingImage);*/
+        Image image = new Image(getClass().getResourceAsStream("images/addbutton.png"));
+        ImageView imgview = new ImageView();
+        imgview.setImage(image);
+        buttonAdd.setGraphic(imgview);
+    }
+
 
     @FXML
     private void HandleClose(ActionEvent event){
