@@ -43,15 +43,10 @@ public class UserDataAccessor extends Accessor<UserData> {
                 "INSERT INTO User_data (user_ID, Movie_ID, view, length_already_seen, language_selected, rate) " +
                 "VALUES (?, ?, ?, ?, ?, ?)");
 
-        pre.setInt(1, usrData.getOwnerId());
-        pre.setInt(2, usrData.getMovie().getId());
-        pre.setBoolean(1, usrData.isView());
-        pre.setInt(4, usrData.getLengthAlreadySeen());
-        pre.setString(5, usrData.getLanguageSelected());
-        pre.setDouble(6, usrData.getRate());
+        loadPreStatement(usrData, pre);
+        pre.executeUpdate();
 
-
-        return 0;
+        return usrData.getOwnerId();
     }
 
     @Override
@@ -66,13 +61,19 @@ public class UserDataAccessor extends Accessor<UserData> {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "UPDATE User_data SET user_ID = ?, Movie_ID = ?, view = ?, length_already_seen = ?, language_selected = ?, rate = ? ");
 
+        loadPreStatement(usrData, pre);
+        pre.executeUpdate();
+        return usrData.getOwnerId();
+    }
+
+    private PreparedStatement loadPreStatement(UserData usrData, PreparedStatement pre) throws SQLException {
         pre.setInt(1, usrData.getOwnerId());
         pre.setInt(2, usrData.getMovie().getId());
         pre.setBoolean(1, usrData.isView());
         pre.setInt(4, usrData.getLengthAlreadySeen());
         pre.setString(5, usrData.getLanguageSelected());
         pre.setDouble(6, usrData.getRate());
-        return usrData.getOwnerId();
+        return pre;
     }
 
     @Override

@@ -11,7 +11,7 @@ public abstract class Accessor<T> {
 
     public abstract T find(int id) throws SQLException, ClassNotFoundException, IOException;
 
-    public abstract int create(T obj) throws SQLException;
+    public abstract int create(T obj) throws SQLException, IOException;
 
     public abstract int update(T obj) throws SQLException, IOException;
 

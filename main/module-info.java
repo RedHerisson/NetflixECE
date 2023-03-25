@@ -9,6 +9,8 @@ module netflix {
     requires java.sql;
     requires java.desktop;
 
+    exports com.Vue;
+    opens com.Vue to javafx.fxml;
     exports com.Vue.VideoPlayer;
     opens com.Vue.VideoPlayer to javafx.fxml;
 }

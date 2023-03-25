@@ -5,16 +5,16 @@ import java.time.LocalDate;
 public class MovieHistoric {
 
     private int id;
-    private Movie movie;
 
-    private User user;
+    private int ownerId;
+    private Movie movie;
 
     private LocalDate seeingDate;
 
-    public MovieHistoric(int id,Movie movie, User user, LocalDate seeingDate) {
+    public MovieHistoric(int id,int ownerId, Movie movie, LocalDate seeingDate) {
         this.id = id;
+        this.ownerId = ownerId;
         this.movie = movie;
-        this.user = user;
         this.seeingDate = seeingDate;
     }
 
@@ -22,12 +22,12 @@ public class MovieHistoric {
         return id;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    public User getUser() {
-        return user;
+    public Movie getMovie() {
+        return movie;
     }
 
     public LocalDate getSeenDate() {
@@ -40,10 +40,6 @@ public class MovieHistoric {
 
     public void setMovie(Movie movie) {
         this.movie = movie;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public void setSeeingDate(LocalDate seeingDate) {

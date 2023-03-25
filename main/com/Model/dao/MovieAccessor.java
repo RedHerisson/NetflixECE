@@ -39,21 +39,20 @@ public class MovieAccessor extends Accessor<Movie> {
             LocalDate releaseDate = result.getDate(5).toLocalDate();
             int length = result.getInt(6);
             Person director = new Person(personAccessor.find(result.getInt(7)));
-            int actorListID = result.getInt(8);
 
-            ResultSet actorList = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE ID = " + actorListID );
+            ResultSet actorList = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE movie_ID = " + id );
             ArrayList<Person> actors = new ArrayList<Person>();
             while ( actorList.next() ) {
 
                 actors.add( new Person(personAccessor.find(actorList.getInt(2))) );
             }
 
-            String type = result.getString(9);
-            String summary = result.getString(10);
-            String teaserPath = result.getString(11);
-            int rating = result.getInt(12);
-            boolean awarded = result.getBoolean(13);
-            int viewCount = result.getInt(14);
+            String type = result.getString(8);
+            String summary = result.getString(9);
+            String teaserPath = result.getString(10);
+            int rating = result.getInt(11);
+            boolean awarded = result.getBoolean(12);
+            int viewCount = result.getInt(13);
 
             return new Movie(id, title,thumbnail, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
         }
@@ -61,31 +60,15 @@ public class MovieAccessor extends Accessor<Movie> {
     }
 
     @Override
-    public int create(Movie movie) throws SQLException {
+    public int create(Movie movie) throws SQLException, IOException {
 
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "INSERT INTO Movie (ID, title, file_path, release_date, length, director_ID, actor_ID, type, summary, teaser_path, award, thumbnail, view_counter, rating) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        pre.setInt(1, movie.getId());
-        pre.setString(2, movie.getTitle());
-        pre.setString(3, movie.getFilePath());
-        pre.setDate(4, java.sql.Date.valueOf(movie.getReleaseDate()));
-        pre.setInt(5, movie.getLength());
-        pre.setInt(6, movie.getDirector().getId());
-        String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
-        for( Person actor : movie.getActors()) {
-            queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
-        }
-        queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
-        System.out.println(queryForActorTable);
-        dataBase.getRequest().executeQuery(queryForActorTable);
-        pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
-        pre.setString(8, movie.getType());
-        pre.setString(9, movie.getSummary());
-        pre.setString(10, movie.getTeaserPath());
-
-        return 0;
+        loadPreStatement(movie, pre);
+        pre.executeUpdate();
+        return movie.getId();
     }
 
     @Override
@@ -99,41 +82,46 @@ public class MovieAccessor extends Accessor<Movie> {
 
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                     "UPDATE Movie SET ID = ?, title = ?, file_path = ?, release_date = ?, length = ?, director_ID = ?, actor_ID = ?" +
-                            ",type = ?,summary = ?,teaser_path = ?,award = ?,thumbnail = ?,view_counter = ?,rating = ?" );
+                            ",type = ?,summary = ?,teaser_path = ?,award = ?,thumbnail = ?,view_counter = ?,rating = ? WHERE id = " + movie.getId());
 
-            pre.setInt(1, movie.getId());
-            pre.setString(2, movie.getTitle());
-            pre.setString(3, movie.getFilePath());
-            pre.setDate(4, Date.valueOf(movie.getReleaseDate()));
-            pre.setInt(5, movie.getLength());
-            pre.setInt(6, movie.getDirector().getId());
-
-            String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
-            for( Person actor : movie.getActors()) {
-                queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
-            }
-            queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
-            System.out.println(queryForActorTable);
-            dataBase.getRequest().executeQuery(queryForActorTable);
-            pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
-
-            pre.setString(8, movie.getType());
-            pre.setString(9, movie.getSummary());
-            pre.setString(10, movie.getTeaserPath());
-            pre.setBoolean(11, movie.isAwarded());
-
-            ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
-            ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
-            InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
-            pre.setBlob(12, inputStream);
-
-            pre.setInt(13, movie.getViewCount());
-            pre.setDouble(14, movie.getRating());
-
+            loadPreStatement(movie, pre);
             pre.executeUpdate();
 
             return movie.getId();
         }
+    }
+
+    private PreparedStatement loadPreStatement(Movie movie, PreparedStatement pre) throws SQLException, IOException {
+        pre.setInt(1, movie.getId());
+        pre.setString(2, movie.getTitle());
+        pre.setString(3, movie.getFilePath());
+        pre.setDate(4, Date.valueOf(movie.getReleaseDate()));
+        pre.setInt(5, movie.getLength());
+        pre.setInt(6, movie.getDirector().getId());
+
+        String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
+        for( Person actor : movie.getActors()) {
+            queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
+        }
+        queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
+        System.out.println(queryForActorTable);
+        dataBase.getRequest().executeQuery(queryForActorTable);
+        pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
+
+        pre.setString(8, movie.getType());
+        pre.setString(9, movie.getSummary());
+        pre.setString(10, movie.getTeaserPath());
+        pre.setBoolean(11, movie.isAwarded());
+
+        ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
+        ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
+        InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
+        pre.setBlob(12, inputStream);
+
+        pre.setInt(13, movie.getViewCount());
+        pre.setDouble(14, movie.getRating());
+
+        return pre;
     }
 
     @Override

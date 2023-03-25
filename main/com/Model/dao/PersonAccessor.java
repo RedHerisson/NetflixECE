@@ -53,7 +53,7 @@ public class PersonAccessor extends Accessor<Person> {
     @Override
     public int update(Person person) throws SQLException {
         System.out.println(person.getId());
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = 1 " + person.getId() );
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = " + person.getId() );
         if( ! result.next() ) {
             return create( person );
         }

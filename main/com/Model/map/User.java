@@ -2,6 +2,7 @@ package com.Model.map;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class User extends Person {
 
@@ -15,20 +16,19 @@ public class User extends Person {
 
     private ArrayList<MovieHistoric> historic;
 
+    private ArrayList<String> favouriteType;
+
     private UserData data;
 
-    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date, UserData data) {
+    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,ArrayList<MovieHistoric> historic , ArrayList<String> favouriteType, UserData data) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
         this.email = email;
         this.acc_creation_date = acc_creation_date;
-        this.historic = new ArrayList<MovieHistoric>();
+        this.historic = historic;
+        this.favouriteType = favouriteType;
         this.data = data;
-    }
-
-    public int getUsrId() {
-        return id;
     }
 
     public String getPseudo() {
@@ -53,6 +53,18 @@ public class User extends Person {
 
     public UserData getData() {
         return data;
+    }
+
+    public ArrayList<String> getFavouriteType() {
+        return favouriteType;
+    }
+
+    public void addFavouriteType(String type) {
+        this.favouriteType.add(type);
+    }
+
+    public void removeFavouriteType(String type) {
+        this.favouriteType.remove(type);
     }
 
     public void addMovieToHistoric(MovieHistoric movie) {

@@ -34,7 +34,7 @@ import javafx.util.Duration;
 import static java.lang.Math.abs;
 
 
-public class PlayerController implements Initializable{
+public class PlayerController implements Initializable {
 
     @FXML
     private StackPane FullFrame;

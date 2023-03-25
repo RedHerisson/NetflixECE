@@ -28,7 +28,7 @@ public class MovieHistoricAccessor extends Accessor<MovieHistoric> {
             int userID = result.getInt(2);
             LocalDate seenDate = result.getDate(3).toLocalDate();
 
-            return new MovieHistoric(id, movieAccessor.find(movieID), userAccessor.find(userID), seenDate);
+            return new MovieHistoric(id,userID , movieAccessor.find(movieID), seenDate);
 
         }
         return null;
@@ -42,7 +42,7 @@ public class MovieHistoricAccessor extends Accessor<MovieHistoric> {
                 "VALUES (?, ?, ?)");
 
         pre.setInt(1, movieHistoric.getMovie().getId());
-        pre.setInt(2, movieHistoric.getUser().getId());
+        pre.setInt(2, movieHistoric.getOwnerId());
         pre.setDate(3, Date.valueOf(movieHistoric.getSeenDate()) );
 
         return 0;
@@ -61,7 +61,7 @@ public class MovieHistoricAccessor extends Accessor<MovieHistoric> {
                     "UPDATE MovieHistoric SET movie_ID = ?, user_ID = ?, seen_date = ? ");
 
             pre.setInt(1, obj.getMovie().getId());
-            pre.setInt(2, obj.getUser().getId());
+            pre.setInt(2, obj.getOwnerId());
             pre.setDate(3, Date.valueOf(obj.getSeenDate()) );
             
             pre.executeUpdate();
