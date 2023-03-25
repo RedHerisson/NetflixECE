@@ -25,9 +25,11 @@ import java.util.ResourceBundle;
 
 public class SlideApp implements Initializable{
 
+    /*
+    Buttons
+     */
     @FXML
     private Button Back;
-
     @FXML
     private Button Next;
     @FXML
@@ -35,6 +37,10 @@ public class SlideApp implements Initializable{
 
     @FXML
     private Button Next1;
+
+    /*
+    Label
+     */
     @FXML
     private Label Num;
 

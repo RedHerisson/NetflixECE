@@ -75,8 +75,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="Back1" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#BackImage" text="Back" />
-            <Button fx:id="Next1" layoutX="978.0" layoutY="320.0" mnemonicParsing="false" onAction="#NextImage" text="Next" />
+            <Button fx:id="Back1" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#BackImage1" text="Back" />
+            <Button fx:id="Next1" layoutX="978.0" layoutY="320.0" mnemonicParsing="false" onAction="#NextImage1" text="Next" />
          </children>
       </Pane>
    </children>
