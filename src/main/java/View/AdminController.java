@@ -45,14 +45,17 @@ public class AdminController implements Initializable {
     @FXML
     private Parent root;
     @FXML
-    private Button buttonAdd;
+    private HBox hbox;
+    @FXML
+    private Button buttonAdd= new Button();
     @FXML
     private GridPane gridPane= new GridPane();
     @FXML
-    private ImageView brandingImageView;
+    private ImageView brandingImageView = new ImageView();
 
     @FXML
-    private void HandleShowStatisticsGenre(ActionEvent event){
+    private void HandleShowStatisticsGenre(ActionEvent event) throws IOException{
+
 
 
         CategoryAxis xAxis = new CategoryAxis();
@@ -146,28 +149,42 @@ public class AdminController implements Initializable {
         //vbox.getChildren().add(lineChart);
         gridPane.add(lineChart,1,1);
 
-
     }
 
 
     @FXML
     private void HandleCatalogGestion(ActionEvent event) throws IOException {
+
         root = FXMLLoader.load(getClass().getResource("admincatalog.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        Image image = new Image(getClass().getResourceAsStream("images/addbutton.png"));
+        hbox.getChildren().add(new ImageView(image));
+
+
+        /*File brandingFile = new File("images/addbutton.png");
+        Image brandingImage = new Image(brandingFile.toURI().toString());
+        brandingImageView.setImage(brandingImage);/*
+        Image image = new Image(getClass().getResourceAsStream("images/addbutton.png"));
+        ImageView imgview = new ImageView();
+        imgview.setImage(image);
+        buttonAdd.setGraphic(brandingImageView);*/
+
+    }
+
+
+    @FXML
+    private void HandleUser(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("adminusergestion.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
 
-        /*File brandingFile = new File("images/addbutton.png");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);*/
-        Image image = new Image(getClass().getResourceAsStream("images/addbutton.png"));
-        ImageView imgview = new ImageView();
-        imgview.setImage(image);
-        buttonAdd.setGraphic(imgview);
     }
-
 
     @FXML
     private void HandleClose(ActionEvent event){
