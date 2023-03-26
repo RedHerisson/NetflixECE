@@ -22,7 +22,6 @@ public class BDD {
 
     private static Connection session;
 
-    private static Statement request;
 
     // singleton
     private static BDD bdd;
@@ -46,15 +45,14 @@ public class BDD {
             bdd = new BDD();
             Class.forName("com.mysql.cj.jdbc.Driver");
             bdd.session = DriverManager.getConnection("jdbc:mysql://" + ip + "/" + name , login, pwd );
-            bdd.request = session.createStatement();
         }
         return bdd;
 
 
     }
 
-    public static Statement getRequest() {
-        return request;
+    public static Statement getRequest() throws SQLException {
+        return session.createStatement();
     }
 
     public Image getImageByBlob(Blob blob){

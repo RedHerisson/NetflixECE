@@ -28,34 +28,37 @@ public class MovieAccessor extends Accessor<Movie> {
     @Override
     public Movie find(int id) throws SQLException, ClassNotFoundException, IOException {
 
+        ArrayList<Person> actors = new ArrayList<Person>();
+
+        ResultSet actorList = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE movie_ID = " + id );
+        while ( actorList.next() ) {
+
+            actors.add( new Person(personAccessor.find(actorList.getInt(2))));
+        }
+        actorList.close();
+
 
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Movie WHERE ID = " + id );
 
         if ( result.next() ) {
             String title = result.getString(2);
 
-            BufferedImage thumbnail =  ImageIO.read(result.getBlob(3).getBinaryStream());
-            String filePath = result.getString(4);
-            LocalDate releaseDate = result.getDate(5).toLocalDate();
-            int length = result.getInt(6);
-            Person director = new Person(personAccessor.find(result.getInt(7)));
+            String filePath = result.getString(3);
+            LocalDate releaseDate = result.getDate(4).toLocalDate();
+            int length = result.getInt(5);
+            Person director = new Person(personAccessor.find(result.getInt(6)));
 
-            ResultSet actorList = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE movie_ID = " + id );
-            ArrayList<Person> actors = new ArrayList<Person>();
-            while ( actorList.next() ) {
-
-                actors.add( new Person(personAccessor.find(actorList.getInt(2))) );
-            }
-
-            String type = result.getString(8);
-            String summary = result.getString(9);
-            String teaserPath = result.getString(10);
-            int rating = result.getInt(11);
-            boolean awarded = result.getBoolean(12);
-            int viewCount = result.getInt(13);
+            String type = result.getString(7);
+            String summary = result.getString(8);
+            String teaserPath = result.getString(9);
+            boolean awarded = result.getBoolean(10);
+            BufferedImage thumbnail =  ImageIO.read(result.getBlob(11).getBinaryStream());
+            int viewCount = result.getInt(12);
+            int rating = result.getInt(13);
 
             return new Movie(id, title,thumbnail, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
         }
+        result.close();
         return null;
     }
 
@@ -63,11 +66,10 @@ public class MovieAccessor extends Accessor<Movie> {
     public int create(Movie movie) throws SQLException, IOException {
 
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "INSERT INTO Movie (ID, title, file_path, release_date, length, director_ID, actor_ID, type, summary, teaser_path, award, thumbnail, view_counter, rating) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO Movie (title, file_path, release_date, length, director_ID,type, summary, teaser_path, award, thumbnail, view_counter, rating) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        loadPreStatement(movie, pre);
-        pre.executeUpdate();
+        loadPreStatement(movie, pre, false);
         return movie.getId();
     }
 
@@ -76,59 +78,92 @@ public class MovieAccessor extends Accessor<Movie> {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Movie WHERE ID = " + movie.getId() );
 
         if( ! result.next() ) {
+            System.out.println("Create new Movie");
             return create(movie);
         }
         else {
 
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                    "UPDATE Movie SET ID = ?, title = ?, file_path = ?, release_date = ?, length = ?, director_ID = ?, actor_ID = ?" +
+                    "UPDATE Movie SET title = ?, file_path = ?, release_date = ?, length = ?, director_ID = ?" +
                             ",type = ?,summary = ?,teaser_path = ?,award = ?,thumbnail = ?,view_counter = ?,rating = ? WHERE id = " + movie.getId());
 
-            loadPreStatement(movie, pre);
-            pre.executeUpdate();
+            loadPreStatement(movie, pre, true);
 
             return movie.getId();
         }
     }
 
-    private PreparedStatement loadPreStatement(Movie movie, PreparedStatement pre) throws SQLException, IOException {
-        pre.setInt(1, movie.getId());
-        pre.setString(2, movie.getTitle());
-        pre.setString(3, movie.getFilePath());
-        pre.setDate(4, Date.valueOf(movie.getReleaseDate()));
-        pre.setInt(5, movie.getLength());
-        pre.setInt(6, movie.getDirector().getId());
+    private PreparedStatement loadPreStatement(Movie movie, PreparedStatement pre, boolean isUpdate) throws SQLException, IOException {
+        pre.setString(1, movie.getTitle());
+        pre.setString(2, movie.getFilePath());
+        pre.setDate(3, Date.valueOf(movie.getReleaseDate()));
+        pre.setInt(4, movie.getLength());
+        pre.setInt(5, personAccessor.update(movie.getDirector()));
 
-        String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ";
-        for( Person actor : movie.getActors()) {
-            queryForActorTable+= "( "+ movie.getId() +", "+ personAccessor.update(actor) + "),";
-        }
-        queryForActorTable = queryForActorTable.substring(0, queryForActorTable.length()  -1);
-        System.out.println(queryForActorTable);
-        dataBase.getRequest().executeQuery(queryForActorTable);
-        pre.setInt(7, dataBase.getLastIdFromTable("Actor"));
-
-        pre.setString(8, movie.getType());
-        pre.setString(9, movie.getSummary());
-        pre.setString(10, movie.getTeaserPath());
-        pre.setBoolean(11, movie.isAwarded());
+        pre.setString(6, movie.getType());
+        pre.setString(7, movie.getSummary());
+        pre.setString(8, movie.getTeaserPath());
+        pre.setBoolean(9, movie.isAwarded());
 
         ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
         ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
         InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
-        pre.setBlob(12, inputStream);
+        pre.setBlob(10, inputStream);
 
-        pre.setInt(13, movie.getViewCount());
-        pre.setDouble(14, movie.getRating());
+        pre.setInt(11, movie.getViewCount());
+        pre.setDouble(12, movie.getRating());
 
+        pre.executeUpdate();
+
+        int movieID = isUpdate ? movie.getId() : dataBase.getLastIdFromTable("Movie");
+        if( isUpdate ) {
+           dataBase.getRequest().executeUpdate(" DELETE FROM Person WHERE ID = ( SELECT person_ID FROM Actor WHERE movie_ID = "+ movieID +" AND person_ID NOT IN (SELECT person_ID FROM Actor WHERE movie_ID != "+ movieID +") )" );
+           dataBase.getRequest().executeUpdate(" DELETE FROM Actor WHERE movie_ID = " + movieID);
+        }
+
+
+
+
+        for( Person actor : movie.getActors()) {
+            int personID = personAccessor.update(actor);
+            System.out.println("Person ID: " + personID);
+            ResultSet ActorIdExist = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE person_ID = " + personID + " AND movie_ID = " +  movieID );
+            if( ! ActorIdExist.next()) {
+
+                String queryForActorTable = "INSERT INTO Actor(person_ID, movie_ID) VALUE ( " + personID + ", " + movieID + " )";
+                dataBase.getRequest().executeUpdate(queryForActorTable);
+
+            }
+            else {
+                String queryForActorTable = "UPDATE Actor SET person_ID = " + personID + ", movie_ID = " + movieID + " WHERE person_ID = " + personID + " AND movie_ID = " +  movieID;
+                dataBase.getRequest().executeUpdate(queryForActorTable);
+            }
+            ActorIdExist.close();
+        }
         return pre;
     }
 
     @Override
     public void delete( int id ) throws SQLException {
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT actor_ID FROM Movie WHERE ID =" + id );
-                dataBase.getRequest().executeUpdate("DELETE * FROM Movie WHERE ID =" + id );
-                dataBase.getRequest().executeUpdate("DELETE * FROM Actor WHERE ID =" + id );
+        ResultSet ActorList = dataBase.getRequest().executeQuery("SELECT * FROM Actor WHERE movie_ID = " + id );
+        while ( ActorList.next() ) {
+            personAccessor.delete(ActorList.getInt(2));
+        }
+        ActorList.close();
+
+        ResultSet Director = dataBase.getRequest().executeQuery("SELECT director_ID FROM Movie WHERE  ID = " + id );
+
+        dataBase.getRequest().executeUpdate("DELETE FROM Movie WHERE ID =" + id );
+
+        if( Director.next() ) {
+            personAccessor.delete(Director.getInt(1));
+        }
+        Director.close();
+
+
+
+
+
 
     }
 }

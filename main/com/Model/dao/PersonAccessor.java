@@ -53,21 +53,23 @@ public class PersonAccessor extends Accessor<Person> {
     @Override
     public int update(Person person) throws SQLException {
         System.out.println(person.getId());
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE ID = " + person.getId() );
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE name = '" + person.getName() + "' AND surname = '" + person.getSurname() + "' AND age = " + person.getAge() + " AND sexe = '" + person.getSexe() + "'");
         if( ! result.next() ) {
             return create( person );
         }
         else {
-
+            int PersonId = result.getInt(1);
+            System.out.println("update");
+            System.out.println(person.toString());
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                    "UPDATE Person SET name = ? , surname = ?, age = ?, sexe = ?" );
+                    "UPDATE Person SET name = ? , surname = ?, age = ?, sexe = ? WHERE ID = " + person.getId());
             pre.setString(1, person.getName());
             pre.setString(2, person.getSurname());
             pre.setInt(3, person.getAge());
             pre.setString(4, person.getSexe());
 
             pre.executeUpdate();
-            return person.getId();
+            return PersonId;
         }
     }
 
