@@ -83,6 +83,14 @@ public class Movie {
         return actors;
     }
 
+    public void addActor(Person actor) {
+        actors.add(actor);
+    }
+
+    public void removeActor(Person actor) {
+        actors.remove(actor);
+    }
+
     public String getType() {
         return type;
     }
