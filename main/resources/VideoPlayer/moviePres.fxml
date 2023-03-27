@@ -10,40 +10,87 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgba(14, 23, 30, 1);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.MoviePres">
+<StackPane fx:id="MainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" style="-fx-background-color: rgba(14, 23, 30, 1);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.MoviePres">
    <children>
-      <AnchorPane fx:id="TrailerConteneur" maxHeight="-Infinity" prefHeight="291.0" prefWidth="516.0" StackPane.alignment="TOP_CENTER">
+      <MediaView fx:id="trailerBlur" fitHeight="645.0" fitWidth="1275.0" opacity="0.6" />
+      <AnchorPane fx:id="TrailerConteneur" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="916.0" StackPane.alignment="TOP_RIGHT">
          <children>
-            <MediaView fx:id="trailerIntegration" fitHeight="250.0" fitWidth="400.0" opacity="0.8" />
+            <MediaView fx:id="trailerIntegration" blendMode="SCREEN" fitHeight="250.0" fitWidth="400.0" opacity="0.9" style="-fx-background: linear-gradient(to right,rgba(14, 23, 30, 0.95), rgba(0, 0, 153,0));;" />
          </children>
          <StackPane.margin>
             <Insets left="100.0" />
          </StackPane.margin>
       </AnchorPane>
-      <VBox maxHeight="-Infinity" prefHeight="273.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 50%, rgba(14, 23, 30, 0.9), rgba(0, 0, 153,0))" StackPane.alignment="TOP_CENTER">
+      <VBox fx:id="InformationConteneur" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1023.0" style="-fx-background-color: linear-gradient(from 50% 50% to 100% 50%, rgba(14, 23, 30, 0.8), rgba(14, 23, 30, 0));" StackPane.alignment="TOP_LEFT">
          <children>
-            <Label prefHeight="42.0" prefWidth="581.0" text="Star Wars, épisode I : La Menace fantôme" textFill="WHITE" VBox.vgrow="ALWAYS">
+            <Label fx:id="title" prefHeight="146.0" prefWidth="683.0" text="Star Wars, épisode I : La Menace fantôme" textFill="WHITE" VBox.vgrow="ALWAYS">
                <font>
-                  <Font name="Impact" size="25.0" />
+                  <Font name="Impact" size="39.0" />
                </font>
                <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
+                  <Insets left="30.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="100.0" prefWidth="357.0" text="Deux chevaliers Jedi échappent à un blocus hostile pour trouver des alliés lorsqu'ils rencontrent un jeune garçon qui pourrait apporter un équilibre à la Force, mais les Sith, longtemps inactifs, refont surface pour réclamer leur ancienne gloire." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
+            <Label fx:id="synopsis" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="189.0" prefWidth="607.0" text="Deux chevaliers Jedi échappent à un blocus hostile pour trouver des alliés lorsqu'ils rencontrent un jeune garçon qui pourrait apporter un équilibre à la Force, mais les Sith, longtemps inactifs, refont surface pour réclamer leur ancienne gloire." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS">
                <VBox.margin>
-                  <Insets left="10.0" top="20.0" />
+                  <Insets left="30.0" top="20.0" />
                </VBox.margin>
                <font>
-                  <Font name="Verdana" size="13.0" />
+                  <Font name="Verdana" size="21.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="570.0">
+            <HBox prefHeight="30.0" prefWidth="1023.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="108.0" style="-fx-background-color: rgb(44, 169, 237);" text="PLAY" HBox.hgrow="ALWAYS" />
+                  <Label text="Réalisateur : " textFill="#2ca9ed">
+                     <font>
+                        <Font name="Verdana Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="DirectorLabel" text="null" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="30.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="1023.0">
+               <children>
+                  <Label text="Acteurs : " textFill="#2ca9ed">
+                     <font>
+                        <Font name="Verdana Bold" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="ActorsLabel" text="null" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="88.0" prefWidth="1255.0">
+               <children>
+                  <Button fx:id="LaunchPlayerButton" alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="166.0" style="-fx-background-color: rgb(44, 169, 237);" text="PLAY" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font></Button>
                </children>
                <VBox.margin>
-                  <Insets left="20.0" top="5.0" />
+                  <Insets left="50.0" top="5.0" />
                </VBox.margin>
             </HBox>
          </children>
