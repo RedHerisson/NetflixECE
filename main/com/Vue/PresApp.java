@@ -24,6 +24,7 @@ public class PresApp extends Application {
         stage.setScene(scenes);
         stage.setTitle("Demo Pres Vidéo");
         stage.setFullScreen(true);
+        stage.setResizable(false);
         stage.show();
 
 

@@ -7,9 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 public class PlayerApp extends Application {
 

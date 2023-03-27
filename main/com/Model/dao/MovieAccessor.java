@@ -35,6 +35,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
             actors.add( new Person(personAccessor.find(actorList.getInt(2))));
         }
+
         actorList.close();
 
 
@@ -56,9 +57,12 @@ public class MovieAccessor extends Accessor<Movie> {
             int viewCount = result.getInt(12);
             int rating = result.getInt(13);
 
+            result.close();
+
             return new Movie(id, title,thumbnail, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
         }
         result.close();
+        System.out.println("Movie not found");
         return null;
     }
 
@@ -117,7 +121,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
         int movieID = isUpdate ? movie.getId() : dataBase.getLastIdFromTable("Movie");
         if( isUpdate ) {
-           dataBase.getRequest().executeUpdate(" DELETE FROM Person WHERE ID = ( SELECT person_ID FROM Actor WHERE movie_ID = "+ movieID +" AND person_ID NOT IN (SELECT person_ID FROM Actor WHERE movie_ID != "+ movieID +") )" );
+           dataBase.getRequest().executeUpdate(" DELETE FROM Person WHERE ID IN ( SELECT person_ID FROM Actor WHERE movie_ID = "+ movieID +" AND person_ID NOT IN (SELECT person_ID FROM Actor WHERE movie_ID != "+ movieID +") )" );
            dataBase.getRequest().executeUpdate(" DELETE FROM Actor WHERE movie_ID = " + movieID);
         }
 
