@@ -25,7 +25,7 @@ public class PresApp extends Application {
 
         Scene scenes = new Scene(loader.load(), 1275, 645, Color.BLACK);
 
-        Movie movie = movieAccessor.find(54);
+        Movie movie = movieAccessor.findById(54);
         MoviePres controller = loader.<MoviePres>getController();
         controller.updateFromMovie(movie);
 

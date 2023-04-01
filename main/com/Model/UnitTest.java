@@ -17,6 +17,7 @@ public class UnitTest {
 
     public Movie loadDemoMovie() throws IOException {
         ArrayList<Person> actors = new ArrayList<Person>();
+
         actors.add(new Person(-1, "John", "Doe",10, "M"));
         actors.add(new Person(-1, "Jane", "Doe",10, "F"));
         actors.add(new Person(-1, "John", "Smith",10, "M"));
@@ -28,23 +29,30 @@ public class UnitTest {
         return demoMovie;
     }
 
+    public User LoadDemoUser() throws SQLException, ClassNotFoundException, IOException {
+        MovieAccessor movieAccessor = new MovieAccessor();
+        ArrayList<String> favTypeList = new ArrayList<String>();
+        favTypeList.add("Action");
+        favTypeList.add("Comedy");
+        favTypeList.add("Horror");
+
+        UserData data = new UserData(-1, -1, movieAccessor.findById(54), true, 20, "fr", 3);
+        Playlist history = new Playlist(-1, -1, "History", new ArrayList<Movie>());
+
+        return new User(-1, "redherisson", "123", "Raphaël", "Jeantet", "jeantet.raph@gmail.com", 30, "M", LocalDate.of(1999, 02, 12),
+                new ArrayList<Playlist>(),history, favTypeList, data);
+    }
+
     public static void main( String[] args) {
         try {
-            MovieAccessor movieAccessor = new MovieAccessor();
             PersonAccessor personAccessor = new PersonAccessor();
+            UserAccessor userAccessor = new UserAccessor();
             //Movie demoMovie = new UnitTest().loadDemoMovie();
-            Movie demoMovie = movieAccessor.find(54);
-            if( demoMovie == null ) {
-                System.out.println("Movie not found");
-                return;
-            }
+            userAccessor.update(new UnitTest().LoadDemoUser());
 
-            for(Person actor : demoMovie.getActors()) {
-                System.out.print("new actor : ");
-                System.out.println(actor.getName() + " " + actor.getSurname());
-            }
 
-            movieAccessor.update(demoMovie);
+
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

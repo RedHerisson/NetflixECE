@@ -51,7 +51,7 @@ public class BDD {
 
     }
 
-    public static Statement getRequest() throws SQLException {
+    public Statement getRequest() throws SQLException {
         return session.createStatement();
     }
 

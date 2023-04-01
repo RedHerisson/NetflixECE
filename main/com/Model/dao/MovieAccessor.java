@@ -1,5 +1,6 @@
 package com.Model.dao;
 
+import com.Controller.BDD;
 import com.Model.map.Movie;
 import com.Model.map.Person;
 
@@ -26,14 +27,14 @@ public class MovieAccessor extends Accessor<Movie> {
 
 
     @Override
-    public Movie find(int id) throws SQLException, ClassNotFoundException, IOException {
+    public Movie findById(int id) throws SQLException, ClassNotFoundException, IOException {
 
         ArrayList<Person> actors = new ArrayList<Person>();
 
         ResultSet actorList = dataBase.getRequest().executeQuery(" SELECT * FROM Actor WHERE movie_ID = " + id );
         while ( actorList.next() ) {
 
-            actors.add( new Person(personAccessor.find(actorList.getInt(2))));
+            actors.add( new Person(personAccessor.findById(actorList.getInt(2))));
         }
 
         actorList.close();
@@ -47,7 +48,7 @@ public class MovieAccessor extends Accessor<Movie> {
             String filePath = result.getString(3);
             LocalDate releaseDate = result.getDate(4).toLocalDate();
             int length = result.getInt(5);
-            Person director = new Person(personAccessor.find(result.getInt(6)));
+            Person director = new Person(personAccessor.findById(result.getInt(6)));
 
             String type = result.getString(7);
             String summary = result.getString(8);
@@ -77,7 +78,6 @@ public class MovieAccessor extends Accessor<Movie> {
         return movie.getId();
     }
 
-    @Override
     public int update(Movie movie) throws SQLException, IOException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Movie WHERE ID = " + movie.getId() );
 

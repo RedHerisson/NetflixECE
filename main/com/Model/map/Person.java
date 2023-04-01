@@ -1,8 +1,7 @@
 package com.Model.map;
 
-public class Person {
+public class Person extends BdModel {
 
-    protected int id;
     protected String name;
 
     protected String surname;
@@ -12,6 +11,7 @@ public class Person {
     protected String sexe;
 
     public Person() {
+        super(-1);
         this.name = "";
         this.surname = "";
         this.age = 0;
@@ -19,7 +19,7 @@ public class Person {
     }
 
     public Person(int id, String name, String surname, int age, String sexe) {
-        this.id = id;
+        super(id);
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -27,7 +27,7 @@ public class Person {
     }
 
     public Person(Person person) {
-        this.id = person.id;
+        super(person.getId());
         this.name = person.name;
         this.surname = person.surname;
         this.age = person.age;
@@ -51,10 +51,9 @@ public class Person {
         return sexe;
     }
 
-    public int getId() { return id; }
-
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public String getTableName() {
+        return "Person";
     }
 
     public void setName(String name) {

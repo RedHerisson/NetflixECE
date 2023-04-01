@@ -14,19 +14,22 @@ public class User extends Person {
 
     private LocalDate acc_creation_date;
 
-    private ArrayList<MovieHistoric> historic;
+    private ArrayList<Playlist> playlists;
+
+    private Playlist historic;
 
     private ArrayList<String> favouriteType;
 
     private UserData data;
 
-    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,ArrayList<MovieHistoric> historic , ArrayList<String> favouriteType, UserData data) {
+    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, UserData data) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
         this.email = email;
         this.acc_creation_date = acc_creation_date;
-        this.historic = historic;
+        this.playlists = playlists;
+        this.historic = historic; //TODO : force historic to be called "Historic"
         this.favouriteType = favouriteType;
         this.data = data;
     }
@@ -47,8 +50,8 @@ public class User extends Person {
         return acc_creation_date;
     }
 
-    public ArrayList<MovieHistoric> getHistoric() {
-        return historic;
+    public ArrayList<Playlist> getPlaylists() {
+        return playlists;
     }
 
     public UserData getData() {
@@ -67,12 +70,12 @@ public class User extends Person {
         this.favouriteType.remove(type);
     }
 
-    public void addMovieToHistoric(MovieHistoric movie) {
-        this.historic.add(movie);
+    public void addMovieToPlaylist(Playlist movie) {
+        this.playlists.add(movie);
     }
 
-    public void removeMovieFromHistoric(MovieHistoric movie) {
-        this.historic.remove(movie);
+    public void removeMovieFromPlaylist(Playlist movie) {
+        this.playlists.remove(movie);
     }
 
 

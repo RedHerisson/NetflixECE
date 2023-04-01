@@ -4,9 +4,8 @@ import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Movie {
+public class Movie extends BdModel {
 
-    private int id;
     private String title;
 
     private BufferedImage thumbnail;
@@ -35,7 +34,7 @@ public class Movie {
     private int viewCount;
 
     public Movie(int id, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, String type, String summary, String teaserPath, boolean awarded, int viewCount, double rating) {
-        this.id = id;
+        super(id);
         this.title = title;
         this.thumbnail = thumbnail;
         this.filePath = filePath;
@@ -49,10 +48,6 @@ public class Movie {
         this.rating = rating;
         this.awarded = awarded;
         this.viewCount = viewCount;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTitle() {
@@ -115,8 +110,8 @@ public class Movie {
         return viewCount;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getTableName() {
+        return "Movie";
     }
 
     public void setTitle(String title) {

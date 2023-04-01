@@ -1,9 +1,6 @@
 package com.Model.dao;
 
-import com.Model.map.MovieHistoric;
-import com.Model.map.Person;
-import com.Model.map.User;
-import com.Model.map.UserData;
+import com.Model.map.*;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -12,10 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class UserAccessor extends Accessor<User> {
+public class UserAccessor extends PersonAccessor {
 
     PersonAccessor personAccessor;
     MovieAccessor movieAccessor;
+
+    PlaylistAccessor playlistAccessor;
 
     UserDataAccessor userDataAccessor;
 
@@ -26,11 +25,12 @@ public class UserAccessor extends Accessor<User> {
         userDataAccessor = new UserDataAccessor();
     }
 
+    //pas sûr de cette partie-là au niveau de l'heritage de PersonAccessor
     @Override
-    public User find(int id) throws SQLException, IOException, ClassNotFoundException {
+    public User findById(int id) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE ID = " + id );
         ResultSet findFavType = dataBase.getRequest().executeQuery(" SELECT * FROM Favourite_type WHERE user_id = " + id );
-        ResultSet findMovieHistoric = dataBase.getRequest().executeQuery(" SELECT * FROM Movie_historic WHERE user_id = " + id );
+        ResultSet findPlaylist = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id );
 
         if ( findUser.next() ) {
             int personID = findUser.getInt(1);
@@ -44,54 +44,31 @@ public class UserAccessor extends Accessor<User> {
             while( findFavType.next() ) {
                 favTypeList.add( findFavType.getString(1) );
             }
-            ArrayList<MovieHistoric> historic = new ArrayList<MovieHistoric>();
-            while ( findMovieHistoric .next() ) {
-                historic.add( new MovieHistoric( findMovieHistoric.getInt(1),personID, movieAccessor.find( findMovieHistoric.getInt(2) ),
-                        findMovieHistoric.getDate(3).toLocalDate() ) );
+            // TODO: add playlist to the database
+            // TODO : add historic to the database
+            Playlist historic = playlistAccessor.findById(findUser.getInt(7));
+
+            // select all Playlist from the user in the database
+            ArrayList<Playlist> playlistList = new ArrayList<Playlist>();
+            while( findPlaylist.next() ) {
+                playlistList.add( playlistAccessor.findById(findPlaylist.getInt(1)) );
             }
             
 
-            Person pDef = personAccessor.find(personID);
+            Person pDef = personAccessor.findById(personID);
 
-            return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(),
-                    historic, favTypeList, userDataAccessor.find(dataID));
+            return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), playlistList,
+                    historic, favTypeList, userDataAccessor.findById(dataID));
         }
         return null;
     }
 
-    @Override
     public int create(User usr) throws SQLException {
 
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "INSERT INTO User (person_id, pseudo, pwd, email, acc_date_creation, movie_historic_ID) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-        pre = loadPreStatement(pre, usr);
-        pre.executeUpdate();
-
-        return usr.getId();
-    }
-
-    @Override
-    public int update(User usr) throws SQLException {
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE ID = " + usr.getId() );
-
-        if( ! result.next() ) {
-            return create(usr);
-        }
-        else {
-            PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                    "UPDATE User SET person_id = ?, pseudo = ?, pwd = ?, email = ?, acc_date_creation = ?, movie_historic_ID = ? WHERE id = " + usr.getId() );
-
-
-           pre = loadPreStatement(pre, usr);
-           pre.executeUpdate();
-
-            return usr.getId();
-        }
-    }
-
-    private PreparedStatement loadPreStatement( PreparedStatement pre, User usr) throws SQLException {
         pre.setInt(1, personAccessor.create(usr));
         pre.setString(2, usr.getPseudo());
         pre.setString(3, usr.getPwd());
@@ -106,15 +83,40 @@ public class UserAccessor extends Accessor<User> {
             TypePre.executeUpdate();
         }
 
-        for( MovieHistoric movie : usr.getHistoric() ) {
-            PreparedStatement moviePre = dataBase.getRequest().getConnection().prepareStatement( "INSERT INTO Movie_historic (movieID, seen_date, user_ID) VALUES (?, ?, ? )");
-            moviePre.setInt(1, movie.getMovie().getId() );
-            moviePre.setDate(2, Date.valueOf(movie.getSeenDate() ) );
-            moviePre.setInt(3, usr.getId());
-            moviePre.executeUpdate();
+        for( Playlist pl : usr.getPlaylists() ) {
+            pl.setOwnerId(usr.getId());
+            playlistAccessor.create(pl);
         }
-        return pre;
+        pre.executeUpdate();
+
+        return usr.getId();
     }
+
+    public void updatePseudo(User usr) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE Person SET name = ?, surname = ? WHERE id = " + usr.getId() );
+
+        pre.setString(1, usr.getName());
+        pre.setString(2, usr.getSurname());
+        pre.executeUpdate();
+    }
+
+    public void updatePwd(User usr) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE User SET pwd = ? WHERE id = " + usr.getId() ); // TODO: hash pwd
+
+        pre.setString(1, usr.getPwd());
+        pre.executeUpdate();
+    }
+
+    public void updateEmail(User usr) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE User SET email = ? WHERE id = " + usr.getId() );
+
+        pre.setString(1, usr.getEmail());
+        pre.executeUpdate();
+    }
+
 
     @Override
     public void delete( int id ) {

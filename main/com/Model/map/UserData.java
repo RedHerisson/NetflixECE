@@ -1,6 +1,6 @@
 package com.Model.map;
 
-public class UserData {
+public class UserData extends BdModel {
 
     public int ownerId;
 
@@ -15,7 +15,8 @@ public class UserData {
     private double rate;
 
 
-    public UserData(int UserID, Movie movie, boolean view, int lengthAlreadySeen, String languageSelected, double rate) {
+    public UserData(int id, int UserID, Movie movie, boolean view, int lengthAlreadySeen, String languageSelected, double rate) {
+        super(id);
         this.ownerId = UserID;
         this.movie = movie;
         this.view = view;
@@ -70,5 +71,10 @@ public class UserData {
 
     public void setRate(double rate) {
         this.rate = rate;
+    }
+
+    @Override
+    public String getTableName() {
+        return null;
     }
 }

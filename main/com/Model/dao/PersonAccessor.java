@@ -2,6 +2,7 @@ package com.Model.dao;
 
 import com.Model.map.Person;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class PersonAccessor extends Accessor<Person> {
      * @throws SQLException error while accessing the dataBase
      */
     @Override
-    public Person find(int id) throws SQLException {
+    public Person findById(int id) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM `Person` WHERE ID = " + id );
 
         if ( result.next() ) {
@@ -50,7 +51,6 @@ public class PersonAccessor extends Accessor<Person> {
         return dataBase.getLastIdFromTable("Person");
     }
 
-    @Override
     public int update(Person person) throws SQLException {
         System.out.println(person.getId());
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Person WHERE name = '" + person.getName() + "' AND surname = '" + person.getSurname() + "' AND age = " + person.getAge() + " AND sexe = '" + person.getSexe() + "'");
@@ -71,6 +71,38 @@ public class PersonAccessor extends Accessor<Person> {
             pre.executeUpdate();
             return PersonId;
         }
+    }
+
+    // update the name of the person
+    public void updateName(Person person) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE Person SET name = ? WHERE ID = " + person.getId());
+        pre.setString(1, person.getName());
+        pre.executeUpdate();
+    }
+
+    // update the surname of the person
+    public void updateSurname(Person person) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE Person SET surname = ? WHERE ID = " + person.getId());
+        pre.setString(1, person.getSurname());
+        pre.executeUpdate();
+    }
+
+    // update the age of the person
+    public void updateAge(Person person) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE Person SET age = ? WHERE ID = " + person.getId());
+        pre.setInt(1, person.getAge());
+        pre.executeUpdate();
+    }
+
+    // update the sexe of the person
+    public void updateSexe(Person person) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE Person SET sexe = ? WHERE ID = " + person.getId());
+        pre.setString(1, person.getSexe());
+        pre.executeUpdate();
     }
 
     @Override
