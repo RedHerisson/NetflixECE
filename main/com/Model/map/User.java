@@ -22,7 +22,10 @@ public class User extends Person {
 
     private UserData data;
 
-    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, UserData data) {
+    private boolean admin;
+
+    public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,
+                ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, UserData data, boolean admin) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
@@ -32,6 +35,7 @@ public class User extends Person {
         this.historic = historic; //TODO : force historic to be called "Historic"
         this.favouriteType = favouriteType;
         this.data = data;
+        this.admin = admin;
     }
 
     public String getPseudo() {
@@ -54,12 +58,20 @@ public class User extends Person {
         return playlists;
     }
 
+    public Playlist getHistoric() {
+        return historic;
+    }
+
     public UserData getData() {
         return data;
     }
 
     public ArrayList<String> getFavouriteType() {
         return favouriteType;
+    }
+
+    public boolean isAdmin() {
+        return admin;
     }
 
     public void addFavouriteType(String type) {
@@ -78,5 +90,32 @@ public class User extends Person {
         this.playlists.remove(movie);
     }
 
+    public void addMovieToHistoric(Movie movie) {
+        this.historic.addMovie(movie);
+    }
+
+    public void removeMovieFromHistoric(Movie movie) {
+        this.historic.removeMovie(movie.getId());
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    // to string
+    @Override
+    public String toString() {
+        return "User{" +
+                "pseudo='" + pseudo + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", email='" + email + '\'' +
+                ", acc_creation_date=" + acc_creation_date +
+                ", playlists=" + playlists +
+                ", historic=" + historic +
+                ", favouriteType=" + favouriteType +
+                ", data=" + data +
+                ", admin=" + admin +
+                '}';
+    }
 
 }

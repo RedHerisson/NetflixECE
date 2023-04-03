@@ -17,6 +17,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class MovieAccessor extends Accessor<Movie> {
 
     PersonAccessor personAccessor;
@@ -25,7 +28,14 @@ public class MovieAccessor extends Accessor<Movie> {
         personAccessor = new PersonAccessor();
     }
 
-
+    /**
+     * Trouver un film par son ID
+     * @param id ID du film
+     * @return le film correspondant à l'ID
+     * @throws SQLException erreur SQL
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     @Override
     public Movie findById(int id) throws SQLException, ClassNotFoundException, IOException {
 
@@ -67,6 +77,13 @@ public class MovieAccessor extends Accessor<Movie> {
         return null;
     }
 
+    /**
+     * Création d'un film dans la base de données
+     * @param movie film à créer
+     * @return ID du film créé
+     * @throws SQLException erreur SQL
+     * @throws IOException
+     */
     @Override
     public int create(Movie movie) throws SQLException, IOException {
 
@@ -78,6 +95,15 @@ public class MovieAccessor extends Accessor<Movie> {
         return movie.getId();
     }
 
+    /**
+     * Mise à jour d'un film entier dans la base de données
+     * Si le film n'existe pas, il est créé
+     * @param movie
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     * @warning Ne pas utiliser pour mettre à jour seulement quelques champs
+     */
     public int update(Movie movie) throws SQLException, IOException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM Movie WHERE ID = " + movie.getId() );
 
@@ -97,6 +123,15 @@ public class MovieAccessor extends Accessor<Movie> {
         }
     }
 
+    /**
+     * Preparation de la requête préparée pour la création ou la mise à jour d'un film
+     * @param movie film à mettre à jour
+     * @param pre requête préparée
+     * @param isUpdate true si le film existe déjà
+     * @return requête préparée
+     * @throws SQLException erreur SQL
+     * @throws IOException
+     */
     private PreparedStatement loadPreStatement(Movie movie, PreparedStatement pre, boolean isUpdate) throws SQLException, IOException {
         pre.setString(1, movie.getTitle());
         pre.setString(2, movie.getFilePath());
@@ -147,6 +182,11 @@ public class MovieAccessor extends Accessor<Movie> {
         return pre;
     }
 
+    /**
+     * Suppression d'un film dans la base de données
+     * @param id ID du film à supprimer
+     * @throws SQLException erreur SQL
+     */
     @Override
     public void delete( int id ) throws SQLException {
         ResultSet ActorList = dataBase.getRequest().executeQuery("SELECT * FROM Actor WHERE movie_ID = " + id );
@@ -163,11 +203,5 @@ public class MovieAccessor extends Accessor<Movie> {
             personAccessor.delete(Director.getInt(1));
         }
         Director.close();
-
-
-
-
-
-
     }
 }

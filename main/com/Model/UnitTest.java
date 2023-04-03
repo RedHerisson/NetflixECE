@@ -40,7 +40,7 @@ public class UnitTest {
         Playlist history = new Playlist(-1, -1, "History", new ArrayList<Movie>());
 
         return new User(-1, "redherisson", "123", "Raphaël", "Jeantet", "jeantet.raph@gmail.com", 30, "M", LocalDate.of(1999, 02, 12),
-                new ArrayList<Playlist>(),history, favTypeList, data);
+                new ArrayList<Playlist>(),history, favTypeList, data, false);
     }
 
     public static void main( String[] args) {
@@ -48,9 +48,12 @@ public class UnitTest {
             PersonAccessor personAccessor = new PersonAccessor();
             UserAccessor userAccessor = new UserAccessor();
             //Movie demoMovie = new UnitTest().loadDemoMovie();
-            userAccessor.update(new UnitTest().LoadDemoUser());
 
+            //userAccessor.delete(23);
 
+            //userAccessor.create(new UnitTest().LoadDemoUser());
+            User demoUser = userAccessor.findById(25);
+            System.out.println(demoUser.toString());
 
 
 

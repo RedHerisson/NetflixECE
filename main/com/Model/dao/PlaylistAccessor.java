@@ -1,3 +1,4 @@
+
 package com.Model.dao;
 
 import com.Model.map.Movie;
@@ -12,12 +13,14 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Accessor playlist in the database
+ */
 public class PlaylistAccessor extends Accessor<Playlist> {
 
     MovieAccessor movieAccessor;
-    UserAccessor userAccessor;
 
-    private static String GET_BY_ID = "SELECT * FROM PlayList WHERE ID = ";
+    private static String GET_BY_ID = "SELECT * FROM Playlist WHERE ID = ";
     private static String GET_BY_USER = "SELECT * FROM Playlist WHERE user_ID = ";
     private static String GET_MOVIES = "SELECT movie_ID FROM MovieList WHERE playlist_ID = ";
 
@@ -27,13 +30,24 @@ public class PlaylistAccessor extends Accessor<Playlist> {
     private static String INSERT_MOVIE = "INSERT INTO MovieList (playlist_ID, movie_ID) VALUES (?, ?)";
     private static String REMOVE_MOVIE = "DELETE FROM MovieList WHERE playlist_ID = ? AND movie_ID = ?";
 
-
+    /**
+     * Constructeur
+     * @throws SQLException si la connexion à la base de données a échoué
+     * @throws ClassNotFoundException
+     */
     public PlaylistAccessor() throws SQLException, ClassNotFoundException {
         super();
         movieAccessor = new MovieAccessor();
-        userAccessor = new UserAccessor();
     }
 
+    /**
+     * Trouver une playlist dans la base de données en fonction de son ID
+     * @param id ID de la playlist
+     * @return la playlist correspondant à l'ID
+     * @throws SQLException erreur SQL
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     @Override
     public Playlist findById(int id) throws SQLException, ClassNotFoundException, IOException {
         ResultSet result = dataBase.getRequest().executeQuery(GET_BY_ID + id );
@@ -58,6 +72,14 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         return null;
     }
 
+    /**
+     * Mettre à jour une playlist dans la base de données
+     * @param user_ID ID de l'utilisateur à qui appartienent les playlist
+     * @return la liste des playlist de l'utilisateur
+     * @throws SQLException erreur SQL
+     * @throws IOException erreur d'entrée/sortie
+     * @throws ClassNotFoundException erreur SQL
+     */
     public ArrayList<Playlist> findAll(int user_ID ) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Playlist> userPlaylists = new ArrayList<Playlist>();
         ResultSet result = dataBase.getRequest().executeQuery(GET_BY_USER + user_ID );
@@ -67,6 +89,12 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         return userPlaylists;
     }
 
+    /**
+     * Créer une playlist dans la base de données
+     * @param playlist Playlist à créer
+     * @return l'ID de la playlist crée
+     * @throws SQLException
+     */
     @Override
     public int create(Playlist playlist) throws SQLException {
 
@@ -74,6 +102,9 @@ public class PlaylistAccessor extends Accessor<Playlist> {
 
         pre.setInt(1, playlist.getOwnerId());
         pre.setString(2, playlist.getTitle());
+        pre.executeUpdate();
+        pre.close();
+
 
         // Add all movies to the playlist so that the playlist is up-to-date
         for( Movie movie : playlist.getMoviesList() ) {
@@ -87,11 +118,15 @@ public class PlaylistAccessor extends Accessor<Playlist> {
             preMovieList.close();
         }
 
-        pre.executeUpdate();
-        pre.close();
-        return playlist.getId();
+
+        return dataBase.getLastIdFromTable("Playlist");
     }
 
+    /**
+     * Mettre à jour le titre d'une playlist
+     * @param playlist Playlist à mettre à jour
+     * @throws SQLException erreur SQL
+     */
     public void updateTitle( Playlist playlist ) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement(UPDATE_Title);
         pre.setString(1, playlist.getTitle());
@@ -100,6 +135,12 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         pre.close();
     }
 
+    /**
+     * Ajouter un film à une playlist
+     * @param movie Film à ajouter
+     * @param playlist Playlist à laquelle ajouter le film
+     * @throws SQLException erreur SQL
+     */
     public void addMovie( Movie movie, Playlist playlist ) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement(INSERT_MOVIE);
         pre.setInt(1, playlist.getId());
@@ -108,6 +149,12 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         pre.close();
     }
 
+    /**
+     * Supprimer un film d'une playlist
+     * @param movie Film à supprimer
+     * @param playlist Playlist de laquelle supprimer le film
+     * @throws SQLException erreur SQL
+     */
     public void removeMovie( Movie movie, Playlist playlist ) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement(REMOVE_MOVIE);
         pre.setInt(1, playlist.getId());
@@ -116,8 +163,14 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         pre.close();
     }
 
+    /**
+     * Supprimer une playlist de la base de données
+     * @param id ID de la playlist à supprimer
+     * @throws SQLException erreur SQL
+     */
     @Override
-    public void delete( int id ) {
-
+    public void delete( int id ) throws SQLException {
+        dataBase.getRequest().executeUpdate("DELETE FROM MovieList WHERE playlist_ID = " + id);
+        dataBase.getRequest().executeUpdate("DELETE FROM Playlist WHERE ID = " + id);
     }
 }

@@ -4,159 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea774537-6967-444a-8fb7-376e08429056" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/main/com/Model/map/BdModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/test.puml" afterDir="false" />
+    <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/main/com/Model/map/movieType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/BDD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/UnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieHistoricAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/MovieHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/UnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/UnitTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/UnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieHistoricAccessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PlaylistAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PlaylistAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/MovieHistoric.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-        <option value="UML Class" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="raph-main-app" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
-  <component name="ProjectId" id="2NSaTtjNtfRJN2QzOSh4wGOi7uR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2NuePEhV6s6Oc8M31xZzCkY9uMg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.43678162&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean" />
-      <command value="mvn compile" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.PresApp">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View.Main" />
-      <module name="videoPlayer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="View.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="DAO Test" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Vue.VideoPlayer.PlayerApp" />
-      <module name="videoPlayer" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path &quot;C:\Users\redhe\.jdks\openjdk-19.0.2&quot; --add-modules=javafx.controls,javafx.fxml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Vue.VideoPlayer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PresApp" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Vue.PresApp" />
-      <module name="videoPlayer" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UnitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Model.UnitTest" />
       <module name="videoPlayer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.PresApp" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.UnitTest" />
-      <item itemvalue="Application.PlayerApp" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.PlayerApp" />
-        <item itemvalue="Application.UnitTest" />
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea774537-6967-444a-8fb7-376e08429056" name="Changes" comment="" />
-      <created>1679659947428</created>
+      <changelist id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment="" />
+      <created>1680518370191</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679659947428</updated>
+      <updated>1680518370191</updated>
     </task>
     <servers />
   </component>
@@ -170,10 +85,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
