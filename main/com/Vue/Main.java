@@ -15,8 +15,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("Carousel4.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("resources\\View\\login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/View/Carousel4.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("registration.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
