@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,7 +33,10 @@ public class AdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        buttonAdd= new Button();
+        hbox = new HBox();
+        gridPane= new GridPane();
+        brandingImageView = new ImageView();
     }
 
     @FXML
@@ -47,15 +51,14 @@ public class AdminController implements Initializable {
     @FXML
     private HBox hbox;
     @FXML
-    private Button buttonAdd= new Button();
+    private Button buttonAdd;
     @FXML
-    private GridPane gridPane= new GridPane();
+    private GridPane gridPane;
     @FXML
-    private ImageView brandingImageView = new ImageView();
+    private ImageView brandingImageView;
 
     @FXML
     private void HandleShowStatisticsGenre(ActionEvent event) throws IOException{
-
 
 
         CategoryAxis xAxis = new CategoryAxis();
@@ -65,6 +68,7 @@ public class AdminController implements Initializable {
         yAxis.setLabel("Nombre de visionnages");
         yAxis.setTickLabelFill(Color.WHITE);
         BarChart barChart = new BarChart(xAxis, yAxis);
+        HBox hbox = new HBox();
 
         XYChart.Series data = new XYChart.Series();
         data.setName("Nombre de visionnages selon le genre");
@@ -80,7 +84,9 @@ public class AdminController implements Initializable {
 
         //vbox.getChildren().add(barChart);
         //borderPane.setCenter(barChart);
-        gridPane.add(barChart,0,0);
+        hbox.getChildren().add(barChart);
+        hbox.setMargin(barChart, new Insets(10, 10, 10, 10));
+        //gridPane.add(barChart,0,0);
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Pulp Fiction", 1253000),
@@ -155,12 +161,12 @@ public class AdminController implements Initializable {
     @FXML
     private void HandleCatalogGestion(ActionEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("admincatalog.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/ressources/View/admincatalog.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        Image image = new Image(getClass().getResourceAsStream("images/addbutton.png"));
+        Image image = new Image(getClass().getResourceAsStream("/ressources/images/addbutton.jpg"));
         hbox.getChildren().add(new ImageView(image));
 
 
@@ -177,7 +183,7 @@ public class AdminController implements Initializable {
 
     @FXML
     private void HandleUser(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminusergestion.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/ressources/View/adminusergestion.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

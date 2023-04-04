@@ -1,0 +1,13 @@
+@startuml
+
+class Movie {
+   int id;
+
+   }
+
+Movie <==> MovieList
+
+class MovieList {
+    itn test
+}
+@enduml
