@@ -15,7 +15,7 @@
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../images/tortipouss.png" />
+                  <Image url="@../images/tortipouss.png" />
                </image>
             </ImageView>
          </children>
@@ -46,11 +46,11 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <ImageView fx:id="lockImageView" fitHeight="75.0" fitWidth="67.0" layoutX="401.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <PasswordField fx:id="enterPasswordField" layoutX="380.0" layoutY="188.0" prefHeight="25.0" prefWidth="172.0" promptText="Password" />
+      <ImageView fx:id="lockImageView" fitHeight="78.0" fitWidth="58.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../images/cadena.png" />
+            <Image url="@../images/cadena.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="enterPasswordField" layoutX="380.0" layoutY="188.0" prefHeight="25.0" prefWidth="172.0" promptText="Password" />
    </children>
 </AnchorPane>

@@ -14,6 +14,9 @@ import javafx.event.ActionEvent;
 import java.io.File;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class LoginController  implements Initializable{
@@ -62,8 +65,32 @@ public class LoginController  implements Initializable{
         Image lockImage = new Image(lockFile.toURI().toString());
         lockImageView.setImage(lockImage);
     }
-
+/*
     public void validateLogin(){
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDB = connectNow.getConnection();
+
+        String verifyLogin = "...username here..." + UsernameLogin.getText() + "...password here..." + enterPasswordField.getText() + "" ;
+        try{
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()){
+                if(queryResult.getInt(1)==1){
+                    loginMessageError.setText("Congratulations!");
+                }
+                else{
+                    loginMessageError.setText("Invalid login. Please try again");
+                }
+            }
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
 
     }
+    */
+
 }
