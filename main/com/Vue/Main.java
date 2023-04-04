@@ -2,10 +2,8 @@ package com.Vue;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("Carousel4.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/Carousel4.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("registration.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
 

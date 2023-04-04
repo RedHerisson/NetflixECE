@@ -5,7 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/SlideApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/Carousel4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/Carousel4.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/VideoPlayer/moviePres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/VideoPlayer/moviePres.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/VideoPlayer/player.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/VideoPlayer/player.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/TuNeTuerasPoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/TuNeTuerasPoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/cadena.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/cadena.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/close-button.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/close-button.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/dune.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/dune.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/harry-potter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/harry-potter.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/inception.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/inception.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/matrix.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/matrix.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/persiansLessons.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/persiansLessons.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/pirates1.1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/pirates1.2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/pirates1.4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/pirates1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/planete_singes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/planete_singes.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/star_wars.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/star_wars.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/stars wars 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/stars wars 2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/stars-wars.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/stars-wars.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/tortipouss.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/tortipouss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/transfomers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/transfomers.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/tron.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/tron.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/wall-e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/wall-e.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/war_horse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/war_horse.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/wolfCall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/images/wolfCall.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/tempo/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/tempo/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/tempo/star.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/tempo/star.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/test.puml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/test.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerApp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +55,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -28,13 +72,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
