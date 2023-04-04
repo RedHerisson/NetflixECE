@@ -4,54 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment="">
+    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/VideoPlayer/moviePres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/VideoPlayer/moviePres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/VideoPlayer/player.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/VideoPlayer/player.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SlideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/SlideApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/SlideApp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/SlideApp2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Carousel.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Carousel2.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Carousel3.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/Carousel4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/Carousel4.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/admincatalog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminusergestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/View/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/registration.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/TuNeTuerasPoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/TuNeTuerasPoint.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cadena.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/cadena.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/close-button.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/close-button.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/dune.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/dune.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/harry-potter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/harry-potter.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/inception.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/inception.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/matrix.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/matrix.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/persiansLessons.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/persiansLessons.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pirates1.1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/pirates1.1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pirates1.2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/pirates1.2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pirates1.4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/pirates1.4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/pirates1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/pirates1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/planete_singes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/planete_singes.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/star_wars.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/star_wars.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/stars wars 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/stars wars 2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/stars-wars.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/stars-wars.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/tortipouss.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/tortipouss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/transfomers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/transfomers.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/tron.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/tron.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/wall-e.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/wall-e.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/war_horse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/war_horse.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/wolfCall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/wolfCall.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,80 +17,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2NuePEhV6s6Oc8M31xZzCkY9uMg" />
+  <component name="ProjectId" id="2Nx6hO0j9HKzbuI2oZWsD8ZCWHn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE"
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\redhe\Nextcloud\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\images" />
-      <recent name="C:\Users\redhe\Nextcloud\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources" />
-      <recent name="C:\Users\redhe\Nextcloud\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View" />
-      <recent name="C:\Users\redhe\Nextcloud\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Vue" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="DAO Test" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Model.UnitTest" />
-      <module name="videoPlayer" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment="" />
-      <created>1680518370191</created>
+      <changelist id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="" />
+      <created>1680593504557</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680518370191</updated>
+      <updated>1680593504557</updated>
     </task>
-    <task id="LOCAL-00001" summary=" - add find User from id&#10;  - comment Accessor">
-      <created>1680562978098</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1680562978098</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value=" - add find User from id&#10;  - comment Accessor" />
-    <option name="LAST_COMMIT_MESSAGE" value=" - add find User from id&#10;  - comment Accessor" />
   </component>
 </project>
