@@ -1,4 +1,4 @@
-package View;
+package com.Vue;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

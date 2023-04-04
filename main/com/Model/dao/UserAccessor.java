@@ -162,7 +162,7 @@ public class UserAccessor extends PersonAccessor {
 
     /**
      * Destruction d'un utilisateur dans la base de données
-     * @param usr utilisateur à supprimer
+     * @param id ID de l'utilisateur à supprimer
      * @throws SQLException erreur SQL
      */
     @Override

@@ -28,7 +28,7 @@
                               </Label>
                               <ImageView fitHeight="82.0" fitWidth="95.0" onMouseDragReleased="#HandleClose" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../images/addbutton.png" />
+                                    <Image url="@../../../images/addbutton.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
