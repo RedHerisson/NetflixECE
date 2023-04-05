@@ -16,7 +16,7 @@ public class PlayerApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-            Parent root = FXMLLoader.load(getClass().getResource("/resources/VideoPlayer/player.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/ressources/VideoPlayer/player.fxml"));
 
             Scene scenes = new Scene(root, 500, 500, Color.BLACK);
             stage.setScene(scenes);
