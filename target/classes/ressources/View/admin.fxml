@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminController">
+   <children>
+      <ScrollPane layoutX="203.0" prefHeight="648.0" prefWidth="1071.0">
+         <content>
+            <AnchorPane prefHeight="1138.0" prefWidth="1054.0" style="-fx-background-color: #0e171e;">
+               <children>
+                  <GridPane fx:id="gridPane" layoutX="22.0" prefHeight="1147.0" prefWidth="1026.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="327.99999084472654" minHeight="10.0" prefHeight="327.99999084472654" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="524.200048828125" minHeight="0.0" prefHeight="294.199951171875" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="573.8000000000001" minHeight="10.0" prefHeight="249.59980468750007" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="292.8001953124999" minHeight="10.0" prefHeight="276.8001953124999" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <VBox prefHeight="645.0" prefWidth="203.0">
+         <children>
+            <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#HandleShowStatisticsGenre" pickOnBounds="false" prefHeight="162.0" prefWidth="256.0" style="-fx-background-color: #086a75;" text="Statistiques" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></Button>
+            <Button mnemonicParsing="false" onAction="#HandleCatalogGestion" prefHeight="163.0" prefWidth="256.0" style="-fx-background-color: #086a75; -fx-view-order: 5;" text="Gestion de catalogue" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#HandleUser" prefHeight="164.0" prefWidth="256.0" style="-fx-background-color: #086a75;" text="Gestion d'utilisateur" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#HandleClose" prefHeight="162.0" prefWidth="203.0" style="-fx-background-color: #086a75;" text="Quitter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

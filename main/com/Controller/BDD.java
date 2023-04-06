@@ -15,7 +15,7 @@ import java.sql.*;
  */
 public class BDD {
 
-    private static String ip = "192.168.1.14";
+    private static String ip = "90.90.95.91";
     private static String name = "Netflix";
     private static String login = "root";
     private static String pwd = "T9Eu%v5z3_";
