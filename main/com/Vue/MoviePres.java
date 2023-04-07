@@ -110,7 +110,7 @@ public class MoviePres implements Initializable {
         LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/ressources/VideoPlayer/player.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/ressources/View/VideoPlayer/player.fxml"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

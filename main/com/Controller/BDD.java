@@ -1,10 +1,5 @@
 package com.Controller;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 
 /**
@@ -15,7 +10,7 @@ import java.sql.*;
  */
 public class BDD {
 
-    private static String ip = "192.168.1.14";
+    private static String ip = "90.90.95.91";
     private static String name = "Netflix";
     private static String login = "root";
     private static String pwd = "T9Eu%v5z3_";
@@ -53,17 +48,6 @@ public class BDD {
 
     public Statement getRequest() throws SQLException {
         return session.createStatement();
-    }
-
-    public Image getImageByBlob(Blob blob){
-        try {
-            InputStream stream = blob.getBinaryStream();
-            BufferedImage image = ImageIO.read(stream);
-            return image;
-        } catch (IOException | SQLException e) {
-            System.out.println("Blob-Image conversion Error: " + e.getMessage());
-            return null;
-        }
     }
 
     public int getLastIdFromTable(String table ) throws SQLException {

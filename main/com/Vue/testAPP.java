@@ -12,32 +12,29 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Main extends Application {
+public class testAPP extends Application {
 
     double x, y=0;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/MovieIntegration.fxml"));
         MovieAccessor movieAccessor = new MovieAccessor();
 
 
-        Scene scenes = new Scene(loader.load(), 1275, 660, Color.BLACK);
+        Scene scenes = new Scene(loader.load(), 1275, 160, Color.BLACK);
 
         ArrayList<Movie> movies = new ArrayList<Movie>();
 
         // charger 10 films
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 20; i++){
             movies.add(movieAccessor.findById(54));
         }
 
         Movie movie = movieAccessor.findById(54);
-        HomeController controller = loader.<HomeController>getController();
+        MovieIntegrationController controller = loader.<MovieIntegrationController>getController();
 
-        for(int i = 0; i < 10; i++){
-            controller.AddPlaylist(movies, "Playlist " + i);
-        }
-
+        controller.LoadPoster(movie);
 
         primaryStage.setScene(scenes);
         primaryStage.setResizable(false);

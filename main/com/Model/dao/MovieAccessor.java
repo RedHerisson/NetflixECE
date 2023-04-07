@@ -3,8 +3,10 @@ package com.Model.dao;
 import com.Controller.BDD;
 import com.Model.map.Movie;
 import com.Model.map.Person;
+import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -64,7 +66,7 @@ public class MovieAccessor extends Accessor<Movie> {
             String summary = result.getString(8);
             String teaserPath = result.getString(9);
             boolean awarded = result.getBoolean(10);
-            BufferedImage thumbnail =  ImageIO.read(result.getBlob(11).getBinaryStream());
+            BufferedImage thumbnail = ImageIO.read(result.getBlob(11).getBinaryStream());
             int viewCount = result.getInt(12);
             int rating = result.getInt(13);
 
@@ -145,7 +147,8 @@ public class MovieAccessor extends Accessor<Movie> {
         pre.setBoolean(9, movie.isAwarded());
 
         ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
-        ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
+        // image to blob
+        ImageIO.write(movie.getThumbnail(), "png", binaryStream);
         InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
         pre.setBlob(10, inputStream);
 

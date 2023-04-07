@@ -3,6 +3,7 @@ module netflix {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
+    requires javafx.swing;
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
@@ -13,4 +14,6 @@ module netflix {
     opens com.Vue to javafx.fxml;
     exports com.Vue.VideoPlayer;
     opens com.Vue.VideoPlayer to javafx.fxml;
+    exports com.Vue.Carousel;
+    opens com.Vue.Carousel to javafx.fxml;
 }
