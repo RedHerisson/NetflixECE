@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/BDD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoPlayer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.Vue.Main" />
       <module name="videoPlayer" />
@@ -58,6 +56,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PresApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Vue.PresApp" />
+      <module name="videoPlayer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Vue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PresApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

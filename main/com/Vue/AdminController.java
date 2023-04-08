@@ -10,6 +10,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Node;
@@ -37,6 +38,7 @@ public class AdminController implements Initializable {
         hbox = new HBox();
         gridPane= new GridPane();
         brandingImageView = new ImageView();
+        comboBox = new ComboBox();
     }
 
     @FXML
@@ -56,6 +58,14 @@ public class AdminController implements Initializable {
     private GridPane gridPane;
     @FXML
     private ImageView brandingImageView;
+
+    @FXML
+    private CategoryAxis xAxis;
+    @FXML
+    private NumberAxis yAxis;
+
+    @FXML
+    private ComboBox comboBox;
 
     @FXML
     private void HandleShowStatisticsGenre(ActionEvent event) throws IOException{
@@ -110,7 +120,7 @@ public class AdminController implements Initializable {
 
         //borderPane2.setTop(pieChart);
         //vbox.getChildren().add(pieChart);
-        gridPane.add(pieChart,0,1);
+        //gridPane.add(pieChart,0,1);
 
         ObservableList<PieChart.Data> pieChartDataSexPercentage = FXCollections.observableArrayList(
                 new PieChart.Data("Hommes", 12500),
@@ -128,7 +138,7 @@ public class AdminController implements Initializable {
 
         //borderPane.setRight(pieChartSexPercentage);
         //vbox.getChildren().add(pieChartSexPercentage);
-        gridPane.add(pieChartSexPercentage,1,0);
+        //gridPane.add(pieChartSexPercentage,1,0);
 
         NumberAxis xAxis2 = new NumberAxis();
         xAxis2.setLabel("No of employees");
@@ -153,7 +163,7 @@ public class AdminController implements Initializable {
 
         //borderPane.setTop(lineChart);
         //vbox.getChildren().add(lineChart);
-        gridPane.add(lineChart,1,1);
+        //gridPane.add(lineChart,1,1);
 
     }
 
@@ -166,8 +176,14 @@ public class AdminController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        Image image = new Image(getClass().getResourceAsStream("/ressources/images/addbutton.jpg"));
-        hbox.getChildren().add(new ImageView(image));
+
+        comboBox.setValue("Fantastique");
+        comboBox.setValue("Horreur");
+        comboBox.setValue("Action");
+        comboBox.setValue("Drame");
+
+        //Image image = new Image(getClass().getResourceAsStream("/ressources/images/addbutton.jpg"));
+        //hbox.getChildren().add(new ImageView(image));
 
 
         /*File brandingFile = new File("images/addbutton.png");
