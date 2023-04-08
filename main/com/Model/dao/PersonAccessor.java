@@ -1,19 +1,26 @@
 package com.Model.dao;
 
+import com.Model.map.Movie;
 import com.Model.map.Person;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Accessor for Person
  */
+
+
+
 public class PersonAccessor extends Accessor<Person> {
 
+    PersonAccessor personAccessor;
     public PersonAccessor() throws SQLException, ClassNotFoundException {
         super();
+        personAccessor = new PersonAccessor();
     }
 
     /**
@@ -34,9 +41,25 @@ public class PersonAccessor extends Accessor<Person> {
             return new Person(id, name, surname, age, sexe);
         }
         return null;
+    }
 
+    @Override
+    public Person findByName(String name) throws SQLException, ClassNotFoundException, IOException {
 
+        ArrayList<Person> persons = new ArrayList<Person>();
 
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Person WHERE Person.name like '%"+name+"%'");
+
+        while(result.next()){
+            persons.add(personAccessor.findById(result.getInt(1)));
+        }
+
+        if ( result.next() ) {
+            int id = result.getInt(1);
+        }
+        result.close();
+        System.out.println("Person not found");
+        return null;
     }
 
     /**

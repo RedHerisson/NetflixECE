@@ -23,9 +23,11 @@ import java.util.ArrayList;
 public class MovieAccessor extends Accessor<Movie> {
 
     PersonAccessor personAccessor;
+    MovieAccessor movieAccessor;
     public MovieAccessor() throws SQLException, ClassNotFoundException {
         super();
         personAccessor = new PersonAccessor();
+        movieAccessor = new MovieAccessor();
     }
 
     /**
@@ -71,6 +73,25 @@ public class MovieAccessor extends Accessor<Movie> {
             result.close();
 
             return new Movie(id, title,thumbnail, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
+        }
+        result.close();
+        System.out.println("Movie not found");
+        return null;
+    }
+
+    @Override
+    public Movie findByName(String name) throws SQLException, ClassNotFoundException, IOException {
+
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Movie WHERE Movie.title like '%"+name+"%'");
+
+        while(result.next()){
+            movies.add(movieAccessor.findById(result.getInt(1)));
+        }
+
+        if ( result.next() ) {
+            int id = result.getInt(1);
         }
         result.close();
         System.out.println("Movie not found");

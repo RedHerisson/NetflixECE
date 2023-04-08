@@ -11,6 +11,8 @@ public abstract class Accessor<BdModel> {
 
     public abstract BdModel findById(int id) throws SQLException, ClassNotFoundException, IOException;
 
+    public abstract BdModel findByName(String name) throws SQLException, ClassNotFoundException, IOException;
+
     public abstract int create(BdModel obj) throws SQLException, IOException;
 
 

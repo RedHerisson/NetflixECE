@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

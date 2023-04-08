@@ -35,8 +35,10 @@ public class PlaylistAccessor extends Accessor<Playlist> {
      * @throws SQLException si la connexion à la base de données a échoué
      * @throws ClassNotFoundException
      */
+    PlaylistAccessor playlistAccessor;
     public PlaylistAccessor() throws SQLException, ClassNotFoundException {
         super();
+        playlistAccessor = new PlaylistAccessor();
         movieAccessor = new MovieAccessor();
     }
 
@@ -69,6 +71,25 @@ public class PlaylistAccessor extends Accessor<Playlist> {
             return new Playlist(id, userID, title, movies );
 
         }
+        return null;
+    }
+
+    @Override
+    public Playlist findByName(String name) throws SQLException, ClassNotFoundException, IOException {
+
+        ArrayList<Playlist> playlists = new ArrayList<Playlist>();
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Playlist WHERE Playlist.title like '%"+name+"%'");
+
+        while(result.next()){
+            playlists.add(playlistAccessor.findById(result.getInt(1)));
+        }
+
+        if ( result.next() ) {
+            int id = result.getInt(1);
+        }
+        result.close();
+        System.out.println("Playlist not found");
         return null;
     }
 
