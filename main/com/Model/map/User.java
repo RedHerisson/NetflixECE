@@ -38,6 +38,7 @@ public class User extends Person {
         this.admin = admin;
     }
 
+
     public String getPseudo() {
         return pseudo;
     }

@@ -220,7 +220,7 @@ Exit button
         stage.close();
     }
 
-    //Transistion when click on the button
+    //Transition when click on the button
     public void translateAnimation(double duration, Node node, double width){
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(duration), node);
         translateTransition.setByX(width);

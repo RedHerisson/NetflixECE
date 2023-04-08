@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="275.0" style="-fx-background-color: #515151;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="37.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/tortipouss.png" />
                </image>
@@ -25,18 +25,18 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="UsernameLogin" layoutX="380.0" layoutY="127.0" prefHeight="25.0" prefWidth="172.0" promptText="Username" />
+      <TextField fx:id="UsernameLogin" layoutX="380.0" layoutY="128.0" prefHeight="25.0" prefWidth="172.0" promptText="Username" />
       <Label layoutX="316.0" layoutY="190.0" text="Password">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" layoutX="307.0" layoutY="275.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #515151;" text="Login" textFill="WHITE">
+      <Button fx:id="loginButton" layoutX="316.0" layoutY="258.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #515151;" text="Login" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="321.0" layoutY="340.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #515151;" text="Cancel" textFill="WHITE">
+      <Button fx:id="cancelButton" layoutX="316.0" layoutY="298.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #515151;" text="Cancel" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
@@ -47,15 +47,10 @@
          </font>
       </Label>
       <PasswordField fx:id="enterPasswordField" layoutX="380.0" layoutY="188.0" prefHeight="25.0" prefWidth="172.0" promptText="Password" />
-      <ImageView fx:id="lockImageView" fitHeight="78.0" fitWidth="58.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lockImageView" fitHeight="73.0" fitWidth="83.0" layoutX="410.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/cadena.png" />
          </image>
       </ImageView>
-      <Button fx:id="RegisterButton" layoutX="458.0" layoutY="275.0" mnemonicParsing="false" onAction="#RegisterButtonOnAction" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #515151;" text="Creation compte" textFill="WHITE">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

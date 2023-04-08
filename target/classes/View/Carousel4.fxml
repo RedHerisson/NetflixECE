@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.SlideApp2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SlideApp2">
    <children>
       <AnchorPane prefHeight="63.0" prefWidth="1275.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="581.6666666666666" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.33333333333325754" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="Panel_Carousel4" prefHeight="645.0" prefWidth="1275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -17,7 +17,7 @@
                <children>
                   <ImageView fitHeight="89.0" fitWidth="147.0" layoutX="56.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.5063323974609375" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="1072.0" AnchorPane.topAnchor="7.0">
                      <image>
-                        <Image url="@../images/pirates1.4.jpg" />
+                        <Image url="@../images/pirates1.1.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="Image_Panel1" fitHeight="89.0" fitWidth="147.0" layoutX="1059.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
@@ -134,9 +134,9 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Pane layoutX="574.0" prefHeight="63.0" prefWidth="699.0">
+      <Pane prefHeight="63.0" prefWidth="200.0">
          <children>
-            <Button fx:id="exitButton" layoutX="673.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButtonAction" style="-fx-background-color: red;" text="X" textFill="WHITE" />
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonAction" style="-fx-background-color: red;" text="X" textFill="WHITE" />
          </children>
       </Pane>
       <Pane fx:id="Panel_Panel1" prefHeight="97.0" prefWidth="1275.0" AnchorPane.bottomAnchor="458.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
