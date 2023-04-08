@@ -6,17 +6,38 @@
   <component name="ChangeListManager">
     <list default="true" id="76540184-eff6-403c-a560-8ec554f06b47" name="Changes" comment="- sorcelery fonctionnement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/BDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/SlideApp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/SlideApp2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/Carousel4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/Carousel4.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/resources/View/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/registration.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Carousel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Carousel2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Carousel3.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Carousel4.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/registration.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/TuNeTuerasPoint.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/cadena.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/close-button.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/dune.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/harry-potter.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/inception.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/matrix.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/persiansLessons.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pirates1.1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pirates1.2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pirates1.4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/pirates1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/planete_singes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/star_wars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/stars wars 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/stars-wars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/tortipouss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/transfomers.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/tron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/wall-e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/war_horse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/wolfCall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/registration.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
