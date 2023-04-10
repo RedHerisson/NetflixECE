@@ -14,8 +14,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/Carousel4.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/Carousel4.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("registration.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/userSettings2.fxml"));
+        primaryStage.setTitle("User Settings");
+
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
         root.setOnMousePressed(event ->{

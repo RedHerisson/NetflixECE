@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor">
-      <change afterPath="$PROJECT_DIR$/main/ressources/View/userSettings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/BDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/BDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/BDD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoPlayer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/userSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/tempo/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/tempo/star.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/test.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userSettings.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
