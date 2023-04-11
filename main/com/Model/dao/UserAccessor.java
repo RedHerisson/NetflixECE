@@ -74,6 +74,8 @@ public class UserAccessor extends PersonAccessor {
         return null;
     }
 
+
+
     /**
      * Creation d'un utilisateur
      * @warning Pas de vérification de l'unicité

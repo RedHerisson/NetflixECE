@@ -1,11 +1,14 @@
 package com.Model.dao;
 
+import com.Model.map.Movie;
+import com.Model.map.User;
 import com.Model.map.UserData;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserDataAccessor extends Accessor<UserData> {
 
@@ -42,6 +45,8 @@ public class UserDataAccessor extends Accessor<UserData> {
         }
         return null;
     }
+
+
 
     /**
      * Création d'un UserData dans la BDD

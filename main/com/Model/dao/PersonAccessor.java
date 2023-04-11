@@ -1,6 +1,5 @@
 package com.Model.dao;
 
-import com.Model.map.Movie;
 import com.Model.map.Person;
 
 import java.io.IOException;
@@ -43,24 +42,14 @@ public class PersonAccessor extends Accessor<Person> {
         return null;
     }
 
-    @Override
-    public Person findByName(String name) throws SQLException, ClassNotFoundException, IOException {
+    /**
+     * Get Person from name from sqlBDD
+     *
+     * @param name SQL name of the object
+     * @return Person object found
+     * @throws SQLException error while accessing the dataBase
+     */
 
-        ArrayList<Person> persons = new ArrayList<Person>();
-
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Person WHERE Person.name like '%"+name+"%'");
-
-        while(result.next()){
-            persons.add(personAccessor.findById(result.getInt(1)));
-        }
-
-        if ( result.next() ) {
-            int id = result.getInt(1);
-        }
-        result.close();
-        System.out.println("Person not found");
-        return null;
-    }
 
     /**
      * Creation d'un utilisateur dans la base de données
