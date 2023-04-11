@@ -3,6 +3,7 @@ package com.Vue.VideoPlayer;
 
 import java.awt.*;
 
+import com.Model.map.Movie;
 import javafx.animation.FadeTransition;
 import javafx.scene.input.MouseEvent;
 
@@ -62,7 +63,7 @@ public class PlayerController implements Initializable {
     private AnchorPane bgControl;
 
 
-    private Media movie;
+    private Media movieMedia;
     private MediaPlayer player;
 
     enum stateButton {
@@ -77,9 +78,13 @@ public class PlayerController implements Initializable {
 
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        File file = new File("star.mp4");
-        movie = new Media(file.toURI().toString());
-        player = new MediaPlayer(movie);
+    }
+
+    public void loadMovie(Movie movie) {
+
+        File file = new File(movie.getFilePath() + ".mp4");
+        movieMedia = new Media(file.toURI().toString());
+        player = new MediaPlayer(movieMedia);
         viewer.setMediaPlayer(player);
 
         DoubleProperty width = viewer.fitWidthProperty();
@@ -174,8 +179,6 @@ public class PlayerController implements Initializable {
                 );
             }
         });
-
-
 
 
     }

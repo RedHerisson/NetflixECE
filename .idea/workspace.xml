@@ -4,28 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.jpg" afterDir="false" />
+    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - too much things">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/Carousel/Carousel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/Carousel/Carousel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoPlayer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/videoPlayer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$stateButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$stateButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="29887" />
+    <option name="totalTimeSeconds" value="36574" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -98,7 +97,7 @@
       <recent name="com.Vue" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.tempoLoadDataBase">
+  <component name="RunManager" selected="Application.UnitTest Gaphic">
     <configuration name="PresApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Vue.PresApp" />
       <module name="videoPlayer" />

@@ -4,6 +4,7 @@ import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
 import com.Vue.Carousel.CarouselController;
 import com.Vue.Carousel.MovieIntegrationController;
+import com.Vue.VideoPlayer.PlayerController;
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -69,7 +70,7 @@ public class MovieInfoController extends Controller implements Initializable {
         actors = actors.substring(0, actors.length() - 2);
         ActorsLabel.setText(actors);
 
-        File file = new File(movie.getTeaserPath());
+        File file = new File(movie.getTeaserPath() + ".mp4");
         Media movieFile = new Media(file.toURI().toString());
         player = new MediaPlayer(movieFile);
         trailerIntegration.setMediaPlayer(player);
@@ -96,7 +97,12 @@ public class MovieInfoController extends Controller implements Initializable {
         LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
             Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("/resources/View/VideoPlayer/player.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/player.fxml"));
+                root = loader.load();
+                PlayerController controller = loader.getController();
+
+                controller.loadMovie(movie);
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

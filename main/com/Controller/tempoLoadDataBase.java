@@ -15,6 +15,8 @@ import okhttp3.Response;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,6 +26,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Scanner;
 
 public class tempoLoadDataBase {
 
@@ -46,7 +49,7 @@ public class tempoLoadDataBase {
             try (Response response = client.newCall(request).execute()) {
 
                 String json = response.body().string();
-                System.out.println(json);
+                //System.out.println(json);
 
                 return json;
             } catch (IOException e) {
@@ -72,7 +75,7 @@ public class tempoLoadDataBase {
         String title = (String) jsonMap.get("Title");
 
         String StrReleaseDate = (String) jsonMap.get("Released");
-        System.out.println("Input string: " + StrReleaseDate);
+        //System.out.println("Input string: " + StrReleaseDate);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH);
         LocalDate releaseDate = LocalDate.parse(StrReleaseDate, formatter);
 
@@ -109,7 +112,7 @@ public class tempoLoadDataBase {
 
 
         Movie movie = new Movie(-1, title, image, videoPath, releaseDate, Runtime, director, actors, type, plot,
-                videoPath, false, 0, 0);
+                videoPath, Awarded, 0, 0);
         return movie;
     }
 
@@ -138,11 +141,66 @@ public class tempoLoadDataBase {
         return ytLink;
     }
 
+    public static ArrayList<String> readImdbFromFile(String path, int startLigne) {
+        ArrayList<String> imdbIds = new ArrayList<>();
+        try {
+            //
+            File file = new File(path);
+            Scanner sc = new Scanner(file);
+            for(int i = 0; i < startLigne; i++){
+                sc.nextLine();
+            }
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                imdbIds.add(line);
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return imdbIds;
+    }
+
+    public static void addYtURLToFile( String ytURL ) {
+        try {
+            FileWriter myWriter = new FileWriter("ytURL.txt", true);
+            myWriter.write(ytURL + "\n");
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
         try {
-            System.out.println(getYtLinkFromImdbId("tt0133093"));
+            int startLigne = 510;
+            // read a csv file with all the movies ids
+            ArrayList<String> imdbIds = readImdbFromFile("imdb_ID.csv", startLigne);
+            MovieAccessor movieAccessor = new MovieAccessor();
+            int i = startLigne;
+            for( String imdbId : imdbIds){
+                i++;
+                // get the json from omdb
+                String json = OMDBGetById(imdbId);
+                // convert the json to a movie object
+                Movie movie = JsonToMovie(json);
+                // get the youtube link
+                String ytLink = getYtLinkFromImdbId(imdbId);
+                System.out.println(ytLink);
+                System.out.println("Movie " + i + "/" + 549 + " added to the database");
+                addYtURLToFile( ytLink + "," + imdbId);
+
+                //add the movie to the database
+                movieAccessor.create(movie);
+
+            }
 
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

@@ -28,30 +28,23 @@ public class Main extends Application {
 
         Scene scenes = new Scene(loader.load(), 1275, 645, Color.BLACK);
 
-        ArrayList<Movie> movies = new ArrayList<Movie>();
 
-        // charger 10 films
-        for(int i = 0; i < 5; i++){
-            movies.add(movieAccessor.findById(54));
-            Movie movie;
 
-        }
-        for(int i = 0; i < 10; i++){
-            movies.add(movieAccessor.findById(58));
-        }
+        // charger 10 film
 
         Movie movie = movieAccessor.findById(54);
         HomeController controller = loader.<HomeController>getController();
 
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 10; i++){
+            ArrayList<Movie> movies = new ArrayList<Movie>();
+            for(int j = 70 + i*10; j < 80 + i*10; j++){
+                movies.add(movieAccessor.findById(j));
+
+            }
             controller.AddPlaylist(movies, "Playlist " + i);
         }
 
         controller.AddPromotion(movie);
-
-        for(int i = 0; i < 5; i++){
-            controller.AddPlaylist(movies, "Playlist " + i);
-        }
 
         //controller.AddPromotion(movie);
 
