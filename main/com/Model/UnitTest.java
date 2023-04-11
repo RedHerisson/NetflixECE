@@ -16,13 +16,13 @@ public class UnitTest {
     public Movie loadDemoMovie() throws IOException {
         ArrayList<Person> actors = new ArrayList<Person>();
 
-        actors.add(new Person(-1, "John", "Doe",10, "M"));
-        actors.add(new Person(-1, "Jane", "Doe",10, "F"));
-        actors.add(new Person(-1, "John", "Smith",10, "M"));
+        actors.add(new Person(-1, "Marc", "Du train",10, "M"));
+        actors.add(new Person(-1, "Roger", "antoine",10, "F"));
+        actors.add(new Person(-1, "Raph", "Smith",10, "M"));
 
-        Movie demoMovie = new Movie(-1, "Film test", ImageIO.read(new File("main/resources/tempo/star.jpg")), "star.mp4",
-                LocalDate.of(1999, 02, 12), 130, new Person(-1,"Lucas", "George", 30, "M"), actors, "Action",
-                "This is a demo film", "star.mp4", true,
+        Movie demoMovie = new Movie(-1, "Super film", ImageIO.read(new File("main/resources/images/stars-wars.jpg")), "star.mp4",
+                LocalDate.of(1999, 02, 12), 130, new Person(-1,"Nolan", "christophe", 30, "M"), actors, "Action",
+                "Super film, avec un mechant qui meurt à la fin, déso pour le spoil", "star.mp4", true,
                 0, 5);
         return demoMovie;
     }
@@ -43,15 +43,14 @@ public class UnitTest {
 
     public static void main( String[] args) {
         try {
-            PersonAccessor personAccessor = new PersonAccessor();
-            UserAccessor userAccessor = new UserAccessor();
-            //Movie demoMovie = new UnitTest().loadDemoMovie();
-
-            //userAccessor.delete(23);
-
+            //PersonAccessor personAccessor = new PersonAccessor();
+            //UserAccessor userAccessor = new UserAccessor();
+            Movie demoMovie = new UnitTest().loadDemoMovie();
+            MovieAccessor movieAccessor = new MovieAccessor();
+            movieAccessor.create(demoMovie);
             //userAccessor.create(new UnitTest().LoadDemoUser());
-            User demoUser = userAccessor.findById(25);
-            System.out.println(demoUser.toString());
+            //User demoUser = userAccessor.findById(25);
+            //System.out.println(demoUser.toString());
 
 
 

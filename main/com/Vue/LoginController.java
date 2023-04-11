@@ -16,7 +16,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable{
+public class LoginController extends Controller implements Initializable{
 
     @FXML
     private Button cancelButton;

@@ -27,7 +27,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.Slider;
 
-public class AdminController implements Initializable {
+public class AdminController extends Controller implements Initializable  {
 
 
     @Override

@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class PresApp extends Application {
+public class PresApp  extends Application {
 
 
 
     @Override
     public void start(Stage stage) throws IOException, SQLException, ClassNotFoundException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/moviePres.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/moviePres.fxml"));
         MovieAccessor movieAccessor = new MovieAccessor();
 
 
@@ -27,7 +27,7 @@ public class PresApp extends Application {
         Movie movie = movieAccessor.findById(54);
         MoviePres controller = loader.<MoviePres>getController();
 
-        controller.updateFromMovie(movie);
+        controller.loadMovie(movie);
 
         stage.setScene(scenes);
         stage.setTitle(movie.getTitle());

@@ -34,7 +34,7 @@ public class testAPP extends Application {
         Movie movie = movieAccessor.findById(54);
         MovieIntegrationController controller = loader.<MovieIntegrationController>getController();
 
-        controller.LoadPoster(movie);
+        //controller.LoadPoster(movie);
 
         primaryStage.setScene(scenes);
         primaryStage.setResizable(false);

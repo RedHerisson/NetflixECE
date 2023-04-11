@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class RegisterController {
+public class RegisterController extends Controller {
 
     public void createAccount(){
         try{

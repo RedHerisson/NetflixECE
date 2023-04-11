@@ -1,6 +1,9 @@
 package com.Vue;
 
+import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
+import com.Vue.Carousel.CarouselController;
+import com.Vue.Carousel.MovieIntegrationController;
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +12,10 @@ import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -20,32 +25,17 @@ import javafx.scene.media.MediaView;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MoviePres implements Initializable {
+public class MoviePres  extends Controller implements  Initializable {
 
     @FXML
-    private Label title, synopsis, DirectorLabel, ActorsLabel ;
-
+    private VBox mainContainer;
     @FXML
-    private Button LaunchPlayerButton;
-    
-    @FXML
-    private StackPane MainContainer;
-    @FXML
-    private MediaView trailerIntegration;
-    @FXML
-    private MediaView trailerBlur;
-
-
-    @FXML
-    private AnchorPane TrailerConteneur;
-
-    @FXML
-    private VBox InformationConteneur;
-
-    private MediaPlayer player;
-    private Media movie;
+    private Pane suggestionContainer;
+    private VBox MovieInfoContainer;
 
 
     @Override
@@ -53,71 +43,38 @@ public class MoviePres implements Initializable {
 
     }
 
-    public void updateFromMovie(Movie movie) {
-        title.setText(movie.getTitle());
-        synopsis.setText(movie.getSummary());
-        DirectorLabel.setText(" " + movie.getDirector().getSurname() + " " + movie.getDirector().getName());
-        String actors = "";
-        for (int i = 0; i < movie.getActors().size(); i++) {
-            actors += movie.getActors().get(i).getSurname() + " " + movie.getActors().get(i).getName() + ", ";
+
+    public void loadMovie(Movie movie) throws IOException {
+
+        FXMLLoader movieInfoPagingData = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
+        VBox MovieInfoContainer = movieInfoPagingData.load();
+        MovieInfoController InfoController = movieInfoPagingData.getController();
+        InfoController.updateFromMovie(movie);
+        InfoController.setMediaHeightClip(800); // TODO: change for responsive
+
+        mainContainer.getChildren().add(0, MovieInfoContainer);
+
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/Carousel.fxml"));
+            VBox playlist = fxmlLoader.load();
+            // change playlist margin
+            playlist.setMargin(playlist, new javafx.geometry.Insets(30, 0, 0, 0));
+            CarouselController controller = fxmlLoader.<CarouselController>getController();
+            controller.setTitle("Dans le même genre");
+
+            MovieAccessor movieAccessor = new MovieAccessor();
+            movies.add( movieAccessor.findById( movie.getId() ) );
+            controller.LoadMovies(movies);
+            suggestionContainer.getChildren().add(playlist);
+            suggestionContainer.setPrefHeight(playlist.getPrefHeight() + 1000);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        actors = actors.substring(0, actors.length() - 2);
-        ActorsLabel.setText(actors);
-
-
-        File file = new File(movie.getTeaserPath());
-        Media movieFile = new Media(file.toURI().toString());
-        player = new MediaPlayer(movieFile);
-        trailerIntegration.setMediaPlayer(player);
-        trailerBlur.setMediaPlayer(player);
-
-
-        trailerBlur.setEffect(new BoxBlur(100, 100, 3));
-
-
-        InvalidationListener resizeTrailer = observable -> {
-            trailerIntegration.setFitWidth(TrailerConteneur.getWidth());
-            trailerIntegration.setFitHeight(TrailerConteneur.getHeight());
-
-
-            Bounds actualVideoSize = trailerIntegration.getLayoutBounds();
-            trailerIntegration.setX((TrailerConteneur.getWidth() - actualVideoSize.getWidth()) / 2);
-            trailerIntegration.setY((TrailerConteneur.getHeight() - actualVideoSize.getHeight()) / 2);
-
-        };
-
-        InvalidationListener resizeBlur = observable -> {
-            trailerIntegration.setFitWidth(MainContainer.getWidth());
-            trailerIntegration.setFitHeight(MainContainer.getHeight());
-
-
-            Bounds actualVideoSize = trailerIntegration.getLayoutBounds();
-            trailerIntegration.setX((MainContainer.getWidth() - actualVideoSize.getWidth()) / 2);
-            trailerIntegration.setY((MainContainer.getHeight() - actualVideoSize.getHeight()) / 2);
-        };
-
-        TrailerConteneur.heightProperty().addListener(resizeTrailer);
-        TrailerConteneur.widthProperty().addListener(resizeTrailer);
-
-
-        MainContainer.heightProperty().addListener(resizeBlur);
-        MainContainer.widthProperty().addListener(resizeBlur);
-
-        player.setVolume(0);
-        player.play();
-        player.setCycleCount(MediaPlayer.INDEFINITE);
-
-        LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("/ressources/View/VideoPlayer/player.fxml"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            LaunchPlayerButton.getScene().setRoot(root);
-        });
-
-
-
     }
 }

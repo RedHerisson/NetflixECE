@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane prefHeight="645.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.MoviePres">
+   <content>
+      <VBox fx:id="mainContainer" prefHeight="783.0" prefWidth="1275.0" style="-fx-background-color: rgba(14, 23, 30, 1);">
+         <children>
+            <StackPane prefHeight="329.0" prefWidth="1275.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Pane fx:id="suggestionContainer1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="359.0" prefWidth="1275.0" style="-fx-background-color: linear-gradient(from 50% 30% to 50% 0%, rgba(14, 23, 30, 1), rgba(14, 23, 30, 0));">
+                     <padding>
+                        <Insets left="20.0" top="200.0" />
+                     </padding>
+                  </Pane>
+                  <Pane fx:id="suggestionContainer" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="346.0" prefWidth="1275.0" style="-fx-background-color: linear-gradient(from 50% 30% to 50% 0%, rgba(14, 23, 30, 1), rgba(14, 23, 30, 0));">
+                     <padding>
+                        <Insets left="20.0" top="200.0" />
+                     </padding>
+                     <StackPane.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </StackPane.margin>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

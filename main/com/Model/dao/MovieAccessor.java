@@ -37,6 +37,7 @@ public class MovieAccessor extends Accessor<Movie> {
      * @throws SQLException erreur SQL
      * @throws ClassNotFoundException
      * @throws IOException
+     * @warning Ne charge pas les poster des films, utiliser LoadPoster pour charger les poster
      */
     @Override
     public Movie findById(int id) throws SQLException, ClassNotFoundException, IOException {
@@ -66,16 +67,32 @@ public class MovieAccessor extends Accessor<Movie> {
             String summary = result.getString(8);
             String teaserPath = result.getString(9);
             boolean awarded = result.getBoolean(10);
-            BufferedImage thumbnail = ImageIO.read(result.getBlob(11).getBinaryStream());
             int viewCount = result.getInt(12);
             int rating = result.getInt(13);
 
             result.close();
 
-            return new Movie(id, title,thumbnail, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
+            return new Movie(id, title, null, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
         }
         result.close();
         System.out.println("Movie not found");
+        return null;
+    }
+
+    /**
+     * Charge le poster d'un film en mémoire
+     * @param id ID du film
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     */
+    public BufferedImage loadPoster(int id) throws SQLException, IOException {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT thumbnail FROM Movie WHERE ID = " + id);
+        if (result.next()) {
+            InputStream is = result.getBinaryStream(1);
+            BufferedImage image = ImageIO.read(is);
+            return image;
+        }
         return null;
     }
 
@@ -148,7 +165,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
         ByteArrayOutputStream binaryStream = new ByteArrayOutputStream();
         // image to blob
-        ImageIO.write(movie.getThumbnail(), "png", binaryStream);
+        ImageIO.write(movie.getThumbnail(), "jpg", binaryStream);
         InputStream inputStream = new ByteArrayInputStream(binaryStream.toByteArray());
         pre.setBlob(10, inputStream);
 
