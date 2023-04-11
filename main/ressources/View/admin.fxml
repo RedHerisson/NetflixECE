@@ -55,7 +55,7 @@
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </VBox.margin>
                            <children>
-                              <LineChart layoutX="16.0" layoutY="40.0" prefHeight="360.0" prefWidth="330.0">
+                              <LineChart fx:id="lineChart" layoutX="16.0" layoutY="40.0" prefHeight="360.0" prefWidth="330.0">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>
@@ -79,7 +79,7 @@
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </VBox.margin>
                            <children>
-                              <BarChart fx:id="barChart" layoutX="51.0" layoutY="51.0" prefHeight="432.0" prefWidth="517.0">
+                              <BarChart fx:id="barChart1" layoutX="51.0" layoutY="51.0" prefHeight="432.0" prefWidth="517.0">
                                 <xAxis>
                                   <CategoryAxis fx:id="CategoryAxis" label="Genres" side="BOTTOM" />
                                 </xAxis>
@@ -108,7 +108,7 @@
          <children>
             <VBox layoutY="209.0" prefHeight="227.0" prefWidth="203.0" style="-fx-background-color: #04194F;">
                <children>
-                  <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#HandleShowStatisticsGenre" pickOnBounds="false" prefHeight="67.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Statistiques" textFill="WHITE">
+                  <Button fx:id="button1" defaultButton="true" focusTraversable="false" mnemonicParsing="false" onAction="#HandleShowStatisticsGenre" onMouseEntered="#setOnMouseEntered1" onMouseExited="#setOnMouseExited1" pickOnBounds="false" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Statistiques" textFill="WHITE">
                      <font>
                         <Font name="Symbol" size="20.0" />
                      </font>
@@ -123,7 +123,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#HandleCatalogGestion" prefHeight="70.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Catalogue" textFill="WHITE">
+                  <Button fx:id="button2" mnemonicParsing="false" onAction="#HandleCatalogGestion" onMouseEntered="#setOnMouseEntered2" onMouseExited="#setOnMouseExited2" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Catalogue" textFill="WHITE">
                      <font>
                         <Font name="Symbol" size="20.0" />
                      </font>
@@ -135,7 +135,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#HandleUser" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Utilisateurs" textFill="WHITE">
+                  <Button fx:id="button3" mnemonicParsing="false" onAction="#HandleUser" onMouseEntered="#setOnMouseEntered3" onMouseExited="#setOnMouseExited3" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Utilisateurs" textFill="WHITE">
                      <font>
                         <Font name="Symbol" size="20.0" />
                      </font>
@@ -149,7 +149,7 @@
                   </Button>
                </children>
             </VBox>
-            <Button layoutY="555.0" mnemonicParsing="false" onAction="#HandleClose" prefHeight="76.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Quitter" textFill="WHITE">
+            <Button fx:id="button4" layoutY="555.0" mnemonicParsing="false" onAction="#HandleClose" onMouseEntered="#setOnMouseEntered4" onMouseExited="#setOnMouseExited4" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Quitter" textFill="WHITE">
                <font>
                   <Font name="Symbol" size="20.0" />
                </font>

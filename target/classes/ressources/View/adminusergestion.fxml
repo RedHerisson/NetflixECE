@@ -8,16 +8,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane prefHeight="645.0" prefWidth="1275.0" style="-fx-background-color: #0e171e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.AdminController">
    <children>
       <AnchorPane prefHeight="645.0" prefWidth="203.0" style="-fx-background-color: #04194F;">
          <children>
             <VBox layoutY="209.0" prefHeight="257.0" prefWidth="203.0" style="-fx-background-color: #04194F;">
                <children>
-                  <Button mnemonicParsing="false" onAction="#HandleShowStatisticsGenre" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Statistiques" textFill="WHITE">
+                  <Button fx:id="button1" mnemonicParsing="false" onAction="#HandleShowStatisticsGenre" onMouseEntered="#setOnMouseEntered1" onMouseExited="#setOnMouseExited1" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Statistiques" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="Symbol" size="20.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
@@ -27,9 +26,9 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#HandleCatalogGestion" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Gestion de catalogue" textFill="WHITE">
+                  <Button fx:id="button2" mnemonicParsing="false" onAction="#HandleCatalogGestion" onMouseEntered="#setOnMouseEntered2" onMouseExited="#setOnMouseExited2" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Catalogue" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="Symbol" size="20.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
@@ -39,9 +38,9 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Gestion d'utilisateur" textFill="WHITE">
+                  <Button fx:id="button3" mnemonicParsing="false" onMouseEntered="#setOnMouseEntered3" onMouseExited="#setOnMouseExited3" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Utilisateurs" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="Symbol" size="20.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
@@ -53,9 +52,9 @@
                   </Button>
                </children>
             </VBox>
-            <Button layoutY="567.0" mnemonicParsing="false" onAction="#HandleClose" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Quitter" textFill="WHITE">
+            <Button fx:id="button4" layoutY="567.0" mnemonicParsing="false" onAction="#HandleClose" onMouseEntered="#setOnMouseEntered4" onMouseExited="#setOnMouseExited4" prefHeight="78.0" prefWidth="203.0" style="-fx-background-color: #04194F; -fx-background-radius: 30;" text="Quitter" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="Symbol" size="20.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">

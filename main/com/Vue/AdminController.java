@@ -14,7 +14,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.Node;
-
+import javafx.scene.input.MouseEvent;
+import java.awt.event.KeyEvent;
+//import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -32,17 +34,15 @@ import javafx.scene.control.Slider;
 public class AdminController implements Initializable {
 
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        buttonAdd= new Button();
-        hbox = new HBox();
-        gridPane= new GridPane();
-        brandingImageView = new ImageView();
-        comboBox = new ComboBox();
-    }
 
+    }
+    
     @FXML
-    private AnchorPane anchorPane;
+    private BarChart barChart1;
 
     @FXML
     private Scene scene;
@@ -50,15 +50,10 @@ public class AdminController implements Initializable {
     private Stage stage;
     @FXML
     private Parent root;
-    @FXML
-    private HBox hbox;
-    @FXML
-    private Button buttonAdd;
-    @FXML
-    private GridPane gridPane;
-    @FXML
-    private ImageView brandingImageView;
 
+
+    @FXML
+    private PieChart pieChart;
     @FXML
     private CategoryAxis xAxis;
     @FXML
@@ -68,8 +63,23 @@ public class AdminController implements Initializable {
     private ComboBox comboBox;
 
     @FXML
-    private void HandleShowStatisticsGenre(ActionEvent event) throws IOException{
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
 
+    @FXML
+    private LineChart lineChart;
+    @FXML
+    private void HandleShowStatisticsGenre(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/ressources/View/admin.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Genres");
@@ -79,7 +89,7 @@ public class AdminController implements Initializable {
         yAxis.setTickLabelFill(Color.WHITE);
         BarChart barChart = new BarChart(xAxis, yAxis);
         HBox hbox = new HBox();
-
+        pieChart = new PieChart();
         XYChart.Series data = new XYChart.Series();
         data.setName("Nombre de visionnages selon le genre");
 
@@ -90,13 +100,10 @@ public class AdminController implements Initializable {
         data.getData().add(new XYChart.Data("Aventure",56240));
         data.getData().add(new XYChart.Data("Romantique",12450));
 
-        barChart.getData().add(data);
+        barChart1.getData().add(data);
+//        hbox.getChildren().add(barChart);
+//        hbox.setMargin(barChart, new Insets(10, 10, 10, 10));
 
-        //vbox.getChildren().add(barChart);
-        //borderPane.setCenter(barChart);
-        hbox.getChildren().add(barChart);
-        hbox.setMargin(barChart, new Insets(10, 10, 10, 10));
-        //gridPane.add(barChart,0,0);
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Pulp Fiction", 1253000),
@@ -111,16 +118,13 @@ public class AdminController implements Initializable {
                 new PieChart.Data("Memento", 852563)
         );
 
-        PieChart pieChart = new PieChart(pieChartData);
+
         pieChart.setTitle("Films les plus regardés");
         pieChart.setClockwise(true);
         pieChart.setLabelLineLength(10);
         pieChart.setStartAngle(180);
 
 
-        //borderPane2.setTop(pieChart);
-        //vbox.getChildren().add(pieChart);
-        //gridPane.add(pieChart,0,1);
 
         ObservableList<PieChart.Data> pieChartDataSexPercentage = FXCollections.observableArrayList(
                 new PieChart.Data("Hommes", 12500),
@@ -136,9 +140,6 @@ public class AdminController implements Initializable {
         pieChartSexPercentage.setLabelsVisible(false);
 
 
-        //borderPane.setRight(pieChartSexPercentage);
-        //vbox.getChildren().add(pieChartSexPercentage);
-        //gridPane.add(pieChartSexPercentage,1,0);
 
         NumberAxis xAxis2 = new NumberAxis();
         xAxis2.setLabel("No of employees");
@@ -161,9 +162,6 @@ public class AdminController implements Initializable {
 
         lineChart.getData().add(dataSeries1);
 
-        //borderPane.setTop(lineChart);
-        //vbox.getChildren().add(lineChart);
-        //gridPane.add(lineChart,1,1);
 
     }
 
@@ -206,6 +204,54 @@ public class AdminController implements Initializable {
         stage.show();
 
 
+    }
+
+    @FXML
+    private void setOnMouseEntered1(MouseEvent event) {
+        button1.setStyle("-fx-background-color: #FFFFFF; -fx-background-radius: 30; -fx-border-radius: 30;");
+        button1.setTextFill(Color.DARKBLUE);
+    }
+
+    @FXML
+    private void setOnMouseExited1(MouseEvent event) {
+        button1.setStyle("-fx-background-color: #04194F");
+        button1.setTextFill(Color.WHITE);
+    }
+
+    @FXML
+    private void setOnMouseEntered2(MouseEvent event) {
+        button2.setStyle("-fx-background-color: #FFFFFF; -fx-background-radius: 30; -fx-border-radius: 30;");
+        button2.setTextFill(Color.DARKBLUE);
+    }
+
+    @FXML
+    private void setOnMouseExited2(MouseEvent event) {
+        button2.setStyle("-fx-background-color: #04194F");
+        button2.setTextFill(Color.WHITE);
+    }
+
+    @FXML
+    private void setOnMouseEntered3(MouseEvent event) {
+        button3.setStyle("-fx-background-color: #FFFFFF; -fx-background-radius: 30; -fx-border-radius: 30;");
+        button3.setTextFill(Color.DARKBLUE);
+    }
+
+    @FXML
+    private void setOnMouseExited3(MouseEvent event) {
+        button3.setStyle("-fx-background-color: #04194F");
+        button3.setTextFill(Color.WHITE);
+    }
+
+    @FXML
+    private void setOnMouseEntered4(MouseEvent event) {
+        button4.setStyle("-fx-background-color: #FFFFFF; -fx-background-radius: 30; -fx-border-radius: 30;");
+        button4.setTextFill(Color.DARKBLUE);
+    }
+
+    @FXML
+    private void setOnMouseExited4(MouseEvent event) {
+        button4.setStyle("-fx-background-color: #04194F");
+        button4.setTextFill(Color.WHITE);
     }
 
     @FXML
