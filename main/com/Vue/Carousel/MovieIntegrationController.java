@@ -66,7 +66,6 @@ public class MovieIntegrationController implements Initializable {
             darkLayer.opacityProperty().setValue(0.4);
             posterContainer.setFitWidth(SELECTED_WIDTH);
             posterContainer.setFitHeight(SELECTED_HEIGH);
-            System.out.println("Mouse entered");
         }
     }
     @FXML
@@ -76,7 +75,6 @@ public class MovieIntegrationController implements Initializable {
             darkLayer.opacityProperty().setValue(0);
             posterContainer.setFitWidth(WIDTH);
             posterContainer.setFitHeight(HEIGHT);
-            System.out.println("Mouse exited");
         }
     }
 

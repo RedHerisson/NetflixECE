@@ -34,11 +34,6 @@ public class PresApp  extends Application {
         stage.setResizable(false);
         stage.show();
 
-
-
-
-
-
     }
 
 

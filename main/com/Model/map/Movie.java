@@ -3,28 +3,43 @@ package com.Model.map;
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.fxml.FXML;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Movie extends BdModel {
 
+    @JsonProperty("title")
     private String title;
 
+    @JsonProperty("poster")
     private BufferedImage thumbnail;
 
     private String filePath;
 
+    @JsonProperty("Released")
     private LocalDate releaseDate;
 
-    // length in second
+    @JsonProperty("Runtim")
     private int length;
 
+    @JsonProperty("Director")
     private Person director;
 
+    @JsonProperty("Actors")
     private ArrayList<Person> actors;
 
+    @JsonProperty("Genre")
     private String type;
 
+    @JsonProperty("Plot")
     private String summary;
 
+    @JsonProperty("Trailer")
     private String teaserPath;
 
     private double rating;
@@ -165,4 +180,5 @@ public class Movie extends BdModel {
     public void setViewCount(int viewCount) {
         this.viewCount = viewCount;
     }
+
 }

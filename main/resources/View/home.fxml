@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <StackPane alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.HomeController">
    <children>
-      <ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1274.0">
+      <ScrollPane fx:id="mainContainer" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1274.0">
         <content>
           <AnchorPane fx:id="ScrollableContainer" minWidth="-Infinity" prefHeight="645.0" prefWidth="1259.0" style="-fx-background-color: rgb(14, 23, 30,);">
                <children>

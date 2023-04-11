@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
 
     @FXML
+    private ScrollPane mainContainer;
+    @FXML
     private AnchorPane ScrollableContainer;
     @FXML
     private VBox PlaylistContainer;
@@ -37,7 +39,13 @@ public class HomeController implements Initializable {
 
 
         PlaylistContainer.getChildren().add(mvContainer);
+        System.out.println(ScrollableContainer.getPrefHeight());
         ScrollableContainer.setPrefHeight(ScrollableContainer.getPrefHeight() + mvContainer.getPrefHeight() + PlaylistContainer.getSpacing());
+        // print all value for debug
+        System.out.println("mvContainer.getPrefHeight() = " + mvContainer.getPrefHeight());
+        System.out.println("PlaylistContainer.getSpacing() = " + PlaylistContainer.getSpacing());
+        System.out.println("ScrollableContainer.getPrefHeight() = " + ScrollableContainer.getPrefHeight());
+        
     }
 
     public void AddPromotion(Movie movie) throws IOException, SQLException {
@@ -50,5 +58,10 @@ public class HomeController implements Initializable {
         // update the height of the scroll pane to fit the new content
         ScrollableContainer.setPrefHeight(ScrollableContainer.getPrefHeight() + PromoContainer.getPrefHeight() + PlaylistContainer.getSpacing());
 
+    }
+
+    public void backToTop() {
+        // set the scroll pane to the top
+        mainContainer.setVvalue(0);
     }
 }

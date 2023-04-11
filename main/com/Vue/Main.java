@@ -10,7 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import static com.Controller.tempoLoadDataBase.JsonToMovie;
+import static com.Controller.tempoLoadDataBase.OMDBGetById;
 
 public class Main extends Application {
 
@@ -29,9 +33,11 @@ public class Main extends Application {
         // charger 10 films
         for(int i = 0; i < 5; i++){
             movies.add(movieAccessor.findById(54));
+            Movie movie;
+
         }
         for(int i = 0; i < 10; i++){
-            movies.add(movieAccessor.findById(57));
+            movies.add(movieAccessor.findById(58));
         }
 
         Movie movie = movieAccessor.findById(54);
@@ -49,12 +55,19 @@ public class Main extends Application {
 
         //controller.AddPromotion(movie);
 
-
-
-
+        controller.backToTop();
         primaryStage.setScene(scenes);
         primaryStage.setResizable(false);
         primaryStage.show();
+        Movie movie2 = null;
+       // try {
+            //movie2 = JsonToMovie(OMDBGetById("tt0133093"));
+            //System.out.println(movie2);
+            //movieAccessor.create(movie2);
+       // } catch (IOException e) {
+         //   throw new RuntimeException(e);
+        //}
+
     }
 
     public static void Main(String[] args){

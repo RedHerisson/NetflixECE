@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.Carousel.CarouselController">
+<VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.Carousel.CarouselController">
    <children>
       <Label fx:id="title" prefHeight="27.0" prefWidth="541.0" text="Label" textFill="WHITE">
          <VBox.margin>
