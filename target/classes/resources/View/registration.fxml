@@ -32,11 +32,11 @@
       <Label layoutX="170.0" layoutY="208.0" text="Username" />
       <TextField fx:id="UserName" layoutX="170.0" layoutY="226.0" prefHeight="25.0" prefWidth="247.0" promptText="Username" />
       <Label layoutX="170.0" layoutY="259.0" text="Password" />
-      <TextField fx:id="Password" layoutX="170.0" layoutY="276.0" prefHeight="25.0" prefWidth="247.0" promptText="Password" />
       <Label layoutX="170.0" layoutY="310.0" text="Confirm Password" />
       <Button fx:id="Register" layoutX="170.0" layoutY="408.0" mnemonicParsing="false" onAction="#RegisterAction" prefHeight="25.0" prefWidth="96.0" text="Register " />
       <Button fx:id="Close" layoutX="321.0" layoutY="408.0" mnemonicParsing="false" onAction="#CloseAction" prefHeight="25.0" prefWidth="96.0" text="Close" />
       <Label fx:id="loginMessage" layoutX="170.0" layoutY="366.0" prefHeight="17.0" prefWidth="247.0" textFill="#e40d0d" />
       <PasswordField fx:id="ConfirmPassword" layoutX="170.0" layoutY="327.0" prefHeight="25.0" prefWidth="247.0" promptText="Confirm Password " />
+      <PasswordField fx:id="Password" layoutX="170.0" layoutY="276.0" prefHeight="25.0" prefWidth="247.0" promptText="Password" />
    </children>
 </AnchorPane>

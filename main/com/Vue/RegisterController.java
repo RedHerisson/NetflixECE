@@ -30,7 +30,7 @@ public class RegisterController {
     private TextField LastName;
 
     @FXML
-    private TextField Password;
+    private PasswordField Password;
 
     @FXML
     private PasswordField ConfirmPassword;
@@ -62,23 +62,15 @@ public class RegisterController {
         }
         else if (Password.getText().compareTo(ConfirmPassword.getText())==0){
             loginMessage.setText("Password OK");
+
+            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
+            Scene login = new Scene(registration);
+            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            appStage.setScene(login);
+            appStage.show();
         }
-
-
-        /*
-
-        Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-        Scene login = new Scene(registration);
-        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        appStage.setScene(login);
-        appStage.show();
-
-         */
-
     }
-
-
 
     public void CloseAction(ActionEvent actionEvent) {
         Stage stage = (Stage) Close.getScene().getWindow();

@@ -62,7 +62,48 @@ public class LoginController implements Initializable {
             appStage.setScene(login);
             appStage.show();
 
-        } else{
+        }
+        else if ((UsernameLogin.getText().compareTo("nono")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
+            loginMessageError.setText("OK");
+            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
+            Scene login = new Scene(registration);
+            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            appStage.setScene(login);
+            appStage.show();
+
+        }
+        else if ((UsernameLogin.getText().compareTo("raph")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
+            loginMessageError.setText("OK");
+            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
+            Scene login = new Scene(registration);
+            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            appStage.setScene(login);
+            appStage.show();
+
+        }
+        else if ((UsernameLogin.getText().compareTo("gaelle")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
+            loginMessageError.setText("OK");
+            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
+            Scene login = new Scene(registration);
+            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            appStage.setScene(login);
+            appStage.show();
+
+        }
+        else if ((UsernameLogin.getText().compareTo("igor")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
+            loginMessageError.setText("OK");
+            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
+            Scene login = new Scene(registration);
+            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            appStage.setScene(login);
+            appStage.show();
+
+        }
+        else{
             loginMessageError.setText("UserName or Password aren't correct");
         }
 
