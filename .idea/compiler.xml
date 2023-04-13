@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="videoPlayer" target="19" />
+      <module name="demo1" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>
