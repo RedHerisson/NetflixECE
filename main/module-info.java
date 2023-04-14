@@ -20,4 +20,6 @@ module netflix {
     opens com.Vue.VideoPlayer to javafx.fxml;
     exports com.Vue.Carousel;
     opens com.Vue.Carousel to javafx.fxml;
+    exports com.Controller;
+    opens com.Controller to javafx.fxml;
 }

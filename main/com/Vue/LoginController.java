@@ -1,4 +1,7 @@
 package com.Vue;
+import com.Controller.AppController;
+import com.Model.dao.UserAccessor;
+import com.Model.map.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,12 +13,13 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.io.PushbackReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 
-public class LoginController implements Initializable {
+public class LoginController  extends Controller implements Initializable {
 
     @FXML
     private Button cancelButton;
@@ -29,20 +33,15 @@ public class LoginController implements Initializable {
     private PasswordField enterPasswordField;
     @FXML
     private Button RegisterButton;
-    private Parent login;
+    private AppController appController;
 
 
     @FXML
     void RegisterButtonOnAction(ActionEvent event) throws Exception{
         Stage stage = (Stage) RegisterButton.getScene().getWindow();
-        //loginMessageError.setText("You try to register");
+        loginMessageError.setText("You try to register");
 
-        Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/registration.fxml"));
-        Scene login = new Scene(registration);
-        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        appStage.setScene(login);
-        appStage.show();
+        appController.setRegisterPage();
     }
 
     @FXML
@@ -53,62 +52,23 @@ public class LoginController implements Initializable {
         System.out.println(UsernameLogin.getText());
         System.out.println(enterPasswordField.getText());
 
-        if ((UsernameLogin.getText().compareTo("admin")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
-            loginMessageError.setText("OK");
-            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-            Scene login = new Scene(registration);
-            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        UserAccessor userAccessor = new UserAccessor();
 
-            appStage.setScene(login);
-            appStage.show();
-
+        User foundUser = userAccessor.findByName(UsernameLogin.getText());
+        if( foundUser != null ) {
+            System.out.println("User found: " + foundUser);
+            if( userAccessor.checkPwd(foundUser.getId(), enterPasswordField.getText() ) ) {
+                appController.loginComplete(foundUser);
+            } else {
+                loginMessageError.setText("Password is incorrect");
+            }
+        } else {
+            loginMessageError.setText("User not found");
         }
-        else if ((UsernameLogin.getText().compareTo("nono")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
-            loginMessageError.setText("OK");
-            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-            Scene login = new Scene(registration);
-            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    }
 
-            appStage.setScene(login);
-            appStage.show();
-
-        }
-        else if ((UsernameLogin.getText().compareTo("raph")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
-            loginMessageError.setText("OK");
-            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-            Scene login = new Scene(registration);
-            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            appStage.setScene(login);
-            appStage.show();
-
-        }
-        else if ((UsernameLogin.getText().compareTo("gaelle")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
-            loginMessageError.setText("OK");
-            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-            Scene login = new Scene(registration);
-            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            appStage.setScene(login);
-            appStage.show();
-
-        }
-        else if ((UsernameLogin.getText().compareTo("igor")==0) && (enterPasswordField.getText().compareTo("admin")==0)) {
-            loginMessageError.setText("OK");
-            Parent registration = FXMLLoader.load(getClass().getResource("/resources/View/test.fxml"));
-            Scene login = new Scene(registration);
-            Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            appStage.setScene(login);
-            appStage.show();
-
-        }
-        else{
-            loginMessageError.setText("UserName or Password aren't correct");
-        }
-
-
-
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 
     public void cancelButtonOnAction(ActionEvent event){
@@ -120,49 +80,6 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-
-
-
-
-
-
-
-
-
-
-    /*
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //loginButton.setOnAction(actionEvent -> login());
-    }
-*/
-
-/*
-    public void login(){
-        PreparedStatement state = null;
-        ResultSet result = null;
-        Connection con = DatabaseConnection.getConnection();
-        try {
-            state = con.prepareStatement("SELECT * FROM users WHERE USERNAME =? AND PASSWORD =?");
-            state.setString(1, UsernameLogin.getText());
-            state.setString(2, enterPasswordField.getText());
-            result = state.executeQuery();
-            if(result.next()){
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Login successfull", ButtonType.OK);
-                alert.show();
-            }
-            else{
-                Alert alert = new Alert(Alert.AlertType.WARNING, "Login Error", ButtonType.OK);
-                alert.show();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
-    }
-*/
-
 }
 
 

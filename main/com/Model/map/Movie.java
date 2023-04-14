@@ -1,6 +1,7 @@
 package com.Model.map;
 
 import java.awt.image.BufferedImage;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -34,7 +35,7 @@ public class Movie extends BdModel {
     private ArrayList<Person> actors;
 
     @JsonProperty("Genre")
-    private String type;
+    private ArrayList<String> type;
 
     @JsonProperty("Plot")
     private String summary;
@@ -48,7 +49,7 @@ public class Movie extends BdModel {
 
     private int viewCount;
 
-    public Movie(int id, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, String type, String summary, String teaserPath, boolean awarded, int viewCount, double rating) {
+    public Movie(int id, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, ArrayList<String> type, String summary, String teaserPath, boolean awarded, int viewCount, double rating) {
         super(id);
         this.title = title;
         this.thumbnail = thumbnail;
@@ -101,7 +102,14 @@ public class Movie extends BdModel {
         actors.remove(actor);
     }
 
-    public String getType() {
+    public ArrayList<String> getTypeArray() {
+        return type;
+    }
+    public String getTypes() {
+        String type = "";
+        for (String s : this.type) {
+            type += s + ", ";
+        }
         return type;
     }
 
@@ -158,7 +166,11 @@ public class Movie extends BdModel {
     }
 
     public void setType(String type) {
-        this.type = type;
+
+        String[] types = type.split(", ");
+        for (String s : types) {
+            this.type.add(s);
+        }
     }
 
     public void setSummary(String summary) {

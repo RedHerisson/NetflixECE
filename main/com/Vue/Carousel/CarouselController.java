@@ -1,7 +1,9 @@
 package com.Vue.Carousel;
 
+import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
+import com.Vue.Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CarouselController implements Initializable {
+public class CarouselController extends Controller implements Initializable {
 
     @FXML
     private ImageView nextArrow;
@@ -129,7 +131,9 @@ public class CarouselController implements Initializable {
         for(int i = 0; i < nbrMoviesPerPage; i++ ) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/MovieIntegration.fxml"));
             StackPane mvContainer = fxmlLoader.load();
-             controllerList.add(fxmlLoader.<MovieIntegrationController>getController());
+            MovieIntegrationController controller = fxmlLoader.getController();
+            controller.setAppController(appController);
+            controllerList.add(controller);
             carouselContainer.getChildren().add(mvContainer);
         }
         System.out.println("Nombre de Films : " + nbrMoviesPerPage);
@@ -148,5 +152,10 @@ public class CarouselController implements Initializable {
     public void setTitle(String title) {
 
         this.title.setText(title);
+    }
+
+    @Override
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

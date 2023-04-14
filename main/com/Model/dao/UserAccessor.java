@@ -69,9 +69,33 @@ public class UserAccessor extends PersonAccessor {
             
 
             return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), playlistList,
-                    historic, favTypeList, userDataAccessor.findById(id), admin);
+                    historic, favTypeList, userDataAccessor.findAllDataFromUser(id), admin);
         }
         return null;
+    }
+
+    public User findByName( String name ) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE pseudo = " + "'" +  name + "'" );
+        if( findUser.next() ) {
+            return findById( findUser.getInt(1) );
+        }
+        else return null;
+    }
+
+    public User findByMail( String mail ) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE email = " + "'" +  mail + "'" );
+        if( findUser.next() ) {
+            return findById( findUser.getInt(1) );
+        }
+        else return null;
+    }
+
+    public boolean checkPwd( int id, String pwd ) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT pwd FROM User WHERE ID = " + id );
+        if( findUser.next() ) {
+            return findUser.getString(1).equals(pwd);
+        }
+        else return false;
     }
 
     /**
@@ -114,9 +138,12 @@ public class UserAccessor extends PersonAccessor {
         historic.setOwnerId(usr.getId());
         playlistAccessor.create(historic);
 
-        UserData data = usr.getData();
-        data.setOwnerId(usr.getId());
-        userDataAccessor.create( data );
+        ArrayList<UserData> dataArray = usr.getData();
+        for( UserData data : dataArray) {
+            data.setOwnerId(usr.getId());
+            userDataAccessor.create( data );
+        }
+
 
         return usr.getId();
     }

@@ -1,10 +1,15 @@
 package com.Model.map;
 
+import com.Model.dao.MovieAccessor;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class UserData extends BdModel {
 
     public int ownerId;
 
-    public Movie movie;
+    public int movieId;
 
     public boolean view;
 
@@ -15,10 +20,10 @@ public class UserData extends BdModel {
     private double rate;
 
 
-    public UserData(int id, int UserID, Movie movie, boolean view, int lengthAlreadySeen, String languageSelected, double rate) {
+    public UserData(int id, int UserID, int movieId, boolean view, int lengthAlreadySeen, String languageSelected, double rate) {
         super(id);
         this.ownerId = UserID;
-        this.movie = movie;
+        this.movieId = movieId;
         this.view = view;
         this.lengthAlreadySeen = lengthAlreadySeen;
         this.languageSelected = languageSelected;
@@ -29,8 +34,22 @@ public class UserData extends BdModel {
         return ownerId;
     }
 
+    public int getMovieId() {
+        return movieId;
+    }
+
     public Movie getMovie() {
-        return movie;
+        try {
+            MovieAccessor movieAccessor = new MovieAccessor();
+            Movie movie = movieAccessor.findById(movieId);
+            return movie;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean isView() {
@@ -53,8 +72,8 @@ public class UserData extends BdModel {
         this.ownerId = ownerId;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public void setMovieId(int movie) {
+        this.movieId = movieId;
     }
 
     public void setView(boolean view) {

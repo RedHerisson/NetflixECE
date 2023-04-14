@@ -3,7 +3,9 @@ package com.Vue.VideoPlayer;
 
 import java.awt.*;
 
+import com.Controller.AppController;
 import com.Model.map.Movie;
+import com.Vue.Controller;
 import javafx.animation.FadeTransition;
 import javafx.scene.input.MouseEvent;
 
@@ -35,7 +37,7 @@ import javafx.util.Duration;
 import static java.lang.Math.abs;
 
 
-public class PlayerController implements Initializable {
+public class PlayerController extends Controller implements Initializable {
 
     @FXML
     private StackPane FullFrame;
@@ -66,6 +68,11 @@ public class PlayerController implements Initializable {
     private Media movieMedia;
     private MediaPlayer player;
 
+    @Override
+    public void setAppController(AppController appController) {
+        this.appController = appController;
+    }
+
     enum stateButton {
         PLAY, RESUME, REPLAY;
 
@@ -95,7 +102,9 @@ public class PlayerController implements Initializable {
 
         viewer.setPreserveRatio(true);
 
-        state = stateButton.RESUME;
+        state = stateButton.PLAY;
+
+        player.play();
 
         controlVisible = false;
 

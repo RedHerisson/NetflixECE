@@ -64,6 +64,11 @@ public class MovieAccessor extends Accessor<Movie> {
             Person director = new Person(personAccessor.findById(result.getInt(6)));
 
             String type = result.getString(7);
+            ArrayList<String> typeArray = new ArrayList<String>();
+            String[] types = type.split(", ");
+            for (String s : types) {
+                typeArray.add(s);
+            }
             String summary = result.getString(8);
             String teaserPath = result.getString(9);
             boolean awarded = result.getBoolean(10);
@@ -72,7 +77,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
             result.close();
 
-            return new Movie(id, title, null, filePath, releaseDate, length, director, actors, type, summary, teaserPath, awarded, viewCount, rating);
+            return new Movie(id, title, null, filePath, releaseDate, length, director, actors, typeArray, summary, teaserPath, awarded, viewCount, rating);
         }
         result.close();
         System.out.println("Movie not found");
@@ -158,7 +163,7 @@ public class MovieAccessor extends Accessor<Movie> {
         pre.setInt(4, movie.getLength());
         pre.setInt(5, personAccessor.update(movie.getDirector()));
 
-        pre.setString(6, movie.getType());
+        pre.setString(6, movie.getTypes());
         pre.setString(7, movie.getSummary());
         pre.setString(8, movie.getTeaserPath());
         pre.setBoolean(9, movie.isAwarded());
@@ -223,5 +228,26 @@ public class MovieAccessor extends Accessor<Movie> {
             personAccessor.delete(Director.getInt(1));
         }
         Director.close();
+    }
+
+    public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
+        ArrayList<Movie> movies = new ArrayList<>();
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie WHERE type = '" + type + "' LIMIT " + max);
+        while (result.next()) {
+            movies.add(findById(result.getInt(1)));
+        }
+        result.close();
+
+        return movies;
+    }
+
+    public ArrayList<Movie> findByDate(int i) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY release_date DESC LIMIT " + i);
+        ArrayList<Movie> movies = new ArrayList<>();
+        while (result.next()) {
+            movies.add(findById(result.getInt(1)));
+        }
+        result.close();
+        return movies;
     }
 }

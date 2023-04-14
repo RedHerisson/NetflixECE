@@ -20,12 +20,12 @@ public class User extends Person {
 
     private ArrayList<String> favouriteType;
 
-    private UserData data;
+    private ArrayList<UserData> data;
 
     private boolean admin;
 
     public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,
-                ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, UserData data, boolean admin) {
+                ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, ArrayList<UserData> data, boolean admin) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
@@ -63,7 +63,7 @@ public class User extends Person {
         return historic;
     }
 
-    public UserData getData() {
+    public ArrayList<UserData> getData() {
         return data;
     }
 
@@ -101,6 +101,21 @@ public class User extends Person {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public void addData(UserData data) {
+        this.data.add(data);
+    }
+
+    public ArrayList<String> getTypeFromHistoric() {
+        ArrayList<String> types = new ArrayList<>();
+        if( this.historic == null)
+            return types;
+        for(Movie movie : this.historic.getMoviesList()) {
+            for(String type : movie.getTypeArray())
+                    types.add(type);
+        }
+        return types;
     }
 
     // to string

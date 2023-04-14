@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.RegisterController">
    <children>
       <AnchorPane layoutX="-10.0" prefHeight="90.0" prefWidth="613.0" style="-fx-background-color: #515151;">
          <children>
@@ -25,18 +30,80 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="170.0" layoutY="108.0" text="First Name" />
-      <TextField fx:id="FirstName" layoutX="170.0" layoutY="125.0" prefHeight="25.0" prefWidth="247.0" promptText="First Name" />
-      <Label layoutX="170.0" layoutY="157.0" text="Last Name" />
-      <TextField fx:id="LastName" layoutX="170.0" layoutY="174.0" prefHeight="25.0" prefWidth="247.0" promptText="Last Name" />
-      <Label layoutX="170.0" layoutY="208.0" text="Username" />
-      <TextField fx:id="UserName" layoutX="170.0" layoutY="226.0" prefHeight="25.0" prefWidth="247.0" promptText="Username" />
-      <Label layoutX="170.0" layoutY="259.0" text="Password" />
-      <Label layoutX="170.0" layoutY="310.0" text="Confirm Password" />
-      <Button fx:id="Register" layoutX="170.0" layoutY="408.0" mnemonicParsing="false" onAction="#RegisterAction" prefHeight="25.0" prefWidth="96.0" text="Register " />
-      <Button fx:id="Close" layoutX="321.0" layoutY="408.0" mnemonicParsing="false" onAction="#CloseAction" prefHeight="25.0" prefWidth="96.0" text="Close" />
-      <Label fx:id="loginMessage" layoutX="170.0" layoutY="366.0" prefHeight="17.0" prefWidth="247.0" textFill="#e40d0d" />
-      <PasswordField fx:id="ConfirmPassword" layoutX="170.0" layoutY="327.0" prefHeight="25.0" prefWidth="247.0" promptText="Confirm Password " />
-      <PasswordField fx:id="Password" layoutX="170.0" layoutY="276.0" prefHeight="25.0" prefWidth="247.0" promptText="Password" />
+      <VBox alignment="CENTER" layoutX="3.0" layoutY="101.0" prefHeight="388.0" prefWidth="601.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="49.0" prefWidth="301.0" spacing="20.0">
+               <children>
+                  <VBox prefHeight="47.0" prefWidth="301.0">
+                     <children>
+                        <Label text="First Name" />
+                        <TextField fx:id="FirstName" prefHeight="25.0" prefWidth="127.0" promptText="First Name" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="56.0" prefWidth="322.0">
+                     <children>
+                        <Label text="Last Name" />
+                        <TextField fx:id="LastName" prefHeight="25.0" prefWidth="247.0" promptText="Last Name" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Label text="Username" />
+                  <TextField fx:id="UserName" prefHeight="25.0" prefWidth="247.0" promptText="Username" />
+               </children>
+            </VBox>
+            <VBox prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Label text="Email" />
+                  <TextField fx:id="UserMail" prefHeight="25.0" prefWidth="247.0" promptText="First Name" />
+               </children>
+            </VBox>
+            <HBox prefHeight="54.0" prefWidth="301.0" spacing="20.0">
+               <children>
+                  <VBox prefHeight="42.0" prefWidth="350.0">
+                     <children>
+                        <Label text="Birth Date" />
+                        <DatePicker fx:id="UserAge" prefHeight="25.0" prefWidth="164.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="56.0" prefWidth="384.0" spacing="5.0">
+                     <children>
+                        <Label text="Gender" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <RadioButton fx:id="UserSetMale" mnemonicParsing="false" onAction="#setMale" text="Male" />
+                              <RadioButton fx:id="UserSetFemale" mnemonicParsing="false" onAction="#setFemale" text="Female" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Label text="Password" />
+                  <PasswordField fx:id="Password" prefHeight="25.0" prefWidth="247.0" promptText="Password" />
+               </children>
+            </VBox>
+            <VBox prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Label text="Confirm Password" />
+                  <PasswordField fx:id="ConfirmPassword" prefHeight="25.0" prefWidth="247.0" promptText="Confirm Password " />
+               </children>
+            </VBox>
+            <Label fx:id="loginMessage" prefHeight="17.0" prefWidth="247.0" textFill="#e40d0d" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="Close" mnemonicParsing="false" onAction="#CloseAction" prefHeight="25.0" prefWidth="96.0" text="Close" />
+                  <Button fx:id="Register" mnemonicParsing="false" onAction="#RegisterAction" prefHeight="25.0" prefWidth="96.0" text="Register " />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="150.0" right="150.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package com.Vue;
 
+import com.Controller.AppController;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -192,5 +193,8 @@ public class AdminController extends Controller implements Initializable  {
     }
 
 
+    @Override
+    public void setAppController(AppController appController) {
 
+    }
 }

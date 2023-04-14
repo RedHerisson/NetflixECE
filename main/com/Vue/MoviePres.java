@@ -1,5 +1,6 @@
 package com.Vue;
 
+import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
 import com.Vue.Carousel.CarouselController;
@@ -50,6 +51,7 @@ public class MoviePres  extends Controller implements  Initializable {
         VBox MovieInfoContainer = movieInfoPagingData.load();
         MovieInfoController InfoController = movieInfoPagingData.getController();
         InfoController.updateFromMovie(movie);
+        InfoController.setAppController(appController);
         InfoController.setMediaHeightClip(800); // TODO: change for responsive
 
         mainContainer.getChildren().add(0, MovieInfoContainer);
@@ -65,6 +67,7 @@ public class MoviePres  extends Controller implements  Initializable {
 
             MovieAccessor movieAccessor = new MovieAccessor();
             movies.add( movieAccessor.findById( movie.getId() ) );
+            controller.setAppController(appController);
             controller.LoadMovies(movies);
             suggestionContainer.getChildren().add(playlist);
             suggestionContainer.setPrefHeight(playlist.getPrefHeight() + 1000);
@@ -76,5 +79,10 @@ public class MoviePres  extends Controller implements  Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

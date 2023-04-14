@@ -84,6 +84,12 @@ public class tempoLoadDataBase {
 
         int Runtime = Integer.parseInt((String) jsonMap.get("Runtime").toString().split(" ")[0]);
         String type = (String) jsonMap.get("Genre");
+        // split type into array
+        String[] typeArray = type.split(", ");
+        ArrayList<String> typeList = new ArrayList<>();
+        for(String s : typeArray){
+            typeList.add(s);
+        }
         String directorInString = (String) jsonMap.get("Director");
         String dirName = directorInString.split(" ")[0];
         String dirSurname = directorInString.split(" ")[1];
@@ -111,7 +117,7 @@ public class tempoLoadDataBase {
         String videoPath = "/resources/video/" + (String) jsonMap.get("imdbID");
 
 
-        Movie movie = new Movie(-1, title, image, videoPath, releaseDate, Runtime, director, actors, type, plot,
+        Movie movie = new Movie(-1, title, image, videoPath, releaseDate, Runtime, director, actors, typeList, plot,
                 videoPath, Awarded, 0, 0);
         return movie;
     }

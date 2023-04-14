@@ -21,7 +21,7 @@ public class UnitTest {
         actors.add(new Person(-1, "Raph", "Smith",10, "M"));
 
         Movie demoMovie = new Movie(-1, "Super film", ImageIO.read(new File("main/resources/images/stars-wars.jpg")), "star.mp4",
-                LocalDate.of(1999, 02, 12), 130, new Person(-1,"Nolan", "christophe", 30, "M"), actors, "Action",
+                LocalDate.of(1999, 02, 12), 130, new Person(-1,"Nolan", "christophe", 30, "M"), actors, new ArrayList<String>(),
                 "Super film, avec un mechant qui meurt à la fin, déso pour le spoil", "star.mp4", true,
                 0, 5);
         return demoMovie;
@@ -34,11 +34,13 @@ public class UnitTest {
         favTypeList.add("Comedy");
         favTypeList.add("Horror");
 
-        UserData data = new UserData(-1, -1, movieAccessor.findById(54), true, 20, "fr", 3);
+        UserData data = new UserData(-1, -1, 54, true, 20, "fr", 3);
+
         Playlist history = new Playlist(-1, -1, "History", new ArrayList<Movie>());
 
-        return new User(-1, "redherisson", "123", "Raphaël", "Jeantet", "jeantet.raph@gmail.com", 30, "M", LocalDate.of(1999, 02, 12),
-                new ArrayList<Playlist>(),history, favTypeList, data, false);
+       // return new User(-1, "redherisson", "123", "Raphaël", "Jeantet", "jeantet.raph@gmail.com", 30, "M", LocalDate.of(1999, 02, 12),
+       //         new ArrayList<Playlist>(),history, favTypeList, data, false);
+        return null;
     }
 
     public static void main( String[] args) {

@@ -1,11 +1,13 @@
 package com.Model.dao;
 
+import com.Model.map.User;
 import com.Model.map.UserData;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserDataAccessor extends Accessor<UserData> {
 
@@ -37,10 +39,20 @@ public class UserDataAccessor extends Accessor<UserData> {
             String languageSelected = result.getString(5);
             double rate = result.getDouble(6);
 
-            return new UserData(id, UserID, movieAccessor.findById( movieID) , view, lengthAs, languageSelected, rate);
+            return new UserData(id, UserID, movieID , view, lengthAs, languageSelected, rate);
 
         }
         return null;
+    }
+
+    public ArrayList<UserData> findAllDataFromUser(int UserId) throws SQLException, IOException, ClassNotFoundException {
+
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT user_ID FROM User_Data WHERE user_ID = " + UserId );
+        ArrayList<UserData> userDataArray = new ArrayList<UserData>();
+        while(result.next()) {
+            userDataArray.add(findById(result.getInt(1)));
+        }
+        return userDataArray;
     }
 
     /**

@@ -1,7 +1,9 @@
 package com.Vue.Carousel;
 
+import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
+import com.Vue.Controller;
 import com.Vue.MoviePres;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -17,7 +19,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class MovieIntegrationController implements Initializable {
+public class MovieIntegrationController extends Controller implements Initializable {
 
     public ImageView playIcon;
     public Pane darkLayer;
@@ -107,17 +109,14 @@ public class MovieIntegrationController implements Initializable {
 
         try {
             if (movie != null) {
-                Parent root = null;
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/moviePres.fxml"));
-                root = loader.load();
-                MoviePres controller = loader.<MoviePres>getController();
-                System.out.println("load movie: " + movie.getTitle() + " id: " + movie.getId());
-
-                controller.loadMovie(movie);
-                posterContainer.getScene().setRoot(root);
+                appController.setMoviePresPage(movie);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

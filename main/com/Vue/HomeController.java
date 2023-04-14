@@ -1,5 +1,6 @@
 package com.Vue;
 
+import com.Controller.AppController;
 import com.Model.map.Movie;
 import com.Vue.Carousel.CarouselController;
 import javafx.fxml.FXML;
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class HomeController implements Initializable {
+public class HomeController extends Controller implements Initializable {
 
     @FXML
     private ScrollPane mainContainer;
@@ -23,6 +24,8 @@ public class HomeController implements Initializable {
     private AnchorPane ScrollableContainer;
     @FXML
     private VBox PlaylistContainer;
+
+    private AppController appController;
 
 
     @Override
@@ -34,8 +37,10 @@ public class HomeController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/Carousel.fxml"));
         VBox mvContainer = fxmlLoader.load();
         CarouselController controller = fxmlLoader.<CarouselController>getController();
+        controller.setAppController(appController);
         controller.setTitle(title);
         controller.LoadMovies(movies);
+
 
 
         PlaylistContainer.getChildren().add(mvContainer);
@@ -53,6 +58,7 @@ public class HomeController implements Initializable {
         VBox PromoContainer = fxmlLoader.load();
         MovieInfoController controller = fxmlLoader.getController();
         controller.updateFromMovie(movie);
+        controller.setAppController(appController);
 
         PlaylistContainer.getChildren().add(PromoContainer);
         // update the height of the scroll pane to fit the new content
@@ -63,5 +69,8 @@ public class HomeController implements Initializable {
     public void backToTop() {
         // set the scroll pane to the top
         mainContainer.setVvalue(0);
+    }
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

@@ -1,5 +1,6 @@
 package com.Vue;
 
+import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
 import com.Vue.Carousel.CarouselController;
@@ -97,16 +98,10 @@ public class MovieInfoController extends Controller implements Initializable {
         LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
             Parent root = null;
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/player.fxml"));
-                root = loader.load();
-                PlayerController controller = loader.getController();
-
-                controller.loadMovie(movie);
-
-            } catch (IOException e) {
+                appController.loadPlayer(movie);
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            LaunchPlayerButton.getScene().setRoot(root);
         });
     }
 
@@ -115,5 +110,10 @@ public class MovieInfoController extends Controller implements Initializable {
                 TrailerContainer.getPrefWidth(), height
         );
         TrailerContainer.setClip(clip);
+    }
+
+    @Override
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

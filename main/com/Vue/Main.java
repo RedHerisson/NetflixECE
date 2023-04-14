@@ -18,10 +18,10 @@ import static com.Controller.tempoLoadDataBase.OMDBGetById;
 
 public class Main extends Application {
 
-    double x, y=0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/home.fxml"));
         MovieAccessor movieAccessor = new MovieAccessor();
 
@@ -33,7 +33,7 @@ public class Main extends Application {
         // charger 10 film
 
         Movie movie = movieAccessor.findById(54);
-        HomeController controller = loader.<HomeController>getController();
+        HomeController controller = loader.getController();
 
         for(int i = 0; i < 10; i++){
             ArrayList<Movie> movies = new ArrayList<Movie>();
