@@ -5,19 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/ressources/View/adminmenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/AdminAppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/Accessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/Accessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PlaylistAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PlaylistAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminStats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminCatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/adminmenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/adminUserGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/tempo/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/tempo/star.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/test.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/adminmenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/adminusergestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/adminusergestion.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,9 +67,9 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.Vue.Main" />
+  <component name="RunManager" selected="Application.MainAdmin">
+    <configuration name="MainAdmin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.Vue.AdminAppController" />
       <module name="videoPlayer" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,6 +88,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainAdmin" />
+      <item itemvalue="Application.PresApp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PresApp" />
