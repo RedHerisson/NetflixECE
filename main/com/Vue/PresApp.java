@@ -1,5 +1,6 @@
 package com.Vue;
 
+import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
 import javafx.application.Application;
@@ -24,9 +25,10 @@ public class PresApp  extends Application {
 
         Scene scenes = new Scene(loader.load(), 1275, 645, Color.BLACK);
 
-        Movie movie = movieAccessor.findById(54);
+        Movie movie = movieAccessor.findById(300);
         MoviePres controller = loader.<MoviePres>getController();
-
+        AppController appController = new AppController();
+        controller.setAppController(appController);
         controller.loadMovie(movie);
 
         stage.setScene(scenes);

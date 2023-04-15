@@ -16,7 +16,7 @@ public class User extends Person {
 
     private ArrayList<Playlist> playlists;
 
-    private Playlist historic;
+    private Playlist history;
 
     private ArrayList<String> favouriteType;
 
@@ -25,14 +25,14 @@ public class User extends Person {
     private boolean admin;
 
     public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,
-                ArrayList<Playlist> playlists ,Playlist historic, ArrayList<String> favouriteType, ArrayList<UserData> data, boolean admin) {
+                ArrayList<Playlist> playlists ,Playlist history, ArrayList<String> favouriteType, ArrayList<UserData> data, boolean admin) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
         this.email = email;
         this.acc_creation_date = acc_creation_date;
         this.playlists = playlists;
-        this.historic = historic; //TODO : force historic to be called "Historic"
+        this.history = history; //TODO : force history to be called "History"
         this.favouriteType = favouriteType;
         this.data = data;
         this.admin = admin;
@@ -59,8 +59,8 @@ public class User extends Person {
         return playlists;
     }
 
-    public Playlist getHistoric() {
-        return historic;
+    public Playlist getHistory() {
+        return history;
     }
 
     public ArrayList<UserData> getData() {
@@ -91,12 +91,12 @@ public class User extends Person {
         this.playlists.remove(movie);
     }
 
-    public void addMovieToHistoric(Movie movie) {
-        this.historic.addMovie(movie);
+    public void addMovieToHistory(Movie movie) {
+        this.history.addMovie(movie);
     }
 
-    public void removeMovieFromHistoric(Movie movie) {
-        this.historic.removeMovie(movie.getId());
+    public void removeMovieFromHistory(Movie movie) {
+        this.history.removeMovie(movie.getId());
     }
 
     public void setAdmin(boolean admin) {
@@ -107,11 +107,11 @@ public class User extends Person {
         this.data.add(data);
     }
 
-    public ArrayList<String> getTypeFromHistoric() {
+    public ArrayList<String> getTypeFromHistory() {
         ArrayList<String> types = new ArrayList<>();
-        if( this.historic == null)
+        if( this.history == null)
             return types;
-        for(Movie movie : this.historic.getMoviesList()) {
+        for(Movie movie : this.history.getMoviesList()) {
             for(String type : movie.getTypeArray())
                     types.add(type);
         }
@@ -127,7 +127,7 @@ public class User extends Person {
                 ", email='" + email + '\'' +
                 ", acc_creation_date=" + acc_creation_date +
                 ", playlists=" + playlists +
-                ", historic=" + historic +
+                ", history=" + history +
                 ", favouriteType=" + favouriteType +
                 ", data=" + data +
                 ", admin=" + admin +
