@@ -1,16 +1,27 @@
 package com.Vue;
+//package com.Model.dao;
 
+import com.Model.dao.MovieAccessor;
+import com.Model.dao.PersonAccessor;
+import com.Model.dao.UserAccessor;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 //import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -19,6 +30,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.chart.*;
+import javafx.util.Duration;
 
 public class AdminStats implements Initializable {
 
@@ -39,11 +51,57 @@ public class AdminStats implements Initializable {
     @FXML
     private LineChart lineChart;
 
+    @FXML
+    private Label totalFilms, totalUsers, totalUserConnected;
+
+    private PersonAccessor personAccessor = new PersonAccessor();
+
+    private UserAccessor userAccessor = new UserAccessor();
+    private MovieAccessor movieAccessor = new MovieAccessor();
+    int totalMen = 0,totalWomen = 0;
+
+    public AdminStats() throws SQLException, ClassNotFoundException {
+    }
+
     ///Méthodes
+
+
+
+
+
 
     //Méthode d'initialisation des données pour les graphiques
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // Put your code here that should be executed every 10 seconds
+                System.out.println("This code is executed every 10 seconds");
+
+                try {
+                    totalFilms.setText(String.valueOf(movieAccessor.countMovies()));
+                    totalUsers.setText(String.valueOf(userAccessor.countUsers()));
+                    totalUserConnected.setText(String.valueOf(userAccessor.countUsersConnected()));
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }));
+
+        // On set le cycle du timer à l'infini, donc il continuera de tourner jusqu'à ce qu'on le stop
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+
+        try {
+            totalMen = personAccessor.countUsersBySexe("M");
+            totalWomen = personAccessor.countUsersBySexe("F");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
 
         //On modifie le style des axes
         Font font = Font.font("Symbol", FontWeight.NORMAL, 10);
@@ -101,9 +159,8 @@ public class AdminStats implements Initializable {
 
         //On ajoute les données au graphique
         ObservableList<PieChart.Data> pieChartDataSexPercentage = FXCollections.observableArrayList(
-                new PieChart.Data("Hommes", 12500),
-                new PieChart.Data("Femmes", 10790),
-                new PieChart.Data("Autres",1260)
+                new PieChart.Data("Hommes", totalMen),
+                new PieChart.Data("Femmes", totalWomen)
         );
 
         //Le graphique prend la forme d'un camembert
@@ -111,14 +168,15 @@ public class AdminStats implements Initializable {
         pieChartSexPercentage.setTitle("Proportion M/F");
         pieChartSexPercentage.setClockwise(true);
         pieChartSexPercentage.setLabelLineLength(10);
-        pieChartSexPercentage.setStartAngle(360);
+        pieChartSexPercentage.setStartAngle(90);
         pieChartSexPercentage.setLabelsVisible(false);
         pieChartSexPercentage.lookup(".chart-title").setStyle("-fx-text-fill: white");
 
         ////////////////////////////////      LINECHART      ///////////////////////////////////////////////
 
         //On ajoute les données au graphique
-
+        yAxis2.setTickLabelFill(Color.WHITE);
+        xAxis2.setTickLabelFill(Color.WHITE);
         XYChart.Series dataSeries1 = new XYChart.Series();
         dataSeries1.setName("Nombre d'abonnés au cours du temps");
         dataSeries1.getData().add(new XYChart.Data("17/03", 1));

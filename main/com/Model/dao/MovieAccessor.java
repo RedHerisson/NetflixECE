@@ -23,11 +23,10 @@ import java.util.ArrayList;
 public class MovieAccessor extends Accessor<Movie> {
 
     PersonAccessor personAccessor;
-    MovieAccessor movieAccessor;
+
     public MovieAccessor() throws SQLException, ClassNotFoundException {
         super();
-        personAccessor = new PersonAccessor();
-        movieAccessor = new MovieAccessor();
+
     }
 
     /**
@@ -100,6 +99,20 @@ public class MovieAccessor extends Accessor<Movie> {
         result.close();
         System.out.println("Movie not found");
         return movies;
+    }
+
+    public int countMovies() throws SQLException, ClassNotFoundException, IOException {
+
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Movie");
+        int cpt=0;
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+
+        result.close();
+        System.out.println("Movie not found");
+        return cpt;
     }
 
     /**

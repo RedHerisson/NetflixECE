@@ -184,7 +184,7 @@
                <children>
                   <VBox layoutY="-1.0" prefHeight="105.0" prefWidth="166.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="127.0" text="22000" textFill="WHITE">
+                        <Label fx:id="totalUsers" alignment="CENTER" prefHeight="40.0" prefWidth="127.0" textFill="WHITE">
                            <font>
                               <Font name="Bauhaus 93" size="34.0" />
                            </font>
@@ -211,7 +211,7 @@
                <children>
                   <VBox layoutY="6.0" prefHeight="92.0" prefWidth="152.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="85.0" prefWidth="142.0" text="146" textFill="WHITE">
+                        <Label fx:id="totalFilms" alignment="CENTER" prefHeight="85.0" prefWidth="142.0" textFill="WHITE">
                            <font>
                               <Font name="Bauhaus 93" size="39.0" />
                            </font>
@@ -232,7 +232,7 @@
                <children>
                   <VBox prefHeight="102.0" prefWidth="152.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="85.0" prefWidth="147.0" text="2" textFill="WHITE">
+                        <Label fx:id="totalUserConnected" alignment="CENTER" prefHeight="85.0" prefWidth="147.0" textFill="WHITE">
                            <font>
                               <Font name="Bauhaus 93" size="39.0" />
                            </font>

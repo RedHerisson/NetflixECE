@@ -16,10 +16,8 @@ import java.util.ArrayList;
 
 public class PersonAccessor extends Accessor<Person> {
 
-    PersonAccessor personAccessor;
     public PersonAccessor() throws SQLException, ClassNotFoundException {
         super();
-        personAccessor = new PersonAccessor();
     }
 
     /**
@@ -49,6 +47,17 @@ public class PersonAccessor extends Accessor<Person> {
      * @return Person object found
      * @throws SQLException error while accessing the dataBase
      */
+
+
+    public int countUsersBySexe(String sexe) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Person p JOIN User u ON p.ID=u.person_id WHERE sexe = '"+sexe+"'");
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
 
 
     /**
