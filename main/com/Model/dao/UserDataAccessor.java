@@ -1,5 +1,6 @@
 package com.Model.dao;
 
+import com.Model.map.Movie;
 import com.Model.map.User;
 import com.Model.map.UserData;
 
@@ -54,6 +55,7 @@ public class UserDataAccessor extends Accessor<UserData> {
         }
         return userDataArray;
     }
+
 
     /**
      * Création d'un UserData dans la BDD
