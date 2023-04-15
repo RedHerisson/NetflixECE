@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor">
-      <change afterPath="$PROJECT_DIR$/main/ressources/images/ECE_LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UserPlaylists.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/UserHistoric.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +58,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/princ/Documents/Projet JAVA Netflix/NetflixECE/main/ressources/images",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/princ/Documents/Projet JAVA Netflix/NetflixECE/main/ressources/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\ressources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\resources\View" />
       <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\ressources\View" />
     </key>
   </component>

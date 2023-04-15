@@ -6,16 +6,14 @@ import com.Model.dao.UserAccessor;
 import com.Model.map.Movie;
 import com.Model.map.Playlist;
 import com.Model.map.User;
-import com.Vue.HomeController;
-import com.Vue.LoginController;
-import com.Vue.MoviePres;
-import com.Vue.RegisterController;
+import com.Vue.*;
 import com.Vue.VideoPlayer.PlayerController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -36,7 +34,10 @@ public class AppController extends Application {
     public void start(Stage stage) throws Exception {
 
     mainStage = stage;
-    setLoginPage();
+    UserAccessor usertest = new UserAccessor();
+    loginUser = usertest.findById(28);
+    setUserSettings();
+    // setHomePage();
     }
 
     public void setLoginPage() throws IOException {
@@ -54,7 +55,24 @@ public class AppController extends Application {
 
         mainStage.show();
     }
+    public void setUserSettings() throws IOException {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings.fxml"));
+        scene = new Scene(loader.load(), 600, 400.0, Color.BLACK);
+
+        UserSettings logCtrl = loader.getController();
+        logCtrl.setAppController(this);
+
+        mainStage.setScene(scene);
+        mainStage.setTitle("UserSettings");
+
+        Image icon = new Image(getClass().getResourceAsStream("/resources/images/ECE_LOGO.png"));
+        mainStage.getIcons().add(icon);
+
+        mainStage.setResizable(false);
+
+        mainStage.show();
+    }
     public void setHomePage() {
         try {
             FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/home.fxml"));

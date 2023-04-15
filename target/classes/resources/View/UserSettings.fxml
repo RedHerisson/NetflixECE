@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserSettings">
+    <children>
+        <Pane fx:id="pnlSettings" layoutX="195.0" layoutY="149.0" prefHeight="394.0" prefWidth="587.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="149.0">
+            <children>
+                <AnchorPane fx:id="rootUS" prefHeight="394.0" prefWidth="587.0" style="-fx-background-color: #0C1A27;" />
+            </children></Pane>
+        <Pane fx:id="pnlStatut" layoutX="195.0" prefHeight="149.0" prefWidth="588.0" style="-fx-background-color: #1e4263;" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Label fx:id="lblStatut" layoutX="60.0" layoutY="57.0" text="Profil" textFill="#ebf2f9">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <VBox prefHeight="543.0" prefWidth="200.0" style="-fx-background-color: #2a5d8a;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="149.0" prefWidth="195.0">
+                    <children>
+                        <Label fx:id="UserName" layoutX="39.0" layoutY="100.0" text="User Name" textFill="#ebf2f9">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="btnProfil" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="199.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Profil" textFill="#ebf2f9">
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="btnPlaylists" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="199.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Playlists" textFill="#ebf2f9">
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="btnHistoric" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="204.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Historic" textFill="#ebf2f9">
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

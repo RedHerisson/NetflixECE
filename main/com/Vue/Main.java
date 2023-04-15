@@ -16,11 +16,11 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/Carousel4.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/registration.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/userSettings2.fxml"));
+       // Parent root = FXMLLoader.load(getClass().getResource("/ressources/View/UserSettings.fxml"));
 
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+       // primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        root.setOnMousePressed(event ->{
+       /* root.setOnMousePressed(event ->{
             x = event.getSceneX();
             y = event.getSceneY();
         });
@@ -31,7 +31,7 @@ public class Main extends Application {
         });
 
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+        primaryStage.show();*/
     }
 
     public static void Main(String[] args){
