@@ -1,5 +1,6 @@
 package com.Model.dao;
 
+import com.Model.map.Movie;
 import com.Model.map.User;
 import com.Model.map.UserData;
 

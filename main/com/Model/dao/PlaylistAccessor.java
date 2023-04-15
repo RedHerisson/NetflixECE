@@ -37,6 +37,7 @@ public class PlaylistAccessor extends Accessor<Playlist> {
      * @throws SQLException si la connexion à la base de données a échoué
      * @throws ClassNotFoundException
      */
+
     public PlaylistAccessor() throws SQLException, ClassNotFoundException {
         super();
         movieAccessor = new MovieAccessor();
@@ -73,6 +74,8 @@ public class PlaylistAccessor extends Accessor<Playlist> {
         }
         return null;
     }
+
+
 
     /**
      * Mettre à jour une playlist dans la base de données
