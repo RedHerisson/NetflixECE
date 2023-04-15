@@ -1,23 +1,21 @@
 package com.Vue;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-
-import java.io.File;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,7 +34,12 @@ public class UserSettings implements Initializable {
     private Label lblStatut;
 
     @FXML
+    private Pane pnlSettings;
+
+    @FXML
     private Pane pnlStatut;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,6 +52,21 @@ public class UserSettings implements Initializable {
         if(event.getSource() == btnProfil){
             lblStatut.setText("Profil");
             pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(30,	66,	99), CornerRadii.EMPTY, Insets.EMPTY)));
+
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("/Vue/userProfil.fxml"));
+                Stage registerStage = new Stage();
+                //primaryStage.setTitle("Hello World");
+                registerStage.setScene(new Scene(root));
+                registerStage.show();
+
+            }
+            catch(Exception e){
+                e.printStackTrace();
+                e.getCause();
+            }
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/UserProfil.fxml"));
+
         }
         else if(event.getSource() == btnPlaylists){
             lblStatut.setText("Playlists");
