@@ -11,7 +11,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserSettings">
    <children>
-      <Pane fx:id="pnlSettings" layoutX="195.0" layoutY="149.0" prefHeight="394.0" prefWidth="588.0" style="-fx-background-color: #0C1A27;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="149.0" />
+      <Pane fx:id="pnlSettings" layoutX="195.0" layoutY="149.0" prefHeight="394.0" prefWidth="587.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="149.0">
+         <children>
+            <AnchorPane fx:id="rootUS" prefHeight="394.0" prefWidth="587.0" style="-fx-background-color: #0C1A27;" />
+         </children></Pane>
       <Pane fx:id="pnlStatut" layoutX="195.0" prefHeight="149.0" prefWidth="588.0" style="-fx-background-color: #1e4263;" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="lblStatut" layoutX="60.0" layoutY="57.0" text="Profil" textFill="#ebf2f9">

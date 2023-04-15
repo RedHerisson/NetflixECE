@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor">
-      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserHistoric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserPlaylists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/userProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/userProfil.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/userProfil.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
