@@ -24,7 +24,7 @@ public class AdminAppController extends Application {
     public void start(Stage stage) throws Exception {
         mainStage = stage;
         AdminStats adminStats = new AdminStats();
-        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/ressources/View/adminStats.fxml"));
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
         scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
         AdminStats controller = loaderHome.getController();
         controller.setAppAdminController(this);
@@ -40,7 +40,7 @@ public class AdminAppController extends Application {
     //Méthode pour load la page des statistiques
     public void loadStatsPage() throws Exception {
         AdminStats adminStats = new AdminStats();
-        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/ressources/View/adminStats.fxml"));
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
         scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
         AdminStats controller = loaderHome.getController();
         controller.setAppAdminController(this);
@@ -53,7 +53,7 @@ public class AdminAppController extends Application {
     //Méthode pour load la page du catalogue
     public void loadCatalogPage() throws Exception {
         AdminCatalog adminCatalog = new AdminCatalog();
-        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/ressources/View/adminCatalog.fxml"));
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminCatalog.fxml"));
         scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
         AdminCatalog controller = loaderHome.getController();
         controller.setAppAdminController(this);
@@ -65,7 +65,7 @@ public class AdminAppController extends Application {
     //Méthode pour load la page des utilisateurs
     public void loadUserPage() throws Exception {
         AdminUser adminUser = new AdminUser();
-        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/ressources/View/adminUserGestion.fxml"));
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminUserGestion.fxml"));
         scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
         AdminUser controller = loaderHome.getController();
         controller.setAppAdminController(this);
