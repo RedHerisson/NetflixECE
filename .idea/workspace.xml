@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE ( fin des embrouilles )">
-      <change afterPath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/adminStats.fxml" afterDir="false" />
+    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminAppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/admincatalog.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/adminusergestion.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/CarouselController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/MovieIntegrationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MovieInfoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$stateButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/testAPP.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="2174" />
+    <option name="totalTimeSeconds" value="2557" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -93,6 +65,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Vue" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Controller" />
     </key>
@@ -175,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681567303180</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MAIN QUI MARCHE VRAIMENT">
+      <created>1681569481725</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681569481725</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MAIN QUI MARCHE ( fin des embrouilles )" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAIN QUI MARCHE ( fin des embrouilles )" />
+    <MESSAGE value="MAIN QUI MARCHE VRAIMENT" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAIN QUI MARCHE VRAIMENT" />
   </component>
 </project>
