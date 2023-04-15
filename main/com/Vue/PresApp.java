@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -17,7 +16,7 @@ public class PresApp  extends Application {
 
 
     @Override
-    public void start(Stage stage) throws IOException, SQLException, ClassNotFoundException {
+    public void start(Stage stage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/moviePres.fxml"));
         MovieAccessor movieAccessor = new MovieAccessor();

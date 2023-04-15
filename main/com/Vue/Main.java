@@ -63,8 +63,8 @@ public class Main extends Application {
 
     }
 
-//    public static void Main(String[] args){
-//        launch(args);
-//    }
+    public static void Main(String[] args){
+        launch(args);
+    }
 
 }

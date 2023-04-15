@@ -102,35 +102,6 @@ public class UserAccessor extends PersonAccessor {
         else return false;
     }
 
-    public int countUsers() throws SQLException, ClassNotFoundException, IOException {
-
-
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM User");
-        int cpt=0;
-        if (result.next()){
-            cpt=result.getInt(1);
-        }
-
-        result.close();
-        System.out.println("Movie not found");
-        return cpt;
-    }
-
-    public int countUsersConnected() throws SQLException, ClassNotFoundException, IOException {
-        int cpt=0;
-
-        ResultSet result = dataBase.getRequest().executeQuery("SHOW STATUS WHERE `variable_name` = 'Threads_connected'; ");
-        if (result.next()){
-            cpt=result.getInt(2);
-        }
-        return cpt;
-    }
-
-
-
-
-
-
     /**
      * Creation d'un utilisateur
      * @warning Pas de vérification de l'unicité

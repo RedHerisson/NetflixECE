@@ -25,10 +25,9 @@ import java.util.ArrayList;
 public class MovieAccessor extends Accessor<Movie> {
 
     PersonAccessor personAccessor;
-
     public MovieAccessor() throws SQLException, ClassNotFoundException {
         super();
-
+        personAccessor = new PersonAccessor();
     }
 
     /**
@@ -100,41 +99,6 @@ public class MovieAccessor extends Accessor<Movie> {
             return image;
         }
         return null;
-    }
-     * Trouver un film par son nom
-     * @param query nom du film
-     * @return le film correspondant au nom
-     * @throws SQLException erreur SQL
-     * @throws ClassNotFoundException
-     * @throws IOException
-     */
-    public ArrayList<Movie> search(String query) throws SQLException, ClassNotFoundException, IOException {
-
-        ArrayList<Movie> movies = new ArrayList<Movie>();
-
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT Movie.Title, Person.name, Person.surname FROM Movie, Person JOIN Person p ON Movie.director_id = p.id JOIN Actor a ON movie_id = a.person_id JOIN Person p ON Movie.id = p.person_id WHERE Movie.title like '%"+query+"%' OR Person.name like '%"+query+"%' OR Person.surname like '%"+query+"%' LIMIT 10");
-
-        while(result.next()){
-            movies.add(findById(result.getInt(1)));
-        }
-
-        result.close();
-        System.out.println("Movie not found");
-        return movies;
-    }
-
-    public int countMovies() throws SQLException, ClassNotFoundException, IOException {
-
-
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Movie");
-        int cpt=0;
-        if (result.next()){
-            cpt=result.getInt(1);
-        }
-
-        result.close();
-        System.out.println("Movie not found");
-        return cpt;
     }
 
     /**

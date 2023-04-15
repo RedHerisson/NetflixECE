@@ -7,6 +7,7 @@ import com.Vue.Carousel.CarouselController;
 import com.Vue.Carousel.MovieIntegrationController;
 import com.Vue.VideoPlayer.PlayerController;
 import javafx.beans.InvalidationListener;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,12 +17,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.BoxBlur;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -96,8 +100,6 @@ public class MovieInfoController extends Controller implements Initializable {
         movieRating.setText(df.format(movie.getRating() )+ "/5");
         TypeLabel.setText(movie.getTypes());
 
-
-
         LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
             Parent root = null;
             try {
@@ -106,6 +108,10 @@ public class MovieInfoController extends Controller implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+
+
+
+
     }
 
     public void setMediaHeightClip(int height) {

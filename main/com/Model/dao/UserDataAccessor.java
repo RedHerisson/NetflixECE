@@ -1,6 +1,5 @@
 package com.Model.dao;
 
-import com.Model.map.Movie;
 import com.Model.map.User;
 import com.Model.map.UserData;
 
@@ -30,18 +29,26 @@ public class UserDataAccessor extends Accessor<UserData> {
     @Override
     public UserData findById(int id) throws SQLException, IOException, ClassNotFoundException {
 
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM User_Data WHERE user_ID = " + id );
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT * FROM User_Data WHERE ID = " + id );
 
         if ( result.next() ) {
-            int UserID = result.getInt(1);
-            int movieID = result.getInt(2);
-            boolean view =  result.getBoolean(3);
-            int lengthAs = result.getInt(4);
-            String languageSelected = result.getString(5);
-            double rate = result.getDouble(6);
+            int UserID = result.getInt(2);
+            int movieID = result.getInt(3);
+            boolean view =  result.getBoolean(4);
+            int lengthAs = result.getInt(5);
+            String languageSelected = result.getString(6);
+            int rate = result.getInt(7);
 
             return new UserData(id, UserID, movieID , view, lengthAs, languageSelected, rate);
 
+        }
+        return null;
+    }
+
+    public UserData findByMovieAndUser(int uId, int mId) throws Exception {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM User_Data WHERE User_ID = " + uId + " AND Movie_ID = " + mId);
+        if(result.next()) {
+            return findById(result.getInt(1));
         }
         return null;
     }

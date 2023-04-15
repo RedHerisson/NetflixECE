@@ -17,10 +17,10 @@ public class UserData extends BdModel {
 
     public String languageSelected;
 
-    private double rate;
+    private int rate;
 
 
-    public UserData(int id, int UserID, int movieId, boolean view, int lengthAlreadySeen, String languageSelected, double rate) {
+    public UserData(int id, int UserID, int movieId, boolean view, int lengthAlreadySeen, String languageSelected, int rate) {
         super(id);
         this.ownerId = UserID;
         this.movieId = movieId;
@@ -64,7 +64,7 @@ public class UserData extends BdModel {
         return languageSelected;
     }
 
-    public double getRate() {
+    public int getRate() {
         return rate;
     }
 
@@ -88,7 +88,7 @@ public class UserData extends BdModel {
         this.languageSelected = languageSelected;
     }
 
-    public void setRate(double rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 

@@ -7,17 +7,32 @@
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Controller/ResearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/Accessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PlaylistAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminAppController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/VideoPlayer/movieInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/VideoPlayer/movieInfo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/moviePres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/moviePres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoPlayer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/videoPlayer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/ResearchController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/Accessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/Accessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminAppController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminCatalog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminStats$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +40,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="90305" />
+    <option name="totalTimeSeconds" value="94269" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -63,16 +78,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.43678162",
+    "settings.editor.selected.configurable": "configurable.group.tools"
   }
-}</component>
-  <component name="RunManager" selected="Application.PresApp">
+}]]></component>
+  <component name="RunManager" selected="Application.AppController">
     <configuration name="AppController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
       <module name="videoPlayer" />
@@ -147,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PresApp" />
         <item itemvalue="Application.AppController" />
+        <item itemvalue="Application.PresApp" />
         <item itemvalue="Application.testAPP" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.tempoLoadDataBase" />

@@ -2,9 +2,13 @@ package com.Vue;
 
 import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
+import com.Model.dao.UserDataAccessor;
 import com.Model.map.Movie;
+import com.Model.map.User;
+import com.Model.map.UserData;
 import com.Vue.Carousel.CarouselController;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
 import javax.imageio.ImageIO;
@@ -37,14 +42,32 @@ public class MoviePres  extends Controller implements  Initializable {
 
     private ArrayList<ImageView> rankStarList;
 
+    private int currentMark = 0;
+    private UserData userData;
+    private UserDataAccessor userDataAccessor;
+    private Movie movie;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        try {
+            userDataAccessor = new UserDataAccessor();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        rankStarList = new ArrayList<ImageView>();
     }
 
 
-    public void loadMovie(Movie movie) throws IOException {
+    public void loadMovie(Movie movie) throws Exception {
+        this.movie = movie;
+        userData = userDataAccessor.findByMovieAndUser(appController.getCurrentuser().getId(), this.movie.getId());
+        if( userData == null ) {
+            currentMark = 0;
+        }
+        else {
+            currentMark = userData.getRate();
+        }
+
 
         FXMLLoader movieInfoPagingData = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
         VBox MovieInfoContainer = movieInfoPagingData.load();
@@ -90,32 +113,60 @@ public class MoviePres  extends Controller implements  Initializable {
                 star.setFitWidth(50);
 
                 star.setImage(SwingFXUtils.toFXImage(rankStarEmpty, null));
+                int finalI = i;
                 star.hoverProperty().addListener((observable, oldValue, newValue) -> {
                     if(newValue) {
-                        star.setImage(SwingFXUtils.toFXImage(rankStar, null));
-                        optionContainer.getChildren().get(0);
+                        updateGraphicRanking(finalI +1);
 
                     }
                     else {
-                        star.setImage(SwingFXUtils.toFXImage(rankStarEmpty, null));
+                        updateGraphicRanking(currentMark);
                     }
                 });
 
+                star.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+                    @Override
+                    public void handle(MouseEvent event) {
+                        currentMark = finalI +1 ;
+                        updateGraphicRanking(currentMark);
+                        try {
+                            updateMark(currentMark);
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        event.consume();
+                    }
+                });
                 rankStarList.add(star);
                 optionContainer.getChildren().add(star);
 
-
-
             }
+            updateGraphicRanking(currentMark);
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public void updateGraphicRanking(int mark ) {
+        for(int i = 0; i < mark; i++) {
+            rankStarList.get(i).setImage(SwingFXUtils.toFXImage(rankStar, null));
+        }
+        for(int i = mark; i < 5; i++) {
+            rankStarList.get(i).setImage(SwingFXUtils.toFXImage(rankStarEmpty, null));
+        }
+    }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    public void updateMark(int mark) throws Exception {
+        if( userData == null ) {
+            try {
+                userData = new UserData(-1,appController.getCurrentuser().getId(), movie.getId(),false, 0, "", mark);
+                userData.setId(userDataAccessor.create(userData));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            userDataAccessor.updateRate(userData);
         }
     }
     public void setUserRanking(int rank) {

@@ -29,7 +29,6 @@ public class AppController extends Application {
     private Stage mainStage;
 
     private Scene scene;
-    private HomeController homePage;
 
     private User loginUser;
 
@@ -66,15 +65,14 @@ public class AppController extends Application {
 
             loadHomeFromUser(controller);
 
-            controller.backToTop();
 
-            controller.backToTop();
 
             mainStage.setTitle("NetflixECE");
 
             mainStage.setScene(scene);
             mainStage.setResizable(false);
             mainStage.show();
+            controller.backToTop();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,14 +97,14 @@ public class AppController extends Application {
             mainStage.setScene(scene);
             mainStage.setTitle(movie.getTitle());
             mainStage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
-        Movie movie = movieAccessor.findById(54);
+        Movie movie = movieAccessor.findById(130);
 
         // chargement des films suivant :
         // Continuer à regarder
@@ -181,9 +179,6 @@ public class AppController extends Application {
 
             movieAccessor.addView(movie.getId());
 
-
-
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/player.fxml"));
             scene = new Scene(loader.load(), 1275, 645, Color.BLACK);
             PlayerController controller = loader.getController();
@@ -200,6 +195,10 @@ public class AppController extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public User getCurrentuser() {
+        return loginUser;
     }
 }
 
