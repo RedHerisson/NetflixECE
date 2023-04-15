@@ -40,6 +40,36 @@ public class PersonAccessor extends Accessor<Person> {
     }
 
     /**
+     * Get Person from name from sqlBDD
+     *
+     * @param name SQL name of the object
+     * @return Person object found
+     * @throws SQLException error while accessing the dataBase
+     */
+
+
+    public int countUsersBySexe(String sexe) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Person p JOIN User u ON p.ID=u.person_id WHERE sexe = '"+sexe+"'");
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
+    public int countUsersByAge(int age1, int age2) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Person p JOIN User u ON p.ID=u.person_id WHERE age BETWEEN "+age1+" AND "+age2+"");;
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
+
+    /**
      * Creation d'un utilisateur dans la base de données
      * @param person Personne à créer
      * @return ID de la base de données mis à jour de l'utilisateur créé
