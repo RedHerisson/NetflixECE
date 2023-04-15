@@ -1,5 +1,4 @@
 package com.Vue;
-//package com.Model.dao;
 
 import com.Model.dao.MovieAccessor;
 import com.Model.dao.PersonAccessor;
@@ -12,23 +11,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-//import java.awt.event.MouseEvent;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
 import javafx.scene.chart.*;
 import javafx.util.Duration;
 
@@ -55,10 +46,11 @@ public class AdminStats implements Initializable {
     private Label totalFilms, totalUsers, totalUserConnected;
 
     private PersonAccessor personAccessor = new PersonAccessor();
-
     private UserAccessor userAccessor = new UserAccessor();
     private MovieAccessor movieAccessor = new MovieAccessor();
     int totalMen = 0,totalWomen = 0;
+    int[] nbAbonnesParDate = new int[5];
+    int[] nbAbonnesParAge = new int[6];
 
     public AdminStats() throws SQLException, ClassNotFoundException {
     }
@@ -66,21 +58,19 @@ public class AdminStats implements Initializable {
     ///Méthodes
 
 
-
-
-
-
     //Méthode d'initialisation des données pour les graphiques
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        //On initialise le timer qui va s'exécuter toutes les secondes
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // Put your code here that should be executed every 10 seconds
-                System.out.println("This code is executed every 10 seconds");
+
+                System.out.println("Le code s'exécute toutes les secondes");
 
                 try {
+                    //On met à jour les données
                     totalFilms.setText(String.valueOf(movieAccessor.countMovies()));
                     totalUsers.setText(String.valueOf(userAccessor.countUsers()));
                     totalUserConnected.setText(String.valueOf(userAccessor.countUsersConnected()));
@@ -94,10 +84,21 @@ public class AdminStats implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
-
+        //On initialise les données
         try {
             totalMen = personAccessor.countUsersBySexe("M");
             totalWomen = personAccessor.countUsersBySexe("F");
+            nbAbonnesParDate[0] = userAccessor.countUsersFromDate("2023-04-07", "2023-04-09");
+            nbAbonnesParDate[1] = userAccessor.countUsersFromDate("2023-04-09", "2023-03-11");
+            nbAbonnesParDate[2] = userAccessor.countUsersFromDate("2023-04-11", "2023-03-12");
+            nbAbonnesParDate[3] = userAccessor.countUsersFromDate("2023-04-12", "2023-04-14");
+            nbAbonnesParDate[4] = userAccessor.countUsersFromDate("2023-04-14", "2023-04-16");
+            nbAbonnesParAge[0] = personAccessor.countUsersByAge(0, 18);
+            nbAbonnesParAge[1] = personAccessor.countUsersByAge(19, 20);
+            nbAbonnesParAge[2] = personAccessor.countUsersByAge(21, 23);
+            nbAbonnesParAge[3] = personAccessor.countUsersByAge(24, 26);
+            nbAbonnesParAge[4] = personAccessor.countUsersByAge(27, 29);
+            nbAbonnesParAge[5] = personAccessor.countUsersByAge(30, 100);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -174,16 +175,18 @@ public class AdminStats implements Initializable {
 
         ////////////////////////////////      LINECHART      ///////////////////////////////////////////////
 
+
+
         //On ajoute les données au graphique
         yAxis2.setTickLabelFill(Color.WHITE);
         xAxis2.setTickLabelFill(Color.WHITE);
         XYChart.Series dataSeries1 = new XYChart.Series();
         dataSeries1.setName("Nombre d'abonnés au cours du temps");
-        dataSeries1.getData().add(new XYChart.Data("17/03", 1));
-        dataSeries1.getData().add(new XYChart.Data("24/03", 2));
-        dataSeries1.getData().add(new XYChart.Data("31/03", 8));
-        dataSeries1.getData().add(new XYChart.Data("07/03", 10));
-        dataSeries1.getData().add(new XYChart.Data("14/03", 14));
+        dataSeries1.getData().add(new XYChart.Data("07/04", nbAbonnesParDate[0]));
+        dataSeries1.getData().add(new XYChart.Data("09/04", nbAbonnesParDate[1]));
+        dataSeries1.getData().add(new XYChart.Data("11/04", nbAbonnesParDate[2]));
+        dataSeries1.getData().add(new XYChart.Data("13/04", nbAbonnesParDate[3]));
+        dataSeries1.getData().add(new XYChart.Data("15/04", nbAbonnesParDate[4]));
 
         //Le graphique prend la forme d'une courbe
         lineChart.getData().add(dataSeries1);
@@ -197,12 +200,12 @@ public class AdminStats implements Initializable {
         XYChart.Series dataAge = new XYChart.Series();
         dataAge.setName("Nombre d'abonnés selon leur tranche d'âge");
 
-        dataAge.getData().add(new XYChart.Data("18-25",4));
-        dataAge.getData().add(new XYChart.Data("25-35",2));
-        dataAge.getData().add(new XYChart.Data("35-45",1));
-        dataAge.getData().add(new XYChart.Data("45-55",3));
-        dataAge.getData().add(new XYChart.Data("55-65",3));
-        dataAge.getData().add(new XYChart.Data("65 et +",1));
+        dataAge.getData().add(new XYChart.Data("0-18",nbAbonnesParAge[0]));
+        dataAge.getData().add(new XYChart.Data("18-20",nbAbonnesParAge[1]));
+        dataAge.getData().add(new XYChart.Data("20-23",nbAbonnesParAge[2]));
+        dataAge.getData().add(new XYChart.Data("23-26",nbAbonnesParAge[3]));
+        dataAge.getData().add(new XYChart.Data("26-29",nbAbonnesParAge[4]));
+        dataAge.getData().add(new XYChart.Data("30 et +",nbAbonnesParAge[5]));
 
 
         //Le graphique prend la forme d'un histogramme

@@ -99,6 +99,18 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    public int countUsersFromDate(String date1, String date2) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM User WHERE acc_date_creation BETWEEN '"+date1+"' AND '"+date2+"'");;
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
+
+
 
 
 

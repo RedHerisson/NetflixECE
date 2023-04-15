@@ -59,6 +59,16 @@ public class PersonAccessor extends Accessor<Person> {
         return cpt;
     }
 
+    public int countUsersByAge(int age1, int age2) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Person p JOIN User u ON p.ID=u.person_id WHERE age BETWEEN "+age1+" AND "+age2+"");;
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
 
     /**
      * Creation d'un utilisateur dans la base de données
