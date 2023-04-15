@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -57,6 +58,8 @@ public class UserSettings implements Initializable {
                 Stage registerStage = new Stage();
                 registerStage.setScene(new Scene(root));
                 registerStage.show();
+                Image icon = new Image(getClass().getResourceAsStream("/ressources/images/ECE_LOGO.png"));
+                registerStage.getIcons().add(icon);
 
             }catch(Exception e){
                 e.printStackTrace();
@@ -75,6 +78,8 @@ public class UserSettings implements Initializable {
                 Stage registerStage = new Stage();
                 registerStage.setScene(new Scene(root));
                 registerStage.show();
+                Image icon = new Image(getClass().getResourceAsStream("/ressources/images/ECE_LOGO.png"));
+                registerStage.getIcons().add(icon);
 
             }catch(Exception e){
                 e.printStackTrace();
@@ -92,6 +97,8 @@ public class UserSettings implements Initializable {
                 Stage registerStage = new Stage();
                 registerStage.setScene(new Scene(root));
                 registerStage.show();
+                Image icon = new Image(getClass().getResourceAsStream("/ressources/images/ECE_LOGO.png"));
+                registerStage.getIcons().add(icon);
 
             }catch(Exception e){
                 e.printStackTrace();
