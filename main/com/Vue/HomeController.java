@@ -67,7 +67,6 @@ public class HomeController extends Controller implements Initializable {
     }
 
     public void backToTop() {
-        // set the scroll pane to the top
         mainContainer.setVvalue(0);
     }
     public void setAppController(AppController appController) {

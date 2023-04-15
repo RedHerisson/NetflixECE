@@ -42,6 +42,7 @@ public class UserAccessor extends PersonAccessor {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE ID = " + id );
         ResultSet findFavType = dataBase.getRequest().executeQuery(" SELECT ID FROM Favourite_type WHERE user_id = " + id );
         ResultSet findPlaylist = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id );
+        ResultSet findHistory = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id + " AND title = 'History' " );
 
         if ( findUser.next() ) {
             int personID = findUser.getInt(2);
@@ -55,8 +56,11 @@ public class UserAccessor extends PersonAccessor {
             while( findFavType.next() ) {
                 favTypeList.add( findFavType.getString(1) );
             }
-
-            Playlist historic = playlistAccessor.findById(findUser.getInt(7));
+            Playlist history;
+            if( findHistory.next()  ) {
+                history = playlistAccessor.findById(findHistory.getInt(1));
+            } else
+                history = null;
 
             // select all Playlist from the user in the database
             ArrayList<Playlist> playlistList = new ArrayList<Playlist>();
@@ -69,7 +73,7 @@ public class UserAccessor extends PersonAccessor {
             
 
             return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), playlistList,
-                    historic, favTypeList, userDataAccessor.findAllDataFromUser(id), admin);
+                    history, favTypeList, userDataAccessor.findAllDataFromUser(id), admin);
         }
         return null;
     }
@@ -176,9 +180,9 @@ public class UserAccessor extends PersonAccessor {
             pl.setOwnerId(usr.getId());
             playlistAccessor.create(pl);
         }
-        Playlist historic = usr.getHistoric();
-        historic.setOwnerId(usr.getId());
-        playlistAccessor.create(historic);
+        Playlist history = usr.getHistory();
+        history.setOwnerId(usr.getId());
+        playlistAccessor.create(history);
 
         ArrayList<UserData> dataArray = usr.getData();
         for( UserData data : dataArray) {
@@ -243,11 +247,11 @@ public class UserAccessor extends PersonAccessor {
         }
         playlistList.close();
         // delete history from the database
-        ResultSet historic  = dataBase.getRequest().executeQuery("SELECT ID FROM Playlist WHERE user_ID = " + id + " AND title = 'Historic'");
-        if( historic.next() ) {
-            playlistAccessor.delete(historic.getInt(1));
+        ResultSet history  = dataBase.getRequest().executeQuery("SELECT ID FROM Playlist WHERE user_ID = " + id + " AND title = 'History'");
+        if( history.next() ) {
+            playlistAccessor.delete(history.getInt(1));
         }
-        historic.close();
+        history.close();
         ResultSet data = dataBase.getRequest().executeQuery("SELECT user_ID FROM User_Data WHERE user_ID = " + id);
         if( data.next() ) {
             userDataAccessor.delete(data.getInt(1));

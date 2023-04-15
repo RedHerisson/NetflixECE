@@ -110,6 +110,8 @@ public class Movie extends BdModel {
         for (String s : this.type) {
             type += s + ", ";
         }
+        // remove last ", "
+        type = type.substring(0, type.length() - 2);
         return type;
     }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane alignment="TOP_LEFT" prefHeight="26.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.searchBar">
+   <children>
+      <VBox fx:id="searchSuggestionContainer" maxHeight="-Infinity" prefHeight="0.0" prefWidth="436.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <padding>
+            <Insets top="25.0" />
+         </padding></VBox>
+      <TextField fx:id="searchBar" prefHeight="25.0" prefWidth="511.0" promptText="Rechercher un film" style="-fx-background-radius: 50;" />
+   </children>
+</StackPane>

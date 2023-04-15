@@ -7,6 +7,7 @@ import com.Vue.Carousel.CarouselController;
 import com.Vue.Carousel.MovieIntegrationController;
 import com.Vue.VideoPlayer.PlayerController;
 import javafx.beans.InvalidationListener;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,19 +17,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.BoxBlur;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -42,13 +44,13 @@ public class MovieInfoController extends Controller implements Initializable {
 
     @FXML
     private MediaView trailerIntegration;
-
-
     @FXML
     private AnchorPane TrailerContainer;
 
     @FXML
-    private VBox InformationContainer;
+    private Label movieRating;
+    @FXML
+    private Label TypeLabel;
 
     private MediaPlayer player;
     private Media movie;
@@ -82,7 +84,7 @@ public class MovieInfoController extends Controller implements Initializable {
 
         Bounds actualVideoSize = trailerIntegration.getLayoutBounds();
         trailerIntegration.setX(( (TrailerContainer.getWidth() - actualVideoSize.getWidth()) / 2) ) ;
-        trailerIntegration.setY( ( (TrailerContainer.getHeight() - actualVideoSize.getHeight()) / 2) - 130 );
+        trailerIntegration.setY( ( (TrailerContainer.getHeight() - actualVideoSize.getHeight()) / 2) - 90 );
 
         player.setVolume(0);
         player.play();
@@ -93,7 +95,10 @@ public class MovieInfoController extends Controller implements Initializable {
         );
         TrailerContainer.setClip(clip);
 
+        DecimalFormat df = new DecimalFormat("#.#");
 
+        movieRating.setText(df.format(movie.getRating() )+ "/5");
+        TypeLabel.setText(movie.getTypes());
 
         LaunchPlayerButton.onMouseClickedProperty().set(mouseEvent -> {
             Parent root = null;
@@ -103,6 +108,10 @@ public class MovieInfoController extends Controller implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+
+
+
+
     }
 
     public void setMediaHeightClip(int height) {

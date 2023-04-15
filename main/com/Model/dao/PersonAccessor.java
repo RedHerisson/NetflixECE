@@ -6,14 +6,10 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  * Accessor for Person
  */
-
-
-
 public class PersonAccessor extends Accessor<Person> {
 
     public PersonAccessor() throws SQLException, ClassNotFoundException {
@@ -38,6 +34,9 @@ public class PersonAccessor extends Accessor<Person> {
             return new Person(id, name, surname, age, sexe);
         }
         return null;
+
+
+
     }
 
     /**

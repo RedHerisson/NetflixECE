@@ -1,7 +1,10 @@
 package com.Controller;
 
 import com.Model.dao.MovieAccessor;
+import com.Model.dao.PlaylistAccessor;
+import com.Model.dao.UserAccessor;
 import com.Model.map.Movie;
+import com.Model.map.Playlist;
 import com.Model.map.User;
 import com.Vue.HomeController;
 import com.Vue.LoginController;
@@ -26,7 +29,6 @@ public class AppController extends Application {
     private Stage mainStage;
 
     private Scene scene;
-    private HomeController homePage;
 
     private User loginUser;
 
@@ -63,15 +65,14 @@ public class AppController extends Application {
 
             loadHomeFromUser(controller);
 
-            controller.backToTop();
 
-            controller.backToTop();
 
             mainStage.setTitle("NetflixECE");
 
             mainStage.setScene(scene);
             mainStage.setResizable(false);
             mainStage.show();
+            controller.backToTop();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,14 +97,14 @@ public class AppController extends Application {
             mainStage.setScene(scene);
             mainStage.setTitle(movie.getTitle());
             mainStage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
-        Movie movie = movieAccessor.findById(54);
+        Movie movie = movieAccessor.findById(130);
 
         // chargement des films suivant :
         // Continuer à regarder
@@ -112,9 +113,9 @@ public class AppController extends Application {
         // Les films les mieux notés
         // Les films les plus récents
 
-        ArrayList<String> TypeFromHistoric = loginUser.getTypeFromHistoric();
-        ArrayList<Movie> movieFromHistoric = new ArrayList<Movie>();
-        for (String type : TypeFromHistoric) {
+        ArrayList<String> TypeFromHistory = loginUser.getTypeFromHistory();
+        ArrayList<Movie> movieFromHistory = new ArrayList<Movie>();
+        for (String type : TypeFromHistory) {
             ArrayList<Movie> movies = movieAccessor.findByType(type, 10);
             // melange des films pour avoir un affichage aléatoire
             for (int i = 0; i < movies.size(); i++) {
@@ -123,9 +124,9 @@ public class AppController extends Application {
                 movies.set(i, movies.get(rand));
                 movies.set(rand, tmp);
             }
-            movieFromHistoric.addAll(movies);
+            movieFromHistory.addAll(movies);
         }
-        controller.AddPlaylist(movieFromHistoric, "From your history");
+        controller.AddPlaylist(movieFromHistory, "From your history");
 
         //ArrayList<Movie> movieFromPopular = movieAccessor.findByPopularity(30);
         //controller.AddPlaylist(movieFromPopular, "Les plus populaires");
@@ -168,6 +169,16 @@ public class AppController extends Application {
 
     public void loadPlayer(Movie movie) {
         try {
+            UserAccessor userAccessor = new UserAccessor();
+            PlaylistAccessor playlistAccessor = new PlaylistAccessor();
+            MovieAccessor movieAccessor = new MovieAccessor();
+            // userData Update
+            loginUser.addMovieToHistory(movie);
+            System.out.println(loginUser.getHistory().getId());
+            playlistAccessor.addMovie(movie, loginUser.getHistory());
+
+            movieAccessor.addView(movie.getId());
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/player.fxml"));
             scene = new Scene(loader.load(), 1275, 645, Color.BLACK);
             PlayerController controller = loader.getController();
@@ -181,9 +192,13 @@ public class AppController extends Application {
             mainStage.setTitle(movie.getTitle());
 
             mainStage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public User getCurrentuser() {
+        return loginUser;
     }
 }
 

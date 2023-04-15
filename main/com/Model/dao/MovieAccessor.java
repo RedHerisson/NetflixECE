@@ -25,10 +25,9 @@ import java.util.ArrayList;
 public class MovieAccessor extends Accessor<Movie> {
 
     PersonAccessor personAccessor;
-
     public MovieAccessor() throws SQLException, ClassNotFoundException {
         super();
-
+        personAccessor = new PersonAccessor();
     }
 
     /**
@@ -267,7 +266,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
     public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Movie> movies = new ArrayList<>();
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie WHERE type = '" + type + "' LIMIT " + max);
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie WHERE type LIKE '%" + type + "%' LIMIT " + max);
         while (result.next()) {
             movies.add(findById(result.getInt(1)));
         }
@@ -284,5 +283,9 @@ public class MovieAccessor extends Accessor<Movie> {
         }
         result.close();
         return movies;
+    }
+
+    public void addView(int id) throws SQLException {
+        dataBase.getRequest().executeUpdate("Update Movie SET view_counter = view_counter + 1 WHERE ID = " + id);
     }
 }

@@ -28,6 +28,8 @@ public class PlaylistAccessor extends Accessor<Playlist> {
 
     private static String UPDATE_Title = "UPDATE Playlist SET title = ? WHERE ID = ?";
     private static String INSERT_MOVIE = "INSERT INTO MovieList (playlist_ID, movie_ID) VALUES (?, ?)";
+
+    private static String CHECK_MOVIE = "SELECT * FROM MovieList WHERE playlist_ID = ? AND movie_ID = ?";
     private static String REMOVE_MOVIE = "DELETE FROM MovieList WHERE playlist_ID = ? AND movie_ID = ?";
 
     /**
@@ -35,7 +37,6 @@ public class PlaylistAccessor extends Accessor<Playlist> {
      * @throws SQLException si la connexion à la base de données a échoué
      * @throws ClassNotFoundException
      */
-
     public PlaylistAccessor() throws SQLException, ClassNotFoundException {
         super();
         movieAccessor = new MovieAccessor();
@@ -67,13 +68,11 @@ public class PlaylistAccessor extends Accessor<Playlist> {
 
             moviesList.close();
             result.close();
-            return new Playlist(id, userID, title, movies );
+            return new Playlist(userID, id, title, movies );
 
         }
         return null;
     }
-
-
 
     /**
      * Mettre à jour une playlist dans la base de données
@@ -145,6 +144,14 @@ public class PlaylistAccessor extends Accessor<Playlist> {
      * @throws SQLException erreur SQL
      */
     public void addMovie( Movie movie, Playlist playlist ) throws SQLException {
+        PreparedStatement preCheck = dataBase.getRequest().getConnection().prepareStatement(CHECK_MOVIE);
+        preCheck.setInt(1, playlist.getId());
+        preCheck.setInt(2, movie.getId());
+        ResultSet result = preCheck.executeQuery();
+
+        if ( result.next() ) {
+            return;
+        }
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement(INSERT_MOVIE);
         pre.setInt(1, playlist.getId());
         pre.setInt(2, movie.getId());
