@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
+    <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor">
+      <change afterPath="$PROJECT_DIR$/main/ressources/images/ECE_LOGO.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/ressources/View/userSettings2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/UserHistoric.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="2557" />
-    <option name="gitIntegration" value="true" />
-    <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,11 +27,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,134 +40,41 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectId" id="2Nx6hO0j9HKzbuI2oZWsD8ZCWHn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/princ/Documents/Projet JAVA Netflix/NetflixECE/main/ressources/images",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View" />
-      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Vue" />
-      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Controller" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\ressources\images" />
     </key>
-  </component>
-  <component name="RunManager" selected="Application.MainAdmin">
-    <configuration name="AppController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
-      <module name="videoPlayer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Vue.Main" />
-      <module name="videoPlayer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Vue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainAdmin" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.Vue.AdminAppController" />
-      <module name="videoPlayer" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PresApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Vue.PresApp" />
-      <module name="videoPlayer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Vue.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.MainAdmin" />
-      <item itemvalue="Application.AppController" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.PresApp" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.AppController" />
-        <item itemvalue="Application.PresApp" />
-        <item itemvalue="Application.PresApp" />
-      </list>
-    </recent_temporary>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\ressources\View" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="" />
+      <changelist id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor" />
       <created>1680593504557</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680593504557</updated>
     </task>
-    <task id="LOCAL-00001" summary="MAIN QUI MARCHE ( fin des embrouilles )">
-      <created>1681567303180</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1681567303180</updated>
-    </task>
-    <task id="LOCAL-00002" summary="MAIN QUI MARCHE VRAIMENT">
-      <created>1681569481725</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1681569481725</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="MAIN QUI MARCHE ( fin des embrouilles )" />
-    <MESSAGE value="MAIN QUI MARCHE VRAIMENT" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAIN QUI MARCHE VRAIMENT" />
   </component>
 </project>
