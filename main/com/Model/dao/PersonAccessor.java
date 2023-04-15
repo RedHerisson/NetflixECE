@@ -6,10 +6,14 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Accessor for Person
  */
+
+
+
 public class PersonAccessor extends Accessor<Person> {
 
     public PersonAccessor() throws SQLException, ClassNotFoundException {
@@ -34,10 +38,27 @@ public class PersonAccessor extends Accessor<Person> {
             return new Person(id, name, surname, age, sexe);
         }
         return null;
-
-
-
     }
+
+    /**
+     * Get Person from name from sqlBDD
+     *
+     * @param name SQL name of the object
+     * @return Person object found
+     * @throws SQLException error while accessing the dataBase
+     */
+
+
+    public int countUsersBySexe(String sexe) throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM Person p JOIN User u ON p.ID=u.person_id WHERE sexe = '"+sexe+"'");
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
 
     /**
      * Creation d'un utilisateur dans la base de données
