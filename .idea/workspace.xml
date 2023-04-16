@@ -5,31 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
-      <change afterPath="$PROJECT_DIR$/.idea/NetflixECEPROJECT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/com/Vue/UpdateMoviesInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_win_19.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserGestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UserGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/searchBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/searchBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/images/addbutton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminStats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminUserGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminUserGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/UnitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/UnitTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserDataAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminCatalog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/CarouselController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/CarouselController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/MovieIntegrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Carousel/MovieIntegrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MenuGestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MenuGestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MovieInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MovieInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/MoviePres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$stateButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController$stateButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/VideoPlayer/PlayerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/searchBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/searchBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/MovieGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/MovieGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/resources/View/adminCatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/adminCatalog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/addbutton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +127,7 @@
   <component name="RunManager" selected="Application.MainAdmin">
     <configuration name="AppController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Controller.*" />
@@ -153,9 +179,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AppController" />
         <item itemvalue="Application.PresApp" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.AppController" />
         <item itemvalue="Application.PresApp" />
       </list>
     </recent_temporary>

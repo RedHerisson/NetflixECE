@@ -253,12 +253,12 @@
                <children>
                   <VBox layoutX="-2.0" prefHeight="101.0" prefWidth="159.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="78.0" prefWidth="163.0" text="213" textFill="WHITE">
+                        <Label fx:id="nbAdmins" alignment="CENTER" prefHeight="78.0" prefWidth="163.0" textFill="WHITE">
                            <font>
                               <Font name="Bauhaus 93" size="39.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="163.0" text="Nombre au pif" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="163.0" text="Total admins" textFill="WHITE">
                            <font>
                               <Font name="Symbol" size="19.0" />
                            </font>

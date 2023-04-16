@@ -9,9 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -25,9 +27,7 @@ public class MenuGestionController extends Controller implements Initializable {
     private Movie movie;
     private MovieAccessor posterGetter;
 
-    private Stage mainStage;
 
-    private Scene scene;
 
     @FXML
     private Pane darkLayer;
@@ -37,6 +37,9 @@ public class MenuGestionController extends Controller implements Initializable {
 
     @FXML
     private ImageView posterContainer;
+
+    @FXML
+    private Button addPromoButton, deleteButton, editButton;
 
     private AdminCatalog adminCatalog = new AdminCatalog();
 
@@ -94,10 +97,6 @@ public class MenuGestionController extends Controller implements Initializable {
     public void updateMovie(ActionEvent event) throws SQLException, IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/resources/View/UpdateMoviesInterface.fxml"));
-        /*
-         * if "fx:controller" is not set in fxml
-         * fxmlLoader.setController(NewWindowController);
-         */
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         Stage stage = new Stage();
         stage.setTitle("Update Movie");
@@ -109,8 +108,40 @@ public class MenuGestionController extends Controller implements Initializable {
     @FXML
     public void deleteMovie(ActionEvent event) throws Exception {
         posterGetter.delete(movie.getId());
+        System.out.println("Movie deleted");
 
+    }
 
-        adminCatalog.HandleSearch(event);
+    //create a function that decrease the opacity of the buttons when the mouse is over them
+    public void decreaseOpacityOnHover1(MouseEvent event) {
+        addPromoButton.setOpacity(0.7);
+    }
+
+    //create a function that increase the opacity of the buttons when the mouse is over them
+    public void increaseOpacityOnHover1(MouseEvent event) {
+        addPromoButton.setOpacity(1.0);
+
+    }
+
+    //create a function that decrease the opacity of the buttons when the mouse is over them
+    public void decreaseOpacityOnHover2(MouseEvent event) {
+        editButton.setOpacity(0.7);
+    }
+
+    //create a function that increase the opacity of the buttons when the mouse is over them
+    public void increaseOpacityOnHover2(MouseEvent event) {
+        editButton.setOpacity(1.0);
+
+    }
+
+    //create a function that decrease the opacity of the buttons when the mouse is over them
+    public void decreaseOpacityOnHover3(MouseEvent event) {
+        deleteButton.setOpacity(0.7);
+    }
+
+    //create a function that increase the opacity of the buttons when the mouse is over them
+    public void increaseOpacityOnHover3(MouseEvent event) {
+        deleteButton.setOpacity(1.0);
+
     }
 }

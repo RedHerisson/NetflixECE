@@ -36,7 +36,7 @@ public class AdminCatalog implements Initializable {
 
     private String querrySearched;
     private MovieAccessor movieAccessor = new MovieAccessor();
-    private Movie movie;
+
     private ArrayList<Movie> movieArrayList = new ArrayList<>();
 
     public AdminCatalog() throws SQLException, ClassNotFoundException {

@@ -120,7 +120,6 @@ public class MovieAccessor extends Accessor<Movie> {
         }
 
         result.close();
-        System.out.println("Movie not found");
         return movies;
     }
 
@@ -134,7 +133,6 @@ public class MovieAccessor extends Accessor<Movie> {
         }
 
         result.close();
-        System.out.println("Movie not found");
         return cpt;
     }
 
@@ -300,6 +298,16 @@ public class MovieAccessor extends Accessor<Movie> {
         result.close();
         return movies;
     }
+
+    public int countMoviesByGenre(String action) throws SQLException {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT COUNT(*) FROM Movie WHERE type like '%"+ action + "%'");
+        result.next();
+        int count = result.getInt(1);
+        result.close();
+        return count;
+    }
+
+
     public ArrayList<Movie> findByRank(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY rating DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();

@@ -20,6 +20,8 @@ public class searchBar implements Initializable {
     @FXML
     private TextField searchBar;
 
+    private HomeController homeController;
+
     @FXML
     private VBox searchSuggestionContainer;
 

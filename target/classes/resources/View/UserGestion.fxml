@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1030.0" style="-fx-background-color: #0e171e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserGestion">
+   <children>
+      <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="30.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/userLogo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="pseudoUser" layoutX="147.0" layoutY="5.0" prefHeight="90.0" prefWidth="616.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Symbol" size="27.0" />
+         </font>
+      </Label>
+      <HBox layoutX="744.0" layoutY="5.0" prefHeight="90.0" prefWidth="274.0">
+         <children>
+            <Button fx:id="adminButton" mnemonicParsing="false" onAction="#setAdmin" onMouseEntered="#decreaseOpacityOnHover1" onMouseExited="#increaseOpacityOnHover1" prefHeight="68.0" prefWidth="81.0" style="-fx-background-color: #0e171e;">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="68.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/addAdminButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="banButton" mnemonicParsing="false" onAction="#setBan" onMouseEntered="#decreaseOpacityOnHover2" onMouseExited="#increaseOpacityOnHover2" prefHeight="68.0" prefWidth="81.0" style="-fx-background-color: #0e171e;">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="68.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/banButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</Pane>

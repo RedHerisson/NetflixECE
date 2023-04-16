@@ -16,10 +16,10 @@
    <children>
       <StackPane layoutX="50.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="165.0">
          <children>
-            <AnchorPane opacity="0" prefHeight="247.0" prefWidth="165.0" />
+            <AnchorPane opacity="0.0" prefHeight="247.0" prefWidth="165.0" />
             <ImageView fx:id="posterContainer" fitHeight="247.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-            <Pane fx:id="darkLayer" opacity="0.4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" StackPane.alignment="CENTER" />
+            <Pane fx:id="darkLayer" opacity="0.2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" StackPane.alignment="CENTER" />
          </children>
       </StackPane>
       <VBox layoutX="230.0" layoutY="11.0" prefHeight="228.0" prefWidth="490.0">
@@ -61,7 +61,19 @@
       </VBox>
       <HBox layoutX="720.0" layoutY="80.0" prefHeight="108.0" prefWidth="301.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#updateMovie" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #111111;">
+            <Button fx:id="addPromoButton" mnemonicParsing="false" onMouseEntered="#decreaseOpacityOnHover1" onMouseExited="#increaseOpacityOnHover1" prefHeight="68.0" prefWidth="81.0" style="-fx-background-color: #111111;">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="8.0" top="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/addbutton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#updateMovie" onMouseEntered="#decreaseOpacityOnHover2" onMouseExited="#increaseOpacityOnHover2" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #111111;">
                <HBox.margin>
                   <Insets bottom="20.0" left="6.0" right="8.0" top="20.0" />
                </HBox.margin>
@@ -73,7 +85,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" onAction="#deleteMovie" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #111111;">
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteMovie" onMouseEntered="#decreaseOpacityOnHover3" onMouseExited="#increaseOpacityOnHover3" prefHeight="200.0" prefWidth="80.0" style="-fx-background-color: #111111;">
                <HBox.margin>
                   <Insets bottom="20.0" left="6.0" right="6.0" top="20.0" />
                </HBox.margin>

@@ -3,6 +3,7 @@ package com.Vue;
 import com.Model.dao.MovieAccessor;
 import com.Model.dao.PersonAccessor;
 import com.Model.dao.UserAccessor;
+import com.Model.map.Movie;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -15,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.paint.Color;
@@ -43,14 +45,16 @@ public class AdminStats implements Initializable {
     private LineChart lineChart;
 
     @FXML
-    private Label totalFilms, totalUsers, totalUserConnected;
+    private Label totalFilms, totalUsers, totalUserConnected, nbAdmins;
 
     private PersonAccessor personAccessor = new PersonAccessor();
     private UserAccessor userAccessor = new UserAccessor();
     private MovieAccessor movieAccessor = new MovieAccessor();
+    private ArrayList<Movie> movieArrayList = new ArrayList<>();
     int totalMen = 0,totalWomen = 0;
     int[] nbAbonnesParDate = new int[5];
     int[] nbAbonnesParAge = new int[6];
+    int[] nbFilmsParGenre = new int[6];
 
     public AdminStats() throws SQLException, ClassNotFoundException {
     }
@@ -67,10 +71,10 @@ public class AdminStats implements Initializable {
             @Override
             public void handle(ActionEvent event) {
 
-                System.out.println("Le code s'exécute toutes les secondes");
 
                 try {
                     //On met à jour les données
+                    nbAdmins.setText(String.valueOf(userAccessor.countAdmin()));
                     totalFilms.setText(String.valueOf(movieAccessor.countMovies()));
                     totalUsers.setText(String.valueOf(userAccessor.countUsers()));
                     totalUserConnected.setText(String.valueOf(userAccessor.countUsersConnected()));
@@ -99,6 +103,13 @@ public class AdminStats implements Initializable {
             nbAbonnesParAge[3] = personAccessor.countUsersByAge(24, 26);
             nbAbonnesParAge[4] = personAccessor.countUsersByAge(27, 29);
             nbAbonnesParAge[5] = personAccessor.countUsersByAge(30, 100);
+            nbFilmsParGenre[0] = movieAccessor.countMoviesByGenre("Horror");
+            nbFilmsParGenre[1] = movieAccessor.countMoviesByGenre("Drama");
+            nbFilmsParGenre[2] = movieAccessor.countMoviesByGenre("Action");
+            nbFilmsParGenre[3] = movieAccessor.countMoviesByGenre("Fantasy");
+            nbFilmsParGenre[4] = movieAccessor.countMoviesByGenre("Adventure");
+            nbFilmsParGenre[5] = movieAccessor.countMoviesByGenre("Sci-Fi");
+            movieArrayList= movieAccessor.findByPopular(5);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -116,12 +127,12 @@ public class AdminStats implements Initializable {
         data.setName("Nombre de visionnages selon le genre");
 
         //On ajoute les données au graphique
-        data.getData().add(new XYChart.Data("Horreur",32000));
-        data.getData().add(new XYChart.Data("Drame",85600));
-        data.getData().add(new XYChart.Data("Action",69230));
-        data.getData().add(new XYChart.Data("Fantastique",24870));
-        data.getData().add(new XYChart.Data("Aventure",56240));
-        data.getData().add(new XYChart.Data("Romantique",12450));
+        data.getData().add(new XYChart.Data("Horreur",nbFilmsParGenre[0]));
+        data.getData().add(new XYChart.Data("Drame",nbFilmsParGenre[1]));
+        data.getData().add(new XYChart.Data("Action",nbFilmsParGenre[2]));
+        data.getData().add(new XYChart.Data("Fantastique",nbFilmsParGenre[3]));
+        data.getData().add(new XYChart.Data("Aventure",nbFilmsParGenre[4]));
+        data.getData().add(new XYChart.Data("Science-Fiction",nbFilmsParGenre[5]));
 
         //Le graphique prend la forme d'un histogramme
         barChart1.getData().add(data);
@@ -137,13 +148,11 @@ public class AdminStats implements Initializable {
 
         //On ajoute les données au graphique
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Pulp Fiction", 1253000),
-                new PieChart.Data("Interstellar", 1138790),
-                new PieChart.Data("Avatar", 983000),
-                new PieChart.Data("You should not kill", 982563),
-                new PieChart.Data("Titanic", 962563),
-                new PieChart.Data("Harry Potter", 952563),
-                new PieChart.Data("Hunger Games", 902563)
+                new PieChart.Data(movieArrayList.get(0).getTitle(), movieArrayList.get(0).getViewCount()),
+                new PieChart.Data(movieArrayList.get(1).getTitle(), movieArrayList.get(1).getViewCount()),
+                new PieChart.Data(movieArrayList.get(2).getTitle(), movieArrayList.get(2).getViewCount()),
+                new PieChart.Data(movieArrayList.get(3).getTitle(), movieArrayList.get(3).getViewCount()),
+                new PieChart.Data(movieArrayList.get(4).getTitle(), movieArrayList.get(4).getViewCount())
         );
 
         //Le graphique prend la forme d'un camembert
@@ -216,12 +225,7 @@ public class AdminStats implements Initializable {
         barChart2.getXAxis().setStyle("-fx-border-color: #ffffff transparent transparent transparent;  -fx-border-width:3");
         barChart2.getYAxis().setStyle("-fx-border-color: transparent #ffffff transparent transparent;  -fx-border-width:3");
 
-        ///////////////////////////////////////////////////////////////////////////////////Catalog
 
-//        comboBox.setValue("Fantastique");
-//        comboBox.setValue("Horreur");
-//        comboBox.setValue("Action");
-//        comboBox.setValue("Drame");
 
 
     };

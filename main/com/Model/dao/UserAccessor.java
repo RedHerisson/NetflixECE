@@ -88,6 +88,25 @@ public class UserAccessor extends PersonAccessor {
         else return null;
     }
 
+    public ArrayList<User> searchPseudo(String querry) throws SQLException, IOException, ClassNotFoundException {
+        ArrayList<User> userList = new ArrayList<User>();
+        ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE pseudo like '%"+querry +"%'" );
+        while( findUser.next() ) {
+            userList.add( findById( findUser.getInt(1) ) );
+        }
+        return userList;
+    }
+
+    public int countAdmin() throws SQLException, ClassNotFoundException, IOException {
+        int cpt=0;
+
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT COUNT(*) FROM User WHERE admin = 1");
+        if (result.next()){
+            cpt=result.getInt(1);
+        }
+        return cpt;
+    }
+
     public User findByMail( String mail ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE email = " + "'" +  mail + "'" );
         if( findUser.next() ) {
@@ -124,7 +143,6 @@ public class UserAccessor extends PersonAccessor {
         }
 
         result.close();
-        System.out.println("Movie not found");
         return cpt;
     }
 
@@ -186,6 +204,16 @@ public class UserAccessor extends PersonAccessor {
 
 
         return usr.getId();
+    }
+
+
+
+    public void setAdmin(User user) throws SQLException {
+        PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
+                "UPDATE User SET admin = ? WHERE id = " + user.getId() );
+
+        pre.setBoolean(1, user.isAdmin());
+        pre.executeUpdate();
     }
 
     /**
@@ -250,6 +278,9 @@ public class UserAccessor extends PersonAccessor {
         if( data.next() ) {
             userDataAccessor.delete(data.getInt(1));
         }
+        dataBase.getRequest().executeUpdate("SET foreign_key_checks = 0");
         dataBase.getRequest().executeUpdate("DELETE FROM User WHERE ID = " + id);
     }
+
+
 }

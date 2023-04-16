@@ -8,26 +8,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-
 <BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="1200.0" spacing="100.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="200.0">
+            <StackPane alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="629.0">
                <children>
                   <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="50.0" prefWidth="560.0" spacing="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-background-radius: 50; -fx-background-color: rgba(14, 23, 30, 1);">
                      <children>
                         <ImageView fitHeight="37.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/icon/home.png" />
+                              <Image url="@../images/homeMenu.png" />
                            </image>
                            <HBox.margin>
                               <Insets bottom="3.0" left="20.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/icon/play.png" />
+                              <Image url="@../images/playButton.png" />
                            </image>
                            <HBox.margin>
                               <Insets />
@@ -48,18 +47,4 @@
          </children>
       </HBox>
    </center>
-   <left>
-      <Pane maxHeight="-Infinity" prefHeight="50.0" prefWidth="65.0" style="-fx-background-radius: 50; -fx-background-color: rgba(14, 23, 30, 1); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" BorderPane.alignment="TOP_CENTER">
-         <children>
-            <ImageView fitHeight="39.0" fitWidth="30.0" layoutX="18.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/icon/backArrow.png" />
-               </image>
-            </ImageView>
-         </children>
-         <BorderPane.margin>
-            <Insets left="10.0" />
-         </BorderPane.margin>
-      </Pane>
-   </left>
 </BorderPane>
