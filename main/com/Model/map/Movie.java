@@ -66,6 +66,25 @@ public class Movie extends BdModel {
         this.viewCount = viewCount;
     }
 
+    //Constructeur par copie
+    public Movie(Movie movie) {
+        super(movie.getId());
+        this.id = movie.getId();
+        this.title = movie.getTitle();
+        this.thumbnail = movie.getThumbnail();
+        this.filePath = movie.getFilePath();
+        this.releaseDate = movie.getReleaseDate();
+        this.length = movie.getLength();
+        this.director = movie.getDirector();
+        this.actors = movie.getActors();
+        this.type = movie.getTypeArray();
+        this.summary = movie.getSummary();
+        this.teaserPath = movie.getTeaserPath();
+        this.rating = movie.getRating();
+        this.awarded = movie.isAwarded();
+        this.viewCount = movie.getViewCount();
+    }
+
     public String getTitle() {
         return title;
     }

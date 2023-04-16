@@ -1,23 +1,84 @@
 package com.Vue;
 
+import com.Model.dao.MovieAccessor;
+import com.Model.map.Movie;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class AdminCatalog {
+public class AdminCatalog implements Initializable {
 
     ///Attributs
     AdminAppController adminAppController;
     @FXML
-    private Button button1, button2 , button3, button4;
+    private Button button1, button2, button3, button4;
+    @FXML
+    private VBox vBox;
+    @FXML
+    private TextField textField;
+    @FXML
+    private ScrollPane scrollPane;
+
+    private String querrySearched;
+    private MovieAccessor movieAccessor = new MovieAccessor();
+    private Movie movie;
+    private ArrayList<Movie> movieArrayList = new ArrayList<>();
+
+    public AdminCatalog() throws SQLException, ClassNotFoundException {
+    }
 
     ///Méthodes
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        textField.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 2;");
+
+    }
+
+    @FXML
+    public void HandleSearch(ActionEvent event) throws Exception {
+        //On supprime tous les films de la vBox
+        vBox.getChildren().clear();
+        //On remet le scrollPane en haut
+        scrollPane.setVvalue(0);
+        //On capture ce qui a été pris dans le textField
+        querrySearched = textField.getText();
+        movieArrayList = movieAccessor.search(querrySearched);
+        System.out.println(querrySearched);
+        int idMovieDeleted = 0;
+
+        //On load tous les films de la arraylist
+        for (Movie movie : movieArrayList) {
+            System.out.println(movie.getTitle());
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/MovieGestion.fxml"));
+            Pane root = fxmlLoader.load();
+            MenuGestionController menuGestionController = fxmlLoader.getController();
+            menuGestionController.setMovie(movie);
+
+            vBox.getChildren().add(root);
+
+
+        }
+    }
+
+
+
 
     //Setter du controller de l'application
     public void setAppAdminController(AdminAppController adminAppController) {

@@ -58,6 +58,9 @@ public class PersonAccessor extends Accessor<Person> {
         return cpt;
     }
 
+    //return name of a user
+
+
     public int countUsersByAge(int age1, int age2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 

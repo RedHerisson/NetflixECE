@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0e171e; -fx-border-color: #5e5e5e; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UpdateMoviesInterface">
+   <children>
+      <Pane prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #242424;">
+         <children>
+            <Label alignment="CENTER" prefHeight="90.0" prefWidth="600.0" text="Update Movie Interface" textFill="WHITE">
+               <font>
+                  <Font name="Symbol" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="newTitle" alignment="CENTER" layoutX="136.0" layoutY="146.0" prefHeight="25.0" prefWidth="325.0" promptText="New Title" style="-fx-background-color: transparent; -fx-border-color: #5e5e5e; -fx-border-radius: 20; -fx-border-width: 2;" />
+      <TextField fx:id="newType" alignment="CENTER" layoutX="138.0" layoutY="200.0" prefHeight="25.0" prefWidth="325.0" promptText="New Type" style="-fx-background-color: transparent; -fx-border-color: #5e5e5e; -fx-border-radius: 20; -fx-border-width: 2;" />
+      <DatePicker fx:id="newDate" layoutX="213.0" layoutY="255.0" promptText="New Date" style="-fx-background-color: transparent;" />
+      <Button fx:id="confirmButton" layoutX="234.0" layoutY="309.0" mnemonicParsing="false" onAction="#ConfirmUpdate" prefHeight="41.0" prefWidth="129.0" style="-fx-background-color: #407837; -fx-border-color: #204519; -fx-border-radius: 20; -fx-border-width: 5; -fx-background-radius: 30;" text="Confirmer" textFill="WHITE">
+         <font>
+            <Font name="Symbol" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

@@ -20,16 +20,12 @@ public class PresApp  extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/moviePres.fxml"));
         MovieAccessor movieAccessor = new MovieAccessor();
-
-
         Scene scenes = new Scene(loader.load(), 1275, 645, Color.BLACK);
-
         Movie movie = movieAccessor.findById(300);
         MoviePres controller = loader.<MoviePres>getController();
         AppController appController = new AppController();
         controller.setAppController(appController);
         controller.loadMovie(movie);
-
         stage.setScene(scenes);
         stage.setTitle(movie.getTitle());
         stage.setResizable(false);
