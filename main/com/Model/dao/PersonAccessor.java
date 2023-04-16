@@ -42,12 +42,10 @@ public class PersonAccessor extends Accessor<Person> {
     /**
      * Get Person from name from sqlBDD
      *
-     * @param name SQL name of the object
+     * @param sexe SQL name of the object
      * @return Person object found
      * @throws SQLException error while accessing the dataBase
      */
-
-
     public int countUsersBySexe(String sexe) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -61,6 +59,15 @@ public class PersonAccessor extends Accessor<Person> {
     //return name of a user
 
 
+    /**
+     * compteur pour les statistiques des users
+     * @param age1 prends en compte l'age du premier user
+     * @param age2 prends en compte un second age de user
+     * @return  compteur
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersByAge(int age1, int age2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
