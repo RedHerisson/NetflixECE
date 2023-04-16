@@ -14,7 +14,7 @@ public class User extends Person {
 
     private LocalDate acc_creation_date;
 
-    private ArrayList<Playlist> playlists;
+    private Playlist WatchLater;
 
     private Playlist history;
 
@@ -25,14 +25,14 @@ public class User extends Person {
     private boolean admin;
 
     public User(int id, String pseudo, String pwd, String name, String surname, String email, int age, String sexe, LocalDate acc_creation_date,
-                ArrayList<Playlist> playlists ,Playlist history, ArrayList<String> favouriteType, ArrayList<UserData> data, boolean admin) {
+                Playlist WatchLater ,Playlist history, ArrayList<String> favouriteType, ArrayList<UserData> data, boolean admin) {
         super(id, name, surname, age, sexe );
         this.pseudo = pseudo;
         this.pwd = pwd;
         this.email = email;
         this.acc_creation_date = acc_creation_date;
-        this.playlists = playlists;
-        this.history = history; //TODO : force history to be called "History"
+        this.WatchLater = WatchLater;
+        this.history = history;
         this.favouriteType = favouriteType;
         this.data = data;
         this.admin = admin;
@@ -55,8 +55,8 @@ public class User extends Person {
         return acc_creation_date;
     }
 
-    public ArrayList<Playlist> getPlaylists() {
-        return playlists;
+    public Playlist getWatchList() {
+        return WatchLater;
     }
 
     public Playlist getHistory() {
@@ -75,20 +75,12 @@ public class User extends Person {
         return admin;
     }
 
-    public void addFavouriteType(String type) {
-        this.favouriteType.add(type);
+    public void addMovieToWatchList(Movie movie) {
+        this.WatchLater.addMovie(movie);
     }
 
-    public void removeFavouriteType(String type) {
-        this.favouriteType.remove(type);
-    }
-
-    public void addMovieToPlaylist(Playlist movie) {
-        this.playlists.add(movie);
-    }
-
-    public void removeMovieFromPlaylist(Playlist movie) {
-        this.playlists.remove(movie);
+    public void RemoveMovieToWatchList(Movie movie) {
+        this.WatchLater.removeMovie(movie.getId());
     }
 
     public void addMovieToHistory(Movie movie) {
@@ -126,7 +118,7 @@ public class User extends Person {
                 ", pwd='" + pwd + '\'' +
                 ", email='" + email + '\'' +
                 ", acc_creation_date=" + acc_creation_date +
-                ", playlists=" + playlists +
+                ", playlists=" + WatchLater +
                 ", history=" + history +
                 ", favouriteType=" + favouriteType +
                 ", data=" + data +
@@ -134,4 +126,14 @@ public class User extends Person {
                 '}';
     }
 
+    public ArrayList<Movie> getMovieStarted() {
+        ArrayList<Movie> movies = new ArrayList<>();
+        for(UserData data : this.data) {
+            System.out.println(data.getMovie().getTitle());
+            if(data.isView()) {
+                movies.add(data.getMovie());
+            }
+        }
+        return movies;
+    }
 }

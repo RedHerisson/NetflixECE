@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 
 import javafx.geometry.Insets;
 
+import javafx.geometry.NodeOrientation;
+import javafx.scene.Cursor;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -74,9 +76,34 @@ public class MoviePres  extends Controller implements  Initializable {
         MovieInfoController InfoController = movieInfoPagingData.getController();
         InfoController.setAppController(appController);
         InfoController.updateFromMovie(movie);
-        InfoController.setMediaHeightClip(800); // TODO: change for responsive
+        InfoController.setMediaHeightClip(500); // TODO: change for responsive
 
         mainContainer.getChildren().add(0, MovieInfoContainer);
+
+        ImageView BackArrow = new ImageView();
+        BackArrow.setFitHeight(50);
+        BackArrow.setFitWidth(50);
+        BackArrow.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                appController.setHomePage();
+            }
+        });
+        BackArrow.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                BackArrow.getScene().setCursor(javafx.scene.Cursor.HAND);
+            }
+        });
+        BackArrow.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                BackArrow.getScene().setCursor(Cursor.DEFAULT);
+            }
+        });
+        BackArrow.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+        BackArrow.setImage(SwingFXUtils.toFXImage(ImageIO.read(getClass().getResource("/resources/images/icon/arrow.png")), null));
+        mainContainer.getChildren().add(0, BackArrow);
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/Carousel.fxml"));
@@ -101,7 +128,8 @@ public class MoviePres  extends Controller implements  Initializable {
             controller.LoadMovies(movies);
 
             suggestionContainer.getChildren().add(playlist);
-            suggestionContainer.setPrefHeight(playlist.getPrefHeight() + 1000);
+            suggestionContainer.setPrefHeight(playlist.getPrefHeight() + 1200);
+            mainContainer.setPrefHeight(2000);
 
             // load rankStar from resources
             rankStar = ImageIO.read(getClass().getResource("/resources/images/icon/starFilled.png"));
@@ -117,7 +145,6 @@ public class MoviePres  extends Controller implements  Initializable {
                 star.hoverProperty().addListener((observable, oldValue, newValue) -> {
                     if(newValue) {
                         updateGraphicRanking(finalI +1);
-
                     }
                     else {
                         updateGraphicRanking(currentMark);
@@ -166,13 +193,10 @@ public class MoviePres  extends Controller implements  Initializable {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            userDataAccessor.updateRate(userData);
         }
+        userData.setRate(mark);
+        userDataAccessor.updateRate(userData);
     }
-    public void setUserRanking(int rank) {
-        //optionContainer
-    }
-
 
     @Override
     public void setAppController(AppController appController) {

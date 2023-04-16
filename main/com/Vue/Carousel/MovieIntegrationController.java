@@ -116,7 +116,4 @@ public class MovieIntegrationController extends Controller implements Initializa
         }
     }
 
-    public void setAppController(AppController appController) {
-        this.appController = appController;
-    }
 }

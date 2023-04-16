@@ -271,7 +271,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
     public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Movie> movies = new ArrayList<>();
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie WHERE type LIKE '%" + type + "%' LIMIT " + max);
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT DISTINCT ID FROM Movie WHERE type LIKE '%" + type + "%' LIMIT " + max);
         while (result.next()) {
             movies.add(findById(result.getInt(1)));
         }
@@ -290,7 +290,37 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    // find by Popular
+    public ArrayList<Movie> findByPopular(int i) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY view_counter DESC LIMIT " + i);
+        ArrayList<Movie> movies = new ArrayList<>();
+        while (result.next()) {
+            movies.add(findById(result.getInt(1)));
+        }
+        result.close();
+        return movies;
+    }
+    public ArrayList<Movie> findByRank(int i) throws SQLException, IOException, ClassNotFoundException {
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY rating DESC LIMIT " + i);
+        ArrayList<Movie> movies = new ArrayList<>();
+        while (result.next()) {
+            movies.add(findById(result.getInt(1)));
+        }
+        result.close();
+        return movies;
+    }
+
     public void addView(int id) throws SQLException {
         dataBase.getRequest().executeUpdate("Update Movie SET view_counter = view_counter + 1 WHERE ID = " + id);
     }
+
+    public void updateRating(int id, double rate) {
+        try {
+            dataBase.getRequest().executeUpdate("Update Movie SET rating = " + rate + " WHERE ID = " + id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

@@ -3,9 +3,11 @@ package com.Controller;
 import com.Model.dao.MovieAccessor;
 import com.Model.dao.PlaylistAccessor;
 import com.Model.dao.UserAccessor;
+import com.Model.dao.UserDataAccessor;
 import com.Model.map.Movie;
 import com.Model.map.Playlist;
 import com.Model.map.User;
+import com.Model.map.UserData;
 import com.Vue.HomeController;
 import com.Vue.LoginController;
 import com.Vue.MoviePres;
@@ -19,9 +21,13 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 
 public class AppController extends Application {
@@ -32,11 +38,31 @@ public class AppController extends Application {
 
     private User loginUser;
 
+    private boolean NasConnected = false;
+
     @Override
     public void start(Stage stage) throws Exception {
 
     mainStage = stage;
+    TestConnection();
     setLoginPage();
+    }
+
+    private void TestConnection() {
+        try {
+            File file = new File("L:/test.txt");
+            if (file.exists()) {
+                NasConnected = true;
+                System.out.println("NAS connected");
+            }
+            else {
+                System.out.println("NAS NOT connected");
+                NasConnected = false;
+            }
+        } catch (Exception e) {
+            NasConnected = false;
+        }
+
     }
 
     public void setLoginPage() throws IOException {
@@ -65,8 +91,6 @@ public class AppController extends Application {
 
             loadHomeFromUser(controller);
 
-
-
             mainStage.setTitle("NetflixECE");
 
             mainStage.setScene(scene);
@@ -91,8 +115,7 @@ public class AppController extends Application {
             controller.setAppController(this);
             controller.loadMovie(movie);
 
-
-            mainStage.setResizable(true);
+            mainStage.setResizable(false);
 
             mainStage.setScene(scene);
             mainStage.setTitle(movie.getTitle());
@@ -105,18 +128,25 @@ public class AppController extends Application {
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
         Movie movie = movieAccessor.findById(130);
+        UserDataAccessor userDataAccessor = new UserDataAccessor();
+        controller.setAppController(this);
 
-        // chargement des films suivant :
-        // Continuer à regarder
-        // En fonction des types de films que l'utilisateur a regardé
-        // Les films les plus populaires
-        // Les films les mieux notés
-        // Les films les plus récents
+        controller.AddPromotion(movie);
+
+
+        ArrayList<Movie> movieStarted = loginUser.getMovieStarted();
+        // reverse array
+        Collections.reverse(movieStarted);
+        if( movieStarted.size() != 0 ) controller.AddPlaylist(movieStarted, "Continue to watch");
+
+        ArrayList<Movie> movieFromContinue = loginUser.getWatchList().getMoviesList();
+        if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist");
 
         ArrayList<String> TypeFromHistory = loginUser.getTypeFromHistory();
         ArrayList<Movie> movieFromHistory = new ArrayList<Movie>();
         for (String type : TypeFromHistory) {
-            ArrayList<Movie> movies = movieAccessor.findByType(type, 10);
+            System.out.println(type);
+            ArrayList<Movie> movies = movieAccessor.findByType(type, 1);
             // melange des films pour avoir un affichage aléatoire
             for (int i = 0; i < movies.size(); i++) {
                 int rand = (int) (Math.random() * movies.size());
@@ -126,15 +156,17 @@ public class AppController extends Application {
             }
             movieFromHistory.addAll(movies);
         }
-        controller.AddPlaylist(movieFromHistory, "From your history");
+        controller.AddPlaylist(movieFromHistory, "Type From your history");
 
-        //ArrayList<Movie> movieFromPopular = movieAccessor.findByPopularity(30);
-        //controller.AddPlaylist(movieFromPopular, "Les plus populaires");
+        ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
+        controller.AddPlaylist(movieFromPopular, "Most Popular");
 
-        ArrayList<Movie> RecentMovies = movieAccessor.findByDate(100);
+        ArrayList<Movie> movieFromBestRank = movieAccessor.findByRank(20);
+        controller.AddPlaylist(movieFromBestRank, "Best Ranking");
+
+        ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
         controller.AddPlaylist(RecentMovies, "Recent releases");
 
-        controller.AddPromotion(movie);
     }
 
     public void loginComplete(User user){
@@ -199,6 +231,10 @@ public class AppController extends Application {
 
     public User getCurrentuser() {
         return loginUser;
+    }
+
+    public boolean isConnected() {
+        return NasConnected;
     }
 }
 

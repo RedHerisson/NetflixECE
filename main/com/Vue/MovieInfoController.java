@@ -73,18 +73,27 @@ public class MovieInfoController extends Controller implements Initializable {
         actors = actors.substring(0, actors.length() - 2);
         ActorsLabel.setText(actors);
 
-        File file = new File(movie.getTeaserPath() + ".mp4");
-        Media movieFile = new Media(file.toURI().toString());
+        File mediaFile;
+        if( appController.isConnected() ) {
+            mediaFile = new File("L:/" + movie.getTeaserPath() + ".mp4");
+        } else {
+            mediaFile = new File("demo.mp4");
+
+        }
+        Media movieFile = new Media(mediaFile.toURI().toString());
         player = new MediaPlayer(movieFile);
         trailerIntegration.setMediaPlayer(player);
 
+        System.out.println("width : " + TrailerContainer.getWidth() + " height : " + TrailerContainer.getHeight());
         trailerIntegration.setFitWidth(TrailerContainer.getWidth());
         trailerIntegration.setFitHeight(TrailerContainer.getHeight());
+
+        System.out.println("width : " + trailerIntegration.getFitWidth() + " height : " + trailerIntegration.getFitHeight());
 
 
         Bounds actualVideoSize = trailerIntegration.getLayoutBounds();
         trailerIntegration.setX(( (TrailerContainer.getWidth() - actualVideoSize.getWidth()) / 2) ) ;
-        trailerIntegration.setY( ( (TrailerContainer.getHeight() - actualVideoSize.getHeight()) / 2) - 90 );
+        trailerIntegration.setY( ( (TrailerContainer.getHeight() - actualVideoSize.getHeight()) / 2) - 90);
 
         player.setVolume(0);
         player.play();

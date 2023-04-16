@@ -87,10 +87,11 @@ public class RegisterController extends Controller {
                 LocalDate userBirth = UserAge.getValue();
                 int age = userBirth.getYear() - LocalDate.now().getYear(); // TODO: check for month and day
                 Playlist history = new Playlist(-1, -1, "History", new ArrayList<Movie>());
+                Playlist WatchLater = new Playlist(-1, -1, "WatchLater", new ArrayList<Movie>());
 
 
                 User user = new User(-1, UserName.getText(),Password.getText(), LastName.getText(), FirstName.getText(), UserMail.getText(),
-                age, sexe, LocalDate.now(), new ArrayList<Playlist>(),history, new ArrayList<String>(), new ArrayList<UserData>(),false );
+                age, sexe, LocalDate.now(),WatchLater ,history, new ArrayList<String>(), new ArrayList<UserData>(),false );
                 userAccessor.create(user);
                 System.out.println("User created: " + user);
                 appController.setHomePage();

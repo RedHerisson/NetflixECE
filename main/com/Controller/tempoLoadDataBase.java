@@ -49,7 +49,6 @@ public class tempoLoadDataBase {
             try (Response response = client.newCall(request).execute()) {
 
                 String json = response.body().string();
-                //System.out.println(json);
 
                 return json;
             } catch (IOException e) {

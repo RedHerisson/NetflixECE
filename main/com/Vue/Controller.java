@@ -6,7 +6,9 @@ public abstract class Controller {
 
     protected AppController appController;
 
-    public abstract void setAppController(AppController appController);
+    public void setAppController(AppController appController) {
+        this.appController = appController;
+    };
 
 
 }

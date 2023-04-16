@@ -129,12 +129,14 @@ public class CarouselController extends Controller implements Initializable {
         nbrMoviesPerPage = (int) (carouselContainer.getPrefWidth() / 200) + 1;
         maxPage = (int) (fullMovieArray.size() / nbrMoviesPerPage) + 1;
         for(int i = 0; i < nbrMoviesPerPage; i++ ) {
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/MovieIntegration.fxml"));
             StackPane mvContainer = fxmlLoader.load();
             MovieIntegrationController controller = fxmlLoader.getController();
             controller.setAppController(appController);
             controllerList.add(controller);
             carouselContainer.getChildren().add(mvContainer);
+
         }
         System.out.println("Nombre de Films : " + nbrMoviesPerPage);
         System.out.println("Nombre de page : " + maxPage);

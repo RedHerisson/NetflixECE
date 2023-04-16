@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
@@ -33,7 +34,8 @@ public class LoginController  extends Controller implements Initializable {
     private PasswordField enterPasswordField;
     @FXML
     private Button RegisterButton;
-    private AppController appController;
+    @FXML
+    private Pane WarningMovieDB;
 
 
     @FXML
@@ -69,6 +71,11 @@ public class LoginController  extends Controller implements Initializable {
 
     public void setAppController(AppController appController) {
         this.appController = appController;
+        if( appController.isConnected() ) {
+            WarningMovieDB.setVisible(false);
+        } else {
+            WarningMovieDB.setVisible(true);
+        }
     }
 
     public void cancelButtonOnAction(ActionEvent event){

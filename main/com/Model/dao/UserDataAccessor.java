@@ -55,7 +55,7 @@ public class UserDataAccessor extends Accessor<UserData> {
 
     public ArrayList<UserData> findAllDataFromUser(int UserId) throws SQLException, IOException, ClassNotFoundException {
 
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT user_ID FROM User_Data WHERE user_ID = " + UserId );
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM User_Data WHERE user_ID = " + UserId );
         ArrayList<UserData> userDataArray = new ArrayList<UserData>();
         while(result.next()) {
             userDataArray.add(findById(result.getInt(1)));
@@ -96,10 +96,11 @@ public class UserDataAccessor extends Accessor<UserData> {
      */
     public void updateView(UserData usrData) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "UPDATE User_Data SET view = ? WHERE User_ID = ?");
+                "UPDATE User_Data SET view = ? WHERE ID = ?");
 
         pre.setBoolean(1, usrData.isView());
         pre.setInt(2, usrData.getId());
+
         pre.executeUpdate();
         pre.close();
     }
@@ -111,7 +112,7 @@ public class UserDataAccessor extends Accessor<UserData> {
      */
     public void updateLengthAlreadySeen(UserData usrData) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "UPDATE User_data SET length_already_seen = ? WHERE User_ID = ?");
+                "UPDATE User_Data SET length_already_seen = ? WHERE ID = ?");
 
         pre.setInt(1, usrData.getLengthAlreadySeen());
         pre.setInt(2, usrData.getId());
@@ -141,12 +142,23 @@ public class UserDataAccessor extends Accessor<UserData> {
      */
     public void updateRate(UserData usrData) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "UPDATE User_Data SET rate = ? WHERE User_ID = ?");
+                "UPDATE User_Data SET rate = ? WHERE User_ID = ? AND Movie_ID = ?");
 
+        System.out.println("rate : " + usrData.getRate());
         pre.setDouble(1, usrData.getRate());
         pre.setInt(2, usrData.getId());
+        pre.setInt(3, usrData.getMovie().getId());
         pre.executeUpdate();
         pre.close();
+
+        // recupere la note moyenne du film en fonction de toute les notes
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT AVG(CASE WHEN rate <> 0 THEN rate ELSE NULL END) FROM User_Data WHERE Movie_ID = " + usrData.getMovie().getId() );
+        if ( result.next() ) {
+            double rate = result.getDouble(1);
+            System.out.println("rate : " + rate);
+            // met a jour la note du film
+            movieAccessor.updateRating(usrData.getMovie().getId(), rate);
+        }
     }
 
     /**
@@ -158,4 +170,6 @@ public class UserDataAccessor extends Accessor<UserData> {
     public void delete(int id ) throws SQLException {
         dataBase.getRequest().executeUpdate(" DELETE FROM User_Data WHERE user_ID = " + id );
     }
+
+
 }

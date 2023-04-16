@@ -57,8 +57,9 @@ public class HomeController extends Controller implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
         VBox PromoContainer = fxmlLoader.load();
         MovieInfoController controller = fxmlLoader.getController();
-        controller.updateFromMovie(movie);
         controller.setAppController(appController);
+        controller.updateFromMovie(movie);
+
 
         PlaylistContainer.getChildren().add(PromoContainer);
         // update the height of the scroll pane to fit the new content

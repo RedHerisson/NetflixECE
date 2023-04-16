@@ -41,8 +41,8 @@ public class UserAccessor extends PersonAccessor {
     public User findById(int id) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE ID = " + id );
         ResultSet findFavType = dataBase.getRequest().executeQuery(" SELECT ID FROM Favourite_type WHERE user_id = " + id );
-        ResultSet findPlaylist = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id );
         ResultSet findHistory = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id + " AND title = 'History' " );
+        ResultSet findWatchLater = dataBase.getRequest().executeQuery(" SELECT ID FROM Playlist WHERE user_id = " + id + " AND title = 'WatchLater' ");
 
         if ( findUser.next() ) {
             int personID = findUser.getInt(2);
@@ -63,16 +63,18 @@ public class UserAccessor extends PersonAccessor {
                 history = null;
 
             // select all Playlist from the user in the database
-            ArrayList<Playlist> playlistList = new ArrayList<Playlist>();
-            while( findPlaylist.next() ) {
-                playlistList.add( playlistAccessor.findById(findPlaylist.getInt(1)) );
+            Playlist WatchLater;
+            if( findWatchLater.next() ) {
+                WatchLater = playlistAccessor.findById(findWatchLater.getInt(1));
             }
-            
+            else
+                WatchLater = null;
+
+            System.out.println(WatchLater);
 
             Person pDef = personAccessor.findById(personID);
-            
 
-            return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), playlistList,
+            return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), WatchLater,
                     history, favTypeList, userDataAccessor.findAllDataFromUser(id), admin);
         }
         return null;
@@ -101,6 +103,7 @@ public class UserAccessor extends PersonAccessor {
         }
         else return false;
     }
+
     public int countUsersFromDate(String date1, String date2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -167,10 +170,10 @@ public class UserAccessor extends PersonAccessor {
         }
         usr.setId(dataBase.getLastIdFromTable("User"));
 
-        for( Playlist pl : usr.getPlaylists() ) {
-            pl.setOwnerId(usr.getId());
-            playlistAccessor.create(pl);
-        }
+        Playlist WatchLater = usr.getWatchList();
+        WatchLater.setOwnerId(usr.getId());
+        playlistAccessor.create(WatchLater);
+
         Playlist history = usr.getHistory();
         history.setOwnerId(usr.getId());
         playlistAccessor.create(history);

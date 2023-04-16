@@ -4,14 +4,21 @@ package com.Vue.VideoPlayer;
 import java.awt.*;
 
 import com.Controller.AppController;
+import com.Model.dao.UserDataAccessor;
 import com.Model.map.Movie;
+import com.Model.map.UserData;
 import com.Vue.Controller;
 import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -42,8 +49,6 @@ public class PlayerController extends Controller implements Initializable {
     @FXML
     private StackPane FullFrame;
     @FXML
-    private Rectangle bg;
-    @FXML
     private MediaView viewer;
     @FXML
     private Button playPauseButton, FsButton ;
@@ -64,9 +69,14 @@ public class PlayerController extends Controller implements Initializable {
     @FXML
     private AnchorPane bgControl;
 
-
     private Media movieMedia;
+
+    private Movie movie;
     private MediaPlayer player;
+
+    private UserData userData;
+
+    private UserDataAccessor userDataAccessor;
 
     @Override
     public void setAppController(AppController appController) {
@@ -78,7 +88,6 @@ public class PlayerController extends Controller implements Initializable {
 
     }
     stateButton state;
-
     MouseListener mouse;
 
     @Override
@@ -87,10 +96,28 @@ public class PlayerController extends Controller implements Initializable {
 
     }
 
-    public void loadMovie(Movie movie) {
+    public void loadMovie(Movie movie) throws Exception {
+        this.movie = movie;
+        userDataAccessor = new UserDataAccessor();
+        userData = userDataAccessor.findByMovieAndUser(appController.getCurrentuser().getId(), this.movie.getId());
+        if( userData == null ) {
+                userData = new UserData(-1, appController.getCurrentuser().getId(), movie.getId(), true, 0, "", 0);
+                userData.setId(userDataAccessor.create(userData));
+        }
+        else {
+            userData.setView(true);
+            userDataAccessor.updateView(userData);
+        }
 
-        File file = new File(movie.getFilePath() + ".mp4");
-        movieMedia = new Media(file.toURI().toString());
+
+        File mediaFile;
+        if( appController.isConnected() ) {
+            mediaFile = new File("L:/" + movie.getFilePath() + ".mp4");
+        } else {
+             mediaFile = new File("demo.mp4");
+        }
+
+        movieMedia = new Media(mediaFile.toURI().toString());
         player = new MediaPlayer(movieMedia);
         viewer.setMediaPlayer(player);
 
@@ -104,12 +131,32 @@ public class PlayerController extends Controller implements Initializable {
 
         state = stateButton.PLAY;
 
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    int seek = (int) player.getCurrentTime().toSeconds();
+                    userData.setLengthAlreadySeen(seek);
+                    userDataAccessor.updateLengthAlreadySeen(userData);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+
+        // Set the cycle count of the timeline to indefinite, so it keeps running until stopped
+        timeline.setCycleCount(Timeline.INDEFINITE);
+
+        timeline.play();
+
         player.play();
 
         controlVisible = false;
 
         timerLabel.setText(computeTime(player.getCurrentTime()) + " /");
         totalTimeLabel.setText(computeTime(player.getTotalDuration()));
+
+
 
         player.totalDurationProperty().addListener(new ChangeListener<Duration>() {
             @Override
@@ -148,6 +195,7 @@ public class PlayerController extends Controller implements Initializable {
         });
 
         volumeSlider.setMax(100);
+        volumeSlider.setValue(100);
 
         player.volumeProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -172,7 +220,7 @@ public class PlayerController extends Controller implements Initializable {
 
         FullFrame.setOnMouseMoved(event -> {
 
-            if (controlVisible == false ) {
+            if (!controlVisible) {
 
                 fadeControl(0);
                 controlVisible = true;
@@ -188,7 +236,6 @@ public class PlayerController extends Controller implements Initializable {
                 );
             }
         });
-
 
     }
 
