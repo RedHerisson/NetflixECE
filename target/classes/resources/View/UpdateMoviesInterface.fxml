@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0e171e; -fx-border-color: #5e5e5e; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UpdateMoviesInterface">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0e171e; -fx-border-color: #5e5e5e; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.Admin.UpdateMoviesInterface">
    <children>
       <Pane prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #242424;">
          <children>

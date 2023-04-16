@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="1030.0" style="-fx-background-color: #111111; -fx-border-color: #555555; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.MenuGestionController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="1030.0" style="-fx-background-color: #111111; -fx-border-color: #555555; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.Admin.MenuGestionController">
    <children>
       <StackPane layoutX="50.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="165.0">
          <children>

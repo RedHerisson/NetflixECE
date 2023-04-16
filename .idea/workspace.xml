@@ -8,49 +8,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - ajout de plein de trucs encore, je suis trop fatigué">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - last modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/HistoricMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/HistoricMovie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserHistoric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserPlaylists.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserProfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/MenuGestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UpdateMoviesInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UpdateMoviesInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UserGestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/ChangePWD.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/HistoricMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/HistoricMovie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserHistoric.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/UserPlaylists.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserProfil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserSettings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/searchBar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/images/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/images/icon/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/icon/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HeaderBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/HeaderBarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HistoricMovie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserHistoric.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserNewPWD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserPlaylists.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/ChangePWD.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/HistoricMovie.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserSettings.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/searchBar.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminStats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminStats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminUserGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminUserGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/HistoricImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/PlaylistImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/TuNeTuerasPoint.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/dune.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/harry-potter.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/inception.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/matrix.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/persiansLessons.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/pirates1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/star_wars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/stars wars 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/tortipouss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/transfomers.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/tron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/wolfCall.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +49,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="24644" />
+    <option name="totalTimeSeconds" value="25587" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -214,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681658709576</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" - last modif">
+      <created>1681673783564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681673783564</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +230,8 @@
     <MESSAGE value="MAIN QUI MARCHE ( fin des embrouilles )" />
     <MESSAGE value="MAIN QUI MARCHE VRAIMENT" />
     <MESSAGE value=" - ajout de plein de trucs encore, je suis trop fatigué" />
-    <option name="LAST_COMMIT_MESSAGE" value=" - ajout de plein de trucs encore, je suis trop fatigué" />
+    <MESSAGE value=" - last modif" />
+    <option name="LAST_COMMIT_MESSAGE" value=" - last modif" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

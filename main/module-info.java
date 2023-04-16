@@ -24,4 +24,6 @@ module netflix {
     opens com.Controller to javafx.fxml;
     exports com.Vue.UserSettings;
     opens com.Vue.UserSettings to javafx.fxml;
+    exports com.Vue.Admin;
+    opens com.Vue.Admin to javafx.fxml;
 }
