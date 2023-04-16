@@ -38,6 +38,9 @@ public class UserNewPWD implements Initializable {
 
     private UserAccessor userAccessor = new UserAccessor();
 
+    public UserNewPWD() throws SQLException, ClassNotFoundException {
+    }
+
     @FXML
     void ChangePWDAction(ActionEvent event) throws SQLException, ClassNotFoundException {
 
@@ -45,13 +48,13 @@ public class UserNewPWD implements Initializable {
 
             String pwd = NewPWD.getText();
             String confirmPDW = ConfirmNewPDW.getText();
-            User newUser = new User(userConnected); //clone
+            //User newUser = new User(userConnected); //clone
 
 
             if(NewPWD.getText().equals(ConfirmNewPDW.getText())){
 
                 System.out.println("New password: " + pwd);
-                userAccessor.updatePwd(newUser);
+               // userAccessor.updatePwd(newUser);
             }
 
         else if(NewPWD.getText().compareTo(ConfirmNewPDW.getText())!=0) {

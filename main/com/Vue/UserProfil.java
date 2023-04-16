@@ -67,22 +67,22 @@ public class UserProfil implements Initializable {
 
                 if (event.getSource() == BttSaveNewName) {
                 String name = NewName.getText();
-                User newUser = new User(userConnected); //clone
+            //    User newUser = new User(userConnected); //clone
                 System.out.println("New name: " + name);
-                personAccessor.updateName(newUser);
+          //      personAccessor.updateName(newUser);
 
             } else if (event.getSource() == BttSaveNewSurname) {
                 String surname = NewSurname.getText();
-                User newUser = new User(userConnected); //clone
+           //     User newUser = new User(userConnected); //clone
                 System.out.println("New surname: " + surname);
-                personAccessor.updateSurname(newUser);
+               // personAccessor.updateSurname(newUser);
 
             } else if (event.getSource() == BttSaveNewPseudo) {
 
                 String pseudo = NewPseudo.getText();
-                User newUser = new User(UserConnected);
+              //  User newUser = new User(UserConnected);
                 System.out.println("New pseudo: " + pseudo);
-                userAccessor.updatePseudo(newUser);
+            //    userAccessor.updatePseudo(newUser);
 
             } else if (event.getSource() == BttChangePassword) {
                 try {
@@ -90,6 +90,7 @@ public class UserProfil implements Initializable {
                     Stage PWDStage = new Stage();
                     PWDStage.setScene(new Scene(root));
                     PWDStage.show();
+                    PWDStage.setTitle("Change your password");
                     Image icon = new Image(getClass().getResourceAsStream("/resources/images/ECE_LOGO.png"));
                     PWDStage.getIcons().add(icon);
                 } catch (Exception e) {

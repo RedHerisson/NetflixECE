@@ -6,23 +6,52 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserProfil">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="1080.0" style="-fx-background-color: #0e171e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserProfil">
     <children>
-        <Label layoutX="89.0" layoutY="33.0" text="To modify your information please enter your mail :">
+        <Label fx:id="MailUser" layoutX="85.0" layoutY="63.0" prefHeight="27.0" prefWidth="67.0" text="Mail" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="12.0" />
+                <Font size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="NewName" layoutX="87.0" layoutY="134.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Name" />
-        <Button fx:id="BttSaveNewSurname" layoutX="336.0" layoutY="206.0" mnemonicParsing="false" onAction="#HandleClick" text="Save" />
-        <TextField fx:id="NewSurname" layoutX="88.0" layoutY="206.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Surname" />
-        <Label layoutX="87.0" layoutY="101.0" text="Name :" />
-        <Label layoutX="89.0" layoutY="176.0" text="Surname " />
-        <Button fx:id="BttChangePassword" layoutX="89.0" layoutY="335.0" mnemonicParsing="false" onAction="#HandleClick" text="Change Passeword" />
-        <Button fx:id="BttSaveNewName" layoutX="335.0" layoutY="134.0" mnemonicParsing="false" onAction="#HandleClick" text="Save" />
-      <Button fx:id="BttSaveNewPseudo" layoutX="333.0" layoutY="281.0" mnemonicParsing="false" onAction="#HandleClick" text="Save" />
-      <TextField fx:id="NewPseudo" layoutX="89.0" layoutY="281.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Pseudo" />
-      <Label layoutX="89.0" layoutY="251.0" text="Pseudo" />
-      <TextField fx:id="UserMail" layoutX="87.0" layoutY="63.0" prefHeight="25.0" prefWidth="221.0" promptText="Your mail" />
+        <TextField fx:id="NewName" layoutX="85.0" layoutY="156.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Name">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Button fx:id="BttSaveNewSurname" layoutX="334.0" layoutY="228.0" mnemonicParsing="false" onAction="#HandleClick" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <TextField fx:id="NewSurname" layoutX="86.0" layoutY="228.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Surname">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+        <Label layoutX="85.0" layoutY="123.0" text="Name " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Label layoutX="87.0" layoutY="198.0" text="Surname " textFill="#fffefe">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <Button fx:id="BttChangePassword" layoutX="85.0" layoutY="382.0" mnemonicParsing="false" onAction="#HandleClick" text="Change Passeword">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button fx:id="BttSaveNewName" layoutX="333.0" layoutY="156.0" mnemonicParsing="false" onAction="#HandleClick" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="BttSaveNewPseudo" layoutX="331.0" layoutY="303.0" mnemonicParsing="false" onAction="#HandleClick" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextField fx:id="NewPseudo" layoutX="87.0" layoutY="303.0" prefHeight="25.0" prefWidth="221.0" promptText="Change Pseudo">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Label layoutX="87.0" layoutY="273.0" text="Pseudo" textFill="#fff6f6">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
     </children>
 </AnchorPane>

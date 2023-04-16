@@ -6,13 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserNewPWD">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0e171e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserNewPWD">
    <children>
       <Button fx:id="NewPWDBtn" layoutX="133.0" layoutY="152.0" mnemonicParsing="false" onAction="#ChangePWDAction" text="Save" />
-      <Label layoutX="105.0" layoutY="25.0" text="New Password">
+      <Label layoutX="95.0" layoutY="21.0" text="New Password" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <TextField fx:id="NewPWD" layoutX="78.0" layoutY="65.0" promptText="New Passeword" />

@@ -38,7 +38,6 @@ public class AppController extends Application {
     loginUser = usertest.findById(28);
 
     setUserSettings();
-    // setHomePage();
     }
 
     public void setLoginPage() throws IOException {
@@ -59,7 +58,7 @@ public class AppController extends Application {
     public void setUserSettings() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings.fxml"));
-        scene = new Scene(loader.load(), 600, 400.0, Color.BLACK);
+        scene = new Scene(loader.load(), 1080, 645, Color.BLACK);
 
         UserSettings logCtrl = loader.getController();
         logCtrl.setAppController(this);
