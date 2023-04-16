@@ -122,15 +122,15 @@ public class AdminStats extends Controller implements Initializable {
         yAxis.setTickLabelFill(Color.WHITE);
         yAxis.setTickLabelFont(font);
         XYChart.Series<String, Number> data = new XYChart.Series();
-        data.setName("Nombre de visionnages selon le genre");
+        data.setName("Number of views according the genre");
 
         //On ajoute les données au graphique
-        data.getData().add(new XYChart.Data("Horreur",nbFilmsParGenre[0]));
-        data.getData().add(new XYChart.Data("Drame",nbFilmsParGenre[1]));
+        data.getData().add(new XYChart.Data("Horror",nbFilmsParGenre[0]));
+        data.getData().add(new XYChart.Data("Drama",nbFilmsParGenre[1]));
         data.getData().add(new XYChart.Data("Action",nbFilmsParGenre[2]));
-        data.getData().add(new XYChart.Data("Fantastique",nbFilmsParGenre[3]));
-        data.getData().add(new XYChart.Data("Aventure",nbFilmsParGenre[4]));
-        data.getData().add(new XYChart.Data("Science-Fiction",nbFilmsParGenre[5]));
+        data.getData().add(new XYChart.Data("Fantasy",nbFilmsParGenre[3]));
+        data.getData().add(new XYChart.Data("Adventure",nbFilmsParGenre[4]));
+        data.getData().add(new XYChart.Data("Sci-Fi",nbFilmsParGenre[5]));
 
         //Le graphique prend la forme d'un histogramme
         barChart1.getData().add(data);
@@ -155,7 +155,7 @@ public class AdminStats extends Controller implements Initializable {
 
         //Le graphique prend la forme d'un camembert
         pieChartMoviesPercentage.setData(pieChartData);
-        pieChartMoviesPercentage.setTitle("Films les plus regardés");
+        pieChartMoviesPercentage.setTitle("Movies most watched");
         pieChartMoviesPercentage.setClockwise(true);
         pieChartMoviesPercentage.setLabelLineLength(10);
         pieChartMoviesPercentage.setStartAngle(90);
@@ -186,7 +186,7 @@ public class AdminStats extends Controller implements Initializable {
         yAxis2.setTickLabelFill(Color.WHITE);
         xAxis2.setTickLabelFill(Color.WHITE);
         XYChart.Series dataSeries1 = new XYChart.Series();
-        dataSeries1.setName("Nombre d'abonnés au cours du temps");
+        dataSeries1.setName("Number of users per week");
         dataSeries1.getData().add(new XYChart.Data("07/04", nbAbonnesParDate[0]));
         dataSeries1.getData().add(new XYChart.Data("09/04", nbAbonnesParDate[1]));
         dataSeries1.getData().add(new XYChart.Data("11/04", nbAbonnesParDate[2]));

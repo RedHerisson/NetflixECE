@@ -13,10 +13,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -68,6 +71,8 @@ public class PlayerController extends Controller implements Initializable {
 
     @FXML
     private AnchorPane bgControl;
+    @FXML
+    private ImageView playPauseIcon;
 
     private Media movieMedia;
 
@@ -191,6 +196,7 @@ public class PlayerController extends Controller implements Initializable {
             public void run() {
                 state = stateButton.REPLAY;
                 playPauseButton.setText("REPLAY");
+
             }
         });
 
@@ -303,6 +309,11 @@ public class PlayerController extends Controller implements Initializable {
         fadeBg.play();
         fadeTimeSlider.play();
         fadeCtrlItems.play();
+    }
+
+    public void HandleBackButton(ActionEvent actionEvent) throws IOException {
+        appController.setHomePage();
+
     }
 
 

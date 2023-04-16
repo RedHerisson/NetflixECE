@@ -26,6 +26,7 @@ import javafx.scene.*;
 
 public class RegisterController extends Controller {
 
+    ///Attributs
     @FXML
     private Button Close;
     @FXML
@@ -116,6 +117,8 @@ public class RegisterController extends Controller {
     public void CloseAction(ActionEvent actionEvent) throws IOException {
         appController.setLoginPage();
     }
+
+
 
     public void setAppController(AppController appController) {
         this.appController = appController;

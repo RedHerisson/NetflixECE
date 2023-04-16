@@ -96,7 +96,7 @@ public class MovieIntegrationController extends Controller implements Initializa
 
         this.movie = movie;
         if( movie != null) {
-            LoadPoster( posterGetter.loadPoster(movie.getId()));
+             LoadPoster( posterGetter.loadPoster(movie.getId()));
         }
         else {
             LoadPoster(null);

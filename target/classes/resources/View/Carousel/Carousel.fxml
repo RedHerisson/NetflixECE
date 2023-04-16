@@ -35,17 +35,17 @@
                   <Insets left="10.0" right="10.0" />
                </StackPane.margin>
             </HBox>
-            <ImageView fx:id="prevArrow" fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#prevPage" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+            <ImageView fx:id="prevArrow" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#prevPage" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <image>
-                  <Image url="@../../images/icon/arrow.png" />
+                  <Image url="@../../images/icon/arrowBack.png" />
                </image>
             </ImageView>
             <ImageView fx:id="nextArrow" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#nextPage" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
                <image>
-                  <Image url="@../../images/icon/arrow.png" />
+                  <Image url="@../../images/icon/arrowNext.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />

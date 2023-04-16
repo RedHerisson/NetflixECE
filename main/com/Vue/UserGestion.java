@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class UserGestion extends Controller implements Initializable {
 
+    ///Attributs
     private User user;
     private UserAccessor userAccessor;
     @FXML
@@ -37,6 +38,7 @@ public class UserGestion extends Controller implements Initializable {
         pseudoUser.setText(user.getPseudo());
     }
 
+    //Set en admin
     public void setAdmin(ActionEvent event) throws Exception {
         User newAdmin = user;
         newAdmin.setAdmin(true);
@@ -45,6 +47,7 @@ public class UserGestion extends Controller implements Initializable {
         System.out.println("Nouvel admin !");}
     }
 
+    //Ban un user (le supprime)
     public void setBan(ActionEvent event) throws Exception {
         userAccessor.delete(user.getId());
         System.out.println("Utilisateur banni !");

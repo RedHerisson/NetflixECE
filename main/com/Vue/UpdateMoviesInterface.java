@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class UpdateMoviesInterface extends Controller implements Initializable {
 
-
+    ///Attributs
     @FXML
     private TextField newTitle, newType;
 
@@ -39,6 +39,7 @@ public class UpdateMoviesInterface extends Controller implements Initializable {
         newType.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 2;");
     }
 
+    //Update movie
     @FXML
     public void ConfirmUpdate(ActionEvent event) throws SQLException, IOException {
         Movie newMovie = new Movie(movie);

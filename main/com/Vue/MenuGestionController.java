@@ -24,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class MenuGestionController extends Controller implements Initializable {
 
+    ///Attributs
     private Movie movie;
     private MovieAccessor posterGetter;
 
@@ -67,8 +68,9 @@ public class MenuGestionController extends Controller implements Initializable {
         }
     }
 
+    //On set un movie qui va charger les affiches de chaque film
     public void setMovie(Movie movie) throws SQLException, IOException {
-
+        //On set le movie et les attributs qu'il faut afficher
         this.movie = movie;
         if( movie != null) {
             LoadPoster( posterGetter.loadPoster(movie.getId()));
