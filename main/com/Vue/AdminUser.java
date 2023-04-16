@@ -3,14 +3,18 @@ package com.Vue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AdminUser {
+public class AdminUser{
 
 AdminAppController adminAppController;
 
@@ -18,7 +22,12 @@ AdminAppController adminAppController;
     @FXML
     private Button button1, button2 , button3, button4;
 
+
+
+
     ///Méthodes
+
+
 
     //Setter du controller de l'application
     public void setAppAdminController(AdminAppController adminAppController) {

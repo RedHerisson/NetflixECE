@@ -113,8 +113,8 @@ public class MovieAccessor extends Accessor<Movie> {
 
         ArrayList<Movie> movies = new ArrayList<Movie>();
 
-        ResultSet result = dataBase.getRequest().executeQuery("SELECT Movie.Title, Person.name, Person.surname FROM Movie, Person JOIN Person p ON Movie.director_id = p.id JOIN Actor a ON movie_id = a.person_id JOIN Person p ON Movie.id = p.person_id WHERE Movie.title like '%"+query+"%' OR Person.name like '%"+query+"%' OR Person.surname like '%"+query+"%' LIMIT 10");
-
+        //ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Movie m, Person p JOIN Actor a ON m.ID = a.movie_ID JOIN Actor a ON p.ID = a.person_ID WHERE Movie.title like '%"+query+"%' OR Person.name like '%"+query+"%' OR Person.surname like '%"+query+"%' LIMIT 10");
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Movie WHERE title like '%"+query+"%' LIMIT 10");
         while(result.next()){
             movies.add(findById(result.getInt(1)));
         }

@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
+      <change afterPath="$PROJECT_DIR$/.idea/NetflixECEPROJECT.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/UpdateMoviesInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_win_19.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/PresApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/PresApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/adminCatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/addbutton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/PersonAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminCatalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminCatalog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/AdminUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/PresApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/adminCatalog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/adminCatalog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/images/addbutton.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +69,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Nx6hO0j9HKzbuI2oZWsD8ZCWHn" />
   <component name="ProjectViewState">
@@ -57,7 +81,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/redhe/Nextcloud/Cours/ECE cours/ING3-S2/Informatique/Projet Java/NetflixECE&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/igorr/Desktop/NetflixECEPROJECT&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -65,9 +89,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\igorr\Desktop\NetflixECEPROJECT\main\resources\View" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Vue" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Controller" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.Vue" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainAdmin">
@@ -99,14 +127,14 @@
     </configuration>
     <configuration name="MainAdmin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.Vue.AdminAppController" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="PresApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Vue.PresApp" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Vue.*" />
@@ -125,9 +153,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PresApp" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.AppController" />
-        <item itemvalue="Application.PresApp" />
         <item itemvalue="Application.PresApp" />
       </list>
     </recent_temporary>
