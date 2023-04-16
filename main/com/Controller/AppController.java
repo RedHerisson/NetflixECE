@@ -137,10 +137,10 @@ public class AppController extends Application {
         ArrayList<Movie> movieStarted = loginUser.getMovieStarted();
         // reverse array
         Collections.reverse(movieStarted);
-        if( movieStarted.size() != 0 ) controller.AddPlaylist(movieStarted, "Continue to watch");
+        if( movieStarted.size() != 0 ) controller.AddPlaylist(movieStarted, "Continue to watch", -1);
 
         ArrayList<Movie> movieFromContinue = loginUser.getWatchList().getMoviesList();
-        if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist");
+        if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist", -1);
 
         ArrayList<String> TypeFromHistory = loginUser.getTypeFromHistory();
         ArrayList<Movie> movieFromHistory = new ArrayList<Movie>();
@@ -156,16 +156,16 @@ public class AppController extends Application {
             }
             movieFromHistory.addAll(movies);
         }
-        controller.AddPlaylist(movieFromHistory, "Type From your history");
+        controller.AddPlaylist(movieFromHistory, "Type From your history", -1);
 
         ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
-        controller.AddPlaylist(movieFromPopular, "Most Popular");
+        controller.AddPlaylist(movieFromPopular, "Most Popular", -1);
 
         ArrayList<Movie> movieFromBestRank = movieAccessor.findByRank(20);
-        controller.AddPlaylist(movieFromBestRank, "Best Ranking");
+        controller.AddPlaylist(movieFromBestRank, "Best Ranking", -1);
 
         ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
-        controller.AddPlaylist(RecentMovies, "Recent releases");
+        controller.AddPlaylist(RecentMovies, "Recent releases", -1);
 
     }
 

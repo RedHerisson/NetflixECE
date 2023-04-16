@@ -61,7 +61,6 @@ public class AdminCatalog implements Initializable {
         querrySearched = textField.getText();
         movieArrayList = movieAccessor.search(querrySearched);
         System.out.println(querrySearched);
-        int idMovieDeleted = 0;
 
         //On load tous les films de la arraylist
         for (Movie movie : movieArrayList) {
@@ -72,8 +71,6 @@ public class AdminCatalog implements Initializable {
             menuGestionController.setMovie(movie);
 
             vBox.getChildren().add(root);
-
-
         }
     }
 

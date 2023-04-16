@@ -14,6 +14,6 @@
          <padding>
             <Insets top="25.0" />
          </padding></VBox>
-      <TextField fx:id="searchBar" prefHeight="25.0" prefWidth="511.0" promptText="Rechercher un film" style="-fx-background-radius: 50;" />
+      <TextField fx:id="searchBar" onAction="#HandleSearch" prefHeight="25.0" prefWidth="511.0" promptText="Rechercher un film" style="-fx-background-radius: 50;" />
    </children>
 </StackPane>

@@ -25,10 +25,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="49.0" prefWidth="813.0" StackPane.alignment="TOP_LEFT">
-         <children>
-            <fx:include maxHeight="-Infinity" maxWidth="-Infinity" source="headerBar.fxml" StackPane.alignment="TOP_CENTER" />
-         </children>
+      <Pane fx:id="headerContainer" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="49.0" prefWidth="813.0" StackPane.alignment="TOP_LEFT">
          <StackPane.margin>
             <Insets top="20.0" />
          </StackPane.margin>

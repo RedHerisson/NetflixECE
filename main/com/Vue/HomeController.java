@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -19,21 +21,39 @@ import java.util.ResourceBundle;
 public class HomeController extends Controller implements Initializable {
 
     @FXML
-    private ScrollPane mainContainer;
+    private ScrollPane mainContainer;// = new ScrollPane();
     @FXML
-    private AnchorPane ScrollableContainer;
+    private AnchorPane ScrollableContainer;// = new AnchorPane();
     @FXML
-    private VBox PlaylistContainer;
+    private VBox PlaylistContainer;// = new VBox();
+    @FXML
+    private Pane headerContainer;
 
     private AppController appController;
+
+    private boolean isSearched;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+
+
     }
 
-    public void AddPlaylist(ArrayList<Movie> movies, String title) throws IOException, SQLException {
+    public void setSearchedFlag(){
+        this.isSearched = true;
+
+    }
+
+
+    public void removeSearchedPlaylist(){
+        if(isSearched){
+            PlaylistContainer.getChildren().remove(0);
+        }
+    }
+
+    public void AddPlaylist(ArrayList<Movie> movies, String title, int pos) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/Carousel.fxml"));
         VBox mvContainer = fxmlLoader.load();
         CarouselController controller = fxmlLoader.<CarouselController>getController();
@@ -41,16 +61,22 @@ public class HomeController extends Controller implements Initializable {
         controller.setTitle(title);
         controller.LoadMovies(movies);
 
+        if( pos == -1){
+            PlaylistContainer.getChildren().add(mvContainer);
+        }
+        else{
+
+            PlaylistContainer.getChildren().add(pos, mvContainer);
+        }
 
 
-        PlaylistContainer.getChildren().add(mvContainer);
         System.out.println(ScrollableContainer.getPrefHeight());
         ScrollableContainer.setPrefHeight(ScrollableContainer.getPrefHeight() + mvContainer.getPrefHeight() + PlaylistContainer.getSpacing());
         // print all value for debug
         System.out.println("mvContainer.getPrefHeight() = " + mvContainer.getPrefHeight());
         System.out.println("PlaylistContainer.getSpacing() = " + PlaylistContainer.getSpacing());
         System.out.println("ScrollableContainer.getPrefHeight() = " + ScrollableContainer.getPrefHeight());
-        
+
     }
 
     public void AddPromotion(Movie movie) throws IOException, SQLException {
@@ -72,5 +98,17 @@ public class HomeController extends Controller implements Initializable {
     }
     public void setAppController(AppController appController) {
         this.appController = appController;
+        try {
+            isSearched = false;
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/headerBar.fxml"));
+            BorderPane mvContainer = fxmlLoader.load();
+            HeaderBarController controller = fxmlLoader.getController();
+            controller.setAppController(appController);
+            controller.setHomeController(this);
+            headerContainer.getChildren().add(mvContainer);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 }
