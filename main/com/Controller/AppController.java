@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -77,7 +78,24 @@ public class AppController extends Application {
 
         mainStage.show();
     }
+    public void setUserSettings() throws IOException {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings.fxml"));
+        scene = new Scene(loader.load(), 1080, 645, Color.BLACK);
+
+        UserSettings logCtrl = loader.getController();
+        logCtrl.setAppController(this);
+
+        mainStage.setScene(scene);
+        mainStage.setTitle("UserSettings");
+
+        Image icon = new Image(getClass().getResourceAsStream("/resources/images/ECE_LOGO.png"));
+        mainStage.getIcons().add(icon);
+
+        mainStage.setResizable(false);
+
+        mainStage.show();
+    }
     public void setHomePage() {
         try {
             FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/home.fxml"));
