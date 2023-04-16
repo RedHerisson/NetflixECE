@@ -10,16 +10,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0e171e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.LoginController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="275.0" style="-fx-background-color: #515151;">
+      <AnchorPane prefHeight="400.0" prefWidth="275.0" style="-fx-background-color: #242424;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="61.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/tortipouss.png" />
+                  <Image url="@../images/ECE_LOGO.png" />
                </image>
             </ImageView>
-            <Pane fx:id="WarningMovieDB" layoutX="5.0" layoutY="354.0" opacity="0.8" prefHeight="27.0" prefWidth="262.0" style="-fx-background-radius: 10; -fx-background-color: red;">
+            <Pane fx:id="WarningMovieDB" layoutX="5.0" layoutY="354.0" opacity="0.8" prefHeight="27.0" prefWidth="262.0" style="-fx-background-radius: 10; -fx-background-color: #c21313;">
                <children>
                   <Label alignment="CENTER" layoutX="-3.0" layoutY="2.0" prefHeight="25.0" prefWidth="269.0" text="Movie DataBase not found" textFill="WHITE">
                      <font>
@@ -30,13 +30,13 @@
             </Pane>
          </children>
       </AnchorPane>
-      <Label layoutX="314.0" layoutY="131.0" text="Username">
+      <Label layoutX="314.0" layoutY="131.0" text="Username" textFill="WHITE">
          <font>
-            <Font size="13.0" />
+            <Font name="Symbol" size="13.0" />
          </font>
       </Label>
       <TextField fx:id="UsernameLogin" layoutX="380.0" layoutY="127.0" prefHeight="25.0" prefWidth="172.0" promptText="Username" />
-      <Label layoutX="316.0" layoutY="190.0" text="Password">
+      <Label layoutX="316.0" layoutY="190.0" text="Password" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="321.0" layoutY="340.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: #515151;" text="Cancel" textFill="WHITE">
+      <Button fx:id="cancelButton" layoutX="321.0" layoutY="340.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="237.0" style="-fx-background-color: ab0909;" text="Cancel" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
@@ -57,12 +57,12 @@
          </font>
       </Label>
       <PasswordField fx:id="enterPasswordField" layoutX="380.0" layoutY="188.0" prefHeight="25.0" prefWidth="172.0" promptText="Password" />
-      <ImageView fx:id="lockImageView" fitHeight="78.0" fitWidth="58.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lockImageView" fitHeight="78.0" fitWidth="58.0" layoutX="406.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/cadena.png" />
          </image>
       </ImageView>
-      <Button fx:id="RegisterButton" layoutX="458.0" layoutY="275.0" mnemonicParsing="false" onAction="#RegisterButtonOnAction" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #515151;" text="Creation compte" textFill="WHITE">
+      <Button fx:id="RegisterButton" layoutX="458.0" layoutY="275.0" mnemonicParsing="false" onAction="#RegisterButtonOnAction" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #515151;" text="Create Account" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

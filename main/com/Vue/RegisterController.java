@@ -117,6 +117,8 @@ public class RegisterController extends Controller {
         appController.setLoginPage();
     }
 
+
+
     public void setAppController(AppController appController) {
         this.appController = appController;
     }

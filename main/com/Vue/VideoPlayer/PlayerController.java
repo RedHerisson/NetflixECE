@@ -13,6 +13,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.awt.event.MouseListener;
@@ -68,6 +69,8 @@ public class PlayerController extends Controller implements Initializable {
 
     @FXML
     private AnchorPane bgControl;
+    @FXML
+    private ImageView playPauseIcon;
 
     private Media movieMedia;
 
@@ -191,6 +194,7 @@ public class PlayerController extends Controller implements Initializable {
             public void run() {
                 state = stateButton.REPLAY;
                 playPauseButton.setText("REPLAY");
+                //playPauseIcon.setImage(new Image("file:src/main/resources/images/play.png"));
             }
         });
 
