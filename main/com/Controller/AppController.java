@@ -140,9 +140,18 @@ public class AppController extends Application {
         TypeFromHistory = new ArrayList<String>(new java.util.HashSet<String>(TypeFromHistory));
         if( TypeFromHistory.size() > 4 ) TypeFromHistory = new ArrayList<String>(TypeFromHistory.subList(0, 4));
 
+        ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
+        controller.AddPlaylist(movieFromPopular, "Most Popular", -1);
+
+        ArrayList<Movie> movieFromBestRank = movieAccessor.findByRank(20);
+        controller.AddPlaylist(movieFromBestRank, "Best Ranking", -1);
+
+        ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
+        controller.AddPlaylist(RecentMovies, "Recent releases", -1);
+
         for (String type : TypeFromHistory) {
             System.out.println(type);
-            ArrayList<Movie> movies = movieAccessor.findByType(type, 10);
+            ArrayList<Movie> movies = movieAccessor.findByType(type, 40);
             // melange des films pour avoir un affichage aléatoire
             for (int i = 0; i < movies.size(); i++) {
                 int rand = (int) (Math.random() * movies.size());
@@ -153,17 +162,6 @@ public class AppController extends Application {
             if( movies.size() != 0 )
                 controller.AddPlaylist(movies, "You like " + type, -1);
         }
-
-
-
-        ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
-        controller.AddPlaylist(movieFromPopular, "Most Popular", -1);
-
-        ArrayList<Movie> movieFromBestRank = movieAccessor.findByRank(20);
-        controller.AddPlaylist(movieFromBestRank, "Best Ranking", -1);
-
-        ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
-        controller.AddPlaylist(RecentMovies, "Recent releases", -1);
 
         int nbrPlayList = controller.getNbrPlayList();
         ArrayList<Movie> MovieToPromote = movieAccessor.getRandPromotedMovies(3);

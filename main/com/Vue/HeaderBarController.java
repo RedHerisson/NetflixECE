@@ -48,11 +48,9 @@ public class HeaderBarController extends Controller implements Initializable {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(suggestionsList.get(0));
-                System.out.println(suggestionsList.get(1));
-                System.out.println(suggestionsList.get(2));
-                System.out.println(suggestionsList.get(3));
-                System.out.println(suggestionsList.get(4));
+                for(int i = 0; i < suggestionsList.size(); i++){
+                    System.out.println(suggestionsList.get(i));
+                }
                 updateSuggestions(suggestionsList);
             }else{
                 searchSuggestionContainer.getChildren().clear();
@@ -77,6 +75,7 @@ public class HeaderBarController extends Controller implements Initializable {
         homeController.AddPlaylist(moviesList, "Search results for " + querrySearched,0);
         homeController.setSearchedFlag();
         homeController.backToTop();
+        searchBar.setText("");
 
     }
 

@@ -4,32 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - ajout de plein de trucs encore, je suis trop fatigué">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/UnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminAppController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/Carousel/Carousel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/Carousel/Carousel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/View/moviePres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/moviePres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/images/wall-e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/resources/images/war_horse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Controller/appFXController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="12462" />
+    <option name="totalTimeSeconds" value="14017" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -185,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681569481725</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=" - ajout de plein de trucs encore, je suis trop fatigué">
+      <created>1681658709576</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681658709576</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,7 +188,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MAIN QUI MARCHE ( fin des embrouilles )" />
     <MESSAGE value="MAIN QUI MARCHE VRAIMENT" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAIN QUI MARCHE VRAIMENT" />
+    <MESSAGE value=" - ajout de plein de trucs encore, je suis trop fatigué" />
+    <option name="LAST_COMMIT_MESSAGE" value=" - ajout de plein de trucs encore, je suis trop fatigué" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
