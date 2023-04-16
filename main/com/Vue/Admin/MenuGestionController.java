@@ -98,7 +98,8 @@ public class MenuGestionController extends Controller implements Initializable {
         for (int i = 0; i < movie.getActors().size(); i++) {
             actors += movie.getActors().get(i).getSurname() + " " + movie.getActors().get(i).getName() + ", ";
         }
-        actors = actors.substring(0, actors.length() - 2);
+        if( actors.length() > 2)
+            actors = actors.substring(0, actors.length() - 2);
         nameActors.setText(actors);
         nameGenre.setText(movie.getTypes());
 

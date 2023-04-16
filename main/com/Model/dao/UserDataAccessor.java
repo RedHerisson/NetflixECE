@@ -152,7 +152,7 @@ public class UserDataAccessor extends Accessor<UserData> {
      */
     public void updateRate(UserData usrData) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "UPDATE User_Data SET rate = ? WHERE User_ID = ? AND Movie_ID = ?");
+                "UPDATE User_Data SET rate = ? WHERE ID = ? AND Movie_ID = ?");
 
         System.out.println("rate : " + usrData.getRate());
         pre.setDouble(1, usrData.getRate());
