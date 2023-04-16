@@ -26,6 +26,7 @@ import javafx.scene.*;
 
 public class RegisterController extends Controller {
 
+    ///Attributs
     @FXML
     private Button Close;
     @FXML

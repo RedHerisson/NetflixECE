@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class LoginController  extends Controller implements Initializable {
 
+    ///Attributs
     @FXML
     private Button cancelButton;
     @FXML
@@ -42,21 +43,22 @@ public class LoginController  extends Controller implements Initializable {
     void RegisterButtonOnAction(ActionEvent event) throws Exception{
         Stage stage = (Stage) RegisterButton.getScene().getWindow();
         loginMessageError.setText("You try to register");
-
         appController.setRegisterPage();
     }
 
+    //loginButton
     @FXML
     public void loginButtonOnAction(ActionEvent event) throws Exception{
         Stage stage = (Stage) loginButton.getScene().getWindow();
-        //loginMessageError.setText("You try to login");
+
 
         System.out.println(UsernameLogin.getText());
         System.out.println(enterPasswordField.getText());
 
         UserAccessor userAccessor = new UserAccessor();
-
+        //On cherche l'utilisateur
         User foundUser = userAccessor.findByName(UsernameLogin.getText());
+
         if( foundUser != null ) {
             System.out.println("User found: " + foundUser);
             if( userAccessor.checkPwd(foundUser.getId(), enterPasswordField.getText() ) ) {
@@ -69,6 +71,7 @@ public class LoginController  extends Controller implements Initializable {
         }
     }
 
+    //Setter d'appController
     public void setAppController(AppController appController) {
         this.appController = appController;
         if( appController.isConnected() ) {
@@ -78,11 +81,13 @@ public class LoginController  extends Controller implements Initializable {
         }
     }
 
+    //cancelButton
     public void cancelButtonOnAction(ActionEvent event){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    //Initialisation
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

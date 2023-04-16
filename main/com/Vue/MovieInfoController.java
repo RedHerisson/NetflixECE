@@ -36,6 +36,7 @@ import java.util.ResourceBundle;
 
 public class MovieInfoController extends Controller implements Initializable {
 
+    ///Attributs
     @FXML
     private Label title, synopsis, DirectorLabel, ActorsLabel ;
 
@@ -63,6 +64,7 @@ public class MovieInfoController extends Controller implements Initializable {
 
     public void updateFromMovie(Movie movie) throws IOException {
 
+        //
         title.setText(movie.getTitle());
         synopsis.setText(movie.getSummary());
         DirectorLabel.setText(" " + movie.getDirector().getSurname() + " " + movie.getDirector().getName());

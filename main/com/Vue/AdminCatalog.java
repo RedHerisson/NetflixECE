@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class AdminCatalog extends Controller implements Initializable {
 
-
+    ///Attributs
     @FXML
     private Button button1, button2, button3, button4;
     @FXML
@@ -40,7 +40,7 @@ public class AdminCatalog extends Controller implements Initializable {
     }
 
     ///Méthodes
-
+    //Initialisation
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         textField.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 2;");

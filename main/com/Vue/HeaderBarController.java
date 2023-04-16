@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class HeaderBarController extends Controller implements Initializable {
 
+    ///Attributs
     @FXML
     private TextField searchBar;
 
@@ -33,14 +34,18 @@ public class HeaderBarController extends Controller implements Initializable {
     private ArrayList<String> suggestionsList = new ArrayList<>(5);
     private String querrySearched;
 
+    //Constructeur avec exceptions
     public HeaderBarController() throws SQLException, ClassNotFoundException {
     }
 
-
+    //Initialisation
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        searchBar.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 1;");
 
-        //searchBar.setStyle("-fx-text-fill: #ffffff;");
+        //saisie dans la barre de recherche
+        //prend en compte chaque nouvelle valeur dans la barre de recherche
+        //On utilise pour cela un addListener
         searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue.length() > 0){
                 try {
@@ -48,11 +53,7 @@ public class HeaderBarController extends Controller implements Initializable {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(suggestionsList.get(0));
-                System.out.println(suggestionsList.get(1));
-                System.out.println(suggestionsList.get(2));
-                System.out.println(suggestionsList.get(3));
-                System.out.println(suggestionsList.get(4));
+                //On affiche les suggestions
                 updateSuggestions(suggestionsList);
             }else{
                 searchSuggestionContainer.getChildren().clear();
@@ -73,6 +74,7 @@ public class HeaderBarController extends Controller implements Initializable {
         for(int i = 0; i < moviesList.size(); i++){
             System.out.println(moviesList.get(i).getTitle());
         }
+        //On affiche les films correspondant à la recherche
         homeController.removeSearchedPlaylist();
         homeController.AddPlaylist(moviesList, "Search results for " + querrySearched,0);
         homeController.setSearchedFlag();
@@ -82,20 +84,21 @@ public class HeaderBarController extends Controller implements Initializable {
 
 
     public void updateSuggestions(ArrayList<String> suggestionList){
+        //On vide la liste des suggestions
         searchSuggestionContainer.getChildren().clear();
         searchSuggestionContainer.setPrefHeight(0);
         searchSuggestionContainer.setPadding(new Insets(0, 0, 0, 0));
+        //On affiche les suggestions
         if(suggestionList.isEmpty()) searchSuggestionContainer.setVisible(false);
         else searchSuggestionContainer.setVisible(true);
         for(String suggestion : suggestionList){
             Label label = new Label(suggestion);
-            //label.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
             label.setPadding(new Insets(7, 0, 0, 8));
-            // change text color
+            // change esthétique du label
             label.setTextFill(Color.WHITE);
-            // change font size
             label.setStyle("-fx-font-size: 14px;");
             label.setPrefWidth(searchBar.getPrefWidth());
+            //Effet hover sur les boutons
                 label.setOnMouseEntered(event -> {
                     label.setStyle("-fx-background-color: #ffffff; -fx-text-fill: #000000;");
                 });
@@ -116,7 +119,7 @@ public class HeaderBarController extends Controller implements Initializable {
         }
     }
 
-
+    //Setter de HomeController
     public void setHomeController(HomeController homeController){
         this.homeController = homeController;
     }
