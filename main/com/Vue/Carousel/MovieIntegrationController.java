@@ -35,6 +35,16 @@ public class MovieIntegrationController extends Controller implements Initializa
     private Movie movie;
     private MovieAccessor posterGetter;
 
+    /**
+     * initialisation de la page des films du carousel
+     * @param url
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resourceBundle
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -62,6 +72,7 @@ public class MovieIntegrationController extends Controller implements Initializa
         });
     }
 
+
     private void onMouseEnter() {
         if( movie != null) {
             playIcon.setVisible(true);
@@ -80,6 +91,10 @@ public class MovieIntegrationController extends Controller implements Initializa
         }
     }
 
+    /**
+     * permet d'afficher les poster des films
+     * @param bPoster
+     */
     @FXML
     private void LoadPoster(BufferedImage bPoster) {
 
@@ -104,6 +119,9 @@ public class MovieIntegrationController extends Controller implements Initializa
 
     }
 
+    /**
+     * une fois que l'on clique sur un film, sa page perso s'affiche
+     */
     @FXML
     private void onMouseClicked() {
 

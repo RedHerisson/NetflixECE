@@ -6,23 +6,56 @@
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment="MAIN QUI MARCHE VRAIMENT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/ResearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/ResearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/tempoLoadDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/MovieAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/PersonAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserDataAccessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/BdModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/BdModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/ResearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/ResearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/tempoLoadDataBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/MovieAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Carousel/CarouselController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Carousel/CarouselController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/VideoPlayer/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/SlideApp2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/userSettings2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/Carousel4.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/UserHistoric.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/UserPlaylists.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/VideoPlayer/moviePres.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/VideoPlayer/player.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/admincatalog.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/adminusergestion.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/registration.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userProfil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/View/userSettings2.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/ECE_LOGO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/HistoricImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/PlaylistImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/ProfilImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/TuNeTuerasPoint.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/UsersImg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/cadena.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/close-button.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/dune.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/harry-potter.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/inception.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/matrix.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/persiansLessons.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/pirates1.1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/pirates1.2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/pirates1.4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/pirates1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/planete_singes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/star_wars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/stars wars 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/stars-wars.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/tortipouss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/transfomers.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/tron.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/wall-e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/war_horse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/images/wolfCall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/tempo/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/tempo/star.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ressources/test.puml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +129,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Controller.*" />
@@ -122,7 +155,7 @@
     </configuration>
     <configuration name="MainAdmin" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.Controller.AdminAppController" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

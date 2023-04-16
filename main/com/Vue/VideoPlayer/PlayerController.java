@@ -96,6 +96,11 @@ public class PlayerController extends Controller implements Initializable {
 
     }
 
+    /**
+     * lancement du film suivant celui sélectionné
+     * @param movie
+     * @throws Exception
+     */
     public void loadMovie(Movie movie) throws Exception {
         this.movie = movie;
         userDataAccessor = new UserDataAccessor();
@@ -239,6 +244,11 @@ public class PlayerController extends Controller implements Initializable {
 
     }
 
+    /**
+     * permet de compter le temps qu'il reste à regarder de la bande annonce du film
+     * @param duration temps du film
+     * @return le temps restant
+     */
     public String computeTime(Duration duration ) {
         int hours = ( int ) duration.toHours() % 60;
         int minutes = ( int ) duration.toMinutes() % 60;
@@ -248,6 +258,9 @@ public class PlayerController extends Controller implements Initializable {
         else return String.format("%02d:%02d", minutes, seconds );
     }
 
+    /**
+     * différents boutons de la page de play movie
+     */
     public void setPlay() {
 
 
@@ -273,6 +286,9 @@ public class PlayerController extends Controller implements Initializable {
 
     }
 
+    /**
+     * permet de mettre le film sous format grand écran
+     */
     public void setFullScreen() {
         Stage stage = (Stage) FsButton.getScene().getWindow();
 
