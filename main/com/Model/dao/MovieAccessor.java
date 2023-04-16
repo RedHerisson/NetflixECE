@@ -124,6 +124,20 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    public ArrayList<String> getTitleByQuerrt(String query) throws SQLException, ClassNotFoundException, IOException {
+
+        ArrayList<String> suggestions = new ArrayList<String>(5);
+
+        //ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Movie m, Person p JOIN Actor a ON m.ID = a.movie_ID JOIN Actor a ON p.ID = a.person_ID WHERE Movie.title like '%"+query+"%' OR Person.name like '%"+query+"%' OR Person.surname like '%"+query+"%' LIMIT 10");
+        ResultSet result = dataBase.getRequest().executeQuery("SELECT Movie.title FROM Movie WHERE title like '%"+query+"%' LIMIT 5");
+        while(result.next()){
+            suggestions.add(result.getString(1));
+        }
+
+        result.close();
+        return suggestions;
+    }
+
     public int countMovies() throws SQLException, ClassNotFoundException, IOException {
 
 
@@ -212,6 +226,7 @@ public class MovieAccessor extends Accessor<Movie> {
         return promotedMovies;
 
     }
+
     /**
      * Preparation de la requête préparée pour la création ou la mise à jour d'un film
      * @param movie film à mettre à jour

@@ -130,10 +130,10 @@ public class AppController extends Application {
         ArrayList<Movie> movieStarted = loginUser.getMovieStarted();
         // reverse array
         Collections.reverse(movieStarted);
-        if( movieStarted.size() != 0 ) controller.AddPlaylist(movieStarted, "Continue to watch");
+        if( movieStarted.size() != 0 ) controller.AddPlaylist(movieStarted, "Continue to watch", -1);
 
         ArrayList<Movie> movieFromContinue = loginUser.getWatchList().getMoviesList();
-        if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist");
+        if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist", -1);
 
         ArrayList<String> TypeFromHistory = loginUser.getTypeFromHistory();
         Collections.shuffle(TypeFromHistory);
@@ -151,19 +151,19 @@ public class AppController extends Application {
                 movies.set(rand, tmp);
             }
             if( movies.size() != 0 )
-                controller.AddPlaylist(movies, "You like " + type);
+                controller.AddPlaylist(movies, "You like " + type, -1);
         }
 
 
 
         ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
-        controller.AddPlaylist(movieFromPopular, "Most Popular");
+        controller.AddPlaylist(movieFromPopular, "Most Popular", -1);
 
         ArrayList<Movie> movieFromBestRank = movieAccessor.findByRank(20);
-        controller.AddPlaylist(movieFromBestRank, "Best Ranking");
+        controller.AddPlaylist(movieFromBestRank, "Best Ranking", -1);
 
         ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
-        controller.AddPlaylist(RecentMovies, "Recent releases");
+        controller.AddPlaylist(RecentMovies, "Recent releases", -1);
 
         int nbrPlayList = controller.getNbrPlayList();
         ArrayList<Movie> MovieToPromote = movieAccessor.getRandPromotedMovies(3);

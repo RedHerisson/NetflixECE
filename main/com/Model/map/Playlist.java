@@ -35,6 +35,7 @@ public class Playlist extends BdModel {
         return "Playlist";
     }
 
+
     public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
     }
