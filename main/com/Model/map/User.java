@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class User extends Person {
 
     private String pseudo;
@@ -47,7 +45,6 @@ public class User extends Person {
         this.email = usr.getEmail();
         this.acc_creation_date = usr.getCreationDate();
         this.WatchLater = usr.getWatchList();
-        //this.playlists = usr.getPlaylists();
         this.history = usr.getHistory();
         this.favouriteType = usr.getFavouriteType();
         this.data = usr.getData();
@@ -102,35 +99,18 @@ public class User extends Person {
         this.email = email;
     }
 
-    /**
-     * ajoute le film correspondant à la liste des films à voir
-     * @param movie film sélectionné
-     */
     public void addMovieToWatchList(Movie movie) {
         this.WatchLater.addMovie(movie);
     }
 
-    /**
-     * permet de savoir si le film est en cours
-     * @param movie film sélectionné
-     * @return
-     */
     public boolean testIfMovieIsInWatchList(Movie movie) {
         return this.WatchLater.getMoviesList().contains(movie);
     }
 
-    /**
-     * enlève le film choisi de la liste des films à voir
-     * @param movie film sélectionné
-     */
     public void RemoveMovieToWatchList(Movie movie) {
         this.WatchLater.removeMovie(movie.getId());
     }
 
-    /**
-     * ajoute le film à la liste des films vu
-     * @param movie dernier film vu
-     */
     public void addMovieToHistory(Movie movie) {
         this.history.addMovie(movie);
     }

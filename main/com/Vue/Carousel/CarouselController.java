@@ -40,16 +40,6 @@ public class CarouselController extends Controller implements Initializable {
     private MovieAccessor posterGetter;
 
 
-    /**
-     * permet d'intialiser la page de controle du carousel
-     * @param location
-     * The location used to resolve relative paths for the root object, or
-     * {@code null} if the location is not known.
-     *
-     * @param resources
-     * The resources used to localize the root object, or {@code null} if
-     * the root object was not localized.
-     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -86,10 +76,6 @@ public class CarouselController extends Controller implements Initializable {
             }
         });
     }
-
-    /**
-     * button permettant de passer àa la page suivante
-     */
     @FXML
     public void nextPage() {
         if(currentPage < maxPage) {
@@ -103,10 +89,6 @@ public class CarouselController extends Controller implements Initializable {
         }
 
     }
-
-    /**
-     * bouton permettant de revenir à la page précédente
-     */
     @FXML
     private void prevPage() {
         if(currentPage > 1) {
@@ -119,11 +101,6 @@ public class CarouselController extends Controller implements Initializable {
         }
     }
 
-    /**
-     * permet d'actualiser les pages
-     * @throws IOException
-     * @throws SQLException
-     */
     private void updatePage() throws IOException, SQLException {
 
         int showMax = 7;
@@ -148,10 +125,6 @@ public class CarouselController extends Controller implements Initializable {
         }
     }
 
-    /**
-     * permet d'actualiser la taille de la page en fonction du nombre de films
-     * @throws IOException
-     */
     private void updateSize() throws IOException {
         nbrMoviesPerPage = (int) (carouselContainer.getPrefWidth() / 200) + 1;
         maxPage = (int) (fullMovieArray.size() / nbrMoviesPerPage) + 1;
@@ -170,12 +143,6 @@ public class CarouselController extends Controller implements Initializable {
 
     }
 
-    /**
-     * permet de charger les films
-     * @param movies films dans la BDD
-     * @throws IOException
-     * @throws SQLException
-     */
     public void LoadMovies(ArrayList<Movie> movies) throws IOException, SQLException {
 
         fullMovieArray = movies;

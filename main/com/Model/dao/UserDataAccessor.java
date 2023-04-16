@@ -45,13 +45,6 @@ public class UserDataAccessor extends Accessor<UserData> {
         return null;
     }
 
-    /**
-     * cherche l'utilisateur et le film correspondant dans la base de données
-     * @param uId premier id d'un utilisateur
-     * @param mId second id d'un utilisateur
-     * @return l'utilisateur si trouvé, sinon retourne null
-     * @throws Exception
-     */
     public UserData findByMovieAndUser(int uId, int mId) throws Exception {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM User_Data WHERE User_ID = " + uId + " AND Movie_ID = " + mId);
         if(result.next()) {
@@ -60,14 +53,6 @@ public class UserDataAccessor extends Accessor<UserData> {
         return null;
     }
 
-    /**
-     * récupère toutes les informations liées à l'utilisateur à partir de la BDD
-     * @param UserId utilisateur sélectionné
-     * @return les informations correspondantes
-     * @throws SQLException
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
     public ArrayList<UserData> findAllDataFromUser(int UserId) throws SQLException, IOException, ClassNotFoundException {
 
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM User_Data WHERE user_ID = " + UserId );

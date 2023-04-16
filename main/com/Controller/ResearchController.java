@@ -23,12 +23,6 @@ public class ResearchController {
         movieAccessor = new MovieAccessor();
     }
 
-    /**
-     * création d'une liste de films
-     * @param title
-     * @return
-     * @throws Exception
-     */
     public ArrayList<Movie> movieSearched(String title) throws Exception {
         MovieAccessor movieAccessor = new MovieAccessor();
         ArrayList<Movie> listMovies = movieAccessor.search(title);

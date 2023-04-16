@@ -48,18 +48,10 @@ public class Playlist extends BdModel {
         this.movies = movies;
     }
 
-    /**
-     * permet d'ajouter un film à la liste de l'utilisateur
-     * @param movie
-     */
     public void addMovie(Movie movie) {
         this.movies.add(movie);
     }
 
-    /**
-     * permet d'enelever un film de la liste de l'utilisateur
-     * @param id
-     */
     public void removeMovie(int id) {
         Iterator<Movie> i = movies.iterator();
         while (i.hasNext()) {

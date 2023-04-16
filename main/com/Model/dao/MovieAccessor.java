@@ -138,13 +138,6 @@ public class MovieAccessor extends Accessor<Movie> {
         return suggestions;
     }
 
-    /**
-     *
-     * @return compteur. Compte le nombre de films qu'il y a dans la base de donnée
-     * @throws SQLException
-     * @throws ClassNotFoundException
-     * @throws IOException
-     */
     public int countMovies() throws SQLException, ClassNotFoundException, IOException {
 
 
@@ -206,10 +199,6 @@ public class MovieAccessor extends Accessor<Movie> {
         }
     }
 
-    /**
-     * lorsqu'un film est sélectionné pour être promu, il est adpaté et disposé sur la page d'accueil de l'utilisateur
-     * @param movie
-     */
     public void updatePromoted(Movie movie ) {
         try {
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("UPDATE Movie SET promotion = ? WHERE id = " + movie.getId());
@@ -321,15 +310,6 @@ public class MovieAccessor extends Accessor<Movie> {
         Director.close();
     }
 
-    /**
-     * classifie les films selon leur type dans une liste à partir de la base de donnée
-     * @param type type du film
-     * @param max
-     * @return les films
-     * @throws SQLException
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
     public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Movie> movies = new ArrayList<>();
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT DISTINCT ID FROM Movie WHERE type LIKE '%" + type + "%' ORDER BY RAND () LIMIT " + max );
@@ -341,14 +321,6 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
-    /**
-     * classifie les films en fonction de leur date à partir de la base de donnée
-     * @param i
-     * @return les films
-     * @throws SQLException
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
     public ArrayList<Movie> findByDate(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY release_date DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -359,11 +331,7 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
-    /**
-     * cherche à partir de la base de donnée ce qui a été sélectionné et vu par l'utilisateur
-     * find by Popular
-      */
-
+    // find by Popular
     public ArrayList<Movie> findByPopular(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY view_counter DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -374,12 +342,6 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
-    /**
-     * classe les films selon les genre à partir de la base de donnée
-     * @param action
-     * @return le compteur de film selon les genres
-     * @throws SQLException
-     */
     public int countMoviesByGenre(String action) throws SQLException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT COUNT(*) FROM Movie WHERE type like '%"+ action + "%'");
         result.next();
@@ -389,14 +351,6 @@ public class MovieAccessor extends Accessor<Movie> {
     }
 
 
-    /**
-     * sélectionne un film selon son rang à partir de la base de donnée
-     * @param i le rang du film
-     * @return les films
-     * @throws SQLException
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
     public ArrayList<Movie> findByRank(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY rating DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -407,20 +361,10 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
-    /**
-     * à chaque nouvelle vu du film, +1 est ajouté au compteur
-     * @param id
-     * @throws SQLException
-     */
     public void addView(int id) throws SQLException {
         dataBase.getRequest().executeUpdate("Update Movie SET view_counter = view_counter + 1 WHERE ID = " + id);
     }
 
-    /**
-     * le rang du film est ainsi updaté
-     * @param id
-     * @param rate
-     */
     public void updateRating(int id, double rate) {
         try {
             dataBase.getRequest().executeUpdate("Update Movie SET rating = " + rate + " WHERE ID = " + id);

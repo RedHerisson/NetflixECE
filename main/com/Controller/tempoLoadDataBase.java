@@ -67,12 +67,6 @@ public class tempoLoadDataBase {
             return getJsonFromURL("https://www.omdbapi.com/?apikey=" + apikkey + "&i=" + id);
     }
 
-    /**
-     * création d'un objet pour récupérer les informations du film à partir de la base de données
-     * @param json
-     * @return
-     * @throws IOException
-     */
     public static Movie JsonToMovie(String json) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> jsonMap = objectMapper.readValue(json, new TypeReference<Map<String, Object>>(){});
@@ -152,7 +146,6 @@ public class tempoLoadDataBase {
         return ytLink;
     }
 
-
     public static ArrayList<String> readImdbFromFile(String path, int startLigne) {
         ArrayList<String> imdbIds = new ArrayList<>();
         try {
@@ -173,10 +166,6 @@ public class tempoLoadDataBase {
         return imdbIds;
     }
 
-    /**
-     *méthode qui utilise et charge une vidéo youtube
-     * @param ytURL
-     */
     public static void addYtURLToFile( String ytURL ) {
         try {
             FileWriter myWriter = new FileWriter("ytURL.txt", true);
@@ -188,10 +177,6 @@ public class tempoLoadDataBase {
 
     }
 
-    /**
-     * main de cette partie du code
-     * @param args
-     */
     public static void main(String[] args) {
         try {
             int startLigne = 510;
