@@ -68,6 +68,17 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
+            <Button fx:id="btnSignOut" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="204.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Sign Out" textFill="#ebf2f9">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             </children>
         </VBox>
     </children>

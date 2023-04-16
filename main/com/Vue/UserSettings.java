@@ -32,6 +32,9 @@ public class UserSettings extends Controller implements Initializable {
     private Button btnProfil;
 
     @FXML
+    private Button btnSignOut;
+
+    @FXML
     private Label lblStatut;
 
     @FXML
@@ -48,13 +51,13 @@ public class UserSettings extends Controller implements Initializable {
     }
 
     @FXML
-    private void handleClicks(ActionEvent event){
+    private void handleClicks(ActionEvent event) {
 
-        if(event.getSource() == btnProfil){
+        if (event.getSource() == btnProfil) {
             lblStatut.setText("Profil");
-            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(30,	66,	99), CornerRadii.EMPTY, Insets.EMPTY)));
+            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(30, 66, 99), CornerRadii.EMPTY, Insets.EMPTY)));
 
-            try{
+            try {
                 Parent root = FXMLLoader.load(getClass().getResource("/resources/View/UserProfil.fxml"));
                 Stage ProfilStage = new Stage();
                 ProfilStage.setScene(new Scene(root));
@@ -63,17 +66,16 @@ public class UserSettings extends Controller implements Initializable {
                 ProfilStage.setTitle("UserProfil");
                 ProfilStage.getIcons().add(icon);
 
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
 
-        }
-        else if(event.getSource() == btnPlaylists){
+        } else if (event.getSource() == btnPlaylists) {
             lblStatut.setText("Playlists");
-            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(24,	52,	79), CornerRadii.EMPTY, Insets.EMPTY)));
+            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(24, 52, 79), CornerRadii.EMPTY, Insets.EMPTY)));
 
-            try{
+            try {
                 Parent root = FXMLLoader.load(getClass().getResource("/resources/View/UserPlaylists.fxml"));
                 Stage PlaylistsStage = new Stage();
                 PlaylistsStage.setScene(new Scene(root));
@@ -82,16 +84,15 @@ public class UserSettings extends Controller implements Initializable {
                 PlaylistsStage.setTitle("UserPlaylists");
                 PlaylistsStage.getIcons().add(icon);
 
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
-        }
-        else if(event.getSource() == btnHistoric){
+        } else if (event.getSource() == btnHistoric) {
             lblStatut.setText("Historic");
-            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(47,	72,	96), CornerRadii.EMPTY, Insets.EMPTY)));
+            pnlStatut.setBackground(new Background(new BackgroundFill(Color.rgb(47, 72, 96), CornerRadii.EMPTY, Insets.EMPTY)));
 
-            try{
+            try {
                 Parent root = FXMLLoader.load(getClass().getResource("/resources/View/UserHistoric.fxml"));
                 Stage HistoricStage = new Stage();
                 HistoricStage.setScene(new Scene(root));
@@ -100,11 +101,16 @@ public class UserSettings extends Controller implements Initializable {
                 HistoricStage.setTitle("UserHistoric");
                 HistoricStage.getIcons().add(icon);
 
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 e.getCause();
             }
         }
+
+        else if (event.getSource() == btnSignOut) {
+
+            }
+
     }
 
     @Override

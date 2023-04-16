@@ -38,9 +38,24 @@ public class User extends Person {
         this.admin = admin;
     }
 
+    public User(User usr) {
+        super(usr.getId(), usr.getName(), usr.getSurname(), usr.getAge(), usr.getSexe());
+        this.pseudo = usr.getPseudo();
+        this.pwd = usr.getPwd();
+        this.email = usr.getEmail();
+        this.acc_creation_date = usr.getCreationDate();
+        this.playlists = usr.getPlaylists();
+        this.history = usr.getHistory();
+        this.favouriteType = usr.getFavouriteType();
+        this.data = usr.getData();
+        this.admin = usr.isAdmin();
+    }
 
     public String getPseudo() {
         return pseudo;
+    }
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 
     public String getPwd() {

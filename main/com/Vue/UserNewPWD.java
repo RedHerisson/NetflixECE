@@ -2,6 +2,7 @@ package com.Vue;
 
 import com.Controller.AppController;
 import com.Model.dao.UserAccessor;
+import com.Model.map.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,20 +36,28 @@ public class UserNewPWD implements Initializable {
     @FXML
     private Button NewPWDBtn;
 
+    private UserAccessor userAccessor = new UserAccessor();
+
     @FXML
     void ChangePWDAction(ActionEvent event) throws SQLException, ClassNotFoundException {
 
         if(event.getSource() == NewPWDBtn){
-            if(NewPWD.getText().equals(ConfirmNewPDW.getText())){
-                UserAccessor user = new UserAccessor();
-                //user.updatePwd(AppController.getUser().getId())
-                NewPWD.getText();
-            }
-        }
-        else if(NewPWD.getText().compareTo(ConfirmNewPDW.getText())!=0) {
-            //Message.setText("Password not OK");
-        }
 
+            String pwd = NewPWD.getText();
+            String confirmPDW = ConfirmNewPDW.getText();
+            User newUser = new User(userConnected); //clone
+
+
+            if(NewPWD.getText().equals(ConfirmNewPDW.getText())){
+
+                System.out.println("New password: " + pwd);
+                userAccessor.updatePwd(newUser);
+            }
+
+        else if(NewPWD.getText().compareTo(ConfirmNewPDW.getText())!=0) {
+            System.out.println("Les mots de passe ne correspondent pas");
+        }
+      }
     }
 
     @Override

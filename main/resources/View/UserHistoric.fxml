@@ -2,22 +2,23 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserHistoric">
     <children>
-        <Label layoutX="80.0" layoutY="57.0" text="Recently watched">
+        <Label layoutX="80.0" layoutY="57.0" prefHeight="27.0" prefWidth="217.0" text="Recently watched">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-        <Pane layoutX="80.0" layoutY="103.0" prefHeight="220.0" prefWidth="427.0" style="-fx-background-color: e6e6e6;">
-            <children>
-                <Button layoutX="254.0" layoutY="164.0" mnemonicParsing="false" text="Delete" />
-            </children>
-        </Pane>
+      <ScrollPane layoutX="151.0" layoutY="124.0" prefHeight="523.0" prefWidth="974.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="685.0" prefWidth="975.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="325.0" layoutY="58.0" mnemonicParsing="false" onAction="#ShowHistoric" text="Button" />
     </children>
 </AnchorPane>

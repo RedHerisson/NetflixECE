@@ -5,22 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="347788f1-3ae0-4860-be63-56798df6836d" name="Changes" comment=" - add find User from id&#10;  - comment Accessor">
-      <change afterPath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/UserPlaylists.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/com/Vue/HistoricMovie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/resources/View/HistoricMovie.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserHistoric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserNewPWD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserNewPWD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +78,15 @@
       <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\resources\View" />
       <recent name="C:\Users\princ\Documents\Projet JAVA Netflix\NetflixECE\main\ressources\View" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
+      <module name="videoPlayer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -36,6 +36,7 @@ public class AppController extends Application {
     mainStage = stage;
     UserAccessor usertest = new UserAccessor();
     loginUser = usertest.findById(28);
+
     setUserSettings();
     // setHomePage();
     }
