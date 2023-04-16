@@ -19,8 +19,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class CarouselController extends Controller implements Initializable {
 
+    ///Attributs
     @FXML
     private ImageView nextArrow;
     @FXML
@@ -40,6 +46,7 @@ public class CarouselController extends Controller implements Initializable {
     private MovieAccessor posterGetter;
 
 
+    /** Initializes the controller class. */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -101,6 +108,10 @@ public class CarouselController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * Set the movie list to display
+     * @param movieList
+     */
     private void updatePage() throws IOException, SQLException {
 
         int showMax = 7;

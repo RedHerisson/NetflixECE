@@ -11,6 +11,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 
+/**
+ * Classe représentant un film
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Movie extends BdModel {
 

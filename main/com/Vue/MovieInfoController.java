@@ -62,6 +62,10 @@ public class MovieInfoController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Set the movie to display
+     * @param movie
+     */
     public void updateFromMovie(Movie movie) throws IOException {
 
         //
@@ -126,6 +130,10 @@ public class MovieInfoController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Set the width of the media view
+     * @param width
+     */
     public void setMediaHeightClip(int height) {
         Rectangle clip = new Rectangle(
                 TrailerContainer.getPrefWidth(), height

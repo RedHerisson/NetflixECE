@@ -27,10 +27,14 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class UserProfil extends Controller implements Initializable {
 
-
+    ///Attributs
     @FXML
     private TextField LastName;
     @FXML
@@ -58,6 +62,9 @@ public class UserProfil extends Controller implements Initializable {
     public UserProfil() throws SQLException, ClassNotFoundException {
     }
 
+    /**
+     * Initializes the controller class.
+     */
     public void loadUserInfo(AppController appController) {
         this.appController = appController;
         temporaryUser = appController.getCurrentuser();
@@ -65,6 +72,9 @@ public class UserProfil extends Controller implements Initializable {
 
     }
 
+    /**
+     * Initializes the controller class.
+     */
     public void graphicUpdate() {
         UserName.setText(temporaryUser.getPseudo());
         LastName.setText(temporaryUser.getSurname());
@@ -72,6 +82,9 @@ public class UserProfil extends Controller implements Initializable {
         MailUser.setText(temporaryUser.getEmail());
     }
 
+    /**
+     * Initializes the controller class.
+     */
     @FXML
     public void RegisterAction() {
         try {

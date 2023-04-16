@@ -18,8 +18,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class HomeController extends Controller implements Initializable {
-
+    ///Attributs
     @FXML
     private ScrollPane mainContainer;
     @FXML
@@ -49,6 +54,14 @@ public class HomeController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * Ajoute un carousel a la page
+     * @param movies
+     * @param title
+     * @param pos
+     * @throws IOException
+     * @throws SQLException
+     */
     public void AddPlaylist(ArrayList<Movie> movies, String title, int pos) throws IOException, SQLException {
         //Ouvre le fichier fxml du carousel
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/Carousel/Carousel.fxml"));
@@ -79,6 +92,13 @@ public class HomeController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Fonction qui permet d'ajouter une promotion
+     * @param movie
+     * @param index
+     * @throws IOException
+     * @throws SQLException
+     */
     public void AddPromotion(Movie movie, int index) throws IOException, SQLException {
         //Ouvre le fichier fxml du carousel
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
@@ -99,7 +119,10 @@ public class HomeController extends Controller implements Initializable {
         mainContainer.setVvalue(0);
     }
 
-    //Fonction qui permet de mettre a jour le controller de la page
+    /**
+     * Fonction qui permet de charger le header
+     * @param appController
+     */
     public void setAppController(AppController appController) {
         this.appController = appController;
         try {

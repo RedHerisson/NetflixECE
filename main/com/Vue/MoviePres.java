@@ -35,6 +35,7 @@ import java.util.ResourceBundle;
 // TODO : margin to the movie suggestion carousel
 public class MoviePres  extends Controller implements  Initializable {
 
+    ///Attributs
     @FXML
     private VBox mainContainer;
     @FXML
@@ -65,7 +66,11 @@ public class MoviePres  extends Controller implements  Initializable {
         rankStarList = new ArrayList<ImageView>();
     }
 
-
+/**
+     * Load a movie in the movie presentation
+     * @param movie
+     * @throws Exception
+     */
     public void loadMovie(Movie movie) throws Exception {
         this.movie = movie;
         userData = userDataAccessor.findByMovieAndUser(appController.getCurrentuser().getId(), this.movie.getId());
@@ -161,6 +166,10 @@ public class MoviePres  extends Controller implements  Initializable {
 
                 star.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 
+                    /**
+                     * Update the mark of the movie
+                     * @param event
+                     */
                     @Override
                     public void handle(MouseEvent event) {
                         currentMark = finalI +1 ;
@@ -184,6 +193,10 @@ public class MoviePres  extends Controller implements  Initializable {
         }
     }
 
+    /**
+     * Update the graphic of the ranking
+     * @param mark
+     */
     public void updateGraphicRanking(int mark ) {
         for(int i = 0; i < mark; i++) {
             rankStarList.get(i).setImage(SwingFXUtils.toFXImage(rankStar, null));
@@ -193,6 +206,11 @@ public class MoviePres  extends Controller implements  Initializable {
         }
     }
 
+    /**
+     * Update the mark of the movie
+     * @param mark
+     * @throws Exception
+     */
     public void updateMark(int mark) throws Exception {
         if( userData == null ) {
             try {
@@ -206,6 +224,9 @@ public class MoviePres  extends Controller implements  Initializable {
         userDataAccessor.updateRate(userData);
     }
 
+    /**
+     * Update the button skin
+     */
     public void updateButtonSkin() {
         if( appController.getCurrentuser().testIfMovieIsInWatchList(movie) ) {
             AddWatchLater.setText("Remove Watch later");
@@ -218,6 +239,10 @@ public class MoviePres  extends Controller implements  Initializable {
         }
     }
 
+    /**
+     * Add the movie to the watch later list
+     * @throws Exception
+     */
     @FXML
     public void addToWatchLater() throws Exception {
         PlaylistAccessor playlistAccessor = new PlaylistAccessor();

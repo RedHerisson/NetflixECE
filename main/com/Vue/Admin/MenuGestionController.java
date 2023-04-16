@@ -24,8 +24,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class MenuGestionController extends Controller implements Initializable {
-
+    ///Attributs
     private Movie movie;
     private MovieAccessor posterGetter;
 
@@ -46,6 +51,7 @@ public class MenuGestionController extends Controller implements Initializable {
     public MenuGestionController() throws SQLException, ClassNotFoundException {
     }
 
+    /** Initializes the controller class. */
 
     @Override
     public void initialize(java.net.URL location, ResourceBundle resources) {
@@ -56,7 +62,10 @@ public class MenuGestionController extends Controller implements Initializable {
         }
 
     }
-
+    /**
+     * Load the poster of the movie
+     * @param bPoster
+     */
     @FXML
     private void LoadPoster(BufferedImage bPoster) {
 
@@ -69,6 +78,12 @@ public class MenuGestionController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * Set the movie to display
+     * @param movie
+     * @throws SQLException
+     * @throws IOException
+     */
     public void setMovie(Movie movie) throws SQLException, IOException {
 
         this.movie = movie;
@@ -91,6 +106,9 @@ public class MenuGestionController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Update the promo button graphic
+     */
     public void updatePromoButtonGraphic() {
         if (movie.isPromoted()) {
             updatePromoButton.setStyle("-fx-background-color: blue");
@@ -105,6 +123,10 @@ public class MenuGestionController extends Controller implements Initializable {
         this.appController = appController;
     }
 
+    /**
+     * Close the menu
+     * @param event
+     */
     @FXML
     public void updateMovie(ActionEvent event) throws SQLException, IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -117,6 +139,10 @@ public class MenuGestionController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Close the menu
+     * @param event
+     */
     @FXML
     public void deleteMovie(ActionEvent event) throws Exception {
         posterGetter.delete(movie.getId());
@@ -124,6 +150,10 @@ public class MenuGestionController extends Controller implements Initializable {
 
     }
 
+    /**
+     * Close the menu
+     * @param event
+     */
     @FXML
     public void updatePromotion(ActionEvent event) throws Exception {
         movie.setPromoted(true);

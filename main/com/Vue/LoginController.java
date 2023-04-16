@@ -46,7 +46,11 @@ public class LoginController  extends Controller implements Initializable {
         appController.setRegisterPage();
     }
 
-    //loginButton
+    /**
+     * Méthode qui permet de se connecter
+     * @param event
+     * @throws Exception
+     */
     @FXML
     public void loginButtonOnAction(ActionEvent event) throws Exception{
         Stage stage = (Stage) loginButton.getScene().getWindow();

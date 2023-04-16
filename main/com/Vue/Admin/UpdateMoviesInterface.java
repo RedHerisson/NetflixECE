@@ -15,17 +15,20 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class UpdateMoviesInterface extends Controller implements Initializable {
 
-
+    ///Attributs
     @FXML
     private TextField newTitle, newType;
 
     @FXML
     private DatePicker newDate;
 
-    @FXML
-    private Button confirmUpdate;
 
     private Movie movie;
 
@@ -40,6 +43,9 @@ public class UpdateMoviesInterface extends Controller implements Initializable {
         newType.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 2;");
     }
 
+    /**
+     * Méthode qui permet de charger tous les films dans la vBox
+     */
     @FXML
     public void ConfirmUpdate(ActionEvent event) throws SQLException, IOException {
         Movie newMovie = new Movie(movie);

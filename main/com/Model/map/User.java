@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe représentant un utilisateur
+ */
 public class User extends Person {
 
     private String pseudo;

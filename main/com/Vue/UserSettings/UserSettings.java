@@ -22,7 +22,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class UserSettings extends Controller implements Initializable {
+
+   ///Attributs
     @FXML
     private AnchorPane rootUS;
     @FXML
@@ -45,6 +53,9 @@ public class UserSettings extends Controller implements Initializable {
     @FXML
     private ImageView BackArrow;
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BackArrow.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -55,6 +66,9 @@ public class UserSettings extends Controller implements Initializable {
         });
     }
 
+    /**
+     * Initializes the controller class.
+     */
     @FXML
     private void handleClicks(ActionEvent event) throws IOException {
         setGraphicUserName(appController.getCurrentuser().getPseudo());

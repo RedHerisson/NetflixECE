@@ -11,12 +11,30 @@
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - last modif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminStats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/MenuGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/MenuGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UpdateMoviesInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UpdateMoviesInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UserGestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/BdModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/BdModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/AdminCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/AdminStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/AdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/AdminUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/MenuGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/MenuGestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/UpdateMoviesInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UpdateMoviesInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Admin/UserGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Admin/UserGestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Carousel/CarouselController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Carousel/CarouselController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/Carousel/MovieIntegrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MovieInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/MoviePres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings/HistoricMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/HistoricMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserHistoric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserProfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/MovieGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UpdateMoviesInterface.fxml" afterDir="false" />
@@ -116,7 +134,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Controller.AppController" />
-      <module name="videoPlayer" />
+      <module name="NetflixECEPROJECT" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.Controller.*" />

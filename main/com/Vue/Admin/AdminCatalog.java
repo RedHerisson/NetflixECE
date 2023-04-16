@@ -20,9 +20,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * FXML Controller class
+ *
+ * @author
+ */
 public class AdminCatalog extends Controller implements Initializable {
 
-
+    ///Attributs
     @FXML
     private Button button1, button2, button3, button4;
     @FXML
@@ -48,6 +53,9 @@ public class AdminCatalog extends Controller implements Initializable {
 
     }
 
+    /**
+     * Méthode qui permet de charger tous les films dans la vBox
+     */
     @FXML
     public void HandleSearch(ActionEvent event) throws Exception {
         //On supprime tous les films de la vBox
