@@ -54,7 +54,11 @@ public class RegisterController extends Controller {
     @FXML
     String sexe;
 
-
+    /**
+     * Méthode qui permet de se connecter
+     * @param event
+     * @throws Exception
+     */
     public void RegisterAction(ActionEvent event) throws Exception{
 
         System.out.println(Password.getText());

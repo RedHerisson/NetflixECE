@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Classe représentant une playlist
+ */
 public class Playlist extends BdModel {
     private int ownerId;
     private String Title;

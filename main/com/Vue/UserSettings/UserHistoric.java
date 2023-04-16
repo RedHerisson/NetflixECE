@@ -16,13 +16,21 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class UserHistoric extends Controller implements Initializable {
 
+    ///Attributs
     private Playlist historic;
     @FXML
     private VBox vBox;
 
+    /**
+     * Initializes the controller class.
+     */
     @FXML
     public void ShowHistoric(AppController appController) {
         this.appController = appController;

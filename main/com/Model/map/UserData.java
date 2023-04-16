@@ -5,6 +5,9 @@ import com.Model.dao.MovieAccessor;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Classe représentant les données utilisateur
+ */
 public class UserData extends BdModel {
 
     public int ownerId;

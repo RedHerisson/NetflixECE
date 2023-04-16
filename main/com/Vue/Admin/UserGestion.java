@@ -15,8 +15,10 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class UserGestion extends Controller implements Initializable {
 
+    ///Attributs
     private User user;
     private UserAccessor userAccessor;
     @FXML
@@ -38,6 +40,9 @@ public class UserGestion extends Controller implements Initializable {
         pseudoUser.setText(user.getPseudo());
     }
 
+    /**
+     * @return the user
+     */
     public void setAdmin(ActionEvent event) throws Exception {
         User newAdmin = user;
         newAdmin.setAdmin(true);

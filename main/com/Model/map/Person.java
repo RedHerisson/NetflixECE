@@ -1,5 +1,8 @@
 package com.Model.map;
 
+/**
+ * Classe abstraite qui permet de définir les méthodes communes aux modèles
+ */
 public class Person extends BdModel {
 
     protected String name;

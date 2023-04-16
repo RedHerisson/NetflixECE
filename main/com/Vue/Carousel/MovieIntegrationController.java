@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class MovieIntegrationController extends Controller implements Initializable {
 
+    ///Attributs
     public ImageView playIcon;
     public Pane darkLayer;
     @FXML
@@ -35,6 +36,9 @@ public class MovieIntegrationController extends Controller implements Initializa
     private Movie movie;
     private MovieAccessor posterGetter;
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -80,6 +84,10 @@ public class MovieIntegrationController extends Controller implements Initializa
         }
     }
 
+    /**
+     * Load the poster of the movie
+     * @param bPoster
+     */
     @FXML
     private void LoadPoster(BufferedImage bPoster) {
 
@@ -92,6 +100,12 @@ public class MovieIntegrationController extends Controller implements Initializa
         }
     }
 
+    /**
+     * Set the movie to display
+     * @param movie
+     * @throws SQLException
+     * @throws IOException
+     */
     public void setMovie(Movie movie) throws SQLException, IOException {
 
         this.movie = movie;

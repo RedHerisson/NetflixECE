@@ -22,12 +22,15 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
+/**
+ * FXML Controller class
+ *
+ * @author Author
+ */
 public class HistoricMovie extends Controller implements Initializable {
-
+    ///Attributs
     private Movie movie;
     private MovieAccessor posterGetter;
-
     @FXML
     private Pane darkLayer;
 
@@ -54,7 +57,9 @@ public class HistoricMovie extends Controller implements Initializable {
         }
 
     }
-
+    /**
+     * @param bPoster
+     */
     @FXML
     private void LoadPoster(BufferedImage bPoster) {
 
@@ -66,6 +71,12 @@ public class HistoricMovie extends Controller implements Initializable {
             posterContainer.setImage(null);
         }
     }
+
+    /**
+     * @param movie
+     * @throws SQLException
+     * @throws IOException
+     */
     public void setMovie(Movie movie) throws SQLException, IOException {
 
         this.movie = movie;

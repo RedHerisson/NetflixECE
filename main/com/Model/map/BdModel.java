@@ -1,7 +1,9 @@
 package com.Model.map;
 
 import com.Controller.BDD;
-
+/**
+ * Classe abstraite qui permet de définir les méthodes communes aux modèles
+ */
 public abstract class BdModel {
 
     protected int id;

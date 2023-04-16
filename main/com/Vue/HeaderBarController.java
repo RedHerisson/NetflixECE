@@ -97,6 +97,11 @@ public class HeaderBarController extends Controller implements Initializable {
     }
 
 
+    /**
+     * Met à jour la liste des suggestions
+     * @param suggestionList
+     */
+
     public void updateSuggestions(ArrayList<String> suggestionList){
         //On vide la liste des suggestions
         searchSuggestionContainer.getChildren().clear();

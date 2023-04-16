@@ -20,6 +20,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/** FXML Controller class
+ * @author
+ */
 public class AdminUser extends Controller implements Initializable{
 
     ///Attributs
@@ -48,7 +51,9 @@ public class AdminUser extends Controller implements Initializable{
         textField.setStyle("-fx-text-fill: #FFFFFF; -fx-background-color: transparent; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #FFFFFF; -fx-border-width: 2;");
     }
 
-
+    /**
+     * Méthode qui permet de charger tous les films dans la vBox
+     */
     @FXML
     public void HandleSearch(ActionEvent event) throws Exception {
         //On supprime tous les films de la vBox
