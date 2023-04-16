@@ -6,8 +6,6 @@ public abstract class BdModel {
 
     protected int id;
 
-
-
     public BdModel(int id) {
         this.id = id;
     }

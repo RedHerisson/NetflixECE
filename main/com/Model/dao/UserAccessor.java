@@ -78,6 +78,14 @@ public class UserAccessor extends PersonAccessor {
         return null;
     }
 
+    /**
+     * trouve l'utilisateur à partir de son nom
+     * @param name à partir de la base de donnée
+     * @return l'utilisateur si trouvé, sinon retourner null
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public User findByName( String name ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE pseudo = " + "'" +  name + "'" );
         if( findUser.next() ) {
@@ -86,6 +94,14 @@ public class UserAccessor extends PersonAccessor {
         else return null;
     }
 
+    /**
+     * cherche l'utilisateur à partir de son speudo
+     * @param querry à partir de la base de données
+     * @return l'utilisateur trouvé
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<User> searchPseudo(String querry) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<User> userList = new ArrayList<User>();
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE pseudo like '%"+querry +"%'" );
@@ -95,6 +111,14 @@ public class UserAccessor extends PersonAccessor {
         return userList;
     }
 
+
+    /**
+     * compteur qui permet de compter les admins enregistrés de la page
+     * @return compteur final
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countAdmin() throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -105,6 +129,14 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * permet de trouver l'utilisateur à partir de son mail
+     * @param mail à partir de la base de données
+     * @return l'utilisteur si trouvé, sinon retourne null
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public User findByMail( String mail ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE email = " + "'" +  mail + "'" );
         if( findUser.next() ) {
@@ -113,6 +145,15 @@ public class UserAccessor extends PersonAccessor {
         else return null;
     }
 
+    /**
+     * vérifie le mot de passe enregistré
+     * @param id récupère les données de l'utilisateur
+     * @param pwd compare le mot de passe associé
+     * @return l'utilisateur si trouvé, sinon retourne null
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public boolean checkPwd( int id, String pwd ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT pwd FROM User WHERE ID = " + id );
         if( findUser.next() ) {
@@ -121,6 +162,15 @@ public class UserAccessor extends PersonAccessor {
         else return false;
     }
 
+    /**
+     * calcul le nombre d'utilisateur enregistré entre ces deux dates
+     * @param date1 première date enregistrée
+     * @param date2 seconde date enregistrée
+     * @return compteur final
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersFromDate(String date1, String date2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -131,6 +181,13 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * compte les utilisateurs enregistrés
+     * @return le compteur créé
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsers() throws SQLException, ClassNotFoundException, IOException {
 
 
@@ -144,6 +201,13 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * compte les utilisateurs connectés sur la page
+     * @return le compteur
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersConnected() throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 

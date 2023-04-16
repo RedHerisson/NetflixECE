@@ -33,6 +33,14 @@ public class AppController extends Application {
 
     private boolean NasConnected = false;
 
+    /**
+     *
+     * @param stage the primary stage for this application, onto which
+     * the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be
+     * primary stages.
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -42,6 +50,7 @@ public class AppController extends Application {
     TestConnection();
     setLoginPage();
     }
+
 
     private void TestConnection() {
         try {
@@ -60,6 +69,10 @@ public class AppController extends Application {
 
     }
 
+    /**
+     * une fois sur la page login, si le bouton register est sélectionné, alors une autre page fxml s'ouvre
+     * @throws IOException
+     */
     public void setLoginPage() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/login.fxml"));
@@ -75,6 +88,7 @@ public class AppController extends Application {
 
         mainStage.show();
     }
+
     public void setUserSettings() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings/UserSettings.fxml"));
@@ -134,6 +148,14 @@ public class AppController extends Application {
         }
     }
 
+    /**
+     * va chercher les informations à partir du user d'entré
+     * @param controller est sélectionné à partir de HomeController
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
+
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
         UserDataAccessor userDataAccessor = new UserDataAccessor();
@@ -185,6 +207,12 @@ public class AppController extends Application {
 
     }
 
+    /**
+     *
+     * @param user reprends les informations à partir du login d'entrée
+     * @throws Exception
+     */
+
     public void loginComplete(User user) throws Exception {
 
         setLoginUser(user);
@@ -200,6 +228,10 @@ public class AppController extends Application {
         loginUser = user;
     }
 
+    /**
+     * main pour tester la partie de code
+     * @param args
+     */
     public static void Main(String[] args){
         launch(args);
     }
@@ -224,7 +256,10 @@ public class AppController extends Application {
         }
     }
 
-
+    /**
+     * charge le player vidéo
+     * @param movie
+     */
     public void loadPlayer(Movie movie) {
         try {
             UserAccessor userAccessor = new UserAccessor();
@@ -255,6 +290,10 @@ public class AppController extends Application {
         }
     }
 
+    /**
+     * permet de lancer les statistiques de l'admin enregistré
+     * @throws Exception
+     */
     public void launchAdmin() throws Exception {
 
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
@@ -266,7 +305,9 @@ public class AppController extends Application {
         mainStage.show();
     }
 
-    //Méthode pour load la page des statistiques
+    /**
+     * Méthode pour load la page des statistiques
+     */
     public void loadStatsPage() throws Exception {
         AdminStats adminStats = new AdminStats();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
@@ -279,7 +320,9 @@ public class AppController extends Application {
 
     }
 
-    //Méthode pour load la page du catalogue
+    /**
+     * Méthode pour load la page du catalogue
+     */
     public void loadCatalogPage() throws Exception {
         AdminCatalog adminCatalog = new AdminCatalog();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminCatalog.fxml"));
@@ -291,7 +334,9 @@ public class AppController extends Application {
         mainStage.show();
     }
 
-    //Méthode pour load la page des utilisateurs
+    /**
+     * Méthode pour load la page des utilisateurs
+     */
     public void loadUserPage() throws Exception {
         AdminUser adminUser = new AdminUser();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminUserGestion.fxml"));
