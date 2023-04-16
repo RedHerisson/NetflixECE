@@ -2,8 +2,10 @@ package com.Vue;
 
 import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
+import com.Model.dao.PlaylistAccessor;
 import com.Model.dao.UserDataAccessor;
 import com.Model.map.Movie;
+import com.Model.map.Playlist;
 import com.Model.map.User;
 import com.Model.map.UserData;
 import com.Vue.Carousel.CarouselController;
@@ -17,6 +19,7 @@ import javafx.geometry.Insets;
 
 import javafx.geometry.NodeOrientation;
 import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -39,6 +42,9 @@ public class MoviePres  extends Controller implements  Initializable {
     private VBox MovieInfoContainer;
     @FXML
     private HBox optionContainer;
+
+    @FXML
+    private Button AddWatchLater;
 
     private BufferedImage rankStar, rankStarEmpty;
 
@@ -69,6 +75,8 @@ public class MoviePres  extends Controller implements  Initializable {
         else {
             currentMark = userData.getRate();
         }
+
+        updateButtonSkin();
 
 
         FXMLLoader movieInfoPagingData = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
@@ -196,6 +204,36 @@ public class MoviePres  extends Controller implements  Initializable {
         }
         userData.setRate(mark);
         userDataAccessor.updateRate(userData);
+    }
+
+    public void updateButtonSkin() {
+        if( appController.getCurrentuser().testIfMovieIsInWatchList(movie) ) {
+            AddWatchLater.setText("Remove Watch later");
+            // update the button color
+            AddWatchLater.setStyle("-fx-background-color: red");
+        }
+        else {
+            AddWatchLater.setText("Watch later");
+            AddWatchLater.setStyle("-fx-background-color: green");
+        }
+    }
+
+    @FXML
+    public void addToWatchLater() throws Exception {
+        PlaylistAccessor playlistAccessor = new PlaylistAccessor();
+        if( appController.getCurrentuser().testIfMovieIsInWatchList(movie) ) {
+            System.out.println("Remove from watch later");
+            appController.getCurrentuser().RemoveMovieToWatchList(movie);
+            playlistAccessor.removeMovie(movie, appController.getCurrentuser().getWatchList());
+        }
+        else {
+            appController.getCurrentuser().addMovieToWatchList(movie);
+            playlistAccessor.addMovie(movie, appController.getCurrentuser().getWatchList());
+        }
+        System.out.println("watch later size : " + appController.getCurrentuser().getWatchList().getMoviesList().size());
+        updateButtonSkin();
+
+
     }
 
     @Override

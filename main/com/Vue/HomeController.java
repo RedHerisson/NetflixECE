@@ -53,7 +53,7 @@ public class HomeController extends Controller implements Initializable {
         
     }
 
-    public void AddPromotion(Movie movie) throws IOException, SQLException {
+    public void AddPromotion(Movie movie, int index) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/View/VideoPlayer/movieInfo.fxml"));
         VBox PromoContainer = fxmlLoader.load();
         MovieInfoController controller = fxmlLoader.getController();
@@ -61,7 +61,7 @@ public class HomeController extends Controller implements Initializable {
         controller.updateFromMovie(movie);
 
 
-        PlaylistContainer.getChildren().add(PromoContainer);
+        PlaylistContainer.getChildren().add(index, PromoContainer);
         // update the height of the scroll pane to fit the new content
         ScrollableContainer.setPrefHeight(ScrollableContainer.getPrefHeight() + PromoContainer.getPrefHeight() + PlaylistContainer.getSpacing());
 
@@ -72,5 +72,9 @@ public class HomeController extends Controller implements Initializable {
     }
     public void setAppController(AppController appController) {
         this.appController = appController;
+    }
+
+    public int getNbrPlayList() {
+        return PlaylistContainer.getChildren().size();
     }
 }

@@ -61,7 +61,7 @@
       </VBox>
       <HBox layoutX="720.0" layoutY="80.0" prefHeight="108.0" prefWidth="301.0">
          <children>
-            <Button fx:id="addPromoButton" mnemonicParsing="false" onMouseEntered="#decreaseOpacityOnHover1" onMouseExited="#increaseOpacityOnHover1" prefHeight="68.0" prefWidth="81.0" style="-fx-background-color: #111111;">
+            <Button fx:id="updatePromoButton" mnemonicParsing="false" onAction="#updatePromotion" onMouseEntered="#decreaseOpacityOnHover1" onMouseExited="#increaseOpacityOnHover1" prefHeight="68.0" prefWidth="81.0" style="-fx-background-color: #111111;">
                <HBox.margin>
                   <Insets bottom="20.0" left="10.0" right="8.0" top="20.0" />
                </HBox.margin>

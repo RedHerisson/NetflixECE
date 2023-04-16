@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -15,16 +14,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class AdminCatalog implements Initializable {
+public class AdminCatalog extends Controller implements Initializable {
 
-    ///Attributs
-    AdminAppController adminAppController;
+
     @FXML
     private Button button1, button2, button3, button4;
     @FXML
@@ -43,7 +40,6 @@ public class AdminCatalog implements Initializable {
     }
 
     ///Méthodes
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -77,30 +73,22 @@ public class AdminCatalog implements Initializable {
         }
     }
 
-
-
-
-    //Setter du controller de l'application
-    public void setAppAdminController(AdminAppController adminAppController) {
-        this.adminAppController= adminAppController;
-    }
-
     //Chargement de la page de statistiques
     @FXML
     public void HandleShowStatisticsGenre(ActionEvent event) throws Exception {
-        adminAppController.loadStatsPage();
+        appController.loadStatsPage();
     }
 
     //Chargement de la page de gestion des catalogues
     @FXML
     private void HandleCatalogGestion(ActionEvent event) throws Exception {
-        adminAppController.loadCatalogPage();
+        appController.loadCatalogPage();
     }
 
     //Chargement de la page de gestion des utilisateurs
     @FXML
     private void HandleUser(ActionEvent event) throws Exception {
-        adminAppController.loadUserPage();
+        appController.loadUserPage();
     }
 
     //Méthodes pour des effets graphiques sur les boutons
@@ -155,7 +143,13 @@ public class AdminCatalog implements Initializable {
     //Méthode pour quitter le mode admin
     @FXML
     private void HandleClose(ActionEvent event){
-        System.exit(0);
+        try {
+            appController.setLoginPage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
     }
 
 }

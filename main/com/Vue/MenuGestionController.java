@@ -27,8 +27,6 @@ public class MenuGestionController extends Controller implements Initializable {
     private Movie movie;
     private MovieAccessor posterGetter;
 
-
-
     @FXML
     private Pane darkLayer;
 
@@ -39,7 +37,7 @@ public class MenuGestionController extends Controller implements Initializable {
     private ImageView posterContainer;
 
     @FXML
-    private Button addPromoButton, deleteButton, editButton;
+    private Button updatePromoButton, deleteButton, editButton;
 
     private AdminCatalog adminCatalog = new AdminCatalog();
 
@@ -86,6 +84,18 @@ public class MenuGestionController extends Controller implements Initializable {
         actors = actors.substring(0, actors.length() - 2);
         nameActors.setText(actors);
         nameGenre.setText(movie.getTypes());
+
+        updatePromoButtonGraphic();
+
+    }
+
+    public void updatePromoButtonGraphic() {
+        if (movie.isPromoted()) {
+            updatePromoButton.setStyle("-fx-background-color: blue");
+        }
+        else {
+            updatePromoButton.setStyle("-fx-background-color: red");
+        }
     }
 
     @Override
@@ -112,14 +122,23 @@ public class MenuGestionController extends Controller implements Initializable {
 
     }
 
+    @FXML
+    public void updatePromotion(ActionEvent event) throws Exception {
+        movie.setPromoted(true);
+        MovieAccessor movieAccessor = new MovieAccessor();
+        movieAccessor.updatePromoted(movie);
+        updatePromoButtonGraphic();
+
+    }
+
     //create a function that decrease the opacity of the buttons when the mouse is over them
     public void decreaseOpacityOnHover1(MouseEvent event) {
-        addPromoButton.setOpacity(0.7);
+        updatePromoButton.setOpacity(0.7);
     }
 
     //create a function that increase the opacity of the buttons when the mouse is over them
     public void increaseOpacityOnHover1(MouseEvent event) {
-        addPromoButton.setOpacity(1.0);
+        updatePromoButton.setOpacity(1.0);
 
     }
 

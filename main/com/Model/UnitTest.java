@@ -23,7 +23,7 @@ public class UnitTest {
         Movie demoMovie = new Movie(-1, "Super film", ImageIO.read(new File("main/resources/images/stars-wars.jpg")), "demo.mp4",
                 LocalDate.of(1999, 02, 12), 130, new Person(-1,"Nolan", "christophe", 30, "M"), actors, new ArrayList<String>(),
                 "Super film, avec un mechant qui meurt à la fin, déso pour le spoil", "demo.mp4", true,
-                0, 5);
+                0, 5, false);
         return demoMovie;
     }
 

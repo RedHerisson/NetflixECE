@@ -18,7 +18,7 @@
             <Insets left="20.0" top="10.0" />
          </VBox.margin>
          <font>
-            <Font size="32.0" />
+            <Font name="Impact" size="32.0" />
          </font>
       </Label>
       <StackPane alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="1250.0">

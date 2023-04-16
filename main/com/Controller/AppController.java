@@ -8,10 +8,7 @@ import com.Model.map.Movie;
 import com.Model.map.Playlist;
 import com.Model.map.User;
 import com.Model.map.UserData;
-import com.Vue.HomeController;
-import com.Vue.LoginController;
-import com.Vue.MoviePres;
-import com.Vue.RegisterController;
+import com.Vue.*;
 import com.Vue.VideoPlayer.PlayerController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -127,12 +124,8 @@ public class AppController extends Application {
 
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
-        Movie movie = movieAccessor.findById(130);
         UserDataAccessor userDataAccessor = new UserDataAccessor();
         controller.setAppController(this);
-
-        controller.AddPromotion(movie);
-
 
         ArrayList<Movie> movieStarted = loginUser.getMovieStarted();
         // reverse array
@@ -143,10 +136,13 @@ public class AppController extends Application {
         if( movieFromContinue.size() != 0) controller.AddPlaylist(movieFromContinue, "In Watchlist");
 
         ArrayList<String> TypeFromHistory = loginUser.getTypeFromHistory();
-        ArrayList<Movie> movieFromHistory = new ArrayList<Movie>();
+        Collections.shuffle(TypeFromHistory);
+        TypeFromHistory = new ArrayList<String>(new java.util.HashSet<String>(TypeFromHistory));
+        if( TypeFromHistory.size() > 4 ) TypeFromHistory = new ArrayList<String>(TypeFromHistory.subList(0, 4));
+
         for (String type : TypeFromHistory) {
             System.out.println(type);
-            ArrayList<Movie> movies = movieAccessor.findByType(type, 1);
+            ArrayList<Movie> movies = movieAccessor.findByType(type, 10);
             // melange des films pour avoir un affichage aléatoire
             for (int i = 0; i < movies.size(); i++) {
                 int rand = (int) (Math.random() * movies.size());
@@ -154,9 +150,11 @@ public class AppController extends Application {
                 movies.set(i, movies.get(rand));
                 movies.set(rand, tmp);
             }
-            movieFromHistory.addAll(movies);
+            if( movies.size() != 0 )
+                controller.AddPlaylist(movies, "You like " + type);
         }
-        controller.AddPlaylist(movieFromHistory, "Type From your history");
+
+
 
         ArrayList<Movie> movieFromPopular = movieAccessor.findByPopular(20);
         controller.AddPlaylist(movieFromPopular, "Most Popular");
@@ -167,12 +165,25 @@ public class AppController extends Application {
         ArrayList<Movie> RecentMovies = movieAccessor.findByDate(20);
         controller.AddPlaylist(RecentMovies, "Recent releases");
 
+        int nbrPlayList = controller.getNbrPlayList();
+        ArrayList<Movie> MovieToPromote = movieAccessor.getRandPromotedMovies(3);
+        for (int i = 0; i < MovieToPromote.size(); i++) {
+            if( i == 0 ) controller.AddPromotion(MovieToPromote.get(i), 0);
+            if( i == 1 ) controller.AddPromotion(MovieToPromote.get(i), controller.getNbrPlayList()/2);
+            if( i == 2 ) controller.AddPromotion(MovieToPromote.get(i), controller.getNbrPlayList());
+        }
+
     }
 
-    public void loginComplete(User user){
+    public void loginComplete(User user) throws Exception {
 
         loginUser = user;
-        setHomePage();
+        if( loginUser.isAdmin()) {
+            launchAdmin();
+        }
+        else {
+            setHomePage();
+        }
     }
 
     public static void Main(String[] args){
@@ -198,6 +209,7 @@ public class AppController extends Application {
             e.printStackTrace();
         }
     }
+
 
     public void loadPlayer(Movie movie) {
         try {
@@ -227,6 +239,54 @@ public class AppController extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void launchAdmin() throws Exception {
+
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
+        this.scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
+        AdminStats controller = loaderHome.getController();
+        controller.setAppController(this);
+        mainStage.setScene(scene);
+        mainStage.setResizable(false);
+        mainStage.show();
+    }
+
+    //Méthode pour load la page des statistiques
+    public void loadStatsPage() throws Exception {
+        AdminStats adminStats = new AdminStats();
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
+        scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
+        AdminStats controller = loaderHome.getController();
+        controller.setAppController(this);
+        mainStage.setScene(scene);
+        mainStage.setResizable(false);
+        mainStage.show();
+
+    }
+
+    //Méthode pour load la page du catalogue
+    public void loadCatalogPage() throws Exception {
+        AdminCatalog adminCatalog = new AdminCatalog();
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminCatalog.fxml"));
+        scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
+        AdminCatalog controller = loaderHome.getController();
+        controller.setAppController(this);
+        mainStage.setScene(scene);
+        mainStage.setResizable(false);
+        mainStage.show();
+    }
+
+    //Méthode pour load la page des utilisateurs
+    public void loadUserPage() throws Exception {
+        AdminUser adminUser = new AdminUser();
+        FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminUserGestion.fxml"));
+        scene = new Scene(loaderHome.load(), 1275, 645, Color.BLACK);
+        AdminUser controller = loaderHome.getController();
+        controller.setAppController(this);
+        mainStage.setScene(scene);
+        mainStage.setResizable(false);
+        mainStage.show();
     }
 
     public User getCurrentuser() {

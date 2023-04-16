@@ -49,7 +49,9 @@ public class Movie extends BdModel {
 
     private int viewCount;
 
-    public Movie(int id, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, ArrayList<String> type, String summary, String teaserPath, boolean awarded, int viewCount, double rating) {
+    private boolean promoted;
+
+    public Movie(int id, String title, BufferedImage thumbnail, String filePath, LocalDate releaseDate, int length, Person director, ArrayList<Person> actors, ArrayList<String> type, String summary, String teaserPath, boolean awarded, int viewCount, double rating, boolean promoted) {
         super(id);
         this.title = title;
         this.thumbnail = thumbnail;
@@ -64,6 +66,7 @@ public class Movie extends BdModel {
         this.rating = rating;
         this.awarded = awarded;
         this.viewCount = viewCount;
+        this.promoted = promoted;
     }
 
     //Constructeur par copie
@@ -83,6 +86,7 @@ public class Movie extends BdModel {
         this.rating = movie.getRating();
         this.awarded = movie.isAwarded();
         this.viewCount = movie.getViewCount();
+        this.promoted = movie.isPromoted();
     }
 
     public String getTitle() {
@@ -158,6 +162,10 @@ public class Movie extends BdModel {
         return "Movie";
     }
 
+    public boolean isPromoted() {
+        return promoted;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -214,4 +222,7 @@ public class Movie extends BdModel {
         this.viewCount = viewCount;
     }
 
+    public void setPromoted(boolean promoted) {
+        this.promoted = promoted;
+    }
 }

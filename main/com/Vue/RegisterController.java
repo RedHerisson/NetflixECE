@@ -94,9 +94,9 @@ public class RegisterController extends Controller {
                 age, sexe, LocalDate.now(),WatchLater ,history, new ArrayList<String>(), new ArrayList<UserData>(),false );
                 userAccessor.create(user);
                 System.out.println("User created: " + user);
-                appController.setHomePage();
+                appController.setLoginPage();
             }
-            loginMessage.setText("Password OK");
+
             //User user = new User(-1, UserName.getText(),Password.getText(), LastName.getText(), FirstName.getText(), );
 
         }

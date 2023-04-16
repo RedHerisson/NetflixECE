@@ -25,10 +25,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.chart.*;
 import javafx.util.Duration;
 
-public class AdminStats implements Initializable {
+public class AdminStats extends Controller implements Initializable {
 
-    ///Attributs
-    AdminAppController adminAppController;
     @FXML
     private BarChart barChart1, barChart2;
     @FXML
@@ -184,8 +182,6 @@ public class AdminStats implements Initializable {
 
         ////////////////////////////////      LINECHART      ///////////////////////////////////////////////
 
-
-
         //On ajoute les données au graphique
         yAxis2.setTickLabelFill(Color.WHITE);
         xAxis2.setTickLabelFill(Color.WHITE);
@@ -225,33 +221,24 @@ public class AdminStats implements Initializable {
         barChart2.getXAxis().setStyle("-fx-border-color: #ffffff transparent transparent transparent;  -fx-border-width:3");
         barChart2.getYAxis().setStyle("-fx-border-color: transparent #ffffff transparent transparent;  -fx-border-width:3");
 
-
-
-
     };
 
-    ///////////////////////////////////////////////////////////////////////////////////
-
-    //On set le controller de l'application
-    public void setAppAdminController(AdminAppController adminAppController) {
-        this.adminAppController= adminAppController;
-    }
     //On appelle la fonction qui permet de charger la page des statistiques
     @FXML
     public void HandleShowStatisticsGenre(ActionEvent event) throws Exception {
-        adminAppController.loadStatsPage();
+        appController.loadStatsPage();
     }
 
     //On appelle la fonction qui permet de charger la page du gestionnaire de catalogue
     @FXML
     private void HandleCatalogGestion(ActionEvent event) throws Exception {
-        adminAppController.loadCatalogPage();
+        appController.loadCatalogPage();
     }
 
     //On appelle la fonction qui permet de charger la page du gestionnaire d'utilisateurs
     @FXML
     private void HandleUser(ActionEvent event) throws Exception {
-        adminAppController.loadUserPage();
+        appController.loadUserPage();
     }
 
     //Méthodes pour des effets visuels sur les boutons
@@ -306,7 +293,13 @@ public class AdminStats implements Initializable {
     //Méthode pour quitter le mode admin
     @FXML
     private void HandleClose(ActionEvent event){
-    System.exit(0);
+        try {
+            appController.setLoginPage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
     }
 
 

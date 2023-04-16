@@ -79,6 +79,10 @@ public class User extends Person {
         this.WatchLater.addMovie(movie);
     }
 
+    public boolean testIfMovieIsInWatchList(Movie movie) {
+        return this.WatchLater.getMoviesList().contains(movie);
+    }
+
     public void RemoveMovieToWatchList(Movie movie) {
         this.WatchLater.removeMovie(movie.getId());
     }

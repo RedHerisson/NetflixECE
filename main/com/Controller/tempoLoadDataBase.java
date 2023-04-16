@@ -117,7 +117,7 @@ public class tempoLoadDataBase {
 
 
         Movie movie = new Movie(-1, title, image, videoPath, releaseDate, Runtime, director, actors, typeList, plot,
-                videoPath, Awarded, 0, 0);
+                videoPath, Awarded, 0, 0, false);
         return movie;
     }
 

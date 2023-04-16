@@ -70,8 +70,6 @@ public class UserAccessor extends PersonAccessor {
             else
                 WatchLater = null;
 
-            System.out.println(WatchLater);
-
             Person pDef = personAccessor.findById(personID);
 
             return new User(id,pseudo, pwd, pDef.getName(), pDef.getSurname(),email, pDef.getAge(), pDef.getSexe(), accDateCreation.toLocalDate(), WatchLater,

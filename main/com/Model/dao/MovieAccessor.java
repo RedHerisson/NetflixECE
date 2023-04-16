@@ -74,10 +74,11 @@ public class MovieAccessor extends Accessor<Movie> {
             boolean awarded = result.getBoolean(10);
             int viewCount = result.getInt(12);
             int rating = result.getInt(13);
+            boolean promoted = result.getBoolean(14);
 
             result.close();
 
-            return new Movie(id, title, null, filePath, releaseDate, length, director, actors, typeArray, summary, teaserPath, awarded, viewCount, rating);
+            return new Movie(id, title, null, filePath, releaseDate, length, director, actors, typeArray, summary, teaserPath, awarded, viewCount, rating, promoted);
         }
         result.close();
         System.out.println("Movie not found");
@@ -184,6 +185,33 @@ public class MovieAccessor extends Accessor<Movie> {
         }
     }
 
+    public void updatePromoted(Movie movie ) {
+        try {
+            PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("UPDATE Movie SET promotion = ? WHERE id = " + movie.getId());
+            pre.setBoolean(1, movie.isPromoted());
+            pre.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Movie> getRandPromotedMovies(int max) {
+
+        ArrayList<Movie> promotedMovies = new ArrayList<>();
+        try {
+            ResultSet result = dataBase.getRequest().executeQuery("SELECT * FROM Movie WHERE promotion = 1 ORDER BY RAND() LIMIT " + max + "");
+            while (result.next()) {
+                Movie movie = findById(result.getInt(1));
+                if (movie != null) {
+                    promotedMovies.add(movie);
+                }
+            }
+        } catch (SQLException | IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return promotedMovies;
+
+    }
     /**
      * Preparation de la requête préparée pour la création ou la mise à jour d'un film
      * @param movie film à mettre à jour
@@ -269,7 +297,7 @@ public class MovieAccessor extends Accessor<Movie> {
 
     public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Movie> movies = new ArrayList<>();
-        ResultSet result = dataBase.getRequest().executeQuery(" SELECT DISTINCT ID FROM Movie WHERE type LIKE '%" + type + "%' LIMIT " + max);
+        ResultSet result = dataBase.getRequest().executeQuery(" SELECT DISTINCT ID FROM Movie WHERE type LIKE '%" + type + "%' ORDER BY RAND () LIMIT " + max );
         while (result.next()) {
             movies.add(findById(result.getInt(1)));
         }

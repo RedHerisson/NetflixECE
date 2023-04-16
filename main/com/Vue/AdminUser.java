@@ -1,13 +1,11 @@
 package com.Vue;
 
 import com.Model.dao.UserAccessor;
-import com.Model.map.Movie;
 import com.Model.map.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -16,15 +14,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class AdminUser implements Initializable{
-
-AdminAppController adminAppController;
+public class AdminUser extends Controller implements Initializable{
 
     ///Attributs
     @FXML
@@ -79,29 +74,22 @@ AdminAppController adminAppController;
         }
     }
 
-
-
-    //Setter du controller de l'application
-    public void setAppAdminController(AdminAppController adminAppController) {
-        this.adminAppController= adminAppController;
-    }
-
     //Chargement de la page de statistiques
     @FXML
     public void HandleShowStatisticsGenre(ActionEvent event) throws Exception {
-        adminAppController.loadStatsPage();
+        appController.loadStatsPage();
     }
 
     //Chargement de la page de gestion des catalogues
     @FXML
     private void HandleCatalogGestion(ActionEvent event) throws Exception {
-        adminAppController.loadCatalogPage();
+        appController.loadCatalogPage();
     }
 
     //Chargement de la page de gestion des utilisateurs
     @FXML
     private void HandleUser(ActionEvent event) throws Exception {
-        adminAppController.loadUserPage();
+        appController.loadUserPage();
     }
     //Méthodes pour des effets graphiques sur les boutons
     @FXML
@@ -154,6 +142,12 @@ AdminAppController adminAppController;
     //On quitte le mode admin
     @FXML
     private void HandleClose(ActionEvent event){
-        System.exit(0);
+        try {
+            appController.setLoginPage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+
     }
 }

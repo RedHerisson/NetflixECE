@@ -2,6 +2,7 @@ package com.Model.map;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Playlist extends BdModel {
     private int ownerId;
@@ -51,9 +52,12 @@ public class Playlist extends BdModel {
     }
 
     public void removeMovie(int id) {
-        for (Movie movie : movies) {
-            if (movie.getId() == id) {
-                this.movies.remove(movie);
+        Iterator<Movie> i = movies.iterator();
+        while (i.hasNext()) {
+            Movie tempoMovie = i.next();
+
+            if (tempoMovie.getId() == id) {
+                i.remove();
             }
         }
     }
