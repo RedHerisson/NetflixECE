@@ -9,6 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * User Data : lien unique des données d'un utilisteur pour un films
+ */
 public class UserDataAccessor extends Accessor<UserData> {
 
     MovieAccessor movieAccessor;
@@ -45,6 +48,13 @@ public class UserDataAccessor extends Accessor<UserData> {
         return null;
     }
 
+    /**
+     * Recherche un UserData dans la BDD à l'aide du nom et du prénom de l'utilisateur
+     * @param uId
+     * @param mId
+     * @return
+     * @throws Exception
+     */
     public UserData findByMovieAndUser(int uId, int mId) throws Exception {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM User_Data WHERE User_ID = " + uId + " AND Movie_ID = " + mId);
         if(result.next()) {

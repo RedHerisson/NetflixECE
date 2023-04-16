@@ -46,10 +46,21 @@ public class BDD {
 
     }
 
+    /**
+     * Créer une request de connexion
+     * @return Statement
+     * @throws SQLException
+     */
     public Statement getRequest() throws SQLException {
         return session.createStatement();
     }
 
+    /**
+     * Permet de récupérer le dernier ID d'une table
+     * @param table
+     * @return
+     * @throws SQLException
+     */
     public int getLastIdFromTable(String table ) throws SQLException {
         ResultSet result = getRequest().executeQuery("SELECT * FROM " + table +" ORDER BY id DESC LIMIT 1 ");
         if( result.next() ) {

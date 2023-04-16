@@ -124,6 +124,14 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    /**
+     * Trouver un film par son nom pour la recherche auto-complétion
+     * @param query nom du film
+     * @return le film correspondant au nom
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public ArrayList<String> getTitleByQuerrt(String query) throws SQLException, ClassNotFoundException, IOException {
 
         ArrayList<String> suggestions = new ArrayList<String>(5);
@@ -138,6 +146,13 @@ public class MovieAccessor extends Accessor<Movie> {
         return suggestions;
     }
 
+    /**
+     * Compte le nombre de films dans la base de données
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countMovies() throws SQLException, ClassNotFoundException, IOException {
 
 
@@ -199,6 +214,10 @@ public class MovieAccessor extends Accessor<Movie> {
         }
     }
 
+    /**
+     * Mise à jour de promotion d'un films dans la base de données
+     * @param movie
+     */
     public void updatePromoted(Movie movie ) {
         try {
             PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("UPDATE Movie SET promotion = ? WHERE id = " + movie.getId());
@@ -209,6 +228,11 @@ public class MovieAccessor extends Accessor<Movie> {
         }
     }
 
+    /**
+     * Recupération de films aléatoires en promotion
+     * @param max
+     * @return
+     */
     public ArrayList<Movie> getRandPromotedMovies(int max) {
 
         ArrayList<Movie> promotedMovies = new ArrayList<>();
@@ -310,6 +334,15 @@ public class MovieAccessor extends Accessor<Movie> {
         Director.close();
     }
 
+    /**
+     * Recherche d'un films par son type
+     * @param type type du film
+     * @param max nombre de films à retourner
+     * @return liste de films
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<Movie> findByType(String type, int max) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<Movie> movies = new ArrayList<>();
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT DISTINCT ID FROM Movie WHERE type LIKE '%" + type + "%' ORDER BY RAND () LIMIT " + max );
@@ -321,6 +354,14 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    /**
+     * Recherche d'un films par sa date de sortie
+     * @param i nombre de films à retourner
+     * @return liste de films
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<Movie> findByDate(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY release_date DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -331,7 +372,14 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
-    // find by Popular
+    /**
+     * Recherche d'un films par son nombre de vues
+     * @param i nombre de films à retourner
+     * @return liste de films
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<Movie> findByPopular(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY view_counter DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -342,6 +390,12 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    /**
+     * Compte le nombre de films par genre
+     * @param action genre du film
+     * @return nombre de films
+     * @throws SQLException
+     */
     public int countMoviesByGenre(String action) throws SQLException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT COUNT(*) FROM Movie WHERE type like '%"+ action + "%'");
         result.next();
@@ -350,7 +404,14 @@ public class MovieAccessor extends Accessor<Movie> {
         return count;
     }
 
-
+    /**
+     * Recherche d'un films par sa note
+     * @param i
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<Movie> findByRank(int i) throws SQLException, IOException, ClassNotFoundException {
         ResultSet result = dataBase.getRequest().executeQuery(" SELECT ID FROM Movie ORDER BY rating DESC LIMIT " + i);
         ArrayList<Movie> movies = new ArrayList<>();
@@ -361,10 +422,20 @@ public class MovieAccessor extends Accessor<Movie> {
         return movies;
     }
 
+    /**
+     * ajoute une vue au film
+     * @param id
+     * @throws SQLException
+     */
     public void addView(int id) throws SQLException {
         dataBase.getRequest().executeUpdate("Update Movie SET view_counter = view_counter + 1 WHERE ID = " + id);
     }
 
+    /**
+     * Met à jour la note d'un film
+     * @param id
+     * @param rate
+     */
     public void updateRating(int id, double rate) {
         try {
             dataBase.getRequest().executeUpdate("Update Movie SET rating = " + rate + " WHERE ID = " + id);
@@ -372,6 +443,4 @@ public class MovieAccessor extends Accessor<Movie> {
             e.printStackTrace();
         }
     }
-
-
 }

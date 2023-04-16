@@ -46,8 +46,6 @@ public class PersonAccessor extends Accessor<Person> {
      * @return Person object found
      * @throws SQLException error while accessing the dataBase
      */
-
-
     public int countUsersBySexe(String sexe) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -60,7 +58,15 @@ public class PersonAccessor extends Accessor<Person> {
 
     //return name of a user
 
-
+    /**
+     * Compte le nombre d'utilisateurs dans la base de données en fonction de leur age
+     * @param age1
+     * @param age2
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersByAge(int age1, int age2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 

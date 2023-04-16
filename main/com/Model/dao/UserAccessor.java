@@ -78,6 +78,14 @@ public class UserAccessor extends PersonAccessor {
         return null;
     }
 
+    /**
+     * Recherche d'un utilisateur dans la base de données à l'aide de son pseudo
+     * @param name Pseudo de l'utilisateur
+     * @return Utilisateur trouvé dans la base de données
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public User findByName( String name ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE pseudo = " + "'" +  name + "'" );
         if( findUser.next() ) {
@@ -86,6 +94,14 @@ public class UserAccessor extends PersonAccessor {
         else return null;
     }
 
+    /**
+     * Recherche d'un utilisateur au pseudo semblable à celui passé en paramètre
+     * @param querry  Pseudo de l'utilisateur
+     * @return
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public ArrayList<User> searchPseudo(String querry) throws SQLException, IOException, ClassNotFoundException {
         ArrayList<User> userList = new ArrayList<User>();
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT * FROM User WHERE pseudo like '%"+querry +"%'" );
@@ -95,6 +111,13 @@ public class UserAccessor extends PersonAccessor {
         return userList;
     }
 
+    /**
+     * Compte le nombre d'administrateur dans la base de données
+     * @return Nombre d'administrateur
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countAdmin() throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -105,6 +128,14 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * Recherche d'un utilisateur dans la base de données à l'aide de son email
+     * @param mail Email de l'utilisateur
+     * @return Utilisateur trouvé dans la base de données
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public User findByMail( String mail ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT ID FROM User WHERE email = " + "'" +  mail + "'" );
         if( findUser.next() ) {
@@ -113,6 +144,15 @@ public class UserAccessor extends PersonAccessor {
         else return null;
     }
 
+    /**
+     * Test du mot de passe de l'utilisateur
+     * @param id ID de l'utilisateur
+     * @param pwd Mot de passe de l'utilisateur
+     * @return Vrai si le mot de passe est correct, faux sinon
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public boolean checkPwd( int id, String pwd ) throws SQLException, IOException, ClassNotFoundException {
         ResultSet findUser = dataBase.getRequest().executeQuery(" SELECT pwd FROM User WHERE ID = " + id );
         if( findUser.next() ) {
@@ -121,6 +161,15 @@ public class UserAccessor extends PersonAccessor {
         else return false;
     }
 
+    /**
+     * Compte le nombre d'utilisateurs inscrit entre deux dates
+     * @param date1 Date de début
+     * @param date2 Date de fin
+     * @return
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersFromDate(String date1, String date2) throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -131,6 +180,13 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * Compte le nombre d'utilisateurs inscrits
+     * @return Nombre d'utilisateurs inscrits
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsers() throws SQLException, ClassNotFoundException, IOException {
 
 
@@ -144,6 +200,13 @@ public class UserAccessor extends PersonAccessor {
         return cpt;
     }
 
+    /**
+     * Compte le nombre d'utilisateurs connectés
+     * @return Nombre d'utilisateurs connectés
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public int countUsersConnected() throws SQLException, ClassNotFoundException, IOException {
         int cpt=0;
 
@@ -204,6 +267,11 @@ public class UserAccessor extends PersonAccessor {
         return usr.getId();
     }
 
+    /**
+     * Ajouter un utilisateur en temps qu'administrateur
+     * @param user utilisateur à mettre à jour
+     * @throws SQLException
+     */
     public void setAdmin(User user) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "UPDATE User SET admin = ? WHERE id = " + user.getId() );

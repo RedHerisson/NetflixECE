@@ -25,7 +25,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
+/**
+ * Classe principale de l'application, responsable de la gestion des vues
+ * @throws Exception
+ */
 public class AppController extends Application {
 
     private Stage mainStage;
@@ -36,6 +39,14 @@ public class AppController extends Application {
 
     private boolean NasConnected = false;
 
+    /**
+     * Démarre l'application
+     * @param stage the primary stage for this application, onto which
+     * the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be
+     * primary stages.
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -46,6 +57,9 @@ public class AppController extends Application {
     setLoginPage();
     }
 
+    /**
+     * Test de si le NAS est disponible
+     */
     private void TestConnection() {
         try {
             File file = new File("L:/test.txt");
@@ -63,6 +77,10 @@ public class AppController extends Application {
 
     }
 
+     /**
+     * une fois sur la page login, si le bouton register est sélectionné, alors une autre page fxml s'ouvre
+     * @throws IOException
+     */
     public void setLoginPage() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/login.fxml"));
@@ -78,6 +96,10 @@ public class AppController extends Application {
 
         mainStage.show();
     }
+
+    /**
+     * Affiche la page de paramètres de l'utilisateur
+     */
     public void setUserSettings() throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings/UserSettings.fxml"));
@@ -93,6 +115,10 @@ public class AppController extends Application {
 
         mainStage.show();
     }
+
+    /**
+     * Affiche la page d'acceuil de l'application
+     */
     public void setHomePage() {
         try {
             FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/home.fxml"));
@@ -119,6 +145,10 @@ public class AppController extends Application {
         }
     }
 
+    /**
+     * Affiche la page de présentation d'un film
+     * @param movie film à afficher
+     */
     public void setMoviePresPage(Movie movie) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/moviePres.fxml"));
@@ -137,6 +167,13 @@ public class AppController extends Application {
         }
     }
 
+     /**
+     * va chercher les informations à partir du user d'entré
+     * @param controller est sélectionné à partir de HomeController
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public void loadHomeFromUser(HomeController controller) throws SQLException, ClassNotFoundException, IOException {
         MovieAccessor movieAccessor = new MovieAccessor();
         UserDataAccessor userDataAccessor = new UserDataAccessor();
@@ -188,6 +225,11 @@ public class AppController extends Application {
 
     }
 
+    /**
+     * charge l'utilisateur et lance la page en fonction de son role
+     * @param user utilisteur à charger
+     * @throws Exception
+     */
     public void loginComplete(User user) throws Exception {
 
         setLoginUser(user);
@@ -199,6 +241,10 @@ public class AppController extends Application {
         }
     }
 
+    /**
+     * set l'utilisateur courant
+     * @param user utilisateur à charger
+     */
     public void setLoginUser(User user) {
         loginUser = user;
     }
@@ -207,7 +253,9 @@ public class AppController extends Application {
         launch(args);
     }
 
-
+    /**
+     * lance la page d'admin
+     */
     public void setRegisterPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/registration.fxml"));
@@ -227,7 +275,10 @@ public class AppController extends Application {
         }
     }
 
-
+    /**
+     * charge le player video
+     * @param movie
+     */
     public void loadPlayer(Movie movie) {
         try {
             UserAccessor userAccessor = new UserAccessor();
@@ -258,6 +309,10 @@ public class AppController extends Application {
         }
     }
 
+    /**
+     * charge la page d'admin
+     * @throws Exception
+     */
     public void launchAdmin() throws Exception {
 
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
@@ -269,7 +324,10 @@ public class AppController extends Application {
         mainStage.show();
     }
 
-    //Méthode pour load la page des statistiques
+    /**
+     * charge la page de statistique dans la page d'admin
+     * @throws Exception
+     */
     public void loadStatsPage() throws Exception {
         AdminStats adminStats = new AdminStats();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminStats.fxml"));
@@ -282,7 +340,10 @@ public class AppController extends Application {
 
     }
 
-    //Méthode pour load la page du catalogue
+    /**
+     * charge la page de catalogue dans la page d'admin
+     * @throws Exception
+     */
     public void loadCatalogPage() throws Exception {
         AdminCatalog adminCatalog = new AdminCatalog();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminCatalog.fxml"));
@@ -294,7 +355,10 @@ public class AppController extends Application {
         mainStage.show();
     }
 
-    //Méthode pour load la page des utilisateurs
+    /**
+     * charge la page d'utilisateur dans la page d'admin
+     * @throws Exception
+     */
     public void loadUserPage() throws Exception {
         AdminUser adminUser = new AdminUser();
         FXMLLoader loaderHome = new FXMLLoader(getClass().getResource("/resources/View/adminUserGestion.fxml"));
@@ -306,10 +370,18 @@ public class AppController extends Application {
         mainStage.show();
     }
 
+    /**
+     * recupere l'utilisateur courant
+     * @return
+     */
     public User getCurrentuser() {
         return loginUser;
     }
 
+    /**
+     * rend si le NAS est connecté ou non
+     * @throws Exception
+     */
     public boolean isConnected() {
         return NasConnected;
     }

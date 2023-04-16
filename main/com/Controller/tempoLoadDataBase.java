@@ -28,6 +28,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Chargement des films dans la base de données à partir d'un API externe
+ */
 public class tempoLoadDataBase {
 
     MovieAccessor movieAccessor = new MovieAccessor();
@@ -60,13 +63,24 @@ public class tempoLoadDataBase {
         return null;
     }
 
-
+    /**
+     * Récupération des films à partir d'une api externe
+     * @param id Imdb du film à récupérer
+     * @return Json du film
+     * @throws FileNotFoundException
+     */
     public static String OMDBGetById(String id) throws IOException {
             //complete for id
             String apikkey = "9469cce6";
             return getJsonFromURL("https://www.omdbapi.com/?apikey=" + apikkey + "&i=" + id);
     }
 
+    /**
+     * Creation des classes à partir des informations de l'Api externe
+     * @param json information du film venant de l'api
+     * @return Movie avec les informations de l'api
+     * @throws IOException
+     */
     public static Movie JsonToMovie(String json) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         Map<String, Object> jsonMap = objectMapper.readValue(json, new TypeReference<Map<String, Object>>(){});
@@ -77,8 +91,6 @@ public class tempoLoadDataBase {
         //System.out.println("Input string: " + StrReleaseDate);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH);
         LocalDate releaseDate = LocalDate.parse(StrReleaseDate, formatter);
-
-
 
 
         int Runtime = Integer.parseInt((String) jsonMap.get("Runtime").toString().split(" ")[0]);
@@ -121,6 +133,12 @@ public class tempoLoadDataBase {
         return movie;
     }
 
+    /**
+     * Récupération de la bande annonce à partir de l'api themoviedb
+     * @param imdbId id du film
+     * @return lien de la bande annonce
+     * @throws IOException
+     */
     public static String getYtLinkFromImdbId(String imdbId) throws IOException {
         String json1 = getJsonFromURL("https://api.themoviedb.org/3/movie/" + imdbId + "/external_ids?api_key=437f7c220247b94e83186d3692270200");
 
@@ -146,6 +164,12 @@ public class tempoLoadDataBase {
         return ytLink;
     }
 
+    /**
+     * Récupération des Id à partir d'un fichier
+     * @param path
+     * @param startLigne
+     * @return
+     */
     public static ArrayList<String> readImdbFromFile(String path, int startLigne) {
         ArrayList<String> imdbIds = new ArrayList<>();
         try {
@@ -166,6 +190,10 @@ public class tempoLoadDataBase {
         return imdbIds;
     }
 
+    /**
+     * Creation des URL youtube pour telecharge les bandes annonces
+     * @param ytURL
+     */
     public static void addYtURLToFile( String ytURL ) {
         try {
             FileWriter myWriter = new FileWriter("ytURL.txt", true);
@@ -177,6 +205,10 @@ public class tempoLoadDataBase {
 
     }
 
+    /**
+     * Chargement des films dans la base de données à partir d'un fichier
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             int startLigne = 510;
