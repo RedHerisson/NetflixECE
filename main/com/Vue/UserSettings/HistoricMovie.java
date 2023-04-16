@@ -1,8 +1,9 @@
-package com.Vue;
+package com.Vue.UserSettings;
 
 import com.Controller.AppController;
 import com.Model.dao.MovieAccessor;
 import com.Model.map.Movie;
+import com.Vue.Controller;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,8 +27,6 @@ public class HistoricMovie extends Controller implements Initializable {
 
     private Movie movie;
     private MovieAccessor posterGetter;
-
-
 
     @FXML
     private Pane darkLayer;
@@ -92,7 +91,8 @@ public class HistoricMovie extends Controller implements Initializable {
     }
     @FXML
     public void deleteMovie(ActionEvent event) throws Exception {
-        posterGetter.delete(movie.getId());
+        appController.getCurrentuser().removeMovieFromHistory(movie);
+
         System.out.println("Movie deleted");
 
     }

@@ -204,8 +204,6 @@ public class UserAccessor extends PersonAccessor {
         return usr.getId();
     }
 
-
-
     public void setAdmin(User user) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
                 "UPDATE User SET admin = ? WHERE id = " + user.getId() );
@@ -221,10 +219,9 @@ public class UserAccessor extends PersonAccessor {
      */
     public void updatePseudo(User usr) throws SQLException {
         PreparedStatement pre = dataBase.getRequest().getConnection().prepareStatement("" +
-                "UPDATE Person SET name = ?, surname = ? WHERE id = " + usr.getId() );
+                "UPDATE User SET pseudo = ? WHERE id = " + usr.getId() );
 
-        pre.setString(1, usr.getName());
-        pre.setString(2, usr.getSurname());
+        pre.setString(1, usr.getPseudo());
         pre.executeUpdate();
     }
 

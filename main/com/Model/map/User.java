@@ -44,7 +44,7 @@ public class User extends Person {
         this.pwd = usr.getPwd();
         this.email = usr.getEmail();
         this.acc_creation_date = usr.getCreationDate();
-        this.playlists = usr.getPlaylists();
+        this.WatchLater = usr.getWatchList();
         this.history = usr.getHistory();
         this.favouriteType = usr.getFavouriteType();
         this.data = usr.getData();
@@ -65,6 +65,7 @@ public class User extends Person {
     public String getEmail() {
         return email;
     }
+
 
     public LocalDate getCreationDate() {
         return acc_creation_date;
@@ -88,6 +89,14 @@ public class User extends Person {
 
     public boolean isAdmin() {
         return admin;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void addMovieToWatchList(Movie movie) {

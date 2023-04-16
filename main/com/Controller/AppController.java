@@ -5,15 +5,12 @@ import com.Model.dao.PlaylistAccessor;
 import com.Model.dao.UserAccessor;
 import com.Model.dao.UserDataAccessor;
 import com.Model.map.Movie;
-import com.Model.map.Playlist;
 import com.Model.map.User;
-import com.Model.map.UserData;
 import com.Vue.*;
+import com.Vue.UserSettings.UserSettings;
 import com.Vue.VideoPlayer.PlayerController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -23,8 +20,6 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
 
@@ -42,6 +37,8 @@ public class AppController extends Application {
     public void start(Stage stage) throws Exception {
 
     mainStage = stage;
+    Image icon = new Image(getClass().getResourceAsStream("/resources/images/ECE_LOGO.png"));
+    mainStage.getIcons().add(icon);
     TestConnection();
     setLoginPage();
     }
@@ -80,17 +77,14 @@ public class AppController extends Application {
     }
     public void setUserSettings() throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/View/UserSettings/UserSettings.fxml"));
         scene = new Scene(loader.load(), 1080, 645, Color.BLACK);
 
-        UserSettings logCtrl = loader.getController();
-        logCtrl.setAppController(this);
+        UserSettings SetCtrl = loader.getController();
+        SetCtrl.setAppController(this);
 
         mainStage.setScene(scene);
         mainStage.setTitle("UserSettings");
-
-        Image icon = new Image(getClass().getResourceAsStream("/resources/images/ECE_LOGO.png"));
-        mainStage.getIcons().add(icon);
 
         mainStage.setResizable(false);
 
@@ -193,13 +187,17 @@ public class AppController extends Application {
 
     public void loginComplete(User user) throws Exception {
 
-        loginUser = user;
+        setLoginUser(user);
         if( loginUser.isAdmin()) {
             launchAdmin();
         }
         else {
             setHomePage();
         }
+    }
+
+    public void setLoginUser(User user) {
+        loginUser = user;
     }
 
     public static void Main(String[] args){

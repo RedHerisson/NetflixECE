@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60649c0-380a-4b19-89f3-398829ec878e" name="Changes" comment=" - ajout de plein de trucs encore, je suis trop fatigué">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/com/Controller/appFXController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/dao/UserAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Model/map/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Model/map/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/HeaderBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/HistoricMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/HistoricMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserHistoric.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserHistoric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserNewPWD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserPlaylists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserProfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserProfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/com/Vue/UserSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/com/Vue/UserSettings/UserSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/ChangePWD.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/HistoricMovie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/HistoricMovie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserHistoric.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserHistoric.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserPlaylists.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserProfil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserProfil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/UserSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/UserSettings/UserSettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/View/headerBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/View/searchBar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/resources/images/icon/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/main/resources/images/icon/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/dao/UserAccessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Model/map/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HeaderBarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Vue/HeaderBarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/HistoricMovie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserHistoric.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserNewPWD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserPlaylists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserProfil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Vue/UserSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/ChangePWD.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/HistoricMovie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserHistoric.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserPlaylists.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/UserSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/View/headerBar.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/searchBar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/View/userProfil.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +58,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="14017" />
+    <option name="totalTimeSeconds" value="24644" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -68,8 +110,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\igorr\Desktop\NetflixECEPROJECT\main\resources\View" />
+      <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View\UserSettings" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\resources\View" />
+      <recent name="C:\Users\igorr\Desktop\NetflixECEPROJECT\main\resources\View" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Vue" />
       <recent name="N:\Cours\ECE cours\ING3-S2\Informatique\Projet Java\NetflixECE\main\com\Controller" />
     </key>

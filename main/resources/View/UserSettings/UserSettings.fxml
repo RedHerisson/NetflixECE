@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Vue.UserSettings.UserSettings">
+    <children>
+        <Pane fx:id="pnlSettings" layoutX="195.0" layoutY="149.0" prefHeight="394.0" prefWidth="587.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="149.0">
+            <children>
+                <AnchorPane fx:id="rootUS" prefHeight="496.0" prefWidth="1080.0" style="-fx-background-color: #0e171e;" />
+            </children></Pane>
+      <VBox prefHeight="645.0" prefWidth="196.0" style="-fx-background-color: #2a5d8a;">
+         <children>
+              <VBox prefHeight="560.0" prefWidth="196.0">
+                  <children>
+                      <Pane prefHeight="171.0" prefWidth="195.0">
+                          <children>
+                              <Label fx:id="UserName" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="95.0" prefHeight="45.0" prefWidth="189.0" text="User Name" textAlignment="CENTER" textFill="WHITE">
+                                  <font>
+                                      <Font name="Impact" size="24.0" />
+                                  </font>
+                              </Label>
+                        <ImageView fitHeight="102.0" fitWidth="118.0" layoutX="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/ProfilImg.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="80.0" layoutX="105.0" layoutY="147.0" startX="-89.0" />
+                          </children>
+                      </Pane>
+                      <Button fx:id="btnProfil" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="199.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Profil" textFill="WHITE">
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                          <font>
+                              <Font name="Impact" size="24.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                      <Button fx:id="btnHistoric" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="204.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Historic" textFill="WHITE">
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                          <font>
+                              <Font name="Impact" size="24.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  <Button fx:id="btnSignOut" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="204.0" style="-fx-background-color: #2a5d8a; -fx-font-style: #ebf2f9;" text="Sign Out" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font name="Impact" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  </children>
+              </VBox>
+            <Pane prefHeight="105.0" prefWidth="196.0">
+               <children>
+                  <ImageView fx:id="BackArrow" fitHeight="58.0" fitWidth="59.0" layoutX="73.0" layoutY="16.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/icon/arrow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+        <Pane fx:id="pnlStatut" layoutX="195.0" prefHeight="645.0" prefWidth="1275.0" style="-fx-background-color: #1e4263;" AnchorPane.bottomAnchor="496.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="lblStatut" layoutX="57.0" layoutY="46.0" prefHeight="58.0" prefWidth="403.0" text="Profil" textFill="WHITE">
+                    <font>
+                        <Font name="Impact" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

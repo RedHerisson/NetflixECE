@@ -26,7 +26,7 @@
                               <Insets bottom="3.0" left="30.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="UserPageButton" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/userLogo.png" />
                            </image>

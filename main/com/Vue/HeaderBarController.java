@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -24,6 +26,9 @@ public class HeaderBarController extends Controller implements Initializable {
 
     @FXML
     private TextField searchBar;
+
+    @FXML
+    private ImageView UserPageButton;
 
     private HomeController homeController;
     private MovieAccessor movieAccessor = new MovieAccessor();
@@ -58,6 +63,14 @@ public class HeaderBarController extends Controller implements Initializable {
                 searchSuggestionContainer.setPadding(new Insets(0, 0, 0, 0));
             }
         });
+        UserPageButton.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            try {
+                appController.setUserSettings();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     @FXML
